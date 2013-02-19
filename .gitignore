@@ -4,5 +4,6 @@
 *.suo
 
 
-sitemaCA/bin/
-sistemaCA/obj/
+
+sistemaCA\sistemaCA\bin\Debug*\
+sistemaCA\sistemaCA\obj\Debug*\

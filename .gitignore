@@ -1,0 +1,8 @@
+# aquivo git ignore
+
+
+*.suo
+
+
+sitemaCA/bin/
+sistemaCA/obj/

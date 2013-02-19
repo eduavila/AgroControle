@@ -5,5 +5,9 @@
 
 
 
-sistemaCA\sistemaCA\bin\Debug*\
-sistemaCA\sistemaCA\obj\Debug*\
+
+
+sistemaCA\sistemaCA\bin*/
+sistemaCA\sistemaCA\obj*/
+
+sistemaCA/sistemaCA/bin/Debug/sistemaCA.pdb

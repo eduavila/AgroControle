@@ -58,6 +58,9 @@
     <Compile Include="views\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <None Include="DBsysca.dbml.layout">
+      <DependentUpon>DBsysca.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

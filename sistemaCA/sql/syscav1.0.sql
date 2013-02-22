@@ -4,14 +4,14 @@
 --criando db sysca
 
 
-Create Database sysca2;
+Create Database dbsysca;
 
 GO
 
 --usando data base sysca	
 
 
-use sysca2;
+use dbsysca;
 
 GO
 -- criando tabelas
@@ -141,7 +141,7 @@ Create Table tblaplicacao(
 	id_talhao int not null,
 	id_safra int not null,	
 	id_ben int not null,
-
+	id_funcionario int not null,
 
 -- colocado id_aplicacao como chave primaria
 
@@ -300,8 +300,8 @@ Alter Table tblaplicacao
 Add Constraint FK_tblaplicacao_tblprodutoaplicado Foreign Key(id_produtosaplicado) references tblprodutosaplicado(id_produtosaplicado),
 Constraint FK_tblaplicacao_tbltalhao Foreign Key(id_talhao) references tbltalhao(id_talhao),
 Constraint FK_tblaplicacao_tblsafra Foreign Key(id_safra) references tblsafra(id_safra),
-Constraint FK_tblaplicacao_tblbens Foreign Key(id_ben) references tblbens(id_ben);
-
+Constraint FK_tblaplicacao_tblbens Foreign Key(id_ben) references tblbens(id_ben),
+Constraint FK_tblaplicacao_tblfuncionario Foreign Key(id_funcionario) references tblfuncionario(id_funcionario);
 
 --tabela Produtos
 

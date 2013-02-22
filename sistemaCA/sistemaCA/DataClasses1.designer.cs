@@ -1407,8 +1407,6 @@ namespace sistemaCA
 		
 		private string _funcao;
 		
-		private System.Nullable<int> _ctps;
-		
 		private System.Nullable<System.DateTime> _data_admissao;
 		
 		private System.Nullable<System.DateTime> _data_demissao;
@@ -1447,8 +1445,6 @@ namespace sistemaCA
     partial void OnnomeChanged();
     partial void OnfuncaoChanging(string value);
     partial void OnfuncaoChanged();
-    partial void OnctpsChanging(System.Nullable<int> value);
-    partial void OnctpsChanged();
     partial void Ondata_admissaoChanging(System.Nullable<System.DateTime> value);
     partial void Ondata_admissaoChanged();
     partial void Ondata_demissaoChanging(System.Nullable<System.DateTime> value);
@@ -1538,26 +1534,6 @@ namespace sistemaCA
 					this._funcao = value;
 					this.SendPropertyChanged("funcao");
 					this.OnfuncaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctps", DbType="Int")]
-		public System.Nullable<int> ctps
-		{
-			get
-			{
-				return this._ctps;
-			}
-			set
-			{
-				if ((this._ctps != value))
-				{
-					this.OnctpsChanging(value);
-					this.SendPropertyChanging();
-					this._ctps = value;
-					this.SendPropertyChanged("ctps");
-					this.OnctpsChanged();
 				}
 			}
 		}

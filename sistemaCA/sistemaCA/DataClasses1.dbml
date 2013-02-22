@@ -60,7 +60,6 @@
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="ctps" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="data_demissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />

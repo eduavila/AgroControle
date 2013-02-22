@@ -1,8 +1,0 @@
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\bin\Debug\sistemaCA.exe
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\bin\Debug\sistemaCA.pdb
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\obj\Debug\sistemaCA.Form1.resources
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\obj\Debug\sistemaCA.Properties.Resources.resources
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\obj\Debug\sistemaCA.csproj.GenerateResource.Cache
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\obj\Debug\sistemaCA.exe
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\obj\Debug\sistemaCA.pdb
-C:\Users\Eduardo\Documents\syca-code\sistemaCA\sistemaCA\obj\Debug\sistemaCA.views.FormLogin.resources

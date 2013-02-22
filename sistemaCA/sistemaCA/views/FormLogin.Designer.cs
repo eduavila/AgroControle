@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
+            this.tb_senha = new System.Windows.Forms.MaskedTextBox();
             this.btn_entrar = new System.Windows.Forms.Button();
             this.btn_sair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tb_user
             // 
-            this.textBox1.Location = new System.Drawing.Point(343, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 0;
+            this.tb_user.Location = new System.Drawing.Point(343, 79);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(192, 20);
+            this.tb_user.TabIndex = 0;
             // 
-            // maskedTextBox1
+            // tb_senha
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(343, 153);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PasswordChar = '*';
-            this.maskedTextBox1.Size = new System.Drawing.Size(192, 20);
-            this.maskedTextBox1.TabIndex = 1;
+            this.tb_senha.Location = new System.Drawing.Point(343, 153);
+            this.tb_senha.Name = "tb_senha";
+            this.tb_senha.PasswordChar = '*';
+            this.tb_senha.Size = new System.Drawing.Size(192, 20);
+            this.tb_senha.TabIndex = 1;
             // 
             // btn_entrar
             // 
@@ -59,6 +59,7 @@
             this.btn_entrar.TabIndex = 2;
             this.btn_entrar.Text = "Entrar";
             this.btn_entrar.UseVisualStyleBackColor = true;
+            this.btn_entrar.Click += new System.EventHandler(this.btn_entrar_Click);
             // 
             // btn_sair
             // 
@@ -100,8 +101,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_entrar);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_senha);
+            this.Controls.Add(this.tb_user);
             this.Name = "FormLogin";
             this.Text = "FormLogin";
             this.ResumeLayout(false);
@@ -111,8 +112,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox tb_user;
+        private System.Windows.Forms.MaskedTextBox tb_senha;
         private System.Windows.Forms.Button btn_entrar;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Label label1;

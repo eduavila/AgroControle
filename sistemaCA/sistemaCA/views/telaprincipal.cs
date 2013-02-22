@@ -16,5 +16,24 @@ namespace sistemaCA.views
         {
             InitializeComponent();
         }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formUsuario formuser = new formUsuario();
+            formuser.ShowDialog();
+
+        }
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formFuncionario formfunci = new formFuncionario();
+            formfunci.ShowDialog();
+        }
+
+        private void telaprincipal_Load(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

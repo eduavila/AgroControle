@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,24 +44,22 @@
             this.tb_ctps = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_endereco = new System.Windows.Forms.TextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tb_bairro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tblfuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_cidade = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_funcao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_email = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_renumeracao = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.tb_telefone = new System.Windows.Forms.MaskedTextBox();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.tblfuncionarioBindingSource)).BeginInit();
+            this.dtp_admisao = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // shapeContainer1
@@ -103,6 +100,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Cadastrar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -203,15 +201,6 @@
             this.tb_endereco.TabIndex = 15;
             this.tb_endereco.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // maskedTextBox4
-            // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(305, 299);
-            this.maskedTextBox4.Mask = "00/00/0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(96, 20);
-            this.maskedTextBox4.TabIndex = 16;
-            this.maskedTextBox4.ValidatingType = typeof(System.DateTime);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -237,16 +226,12 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Bairro";
             // 
-            // tblfuncionarioBindingSource
+            // tb_cidade
             // 
-            this.tblfuncionarioBindingSource.DataSource = typeof(sistemaCA.tblfuncionario);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(291, 229);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 20);
-            this.textBox1.TabIndex = 20;
+            this.tb_cidade.Location = new System.Drawing.Point(291, 229);
+            this.tb_cidade.Name = "tb_cidade";
+            this.tb_cidade.Size = new System.Drawing.Size(254, 20);
+            this.tb_cidade.TabIndex = 20;
             // 
             // label10
             // 
@@ -257,12 +242,12 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "Cidade";
             // 
-            // textBox2
+            // tb_funcao
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 299);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 20);
-            this.textBox2.TabIndex = 22;
+            this.tb_funcao.Location = new System.Drawing.Point(25, 299);
+            this.tb_funcao.Name = "tb_funcao";
+            this.tb_funcao.Size = new System.Drawing.Size(257, 20);
+            this.tb_funcao.TabIndex = 22;
             // 
             // label11
             // 
@@ -273,12 +258,12 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Função";
             // 
-            // textBox3
+            // tb_email
             // 
-            this.textBox3.Location = new System.Drawing.Point(28, 365);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 20);
-            this.textBox3.TabIndex = 24;
+            this.tb_email.Location = new System.Drawing.Point(28, 365);
+            this.tb_email.Name = "tb_email";
+            this.tb_email.Size = new System.Drawing.Size(257, 20);
+            this.tb_email.TabIndex = 24;
             // 
             // label12
             // 
@@ -289,12 +274,12 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "E-Mail";
             // 
-            // textBox4
+            // tb_renumeracao
             // 
-            this.textBox4.Location = new System.Drawing.Point(437, 299);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(108, 20);
-            this.textBox4.TabIndex = 26;
+            this.tb_renumeracao.Location = new System.Drawing.Point(437, 299);
+            this.tb_renumeracao.Name = "tb_renumeracao";
+            this.tb_renumeracao.Size = new System.Drawing.Size(108, 20);
+            this.tb_renumeracao.TabIndex = 26;
             // 
             // label13
             // 
@@ -322,12 +307,12 @@
             this.label15.TabIndex = 30;
             this.label15.Text = "Telefone";
             // 
-            // maskedTextBox1
+            // tb_telefone
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(305, 365);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(135, 20);
-            this.maskedTextBox1.TabIndex = 31;
+            this.tb_telefone.Location = new System.Drawing.Point(305, 365);
+            this.tb_telefone.Name = "tb_telefone";
+            this.tb_telefone.Size = new System.Drawing.Size(135, 20);
+            this.tb_telefone.TabIndex = 31;
             // 
             // button3
             // 
@@ -339,25 +324,34 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dtp_admisao
+            // 
+            this.dtp_admisao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_admisao.Location = new System.Drawing.Point(305, 299);
+            this.dtp_admisao.Name = "dtp_admisao";
+            this.dtp_admisao.Size = new System.Drawing.Size(126, 20);
+            this.dtp_admisao.TabIndex = 33;
+            this.dtp_admisao.Value = new System.DateTime(2013, 2, 22, 0, 0, 0, 0);
+            // 
             // formFuncionario
             // 
             this.ClientSize = new System.Drawing.Size(604, 485);
+            this.Controls.Add(this.dtp_admisao);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.tb_telefone);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tb_renumeracao);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tb_email);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_funcao);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_cidade);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tb_bairro);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.maskedTextBox4);
             this.Controls.Add(this.tb_endereco);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tb_ctps);
@@ -375,7 +369,6 @@
             this.Controls.Add(this.shapeContainer1);
             this.Name = "formFuncionario";
             this.Load += new System.EventHandler(this.formFuncionario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblfuncionarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,7 +381,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource tblfuncionarioBindingSource;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.Label label3;
@@ -401,21 +393,21 @@
         private System.Windows.Forms.MaskedTextBox tb_ctps;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tb_endereco;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tb_bairro;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_cidade;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_funcao;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_email;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_renumeracao;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox tb_telefone;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker dtp_admisao;
     }
 }

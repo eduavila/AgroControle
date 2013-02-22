@@ -68,5 +68,67 @@ namespace sistemaCA.views
             // função cancela pra criar funcionario
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                DataClasses1DataContext db = new DataClasses1DataContext();
+
+                tblfuncionario func = new tblfuncionario();
+
+
+                func.nome = tb_nome.Text;
+                func.cpf = tb_cpf.Text;
+                func.rg = tb_rg.Text;
+                func.endere = tb_endereco.Text;
+                func.bairro = tb_bairro.Text;
+                func.cidade = tb_cidade.Text;
+                func.funcao = tb_funcao.Text;
+                func.data_admissao = dtp_admisao.Value;
+
+
+                func.renumeracao_mensal = float.Parse(tb_renumeracao.Text);
+                func.email = tb_email.Text;
+                func.telefone = tb_telefone.Text;
+
+
+
+                db.tblfuncionarios.InsertOnSubmit(func);
+                db.SubmitChanges();
+
+                MessageBox.Show("Funcioanrio Foi Cadastrado com Sucesso");
+
+            
+            
+            }
+            catch
+            {
+
+                MessageBox.Show("Ocorreu um Erro ao Cadastrar Funcionario.");
+            
+            }
+            
+
+
+           // limpando os 
+            
+
+           
+
+
+
+                 
+
+
+
+
+        }
+
+        private void Exception()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

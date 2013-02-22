@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 21, 19.625" name="DBsysca">
+  <DataContextMoniker Name="/DBsyscaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c7aba42a-9e73-49c2-b44d-42801324fe2f" absoluteBounds="13.375, 3.125, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblaplicacao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4c80373-3560-4a5d-b90d-9dcfd686c6eb" absoluteBounds="13.39, 3.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0abf92d6-5c7b-4db1-8092-5edfe4f7d139" absoluteBounds="4.5, 2.75, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblben" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b7ef46c-1397-4e7d-a70b-982dd9a0c55a" absoluteBounds="4.515, 3.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7255e8c7-dfcd-4d2a-8b61-3a2d4165d3a6" absoluteBounds="4.5, 6.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblcultura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f34e031-d9b1-4f5d-b11b-5d26a44d5fef" absoluteBounds="4.5150000000000006, 6.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a9da61a-d92d-4cf9-b05d-406e69631006" absoluteBounds="6, 16.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblfornecedor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d437c9cb-49c9-45ea-9075-6c5588d6eac9" absoluteBounds="6.0150000000000006, 17.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45a07024-f01f-4aaa-a1f3-f4c62ee0fad7" absoluteBounds="15.625, 7.125, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblfuncionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="827c9e97-db6d-4db0-90dc-68e788e77e9a" absoluteBounds="15.64, 7.585, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d2110c7-77c5-4f29-b9b2-1757111786c4" absoluteBounds="5.75, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblitenrevisao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3e9e2ae-1b17-4d3a-90cb-a5ecdc412045" absoluteBounds="5.765, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="243f3915-2d8c-4116-a8dd-0114df548625" absoluteBounds="8.75, 10.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblprodutosaplicado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c75bea5-b4b9-42e4-b022-4fd950616982" absoluteBounds="8.765, 11.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e351118-9bc9-4a8d-b61c-c4c914857907" absoluteBounds="8.75, 7.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblsafra" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59770a36-167e-46ec-8643-938e435eac0a" absoluteBounds="8.765, 7.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff4e1422-9906-416d-85f3-65034571d3d8" absoluteBounds="8.5, 2.875, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblrevisaofutura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a023b510-3b35-4e39-a0c2-bf1034719fd7" absoluteBounds="8.515, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c1394fd-b5dc-4f3d-b33d-466bd89c0014" absoluteBounds="6, 9.125, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblproduto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04ca5cfc-91da-4fde-8b71-1e38a99214d0" absoluteBounds="6.0150000000000006, 9.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="477e3616-c067-4f76-9c8c-6422f04bd3a5" absoluteBounds="8.75, 17.125, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/DBsyscaDataContext/tbltalhao" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9829e96c-b384-4d41-9549-6b98572b371d" absoluteBounds="8.765, 17.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d19e61f-0f35-4a83-97af-14d946a97ff0" absoluteBounds="5.375, 14.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DBsyscaDataContext/tbltipoproduto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c7c5786-cd3b-4e64-b6f3-03d765b04771" absoluteBounds="5.3900000000000006, 14.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5bf5ddda-58bc-43b8-b6b9-b8f2fa63b67a" absoluteBounds="18.75, 8.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBsyscaDataContext/tblusuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bb07aad-053d-4950-8869-daf4257863c4" absoluteBounds="18.765, 8.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5 : 2.78125); (9.41666666666667 : 2.78125 : JumpStart); (9.58333333333333 : 2.78125 : JumpEnd); (14.375 : 2.78125); (14.375 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblben/tblben_tblaplicacao" />
+      <nodes>
+        <classShapeMoniker Id="0abf92d6-5c7b-4db1-8092-5edfe4f7d139" />
+        <classShapeMoniker Id="c7aba42a-9e73-49c2-b44d-42801324fe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 11.7315991210937); (13.4479179166667 : 11.7315991210937 : JumpStart); (13.6145845833333 : 11.7315991210937 : JumpEnd); (14.484378125 : 11.7315991210937); (14.484378125 : 5.6651025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblprodutosaplicado/tblprodutosaplicado_tblaplicacao" />
+      <nodes>
+        <classShapeMoniker Id="243f3915-2d8c-4116-a8dd-0114df548625" />
+        <classShapeMoniker Id="c7aba42a-9e73-49c2-b44d-42801324fe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8 : 16.625); (8.375 : 16.25); (9.75 : 16.25); (9.75 : 12.7131982421875)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblfornecedor/tblfornecedor_tblprodutosaplicado" />
+      <nodes>
+        <classShapeMoniker Id="3a9da61a-d92d-4cf9-b05d-406e69631006" />
+        <classShapeMoniker Id="243f3915-2d8c-4116-a8dd-0114df548625" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.65625 : 7.5); (10.65625 : 5.44394932291667); (13.375 : 5.44394932291667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblsafra/tblsafra_tblaplicacao" />
+      <nodes>
+        <classShapeMoniker Id="0e351118-9bc9-4a8d-b61c-c4c914857907" />
+        <classShapeMoniker Id="c7aba42a-9e73-49c2-b44d-42801324fe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 6.9687475); (9.54166666666667 : 6.9687475 : JumpStart); (9.70833333333333 : 6.9687475 : JumpEnd); (10.140625 : 6.9687475); (10.140625 : 7.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblcultura/tblcultura_tblsafra" />
+      <nodes>
+        <classShapeMoniker Id="7255e8c7-dfcd-4d2a-8b61-3a2d4165d3a6" />
+        <classShapeMoniker Id="0e351118-9bc9-4a8d-b61c-c4c914857907" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 3.98640055338542); (8.5 : 3.98640055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblben/tblben_tblrevisaofutura" />
+      <nodes>
+        <classShapeMoniker Id="0abf92d6-5c7b-4db1-8092-5edfe4f7d139" />
+        <classShapeMoniker Id="ff4e1422-9906-416d-85f3-65034571d3d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 1.09699625651042); (9.5 : 1.09699625651042); (9.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblitenrevisao/tblitenrevisao_tblrevisaofutura" />
+      <nodes>
+        <classShapeMoniker Id="0d2110c7-77c5-4f29-b9b2-1757111786c4" />
+        <classShapeMoniker Id="ff4e1422-9906-416d-85f3-65034571d3d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.625 : 7.5); (9.625 : 5.22280110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblsafra/tblsafra_tblrevisaofutura" />
+      <nodes>
+        <classShapeMoniker Id="0e351118-9bc9-4a8d-b61c-c4c914857907" />
+        <classShapeMoniker Id="ff4e1422-9906-416d-85f3-65034571d3d8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.3750025 : 10.8958968098958); (7.3750025 : 11.8358000260417); (8.75 : 11.8358000260417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblproduto/tblproduto_tblprodutosaplicado" />
+      <nodes>
+        <classShapeMoniker Id="0c1394fd-b5dc-4f3d-b33d-466bd89c0014" />
+        <classShapeMoniker Id="243f3915-2d8c-4116-a8dd-0114df548625" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 18.1065991210938); (13.53125125 : 18.1065991210938); (13.53125125 : 5.6651025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tbltalhao/tbltalhao_tblaplicacao" />
+      <nodes>
+        <classShapeMoniker Id="477e3616-c067-4f76-9c8c-6422f04bd3a5" />
+        <classShapeMoniker Id="c7aba42a-9e73-49c2-b44d-42801324fe2f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.6875 : 14.375); (6.6875 : 10.8958968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tbltipoproduto/tbltipoproduto_tblproduto" />
+      <nodes>
+        <classShapeMoniker Id="5d19e61f-0f35-4a83-97af-14d946a97ff0" />
+        <classShapeMoniker Id="0c1394fd-b5dc-4f3d-b33d-466bd89c0014" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.625 : 8.91429768880208); (18.75 : 8.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBsyscaDataContext/tblfuncionario/tblfuncionario_tblusuario" />
+      <nodes>
+        <classShapeMoniker Id="45a07024-f01f-4aaa-a1f3-f4c62ee0fad7" />
+        <classShapeMoniker Id="5bf5ddda-58bc-43b8-b6b9-b8f2fa63b67a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -11,9 +11,9 @@ using sistemaCA.views;
 
 namespace sistemaCA
 {
-    public partial class form1 : Form
+    public partial class telaspash : Form
     {
-        public form1()
+        public telaspash()
         {
             InitializeComponent();
         }

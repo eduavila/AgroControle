@@ -1,6 +1,6 @@
 ﻿namespace sistemaCA
 {
-    partial class form1
+    partial class telaspash
     {
         /// <summary>
         /// Required designer variable.
@@ -57,14 +57,15 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // form1
+            // telaspash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 261);
             this.Controls.Add(this.panel1);
-            this.Name = "form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "telaspash";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

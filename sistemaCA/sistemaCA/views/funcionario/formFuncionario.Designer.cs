@@ -32,10 +32,10 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgw_funcionario = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_cadastrar = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_deletar = new System.Windows.Forms.Button();
+            this.btn_visualizar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_funcionario)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,8 @@
             // 
             this.dgw_funcionario.AllowUserToAddRows = false;
             this.dgw_funcionario.AllowUserToDeleteRows = false;
+            this.dgw_funcionario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgw_funcionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgw_funcionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_funcionario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgw_funcionario.Location = new System.Drawing.Point(3, 16);
@@ -81,15 +83,15 @@
             this.dgw_funcionario.Size = new System.Drawing.Size(839, 387);
             this.dgw_funcionario.TabIndex = 0;
             // 
-            // button2
+            // btn_cadastrar
             // 
-            this.button2.Location = new System.Drawing.Point(12, 13);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 33);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Cadastrar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_cadastrar.Location = new System.Drawing.Point(12, 13);
+            this.btn_cadastrar.Name = "btn_cadastrar";
+            this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
+            this.btn_cadastrar.TabIndex = 34;
+            this.btn_cadastrar.Text = "Cadastrar";
+            this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // statusStrip2
             // 
@@ -98,38 +100,42 @@
             this.statusStrip2.Size = new System.Drawing.Size(860, 22);
             this.statusStrip2.TabIndex = 37;
             this.statusStrip2.Text = "statusStrip2";
+            this.statusStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip2_ItemClicked);
             // 
-            // button1
+            // btn_deletar
             // 
-            this.button1.Location = new System.Drawing.Point(227, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 33);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Deletar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_deletar.Location = new System.Drawing.Point(227, 13);
+            this.btn_deletar.Name = "btn_deletar";
+            this.btn_deletar.Size = new System.Drawing.Size(87, 33);
+            this.btn_deletar.TabIndex = 38;
+            this.btn_deletar.Text = "Deletar";
+            this.btn_deletar.UseVisualStyleBackColor = true;
+            this.btn_deletar.Click += new System.EventHandler(this.btn_deletar_Click);
             // 
-            // button3
+            // btn_visualizar
             // 
-            this.button3.Location = new System.Drawing.Point(122, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 33);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "Alterar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_visualizar.Location = new System.Drawing.Point(122, 13);
+            this.btn_visualizar.Name = "btn_visualizar";
+            this.btn_visualizar.Size = new System.Drawing.Size(87, 33);
+            this.btn_visualizar.TabIndex = 39;
+            this.btn_visualizar.Text = "Alterar";
+            this.btn_visualizar.UseVisualStyleBackColor = true;
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // formFuncionario
             // 
             this.ClientSize = new System.Drawing.Size(860, 513);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_visualizar);
+            this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.statusStrip2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "formFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionários";
             this.Load += new System.EventHandler(this.formFuncionario_Load);
+            this.Shown += new System.EventHandler(this.formFuncionario_Shown);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_funcionario)).EndInit();
             this.ResumeLayout(false);
@@ -144,9 +150,9 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgw_funcionario;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.StatusStrip statusStrip2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_deletar;
+        private System.Windows.Forms.Button btn_visualizar;
     }
 }

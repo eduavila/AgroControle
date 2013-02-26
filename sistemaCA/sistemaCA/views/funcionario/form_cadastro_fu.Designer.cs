@@ -38,8 +38,6 @@
             this.tb_email = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tb_funcao = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb_cidade = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tb_bairro = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,6 +59,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_obs = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dtp_admisao
@@ -146,22 +146,6 @@
             this.tb_funcao.Size = new System.Drawing.Size(257, 20);
             this.tb_funcao.TabIndex = 50;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(317, 174);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "Cidade";
-            // 
-            // tb_cidade
-            // 
-            this.tb_cidade.Location = new System.Drawing.Point(316, 190);
-            this.tb_cidade.Name = "tb_cidade";
-            this.tb_cidade.Size = new System.Drawing.Size(254, 20);
-            this.tb_cidade.TabIndex = 48;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -191,7 +175,7 @@
             // 
             this.tb_endereco.Location = new System.Drawing.Point(315, 136);
             this.tb_endereco.Name = "tb_endereco";
-            this.tb_endereco.Size = new System.Drawing.Size(179, 20);
+            this.tb_endereco.Size = new System.Drawing.Size(257, 20);
             this.tb_endereco.TabIndex = 44;
             this.tb_endereco.TextChanged += new System.EventHandler(this.tb_endereco_TextChanged);
             // 
@@ -339,11 +323,33 @@
             this.label16.TabIndex = 66;
             this.label16.Text = "Observação";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(314, 169);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 13);
+            this.label17.TabIndex = 67;
+            this.label17.Text = "Sexo";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.comboBox1.Location = new System.Drawing.Point(320, 190);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(54, 21);
+            this.comboBox1.TabIndex = 68;
+            // 
             // form_cadastro_fu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 490);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tb_obs);
             this.Controls.Add(this.tb_celular);
@@ -361,8 +367,6 @@
             this.Controls.Add(this.tb_email);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tb_funcao);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.tb_cidade);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tb_bairro);
             this.Controls.Add(this.label8);
@@ -381,6 +385,7 @@
             this.Name = "form_cadastro_fu";
             this.Text = "Cadastro Funcionário";
             this.Load += new System.EventHandler(this.form_cadastro_fu_Load);
+            this.Shown += new System.EventHandler(this.form_cadastro_fu_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,38 +393,40 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dtp_admisao;
-        private System.Windows.Forms.MaskedTextBox tb_telefone;
+        // alterado alguns acesso ao componete para acesso a alteração
+       
+        public System.Windows.Forms.DateTimePicker dtp_admisao;
+        public System.Windows.Forms.MaskedTextBox tb_telefone;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox tb_renumeracao;
+        public System.Windows.Forms.TextBox tb_renumeracao;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox tb_email;
+        public System.Windows.Forms.TextBox tb_email;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tb_funcao;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox tb_cidade;
+        public System.Windows.Forms.TextBox tb_funcao;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tb_bairro;
+        public System.Windows.Forms.TextBox tb_bairro;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tb_endereco;
+        public System.Windows.Forms.TextBox tb_endereco;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox tb_ctps;
+        public System.Windows.Forms.MaskedTextBox tb_ctps;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox tb_cpf;
+        public System.Windows.Forms.MaskedTextBox tb_cpf;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox tb_rg;
-        private System.Windows.Forms.TextBox tb_sobrenome;
-        private System.Windows.Forms.TextBox tb_nome;
+        public System.Windows.Forms.MaskedTextBox tb_rg;
+        public System.Windows.Forms.TextBox tb_sobrenome;
+        public System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox tb_celular;
+        public System.Windows.Forms.MaskedTextBox tb_celular;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_obs;
+        public System.Windows.Forms.TextBox tb_obs;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }

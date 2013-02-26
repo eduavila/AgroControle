@@ -13,10 +13,10 @@
       <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
-      <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
       <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
       <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
       <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
+      <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblbens" Member="tblbens">
@@ -53,27 +53,6 @@
       <Column Name="email" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
       <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblprodutosaplicados" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblprodutosaplicado" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblfuncionario" Member="tblfuncionarios">
-    <Type Name="tblfuncionario">
-      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="data_demissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="cidade" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
-      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Association Name="tblfuncionario_tblaplicacao" Member="tblaplicacaos" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblaplicacao" />
-      <Association Name="tblfuncionario_tblusuario" Member="tblusuarios" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblusuario" />
     </Type>
   </Table>
   <Table Name="dbo.tblproduto" Member="tblprodutos">
@@ -150,8 +129,6 @@
       <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="login" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="senha" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblfuncionario_tblusuario" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbltipoproduto" Member="tbltipoprodutos">
@@ -159,6 +136,27 @@
       <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Association Name="tbltipoproduto_tblproduto" Member="tblprodutos" ThisKey="id_tipoproduto" OtherKey="id_tipoproduto" Type="tblproduto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblfuncionario" Member="tblfuncionarios">
+    <Type Name="tblfuncionario">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Association Name="tblfuncionario_tblaplicacao" Member="tblaplicacaos" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblaplicacao" />
     </Type>
   </Table>
 </Database>

@@ -64,6 +64,17 @@ namespace sistemaCA.views.funcionario
             //dgw.Columns["sexo"].HeaderText = "Sexo";
         }
 
+        public void Pesquisar( string pesquisa,string entidade, DataGridView dgw)
+        {
+               
+        }
+
+        private DataClasses1DataContext DataClasses1DataContext()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         public void alterar(tblfuncionario func)
         {

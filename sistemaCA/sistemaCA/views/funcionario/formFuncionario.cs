@@ -101,7 +101,7 @@ namespace sistemaCA.views
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
-
+        
             // pega a rows selecinado no gridview
 
             int selecionado = dgw_funcionario.CurrentCell.RowIndex;
@@ -181,6 +181,19 @@ namespace sistemaCA.views
                 MessageBox.Show("Ocorreu um erro!");
             }
 
+        }
+
+        private void btn_pesquisar_Click(object sender, EventArgs e)
+        {
+            if (tb_pesquisar.Text == " ")
+            {
+                Funcionarios.PreecherGridview(dgw_funcionario);
+
+            }
+            else { 
+                
+            
+            }
         }
     }
 }

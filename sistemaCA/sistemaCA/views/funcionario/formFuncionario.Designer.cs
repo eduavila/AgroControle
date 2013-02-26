@@ -36,6 +36,9 @@
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.btn_deletar = new System.Windows.Forms.Button();
             this.btn_visualizar = new System.Windows.Forms.Button();
+            this.tb_pesquisar = new System.Windows.Forms.TextBox();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_funcionario)).BeginInit();
             this.SuspendLayout();
@@ -118,13 +121,46 @@
             this.btn_visualizar.Name = "btn_visualizar";
             this.btn_visualizar.Size = new System.Drawing.Size(87, 33);
             this.btn_visualizar.TabIndex = 39;
-            this.btn_visualizar.Text = "Alterar";
+            this.btn_visualizar.Text = "Visualizar";
             this.btn_visualizar.UseVisualStyleBackColor = true;
             this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
+            // 
+            // tb_pesquisar
+            // 
+            this.tb_pesquisar.Location = new System.Drawing.Point(668, 28);
+            this.tb_pesquisar.Name = "tb_pesquisar";
+            this.tb_pesquisar.Size = new System.Drawing.Size(136, 20);
+            this.tb_pesquisar.TabIndex = 40;
+            // 
+            // btn_pesquisar
+            // 
+            this.btn_pesquisar.Location = new System.Drawing.Point(810, 26);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(35, 23);
+            this.btn_pesquisar.TabIndex = 41;
+            this.btn_pesquisar.Text = "button1";
+            this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Nome",
+            "Sobrenome",
+            "CPF"});
+            this.comboBox1.Location = new System.Drawing.Point(592, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(70, 21);
+            this.comboBox1.TabIndex = 42;
+            this.comboBox1.Text = "ID";
             // 
             // formFuncionario
             // 
             this.ClientSize = new System.Drawing.Size(860, 513);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btn_pesquisar);
+            this.Controls.Add(this.tb_pesquisar);
             this.Controls.Add(this.btn_visualizar);
             this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.statusStrip2);
@@ -154,5 +190,8 @@
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.Button btn_deletar;
         private System.Windows.Forms.Button btn_visualizar;
+        private System.Windows.Forms.TextBox tb_pesquisar;
+        private System.Windows.Forms.Button btn_pesquisar;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

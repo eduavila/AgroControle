@@ -20,9 +20,6 @@ namespace sistemaCA
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-
-
-    using System.Windows.Forms;
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dbsysca")]
@@ -206,6 +203,41 @@ namespace sistemaCA
 			{
 				return this.GetTable<tblfuncionario>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spListaProduto")]
+		public ISingleResult<spListaProdutoResult> spListaProduto()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<spListaProdutoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spCadastarProduto")]
+		public int spCadastarProduto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(120)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string unidade_medida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tipoproduto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome, descricao, unidade_medida, id_tipoproduto);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spDeletarProduto")]
+		public int spDeletarProduto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idproduto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idproduto);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spVisualizarProduto")]
+		public ISingleResult<spVisualizarProdutoResult> spVisualizarProduto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idproduto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idproduto);
+			return ((ISingleResult<spVisualizarProdutoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spAlterarProduto")]
+		public int spAlterarProduto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idproduto, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string nome, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(120)")] string decricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(2)")] string unidade_medida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Idtipo_produto", DbType="Int")] System.Nullable<int> idtipo_produto)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idproduto, nome, decricao, unidade_medida, idtipo_produto);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -690,10 +722,7 @@ namespace sistemaCA
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-
-
-
-    }
+	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblbens")]
 	public partial class tblben : INotifyPropertyChanging, INotifyPropertyChanged
@@ -3523,6 +3552,202 @@ namespace sistemaCA
 		{
 			this.SendPropertyChanging();
 			entity.tblfuncionario = null;
+		}
+	}
+	
+	public partial class spListaProdutoResult
+	{
+		
+		private int _id_produto;
+		
+		private string _nome;
+		
+		private string _descricao;
+		
+		private string _unidade_medida;
+		
+		private int _id_tipoproduto;
+		
+		public spListaProdutoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_produto", DbType="Int NOT NULL")]
+		public int id_produto
+		{
+			get
+			{
+				return this._id_produto;
+			}
+			set
+			{
+				if ((this._id_produto != value))
+				{
+					this._id_produto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(120)")]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this._descricao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidade_medida", DbType="VarChar(2)")]
+		public string unidade_medida
+		{
+			get
+			{
+				return this._unidade_medida;
+			}
+			set
+			{
+				if ((this._unidade_medida != value))
+				{
+					this._unidade_medida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipoproduto", DbType="Int NOT NULL")]
+		public int id_tipoproduto
+		{
+			get
+			{
+				return this._id_tipoproduto;
+			}
+			set
+			{
+				if ((this._id_tipoproduto != value))
+				{
+					this._id_tipoproduto = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spVisualizarProdutoResult
+	{
+		
+		private int _id_produto;
+		
+		private string _nome;
+		
+		private string _descricao;
+		
+		private string _unidade_medida;
+		
+		private int _id_tipoproduto;
+		
+		public spVisualizarProdutoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_produto", DbType="Int NOT NULL")]
+		public int id_produto
+		{
+			get
+			{
+				return this._id_produto;
+			}
+			set
+			{
+				if ((this._id_produto != value))
+				{
+					this._id_produto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(120)")]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this._descricao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unidade_medida", DbType="VarChar(2)")]
+		public string unidade_medida
+		{
+			get
+			{
+				return this._unidade_medida;
+			}
+			set
+			{
+				if ((this._unidade_medida != value))
+				{
+					this._unidade_medida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipoproduto", DbType="Int NOT NULL")]
+		public int id_tipoproduto
+		{
+			get
+			{
+				return this._id_tipoproduto;
+			}
+			set
+			{
+				if ((this._id_tipoproduto != value))
+				{
+					this._id_tipoproduto = value;
+				}
+			}
 		}
 	}
 }

@@ -159,4 +159,42 @@
       <Association Name="tblfuncionario_tblaplicacao" Member="tblaplicacaos" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblaplicacao" />
     </Type>
   </Table>
+  <Function Name="dbo.spListaProduto" Method="spListaProduto">
+    <ElementType Name="spListaProdutoResult">
+      <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="unidade_medida" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCadastarProduto" Method="spCadastarProduto">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(120)" />
+    <Parameter Name="unidade_medida" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="id_tipoproduto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletarProduto" Method="spDeletarProduto">
+    <Parameter Name="idproduto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spVisualizarProduto" Method="spVisualizarProduto">
+    <Parameter Name="idproduto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spVisualizarProdutoResult">
+      <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="unidade_medida" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAlterarProduto" Method="spAlterarProduto">
+    <Parameter Name="idproduto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="decricao" Type="System.String" DbType="VarChar(120)" />
+    <Parameter Name="unidade_medida" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Idtipo_produto" Parameter="idtipo_produto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

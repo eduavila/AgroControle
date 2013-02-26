@@ -32,11 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.TeamFoundation.Diff, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +55,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses1.cs">
@@ -55,10 +66,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="views\formFuncionario.cs">
+    <Compile Include="views\FormProduto.cs" />
+    <Compile Include="views\funcionario\formFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\formFuncionario.Designer.cs">
+    <Compile Include="views\funcionario\formFuncionario.Designer.cs">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="views\formUsuario.cs">
@@ -66,6 +78,19 @@
     </Compile>
     <Compile Include="views\formUsuario.Designer.cs">
       <DependentUpon>formUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\funcionario\form_cadastro_fu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\funcionario\form_cadastro_fu.Designer.cs">
+      <DependentUpon>form_cadastro_fu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\funcionario\Funcionarios.cs" />
+    <Compile Include="views\produtos\FormProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\produtos\FormProduto.Designer.cs">
+      <DependentUpon>FormProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="views\telasplash.cs">
       <SubType>Form</SubType>
@@ -92,11 +117,17 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="views\formFuncionario.resx">
+    <EmbeddedResource Include="views\funcionario\formFuncionario.resx">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\funcionario\form_cadastro_fu.resx">
+      <DependentUpon>form_cadastro_fu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\produtos\FormProduto.resx">
+      <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\telasplash.resx">
       <DependentUpon>telasplash.cs</DependentUpon>
@@ -121,6 +152,8 @@
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\tblproduto.datasource" />
+    <None Include="Properties\DataSources\tbltipoproduto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

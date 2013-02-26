@@ -197,4 +197,17 @@
     <Parameter Name="Idtipo_produto" Parameter="idtipo_produto" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.spPesquisaTipoproduto" Method="spPesquisaTipoproduto">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesquisaTipoprodutoResult">
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListatipoProduto" Method="spListatipoProduto">
+    <ElementType Name="spListatipoProdutoResult">
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

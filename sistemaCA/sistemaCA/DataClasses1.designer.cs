@@ -239,6 +239,20 @@ namespace sistemaCA
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idproduto, nome, decricao, unidade_medida, idtipo_produto);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spPesquisaTipoproduto")]
+		public ISingleResult<spPesquisaTipoprodutoResult> spPesquisaTipoproduto([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
+			return ((ISingleResult<spPesquisaTipoprodutoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spListatipoProduto")]
+		public ISingleResult<spListatipoProdutoResult> spListatipoProduto()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<spListatipoProdutoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblaplicacao")]
@@ -3746,6 +3760,94 @@ namespace sistemaCA
 				if ((this._id_tipoproduto != value))
 				{
 					this._id_tipoproduto = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spPesquisaTipoprodutoResult
+	{
+		
+		private int _id_tipoproduto;
+		
+		private string _descicao;
+		
+		public spPesquisaTipoprodutoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipoproduto", DbType="Int NOT NULL")]
+		public int id_tipoproduto
+		{
+			get
+			{
+				return this._id_tipoproduto;
+			}
+			set
+			{
+				if ((this._id_tipoproduto != value))
+				{
+					this._id_tipoproduto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descicao", DbType="VarChar(80)")]
+		public string descicao
+		{
+			get
+			{
+				return this._descicao;
+			}
+			set
+			{
+				if ((this._descicao != value))
+				{
+					this._descicao = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spListatipoProdutoResult
+	{
+		
+		private int _id_tipoproduto;
+		
+		private string _descicao;
+		
+		public spListatipoProdutoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipoproduto", DbType="Int NOT NULL")]
+		public int id_tipoproduto
+		{
+			get
+			{
+				return this._id_tipoproduto;
+			}
+			set
+			{
+				if ((this._id_tipoproduto != value))
+				{
+					this._id_tipoproduto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descicao", DbType="VarChar(80)")]
+		public string descicao
+		{
+			get
+			{
+				return this._descicao;
+			}
+			set
+			{
+				if ((this._descicao != value))
+				{
+					this._descicao = value;
 				}
 			}
 		}

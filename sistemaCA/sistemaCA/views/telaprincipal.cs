@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaCA.views.produtos;
 
 namespace sistemaCA.views
 {
@@ -19,8 +20,12 @@ namespace sistemaCA.views
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formUsuario formuser = new formUsuario();
-            formuser.ShowDialog();
+            //formUsuario formuser = new formUsuario();
+
+            //formuser.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+            //formuser.MdiParent = this;
+            //formuser.Show();
 
         }
 
@@ -34,6 +39,29 @@ namespace sistemaCA.views
         {
             
 
+        }
+
+        private void administradorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastroUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formUsuario formuser = new formUsuario();
+
+            formuser.Show();
+
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProduto fpro = new formProduto();
+
+            fpro.ShowDialog();
+
+            
+            
         }
     }
 }

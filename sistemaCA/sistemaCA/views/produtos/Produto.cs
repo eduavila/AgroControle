@@ -28,7 +28,7 @@ namespace sistemaCA.views.produtos
 
         public void ListaProdutos(DataGridView dgw)
         {
-
+            
             dgw.DataSource = Banco.spListaProduto();
         
         }
@@ -36,40 +36,57 @@ namespace sistemaCA.views.produtos
 
         public void CadastarProduto()
         {
-
-
-
-            Banco.spCadastarProduto(this.Nome, this.Descricao, this.UnidadeMedida, this.Id_tipoproduto);
-        
+            try
+            {
+                Banco.spCadastarProduto(this.Nome, this.Descricao, this.UnidadeMedida, this.Id_tipoproduto);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
 
         // deletar produto parametro ID produto a ser deletado
         public void DeletarProduto(int id)
         {
+            try
+            {
 
-            Banco.spDeletarProduto(id);
-        
+                Banco.spDeletarProduto(id);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
 
 
         public void VisualizarProduto(int id)
         {
-            tblproduto produto = new tblproduto();
+            try
+            {
 
-            // criar pesquisa  no banco para encontrar registro selecionado
-            var pesquisa = from Produtos in Banco.tblprodutos
-                           where Produtos.id_produto == id
-                           select Produtos;
+                tblproduto produto = new tblproduto();
+
+                // criar pesquisa  no banco para encontrar registro selecionado
+                var pesquisa = from Produtos in Banco.tblprodutos
+                               where Produtos.id_produto == id
+                               select Produtos;
 
 
-            produto = pesquisa.Single();
+                produto = pesquisa.Single();
 
 
-            this.Idproduto = produto.id_produto;
-            this.Nome = produto.nome;
-            this.UnidadeMedida = produto.unidade_medida;
-            this.Id_tipoproduto = produto.id_tipoproduto;
-
+                this.Idproduto = produto.id_produto;
+                this.Nome = produto.nome;
+                this.UnidadeMedida = produto.unidade_medida;
+                this.Id_tipoproduto = produto.id_tipoproduto;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+                
+            }
                     
         }
 
@@ -87,6 +104,10 @@ namespace sistemaCA.views.produtos
             }
         
         }
+
+
+
+        
 
 
 

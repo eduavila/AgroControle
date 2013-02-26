@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>sistemaCA</RootNamespace>
-    <AssemblyName>sistemaCA</AssemblyName>
+    <AssemblyName>Agro</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -92,6 +92,19 @@
     <Compile Include="views\produtos\FormProduto.Designer.cs">
       <DependentUpon>FormProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\produtos\FormProdutosCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\produtos\FormProdutosCadastro.Designer.cs">
+      <DependentUpon>FormProdutosCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\produtos\FormProdutoAtualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\produtos\FormProdutoAtualizar.Designer.cs">
+      <DependentUpon>FormProdutoAtualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\produtos\Produto.cs" />
     <Compile Include="views\telasplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\produtos\FormProduto.resx">
       <DependentUpon>FormProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\produtos\FormProdutosCadastro.resx">
+      <DependentUpon>FormProdutosCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\produtos\FormProdutoAtualizar.resx">
+      <DependentUpon>FormProdutoAtualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\telasplash.resx">
       <DependentUpon>telasplash.cs</DependentUpon>

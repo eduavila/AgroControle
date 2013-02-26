@@ -25,7 +25,7 @@ namespace sistemaCA.views.produtos
 
         private void FormProdutosCadastro_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace sistemaCA.views.produtos
             produto.Nome = tb_nome.Text;
             produto.Descricao = tb_descricao.Text;
             produto.UnidadeMedida = cb_unidademedida.Text;
-            produto.Id_tipoproduto = int.Parse(cb_tipoproduto.Text);
+            produto.Id_tipoproduto = int.Parse(tb_tipoproduto.Text);
 
             produto.CadastarProduto();
 
@@ -46,6 +46,14 @@ namespace sistemaCA.views.produtos
             //cb_unidademedida. = produto.unidade_medida;
             
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormtipoProduto formtipo = new FormtipoProduto();
+            formtipo.ShowDialog();
+            tb_tipoproduto.Text = formtipo.IDtipoProduto.ToString();
+            
         }
     }
 }

@@ -63,6 +63,29 @@ namespace sistemaCA.views.funcionario
 
 
 
+            // colocando componetes desativados
+            tb_nome.Enabled = false;
+            tb_sobrenome.Enabled = false;
+            tb_cpf.Enabled = false;
+            tb_ctps.Enabled = false;
+            tb_rg.Enabled = false;
+            tb_endereco.Enabled = false;
+            tb_bairro.Enabled = false;
+            tb_funcao.Enabled = false;
+            dtp_admisao.Enabled = false;
+            tb_renumeracao.Enabled = false;
+            tb_email.Enabled = false;
+            tb_telefone.Enabled = false;
+            tb_celular.Enabled = false;
+            tb_obs.Enabled = false;
+
+          
+
+
+           
+
+
+
 
 
 
@@ -164,22 +187,12 @@ namespace sistemaCA.views.funcionario
 
         private void form_cadastro_fu_Shown(object sender, EventArgs e)
         {
+           
+        }
 
-            // colocando componetes desativados
-            tb_nome.Enabled = false;
-            tb_sobrenome.Enabled = false;
-            tb_cpf.Enabled = false;
-            tb_ctps.Enabled = false;
-            tb_rg.Enabled = false;
-            tb_endereco.Enabled = false;
-            tb_bairro.Enabled = false;
-            tb_funcao.Enabled = false;
-            dtp_admisao.Enabled = false;
-            tb_renumeracao.Enabled = false;
-            tb_email.Enabled = false;
-            tb_telefone.Enabled = false;
-            tb_celular.Enabled = false;
-            tb_obs.Enabled = false;
+        private void form_cadastro_fu_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

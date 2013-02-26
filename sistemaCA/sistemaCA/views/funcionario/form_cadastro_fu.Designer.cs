@@ -384,7 +384,7 @@
             this.MaximizeBox = false;
             this.Name = "form_cadastro_fu";
             this.Text = "Cadastro Funcionário";
-            this.Load += new System.EventHandler(this.form_cadastro_fu_Load);
+            this.Load += new System.EventHandler(this.form_cadastro_fu_Load_1);
             this.Shown += new System.EventHandler(this.form_cadastro_fu_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();

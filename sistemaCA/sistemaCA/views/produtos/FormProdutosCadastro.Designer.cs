@@ -36,8 +36,9 @@
             this.tb_descricao = new System.Windows.Forms.TextBox();
             this.cb_unidademedida = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cb_tipoproduto = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tb_tipoproduto = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_cadastrar
@@ -108,14 +109,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Unidade Medida";
             // 
-            // cb_tipoproduto
-            // 
-            this.cb_tipoproduto.FormattingEnabled = true;
-            this.cb_tipoproduto.Location = new System.Drawing.Point(255, 114);
-            this.cb_tipoproduto.Name = "cb_tipoproduto";
-            this.cb_tipoproduto.Size = new System.Drawing.Size(146, 21);
-            this.cb_tipoproduto.TabIndex = 8;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -125,13 +118,31 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Tipo Produto";
             // 
-            // FormProdutosCadastro
+            // tb_tipoproduto
+            // 
+            this.tb_tipoproduto.Location = new System.Drawing.Point(258, 115);
+            this.tb_tipoproduto.Name = "tb_tipoproduto";
+            this.tb_tipoproduto.Size = new System.Drawing.Size(92, 20);
+            this.tb_tipoproduto.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(357, 114);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "psquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // FormProdutosAtualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 359);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tb_tipoproduto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cb_tipoproduto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cb_unidademedida);
             this.Controls.Add(this.label2);
@@ -140,7 +151,7 @@
             this.Controls.Add(this.tb_nome);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_cadastrar);
-            this.Name = "FormProdutosCadastro";
+            this.Name = "FormProdutosAtualizar";
             this.Text = "Cadastro Produto";
             this.Load += new System.EventHandler(this.FormProdutosCadastro_Load);
             this.ResumeLayout(false);
@@ -158,7 +169,8 @@
         private System.Windows.Forms.TextBox tb_descricao;
         private System.Windows.Forms.ComboBox cb_unidademedida;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cb_tipoproduto;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tb_tipoproduto;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -104,7 +104,14 @@
     <Compile Include="views\produtos\FormProdutoAtualizar.Designer.cs">
       <DependentUpon>FormProdutoAtualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\produtos\FormtipoProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\produtos\FormtipoProduto.Designer.cs">
+      <DependentUpon>FormtipoProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\produtos\Produto.cs" />
+    <Compile Include="views\produtos\TipoProduto.cs" />
     <Compile Include="views\telasplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\produtos\FormProdutoAtualizar.resx">
       <DependentUpon>FormProdutoAtualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\produtos\FormtipoProduto.resx">
+      <DependentUpon>FormtipoProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\telasplash.resx">
       <DependentUpon>telasplash.cs</DependentUpon>

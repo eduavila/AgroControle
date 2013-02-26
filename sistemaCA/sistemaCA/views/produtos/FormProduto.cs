@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace sistemaCA.views.produtos
 {
-    public partial class FormProduto : Form
+    public partial class formProduto : Form
     {
-        public FormProduto()
+        public formProduto()
         {
             InitializeComponent();
         }
@@ -26,7 +26,17 @@ namespace sistemaCA.views.produtos
         {
             DataClasses1DataContext db = new DataClasses1DataContext();
 
-            var select = from produto in db.tblfuncionarios 
+            var pro = from produto in db.tblprodutos select produto;
+
+            dgw_produto.DataSource = pro;
+
+            dgw_produto.Columns["id_produto"].HeaderText = "ID";
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

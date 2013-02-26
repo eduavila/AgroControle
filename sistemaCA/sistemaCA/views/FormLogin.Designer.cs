@@ -104,7 +104,7 @@
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.tb_user);
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

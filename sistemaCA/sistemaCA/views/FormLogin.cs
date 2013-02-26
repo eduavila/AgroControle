@@ -30,51 +30,52 @@ namespace sistemaCA.views
         private void btn_entrar_Click(object sender, EventArgs e)
         {
 
-            //DataClasses1DataContext db = new DataClasses1DataContext();
+            DataClasses1DataContext db = new DataClasses1DataContext();
 
 
-            //var q = from p in db.tblusuarios select p;
+            var q = from user in db.tblusuarios select user;
 
 
-            //foreach (var user in q)
-            //{
+            foreach (var user in q)
+            {
 
 
-            //    if ((tb_user.ToString() == user.login.ToString()) && (tb_senha.ToString() == user.senha.ToString()))
-            //    {
+                if ((tb_user.Text == user.login.ToString()) && (tb_senha.Text == user.senha.ToString()))
+                {
 
-            //        telaprincipal formprincipal = new telaprincipal();
-            //        formprincipal.Show();
-            //        this.Close();
-            //    }
-            //    //else
-            //    //{
+                    telaprincipal formprincipal = new telaprincipal();
+                    formprincipal.Show();
+                    this.Close();
+                    break;
+                }
+                else
+                {
 
-            //    //    MessageBox.Show("Erro Ao Autenticar : Usuário não existe ou senha icorreta","Erro Autenticação " , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro Ao Autenticar : Usuário não existe ou senha icorreta", "Erro Autenticação ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
 
+                }
 
-            //    //}
-
-            //     }
+            }
 
 
 
 
 
             // acesso usuario 
-            if ((tb_user.Text == "admin") && (tb_senha.Text == "admin"))
-            {
-                telaprincipal formprincipal = new telaprincipal();
-                formprincipal.Show();
-                this.Close();
+            //if ((tb_user.Text == "admin") && (tb_senha.Text == "admin"))
+            //{
+            //    telaprincipal formprincipal = new telaprincipal();
+            //    formprincipal.Show();
+            //    this.Close();
 
-            }
-            else
-            {
-                MessageBox.Show("Erro : Usuário não existe ou Senha Incorreta.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Erro : Usuário não existe ou Senha Incorreta.");
 
 
-            }
+            //}
         }
     }
 }

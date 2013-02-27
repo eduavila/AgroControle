@@ -74,34 +74,35 @@
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionario";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // bensToolStripMenuItem
             // 
             this.bensToolStripMenuItem.Name = "bensToolStripMenuItem";
-            this.bensToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.bensToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bensToolStripMenuItem.Text = "Bens";
             // 
             // talhãoToolStripMenuItem
             // 
             this.talhãoToolStripMenuItem.Name = "talhãoToolStripMenuItem";
-            this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.talhãoToolStripMenuItem.Text = "Talhão";
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // safraToolStripMenuItem
             // 
             this.safraToolStripMenuItem.Name = "safraToolStripMenuItem";
-            this.safraToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.safraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.safraToolStripMenuItem.Text = "Safra";
+            this.safraToolStripMenuItem.Click += new System.EventHandler(this.safraToolStripMenuItem_Click);
             // 
             // aplicaçãoToolStripMenuItem
             // 

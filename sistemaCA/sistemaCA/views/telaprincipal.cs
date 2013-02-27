@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaCA.views.produtos;
+using sistemaCA.views.safra;
 
 namespace sistemaCA.views
 {
@@ -62,6 +63,13 @@ namespace sistemaCA.views
 
             
             
+        }
+
+        private void safraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSafra formsafra = new FormSafra();
+            formsafra.Show();
+
         }
     }
 }

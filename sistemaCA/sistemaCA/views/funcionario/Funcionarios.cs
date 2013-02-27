@@ -16,15 +16,31 @@ namespace sistemaCA.views.funcionario
     class Funcionarios
     {
 
-        //public DataClasses1DataContext Banco { get; set; }
+        public DataClasses1DataContext Banco { get; set; }
 
+        public int IDFuncionario { get; set; }
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
+        public string Cpf {get;set;}
+        public string Rg{get;set;}
+        public string Ctps { get; set; }
+        public string Endere {get;set;}
+        public string Bairro{get;set;}
+        public string Funcao{get;set;}
+        public DateTime DataAdmisao{get;set;}
+        public float RenumeracaoMensal{get;set;}
+        public string Email{get;set;}
+        public string Telefone{get;set;}
+        public string Celular{get;set;}  
+        public string Obs{get;set;}
+        public string Sexo { get; set; }        
 
-        public void tblfuncionario()
+        public Funcionarios()
         {
 
-            
-
-
+            this.Banco =new DataClasses1DataContext();
+        
+        
         }
 
 
@@ -120,7 +136,73 @@ namespace sistemaCA.views.funcionario
         
         }
 
+        public void Visualizar(int func)
+        {
+           tblfuncionario funcionario = new tblfuncionario();
 
+            // criar pesquisa  no banco para encontrar registro selecionado
+            var pesquisa = from Funcionario in this.Banco.tblfuncionarios
+                           where Funcionario.id_funcionario == func
+                           select Funcionario;
+
+
+            funcionario = pesquisa.Single();
+
+
+            this.IDFuncionario = funcionario.id_funcionario;
+            this.Nome = funcionario.nome;
+            this.Sobrenome = funcionario.sobrenome;
+            this.Cpf = funcionario.cpf;
+            this.Rg = funcionario.rg;
+            this.Ctps = funcionario.ctps;
+            this.RenumeracaoMensal = float.Parse(funcionario.renumeracao_mensal.ToString());
+            this.DataAdmisao = DateTime.Parse(funcionario.data_admissao.ToString());
+            this.Funcao = funcionario.funcao;
+            this.Email = funcionario.email;
+            this.Endere = funcionario.endere;
+            this.Bairro = funcionario.bairro;
+            this.Telefone = funcionario.telefone;
+            this.Celular = funcionario.celular;
+            this.Obs  = funcionario.obs;
+            this.Sexo = funcionario.sexo;         
+        }
+
+
+
+        public void AlterarFuncionario()
+        {
+            try
+            {
+
+                Banco.spAlterarFuncionario(this.IDFuncionario, this.Nome, this.Funcao, this.Ctps, this.RenumeracaoMensal, this.Endere, this.Bairro, this.Telefone, this.Email, this.Rg, this.Cpf, this.Obs, this.Celular, this.Sobrenome, this.Sexo);
+
+            
+            
+              }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            
+            }
+        
+        }
+
+
+
+        public void DeletarFuncionario(int idfuncio)
+        {
+            try
+            {
+
+                Banco.spDeletarFuncionario(idfuncio);
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show(erro.Message);
+            }
+        
+        }
     }
 
 

@@ -203,6 +203,31 @@ namespace sistemaCA.views.funcionario
             }
         
         }
+
+        public void PesquisarFuncionarioId(int idfunc,DataGridView dgw)
+        {
+            
+            dgw.DataSource=Banco.spPesquisaFunId(idfunc);
+        
+        }
+
+        public void PequisarFuncionarioNome(string nome, DataGridView dgw)
+        {
+
+            dgw.DataSource = Banco.spPesquisaFunNome(nome);
+        
+        }
+
+
+        public void PequisarFuncionarioCPF(string cpf, DataGridView dgw)
+        {
+
+            dgw.DataSource = Banco.spPesquisaFunCPF(cpf);
+        
+        }
+
+
+
     }
 
 

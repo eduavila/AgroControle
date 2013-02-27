@@ -37,7 +37,7 @@
             this.btn_visualizar = new System.Windows.Forms.Button();
             this.tb_pesquisar = new System.Windows.Forms.TextBox();
             this.btn_pesquisar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_seleciona = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_funcionario)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +121,7 @@
             this.tb_pesquisar.Name = "tb_pesquisar";
             this.tb_pesquisar.Size = new System.Drawing.Size(136, 20);
             this.tb_pesquisar.TabIndex = 40;
+            this.tb_pesquisar.TextChanged += new System.EventHandler(this.tb_pesquisar_TextChanged);
             // 
             // btn_pesquisar
             // 
@@ -132,23 +133,22 @@
             this.btn_pesquisar.UseVisualStyleBackColor = true;
             this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             // 
-            // comboBox1
+            // cb_seleciona
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cb_seleciona.FormattingEnabled = true;
+            this.cb_seleciona.Items.AddRange(new object[] {
             "Nome",
-            "Sobrenome",
             "CPF"});
-            this.comboBox1.Location = new System.Drawing.Point(592, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(70, 21);
-            this.comboBox1.TabIndex = 42;
-            this.comboBox1.Text = "ID";
+            this.cb_seleciona.Location = new System.Drawing.Point(592, 28);
+            this.cb_seleciona.Name = "cb_seleciona";
+            this.cb_seleciona.Size = new System.Drawing.Size(70, 21);
+            this.cb_seleciona.TabIndex = 42;
+            this.cb_seleciona.Text = "ID";
             // 
             // formFuncionario
             // 
             this.ClientSize = new System.Drawing.Size(860, 513);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_seleciona);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.tb_pesquisar);
             this.Controls.Add(this.btn_visualizar);
@@ -180,6 +180,6 @@
         private System.Windows.Forms.Button btn_visualizar;
         private System.Windows.Forms.TextBox tb_pesquisar;
         private System.Windows.Forms.Button btn_pesquisar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_seleciona;
     }
 }

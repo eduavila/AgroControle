@@ -209,5 +209,39 @@ namespace sistemaCA.views
         {
 
         }
+
+        private void tb_pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            if (cb_seleciona != null)
+            {
+                if (cb_seleciona.Text == "ID")
+                {
+
+                    Funcionarios func = new Funcionarios();
+
+                    func.PesquisarFuncionarioId(int.Parse(tb_pesquisar.Text), dgw_funcionario);
+                }
+                else if (cb_seleciona.Text == "Nome")
+                {
+                    Funcionarios func = new Funcionarios();
+
+                    func.PequisarFuncionarioNome(tb_pesquisar.Text, dgw_funcionario);
+
+                }
+                else if (cb_seleciona.Text == "CPF")
+                {
+                    Funcionarios func = new Funcionarios();
+                    func.PequisarFuncionarioCPF(tb_pesquisar.Text, dgw_funcionario);
+
+                }
+
+            }
+            else
+            {
+                Funcionarios.PreecherGridview(dgw_funcionario);
+
+            }
+
+        }
     }
 }

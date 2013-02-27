@@ -14,9 +14,9 @@
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
-      <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
       <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
       <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
+      <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblbens" Member="tblbens">
@@ -101,18 +101,6 @@
       <Association Name="tblsafra_tblrevisaofutura" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblsafra" Member="tblsafras">
-    <Type Name="tblsafra">
-      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ano" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
-      <Association Name="tblsafra_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_safra" OtherKey="id_safra" Type="tblrevisaofutura" />
-      <Association Name="tblcultura_tblsafra" Member="tblcultura" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblcultura" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbltalhao" Member="tbltalhaos">
     <Type Name="tbltalhao">
       <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -159,4 +147,241 @@
       <Association Name="tblfuncionario_tblaplicacao" Member="tblaplicacaos" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblaplicacao" />
     </Type>
   </Table>
+  <Table Name="dbo.tblsafra" Member="tblsafras">
+    <Type Name="tblsafra">
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
+      <Association Name="tblsafra_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_safra" OtherKey="id_safra" Type="tblrevisaofutura" />
+      <Association Name="tblcultura_tblsafra" Member="tblcultura" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblcultura" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spListaProduto" Method="spListaProduto">
+    <ElementType Name="spListaProdutoResult">
+      <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="unidade_medida" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCadastarProduto" Method="spCadastarProduto">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(120)" />
+    <Parameter Name="unidade_medida" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="id_tipoproduto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletarProduto" Method="spDeletarProduto">
+    <Parameter Name="idproduto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spVisualizarProduto" Method="spVisualizarProduto">
+    <Parameter Name="idproduto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spVisualizarProdutoResult">
+      <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="unidade_medida" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAlterarProduto" Method="spAlterarProduto">
+    <Parameter Name="idproduto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="decricao" Type="System.String" DbType="VarChar(120)" />
+    <Parameter Name="unidade_medida" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Idtipo_produto" Parameter="idtipo_produto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spPesquisaTipoproduto" Method="spPesquisaTipoproduto">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesquisaTipoprodutoResult">
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListatipoProduto" Method="spListatipoProduto">
+    <ElementType Name="spListatipoProdutoResult">
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spVisualizarFuncionario" Method="spVisualizarFuncionario">
+    <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spVisualizarFuncionarioResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAlterarFuncionario" Method="spAlterarFuncionario">
+    <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="funcao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="ctps" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="renumeracao" Type="System.Single" DbType="Real" />
+    <Parameter Name="endere" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="bairro" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="telefone" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(180)" />
+    <Parameter Name="celular" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sobrenome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="sexo" Type="System.String" DbType="NChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletarFuncionario" Method="spDeletarFuncionario">
+    <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spPesquisaTipoproduto" Method="spPesquisaTipoproduto1">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesquisaTipoprodutoResult1">
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spPesquisaFunNome" Method="spPesquisaFunNome">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesquisaFunNomeResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spPesquisaFunId" Method="spPesquisaFunId">
+    <Parameter Name="descricao" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spPesquisaFunIdResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spPesquisaFunCPF" Method="spPesquisaFunCPF">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="spPesquisaFunCPFResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCadastrarSafra" Method="spCadastrarSafra">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="dataincio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="id_cultura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="datafechamento" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.psListarSafra" Method="psListarSafra">
+    <ElementType Name="psListarSafraResult">
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.psVisualizarSafra" Method="psVisualizarSafra">
+    <Parameter Name="id_safra" Type="System.Int32" DbType="Int" />
+    <ElementType Name="psVisualizarSafraResult">
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAtualizarSafra" Method="spAtualizarSafra">
+    <Parameter Name="idsafra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="dataincio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="id_cultura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="datafechamento" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletarSafra" Method="spDeletarSafra">
+    <Parameter Name="id_safra" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spPesqiosaTipoCultura" Method="spPesqiosaTipoCultura">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesqiosaTipoCulturaResult">
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarTipoCultura" Method="spListarTipoCultura">
+    <ElementType Name="spListarTipoCulturaResult">
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

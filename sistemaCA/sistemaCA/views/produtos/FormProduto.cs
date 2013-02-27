@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaCA.views.produtos;
+
 
 namespace sistemaCA.views.produtos
 {
@@ -24,18 +26,43 @@ namespace sistemaCA.views.produtos
 
         private void FormProduto_Load(object sender, EventArgs e)
         {
-            DataClasses1DataContext db = new DataClasses1DataContext();
 
-            var pro = from produto in db.tblprodutos select produto;
 
-            dgw_produto.DataSource = pro;
+            Produto Prod = new Produto();
 
+
+
+            Prod.ListaProdutos(dgw_produto);// listando produto no data grid
+
+
+            // alterando cabeçalho do datagrid produto
             dgw_produto.Columns["id_produto"].HeaderText = "ID";
-            
+            dgw_produto.Columns["nome"].HeaderText = "Nome";
+            dgw_produto.Columns["unidade_medida"].HeaderText = "Unidade Medida ";
+            dgw_produto.Columns["id_tipoproduto"].HeaderText = "Tipo Produto ";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // teste com classe 
+            int selecionado = dgw_produto.CurrentCell.RowIndex;
+
+            int idprod;
+
+            idprod = int.Parse(dgw_produto.Rows[selecionado].Cells["id_produto"].Value.ToString());
+
+            // criando novo formulario atualizar com parametro do numero 1 da cells do data grid
+            FormProdutoAtualizar formproduto = new FormProdutoAtualizar(idprod);
+            formproduto.Show();
+            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormProdutosAtualizar Fprodutocadastro = new FormProdutosAtualizar();
+            Fprodutocadastro.ShowDialog();
+
 
         }
     }

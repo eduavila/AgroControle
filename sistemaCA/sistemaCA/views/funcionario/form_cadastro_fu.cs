@@ -54,12 +54,35 @@ namespace sistemaCA.views.funcionario
             dtp_admisao.Value = DateTime.Parse(Func.data_admissao.ToString());
             tb_renumeracao.Text = Func.renumeracao_mensal.ToString();
             tb_email.Text = Func.email;
-
+            cb_sexo.Text = Func.sexo;
             tb_telefone.Text = Func.telefone;
 
             tb_celular.Text = Func.celular;
 
             tb_obs.Text = Func.obs;
+
+
+
+            // colocando componetes desativados
+            tb_nome.Enabled = false;
+            tb_sobrenome.Enabled = false;
+            tb_cpf.Enabled = false;
+            tb_ctps.Enabled = false;
+            tb_rg.Enabled = false;
+            tb_endereco.Enabled = false;
+            tb_bairro.Enabled = false;
+            tb_funcao.Enabled = false;
+            dtp_admisao.Enabled = false;
+            tb_renumeracao.Enabled = false;
+            tb_email.Enabled = false;
+            tb_telefone.Enabled = false;
+            tb_celular.Enabled = false;
+            tb_obs.Enabled = false;
+
+          
+
+
+           
 
 
 
@@ -113,6 +136,7 @@ namespace sistemaCA.views.funcionario
                 Func.ctps = tb_ctps.Text;
                 Func.rg = tb_rg.Text;
                 Func.endere = tb_endereco.Text;
+                Func.sexo = cb_sexo.Text;
                 Func.bairro = tb_bairro.Text;
                 Func.funcao = tb_funcao.Text;
                 Func.data_admissao = dtp_admisao.Value;
@@ -134,7 +158,7 @@ namespace sistemaCA.views.funcionario
                 tb_ctps.Text = "";
                 tb_endereco.Text = "";
                 tb_bairro.Text = "";
-              
+                cb_sexo.Text = "";              
                 tb_funcao.Text = "";
                 tb_renumeracao.Text = "";
                 tb_email.Text = "";
@@ -164,22 +188,12 @@ namespace sistemaCA.views.funcionario
 
         private void form_cadastro_fu_Shown(object sender, EventArgs e)
         {
+           
+        }
 
-            // colocando componetes desativados
-            tb_nome.Enabled = false;
-            tb_sobrenome.Enabled = false;
-            tb_cpf.Enabled = false;
-            tb_ctps.Enabled = false;
-            tb_rg.Enabled = false;
-            tb_endereco.Enabled = false;
-            tb_bairro.Enabled = false;
-            tb_funcao.Enabled = false;
-            dtp_admisao.Enabled = false;
-            tb_renumeracao.Enabled = false;
-            tb_email.Enabled = false;
-            tb_telefone.Enabled = false;
-            tb_celular.Enabled = false;
-            tb_obs.Enabled = false;
+        private void form_cadastro_fu_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -101,7 +101,7 @@ namespace sistemaCA.views
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
-
+        
             // pega a rows selecinado no gridview
 
             int selecionado = dgw_funcionario.CurrentCell.RowIndex;
@@ -109,27 +109,34 @@ namespace sistemaCA.views
             int idfunc;
 
             idfunc = int.Parse(dgw_funcionario.Rows[selecionado].Cells["id_funcionario"].Value.ToString());
+
+            FormFuncionarioV FromVisualizar = new FormFuncionarioV(idfunc);
+
+            FromVisualizar.ShowDialog();
+            Funcionarios.PreecherGridview(dgw_funcionario);
+
+
             //
 
 
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            tblfuncionario funcionario = new tblfuncionario();
+            //DataClasses1DataContext db = new DataClasses1DataContext();
+            //tblfuncionario funcionario = new tblfuncionario();
 
 
-            // criar pesquisa  no banco para encontrar registro selecionado
-            var pesquisa = from funcio in db.tblfuncionarios
-                           where funcio.id_funcionario == idfunc
-                           select funcio;
+            //// criar pesquisa  no banco para encontrar registro selecionado
+            //var pesquisa = from funcio in db.tblfuncionarios
+            //               where funcio.id_funcionario == idfunc
+            //               select funcio;
 
 
-            funcionario = pesquisa.Single();
+            //funcionario = pesquisa.Single();
 
-            // criando formulario para mostrar dados do registro que esta no banco 
-            form_cadastro_fu formAlterar = new form_cadastro_fu(funcionario, db);
+            //// criando formulario para mostrar dados do registro que esta no banco 
+            //form_cadastro_fu formAlterar = new form_cadastro_fu(funcionario, db);
 
-            // mostrando formulario
+            //// mostrando formulario
 
-            formAlterar.ShowDialog();
+            //formAlterar.ShowDialog();
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
@@ -139,6 +146,8 @@ namespace sistemaCA.views
             form_cadastro_fu func_cadastro = new form_cadastro_fu();
             func_cadastro.ShowDialog();
             //
+            Funcionarios.PreecherGridview(dgw_funcionario);
+
 
         }
 
@@ -179,6 +188,58 @@ namespace sistemaCA.views
             catch
             {
                 MessageBox.Show("Ocorreu um erro!");
+            }
+
+        }
+
+        private void btn_pesquisar_Click(object sender, EventArgs e)
+        {
+            if (tb_pesquisar.Text == " ")
+            {
+                Funcionarios.PreecherGridview(dgw_funcionario);
+
+            }
+            else { 
+                
+            
+            }
+        }
+
+        private void dgw_funcionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tb_pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            if (cb_seleciona != null)
+            {
+                if (cb_seleciona.Text == "ID")
+                {
+
+                    Funcionarios func = new Funcionarios();
+
+                    func.PesquisarFuncionarioId(int.Parse(tb_pesquisar.Text), dgw_funcionario);
+                }
+                else if (cb_seleciona.Text == "Nome")
+                {
+                    Funcionarios func = new Funcionarios();
+
+                    func.PequisarFuncionarioNome(tb_pesquisar.Text, dgw_funcionario);
+
+                }
+                else if (cb_seleciona.Text == "CPF")
+                {
+                    Funcionarios func = new Funcionarios();
+                    func.PequisarFuncionarioCPF(tb_pesquisar.Text, dgw_funcionario);
+
+                }
+
+            }
+            else
+            {
+                Funcionarios.PreecherGridview(dgw_funcionario);
+
             }
 
         }

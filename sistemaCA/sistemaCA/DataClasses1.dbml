@@ -14,9 +14,9 @@
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
-      <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
       <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
       <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
+      <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblbens" Member="tblbens">
@@ -101,18 +101,6 @@
       <Association Name="tblsafra_tblrevisaofutura" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tblsafra" Member="tblsafras">
-    <Type Name="tblsafra">
-      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ano" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
-      <Association Name="tblsafra_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_safra" OtherKey="id_safra" Type="tblrevisaofutura" />
-      <Association Name="tblcultura_tblsafra" Member="tblcultura" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblcultura" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbltalhao" Member="tbltalhaos">
     <Type Name="tbltalhao">
       <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -157,6 +145,20 @@
       <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
       <Association Name="tblfuncionario_tblaplicacao" Member="tblaplicacaos" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblaplicacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblsafra" Member="tblsafras">
+    <Type Name="tblsafra">
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
+      <Association Name="tblsafra_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_safra" OtherKey="id_safra" Type="tblrevisaofutura" />
+      <Association Name="tblcultura_tblsafra" Member="tblcultura" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblcultura" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">
@@ -321,6 +323,65 @@
       <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCadastrarSafra" Method="spCadastrarSafra">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="dataincio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="id_cultura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="datafechamento" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.psListarSafra" Method="psListarSafra">
+    <ElementType Name="psListarSafraResult">
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.psVisualizarSafra" Method="psVisualizarSafra">
+    <Parameter Name="id_safra" Type="System.Int32" DbType="Int" />
+    <ElementType Name="psVisualizarSafraResult">
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAtualizarSafra" Method="spAtualizarSafra">
+    <Parameter Name="idsafra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="status" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="dataincio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="id_cultura" Type="System.Int32" DbType="Int" />
+    <Parameter Name="datafechamento" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletarSafra" Method="spDeletarSafra">
+    <Parameter Name="id_safra" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spPesqiosaTipoCultura" Method="spPesqiosaTipoCultura">
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesqiosaTipoCulturaResult">
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarTipoCultura" Method="spListarTipoCultura">
+    <ElementType Name="spListarTipoCulturaResult">
+      <Column Name="id_cultura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

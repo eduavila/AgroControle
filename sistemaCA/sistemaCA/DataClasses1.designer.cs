@@ -54,9 +54,6 @@ namespace sistemaCA
     partial void Inserttblrevisaofutura(tblrevisaofutura instance);
     partial void Updatetblrevisaofutura(tblrevisaofutura instance);
     partial void Deletetblrevisaofutura(tblrevisaofutura instance);
-    partial void Inserttblsafra(tblsafra instance);
-    partial void Updatetblsafra(tblsafra instance);
-    partial void Deletetblsafra(tblsafra instance);
     partial void Inserttbltalhao(tbltalhao instance);
     partial void Updatetbltalhao(tbltalhao instance);
     partial void Deletetbltalhao(tbltalhao instance);
@@ -69,6 +66,9 @@ namespace sistemaCA
     partial void Inserttblfuncionario(tblfuncionario instance);
     partial void Updatetblfuncionario(tblfuncionario instance);
     partial void Deletetblfuncionario(tblfuncionario instance);
+    partial void Inserttblsafra(tblsafra instance);
+    partial void Updatetblsafra(tblsafra instance);
+    partial void Deletetblsafra(tblsafra instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -165,14 +165,6 @@ namespace sistemaCA
 			}
 		}
 		
-		public System.Data.Linq.Table<tblsafra> tblsafras
-		{
-			get
-			{
-				return this.GetTable<tblsafra>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tbltalhao> tbltalhaos
 		{
 			get
@@ -202,6 +194,14 @@ namespace sistemaCA
 			get
 			{
 				return this.GetTable<tblfuncionario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblsafra> tblsafras
+		{
+			get
+			{
+				return this.GetTable<tblsafra>();
 			}
 		}
 		
@@ -302,6 +302,55 @@ namespace sistemaCA
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
 			return ((ISingleResult<spPesquisaFunCPFResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spCadastrarSafra")]
+		public int spCadastrarSafra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataincio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cultura, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> datafechamento)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao, status, obs, dataincio, id_cultura, datafechamento);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.psListarSafra")]
+		public ISingleResult<psListarSafraResult> psListarSafra()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<psListarSafraResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.psVisualizarSafra")]
+		public ISingleResult<psVisualizarSafraResult> psVisualizarSafra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_safra)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_safra);
+			return ((ISingleResult<psVisualizarSafraResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spAtualizarSafra")]
+		public int spAtualizarSafra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idsafra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(150)")] string obs, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dataincio, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cultura, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> datafechamento)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idsafra, descricao, status, obs, dataincio, id_cultura, datafechamento);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spDeletarSafra")]
+		public int spDeletarSafra([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_safra)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_safra);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spPesqiosaTipoCultura")]
+		public ISingleResult<spPesqiosaTipoCulturaResult> spPesqiosaTipoCultura([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string nome)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nome);
+			return ((ISingleResult<spPesqiosaTipoCulturaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spListarTipoCultura")]
+		public ISingleResult<spListarTipoCulturaResult> spListarTipoCultura()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<spListarTipoCulturaResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblaplicacao")]
@@ -334,11 +383,11 @@ namespace sistemaCA
 		
 		private EntityRef<tblprodutosaplicado> _tblprodutosaplicado;
 		
-		private EntityRef<tblsafra> _tblsafra;
-		
 		private EntityRef<tbltalhao> _tbltalhao;
 		
 		private EntityRef<tblfuncionario> _tblfuncionario;
+		
+		private EntityRef<tblsafra> _tblsafra;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -370,9 +419,9 @@ namespace sistemaCA
 		{
 			this._tblben = default(EntityRef<tblben>);
 			this._tblprodutosaplicado = default(EntityRef<tblprodutosaplicado>);
-			this._tblsafra = default(EntityRef<tblsafra>);
 			this._tbltalhao = default(EntityRef<tbltalhao>);
 			this._tblfuncionario = default(EntityRef<tblfuncionario>);
+			this._tblsafra = default(EntityRef<tblsafra>);
 			OnCreated();
 		}
 		
@@ -664,40 +713,6 @@ namespace sistemaCA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblsafra_tblaplicacao", Storage="_tblsafra", ThisKey="id_safra", OtherKey="id_safra", IsForeignKey=true)]
-		public tblsafra tblsafra
-		{
-			get
-			{
-				return this._tblsafra.Entity;
-			}
-			set
-			{
-				tblsafra previousValue = this._tblsafra.Entity;
-				if (((previousValue != value) 
-							|| (this._tblsafra.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblsafra.Entity = null;
-						previousValue.tblaplicacaos.Remove(this);
-					}
-					this._tblsafra.Entity = value;
-					if ((value != null))
-					{
-						value.tblaplicacaos.Add(this);
-						this._id_safra = value.id_safra;
-					}
-					else
-					{
-						this._id_safra = default(int);
-					}
-					this.SendPropertyChanged("tblsafra");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbltalhao_tblaplicacao", Storage="_tbltalhao", ThisKey="id_talhao", OtherKey="id_talhao", IsForeignKey=true)]
 		public tbltalhao tbltalhao
 		{
@@ -762,6 +777,40 @@ namespace sistemaCA
 						this._id_funcionario = default(int);
 					}
 					this.SendPropertyChanged("tblfuncionario");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblsafra_tblaplicacao", Storage="_tblsafra", ThisKey="id_safra", OtherKey="id_safra", IsForeignKey=true)]
+		public tblsafra tblsafra
+		{
+			get
+			{
+				return this._tblsafra.Entity;
+			}
+			set
+			{
+				tblsafra previousValue = this._tblsafra.Entity;
+				if (((previousValue != value) 
+							|| (this._tblsafra.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblsafra.Entity = null;
+						previousValue.tblaplicacaos.Remove(this);
+					}
+					this._tblsafra.Entity = value;
+					if ((value != null))
+					{
+						value.tblaplicacaos.Add(this);
+						this._id_safra = value.id_safra;
+					}
+					else
+					{
+						this._id_safra = default(int);
+					}
+					this.SendPropertyChanged("tblsafra");
 				}
 			}
 		}
@@ -2479,261 +2528,6 @@ namespace sistemaCA
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblsafra")]
-	public partial class tblsafra : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_safra;
-		
-		private int _ano;
-		
-		private string _obs;
-		
-		private string _status;
-		
-		private System.Nullable<int> _id_cultura;
-		
-		private EntitySet<tblaplicacao> _tblaplicacaos;
-		
-		private EntitySet<tblrevisaofutura> _tblrevisaofuturas;
-		
-		private EntityRef<tblcultura> _tblcultura;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_safraChanging(int value);
-    partial void Onid_safraChanged();
-    partial void OnanoChanging(int value);
-    partial void OnanoChanged();
-    partial void OnobsChanging(string value);
-    partial void OnobsChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    partial void Onid_culturaChanging(System.Nullable<int> value);
-    partial void Onid_culturaChanged();
-    #endregion
-		
-		public tblsafra()
-		{
-			this._tblaplicacaos = new EntitySet<tblaplicacao>(new Action<tblaplicacao>(this.attach_tblaplicacaos), new Action<tblaplicacao>(this.detach_tblaplicacaos));
-			this._tblrevisaofuturas = new EntitySet<tblrevisaofutura>(new Action<tblrevisaofutura>(this.attach_tblrevisaofuturas), new Action<tblrevisaofutura>(this.detach_tblrevisaofuturas));
-			this._tblcultura = default(EntityRef<tblcultura>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_safra", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_safra
-		{
-			get
-			{
-				return this._id_safra;
-			}
-			set
-			{
-				if ((this._id_safra != value))
-				{
-					this.Onid_safraChanging(value);
-					this.SendPropertyChanging();
-					this._id_safra = value;
-					this.SendPropertyChanged("id_safra");
-					this.Onid_safraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ano", DbType="Int NOT NULL")]
-		public int ano
-		{
-			get
-			{
-				return this._ano;
-			}
-			set
-			{
-				if ((this._ano != value))
-				{
-					this.OnanoChanging(value);
-					this.SendPropertyChanging();
-					this._ano = value;
-					this.SendPropertyChanged("ano");
-					this.OnanoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
-		public string obs
-		{
-			get
-			{
-				return this._obs;
-			}
-			set
-			{
-				if ((this._obs != value))
-				{
-					this.OnobsChanging(value);
-					this.SendPropertyChanging();
-					this._obs = value;
-					this.SendPropertyChanged("obs");
-					this.OnobsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="VarChar(15)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cultura", DbType="Int")]
-		public System.Nullable<int> id_cultura
-		{
-			get
-			{
-				return this._id_cultura;
-			}
-			set
-			{
-				if ((this._id_cultura != value))
-				{
-					if (this._tblcultura.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_culturaChanging(value);
-					this.SendPropertyChanging();
-					this._id_cultura = value;
-					this.SendPropertyChanged("id_cultura");
-					this.Onid_culturaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblsafra_tblaplicacao", Storage="_tblaplicacaos", ThisKey="id_safra", OtherKey="id_safra")]
-		public EntitySet<tblaplicacao> tblaplicacaos
-		{
-			get
-			{
-				return this._tblaplicacaos;
-			}
-			set
-			{
-				this._tblaplicacaos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblsafra_tblrevisaofutura", Storage="_tblrevisaofuturas", ThisKey="id_safra", OtherKey="id_safra")]
-		public EntitySet<tblrevisaofutura> tblrevisaofuturas
-		{
-			get
-			{
-				return this._tblrevisaofuturas;
-			}
-			set
-			{
-				this._tblrevisaofuturas.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblcultura_tblsafra", Storage="_tblcultura", ThisKey="id_cultura", OtherKey="id_cultura", IsForeignKey=true)]
-		public tblcultura tblcultura
-		{
-			get
-			{
-				return this._tblcultura.Entity;
-			}
-			set
-			{
-				tblcultura previousValue = this._tblcultura.Entity;
-				if (((previousValue != value) 
-							|| (this._tblcultura.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblcultura.Entity = null;
-						previousValue.tblsafras.Remove(this);
-					}
-					this._tblcultura.Entity = value;
-					if ((value != null))
-					{
-						value.tblsafras.Add(this);
-						this._id_cultura = value.id_cultura;
-					}
-					else
-					{
-						this._id_cultura = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("tblcultura");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblaplicacaos(tblaplicacao entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblsafra = this;
-		}
-		
-		private void detach_tblaplicacaos(tblaplicacao entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblsafra = null;
-		}
-		
-		private void attach_tblrevisaofuturas(tblrevisaofutura entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblsafra = this;
-		}
-		
-		private void detach_tblrevisaofuturas(tblrevisaofutura entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblsafra = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbltalhao")]
 	public partial class tbltalhao : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3615,6 +3409,309 @@ namespace sistemaCA
 		{
 			this.SendPropertyChanging();
 			entity.tblfuncionario = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblsafra")]
+	public partial class tblsafra : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_safra;
+		
+		private string _obs;
+		
+		private string _status;
+		
+		private System.Nullable<int> _id_cultura;
+		
+		private System.DateTime _dataincio;
+		
+		private string _descricao;
+		
+		private System.Nullable<System.DateTime> _datafechamento;
+		
+		private EntitySet<tblaplicacao> _tblaplicacaos;
+		
+		private EntitySet<tblrevisaofutura> _tblrevisaofuturas;
+		
+		private EntityRef<tblcultura> _tblcultura;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_safraChanging(int value);
+    partial void Onid_safraChanged();
+    partial void OnobsChanging(string value);
+    partial void OnobsChanged();
+    partial void OnstatusChanging(string value);
+    partial void OnstatusChanged();
+    partial void Onid_culturaChanging(System.Nullable<int> value);
+    partial void Onid_culturaChanged();
+    partial void OndataincioChanging(System.DateTime value);
+    partial void OndataincioChanged();
+    partial void OndescricaoChanging(string value);
+    partial void OndescricaoChanged();
+    partial void OndatafechamentoChanging(System.Nullable<System.DateTime> value);
+    partial void OndatafechamentoChanged();
+    #endregion
+		
+		public tblsafra()
+		{
+			this._tblaplicacaos = new EntitySet<tblaplicacao>(new Action<tblaplicacao>(this.attach_tblaplicacaos), new Action<tblaplicacao>(this.detach_tblaplicacaos));
+			this._tblrevisaofuturas = new EntitySet<tblrevisaofutura>(new Action<tblrevisaofutura>(this.attach_tblrevisaofuturas), new Action<tblrevisaofutura>(this.detach_tblrevisaofuturas));
+			this._tblcultura = default(EntityRef<tblcultura>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_safra", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_safra
+		{
+			get
+			{
+				return this._id_safra;
+			}
+			set
+			{
+				if ((this._id_safra != value))
+				{
+					this.Onid_safraChanging(value);
+					this.SendPropertyChanging();
+					this._id_safra = value;
+					this.SendPropertyChanged("id_safra");
+					this.Onid_safraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this.OnobsChanging(value);
+					this.SendPropertyChanging();
+					this._obs = value;
+					this.SendPropertyChanged("obs");
+					this.OnobsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="VarChar(15)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cultura", DbType="Int")]
+		public System.Nullable<int> id_cultura
+		{
+			get
+			{
+				return this._id_cultura;
+			}
+			set
+			{
+				if ((this._id_cultura != value))
+				{
+					if (this._tblcultura.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_culturaChanging(value);
+					this.SendPropertyChanging();
+					this._id_cultura = value;
+					this.SendPropertyChanged("id_cultura");
+					this.Onid_culturaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dataincio", DbType="Date NOT NULL")]
+		public System.DateTime dataincio
+		{
+			get
+			{
+				return this._dataincio;
+			}
+			set
+			{
+				if ((this._dataincio != value))
+				{
+					this.OndataincioChanging(value);
+					this.SendPropertyChanging();
+					this._dataincio = value;
+					this.SendPropertyChanged("dataincio");
+					this.OndataincioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(80)")]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this.OndescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._descricao = value;
+					this.SendPropertyChanged("descricao");
+					this.OndescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datafechamento", DbType="Date")]
+		public System.Nullable<System.DateTime> datafechamento
+		{
+			get
+			{
+				return this._datafechamento;
+			}
+			set
+			{
+				if ((this._datafechamento != value))
+				{
+					this.OndatafechamentoChanging(value);
+					this.SendPropertyChanging();
+					this._datafechamento = value;
+					this.SendPropertyChanged("datafechamento");
+					this.OndatafechamentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblsafra_tblaplicacao", Storage="_tblaplicacaos", ThisKey="id_safra", OtherKey="id_safra")]
+		public EntitySet<tblaplicacao> tblaplicacaos
+		{
+			get
+			{
+				return this._tblaplicacaos;
+			}
+			set
+			{
+				this._tblaplicacaos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblsafra_tblrevisaofutura", Storage="_tblrevisaofuturas", ThisKey="id_safra", OtherKey="id_safra")]
+		public EntitySet<tblrevisaofutura> tblrevisaofuturas
+		{
+			get
+			{
+				return this._tblrevisaofuturas;
+			}
+			set
+			{
+				this._tblrevisaofuturas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblcultura_tblsafra", Storage="_tblcultura", ThisKey="id_cultura", OtherKey="id_cultura", IsForeignKey=true)]
+		public tblcultura tblcultura
+		{
+			get
+			{
+				return this._tblcultura.Entity;
+			}
+			set
+			{
+				tblcultura previousValue = this._tblcultura.Entity;
+				if (((previousValue != value) 
+							|| (this._tblcultura.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblcultura.Entity = null;
+						previousValue.tblsafras.Remove(this);
+					}
+					this._tblcultura.Entity = value;
+					if ((value != null))
+					{
+						value.tblsafras.Add(this);
+						this._id_cultura = value.id_cultura;
+					}
+					else
+					{
+						this._id_cultura = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("tblcultura");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblaplicacaos(tblaplicacao entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblsafra = this;
+		}
+		
+		private void detach_tblaplicacaos(tblaplicacao entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblsafra = null;
+		}
+		
+		private void attach_tblrevisaofuturas(tblrevisaofutura entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblsafra = this;
+		}
+		
+		private void detach_tblrevisaofuturas(tblrevisaofutura entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblsafra = null;
 		}
 	}
 	
@@ -5125,6 +5222,362 @@ namespace sistemaCA
 				if ((this._sexo != value))
 				{
 					this._sexo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class psListarSafraResult
+	{
+		
+		private int _id_safra;
+		
+		private string _descricao;
+		
+		private System.DateTime _dataincio;
+		
+		private System.Nullable<System.DateTime> _datafechamento;
+		
+		private System.Nullable<int> _id_cultura;
+		
+		private string _status;
+		
+		private string _obs;
+		
+		public psListarSafraResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_safra", DbType="Int NOT NULL")]
+		public int id_safra
+		{
+			get
+			{
+				return this._id_safra;
+			}
+			set
+			{
+				if ((this._id_safra != value))
+				{
+					this._id_safra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(80)")]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this._descricao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dataincio", DbType="Date NOT NULL")]
+		public System.DateTime dataincio
+		{
+			get
+			{
+				return this._dataincio;
+			}
+			set
+			{
+				if ((this._dataincio != value))
+				{
+					this._dataincio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datafechamento", DbType="Date")]
+		public System.Nullable<System.DateTime> datafechamento
+		{
+			get
+			{
+				return this._datafechamento;
+			}
+			set
+			{
+				if ((this._datafechamento != value))
+				{
+					this._datafechamento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cultura", DbType="Int")]
+		public System.Nullable<int> id_cultura
+		{
+			get
+			{
+				return this._id_cultura;
+			}
+			set
+			{
+				if ((this._id_cultura != value))
+				{
+					this._id_cultura = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="VarChar(15)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this._obs = value;
+				}
+			}
+		}
+	}
+	
+	public partial class psVisualizarSafraResult
+	{
+		
+		private int _id_safra;
+		
+		private string _descricao;
+		
+		private System.DateTime _dataincio;
+		
+		private System.Nullable<System.DateTime> _datafechamento;
+		
+		private System.Nullable<int> _id_cultura;
+		
+		private string _status;
+		
+		private string _obs;
+		
+		public psVisualizarSafraResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_safra", DbType="Int NOT NULL")]
+		public int id_safra
+		{
+			get
+			{
+				return this._id_safra;
+			}
+			set
+			{
+				if ((this._id_safra != value))
+				{
+					this._id_safra = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(80)")]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this._descricao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dataincio", DbType="Date NOT NULL")]
+		public System.DateTime dataincio
+		{
+			get
+			{
+				return this._dataincio;
+			}
+			set
+			{
+				if ((this._dataincio != value))
+				{
+					this._dataincio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datafechamento", DbType="Date")]
+		public System.Nullable<System.DateTime> datafechamento
+		{
+			get
+			{
+				return this._datafechamento;
+			}
+			set
+			{
+				if ((this._datafechamento != value))
+				{
+					this._datafechamento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cultura", DbType="Int")]
+		public System.Nullable<int> id_cultura
+		{
+			get
+			{
+				return this._id_cultura;
+			}
+			set
+			{
+				if ((this._id_cultura != value))
+				{
+					this._id_cultura = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="VarChar(15)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this._obs = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spPesqiosaTipoCulturaResult
+	{
+		
+		private int _id_cultura;
+		
+		private string _nome;
+		
+		public spPesqiosaTipoCulturaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cultura", DbType="Int NOT NULL")]
+		public int id_cultura
+		{
+			get
+			{
+				return this._id_cultura;
+			}
+			set
+			{
+				if ((this._id_cultura != value))
+				{
+					this._id_cultura = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80)")]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spListarTipoCulturaResult
+	{
+		
+		private int _id_cultura;
+		
+		private string _nome;
+		
+		public spListarTipoCulturaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cultura", DbType="Int NOT NULL")]
+		public int id_cultura
+		{
+			get
+			{
+				return this._id_cultura;
+			}
+			set
+			{
+				if ((this._id_cultura != value))
+				{
+					this._id_cultura = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80)")]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
 				}
 			}
 		}

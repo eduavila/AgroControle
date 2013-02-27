@@ -118,6 +118,32 @@
     </Compile>
     <Compile Include="views\produtos\Produto.cs" />
     <Compile Include="views\produtos\TipoProduto.cs" />
+    <Compile Include="views\safra\Cultura.cs" />
+    <Compile Include="views\safra\FormAtualizarSafra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\safra\FormAtualizarSafra.Designer.cs">
+      <DependentUpon>FormAtualizarSafra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\safra\FormSafra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\safra\FormSafra.Designer.cs">
+      <DependentUpon>FormSafra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\safra\FormCadastroSafra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\safra\FormCadastroSafra.Designer.cs">
+      <DependentUpon>FormCadastroSafra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\safra\FormTipoCultura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\safra\FormTipoCultura.Designer.cs">
+      <DependentUpon>FormTipoCultura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\safra\Safra.cs" />
     <Compile Include="views\telasplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +192,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\produtos\FormtipoProduto.resx">
       <DependentUpon>FormtipoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\safra\FormAtualizarSafra.resx">
+      <DependentUpon>FormAtualizarSafra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\safra\FormSafra.resx">
+      <DependentUpon>FormSafra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\safra\FormCadastroSafra.resx">
+      <DependentUpon>FormCadastroSafra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\safra\FormTipoCultura.resx">
+      <DependentUpon>FormTipoCultura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\telasplash.resx">
       <DependentUpon>telasplash.cs</DependentUpon>

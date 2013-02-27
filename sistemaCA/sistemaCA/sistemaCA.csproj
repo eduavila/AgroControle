@@ -79,6 +79,12 @@
     <Compile Include="views\formUsuario.Designer.cs">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\funcionario\FormFuncionarioV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\funcionario\FormFuncionarioV.Designer.cs">
+      <DependentUpon>FormFuncionarioV.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\funcionario\form_cadastro_fu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\funcionario\FormFuncionarioV.resx">
+      <DependentUpon>FormFuncionarioV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\funcionario\form_cadastro_fu.resx">
       <DependentUpon>form_cadastro_fu.cs</DependentUpon>

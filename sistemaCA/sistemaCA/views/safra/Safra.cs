@@ -75,6 +75,7 @@ namespace sistemaCA.views.safra
                 this.DataFechamento =DateTime.Parse(safra.datafechamento.ToString());
                 this.Obs = safra.obs;
                 this.status = safra.status;
+                this.IdCultura = Convert.ToInt32(safra.id_cultura);
 
             }
             catch (Exception Erro)

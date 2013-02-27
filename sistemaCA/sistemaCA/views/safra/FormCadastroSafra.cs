@@ -49,6 +49,7 @@ namespace sistemaCA.views.safra
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             FormTipoCultura FormTipo = new FormTipoCultura();
             FormTipo.ShowDialog();
             tb_tipocultura.Text = FormTipo.Id_cultura.ToString();

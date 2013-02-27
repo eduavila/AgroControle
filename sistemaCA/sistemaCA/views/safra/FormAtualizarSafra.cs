@@ -29,6 +29,7 @@ namespace sistemaCA.views.safra
             tb_idsafra.Text = safra.IdSafra.ToString() ;
             tb_descricao.Text = safra.Descricao;
             tb_status.Text = safra.status;
+            tb_tipocultura.Text = safra.IdCultura.ToString();
             dt_datainicio.Value =DateTime.Parse(safra.DataInicio.ToString());
 
            
@@ -43,8 +44,8 @@ namespace sistemaCA.views.safra
             dt_datainicio.Enabled = false;
             dt_datainicio.Enabled = false;
             tb_obs.Enabled = false;
-
-
+            tb_tipocultura.Enabled = false;
+            btn_pesquisar.Enabled = false;
         
         
         }
@@ -63,6 +64,8 @@ namespace sistemaCA.views.safra
             dt_datainicio.Enabled = true;
             dt_datainicio.Enabled = true;
             tb_obs.Enabled = true;
+            tb_tipocultura.Enabled = true;
+            btn_pesquisar.Enabled = true;
 
         }
 
@@ -75,6 +78,7 @@ namespace sistemaCA.views.safra
 
                 safra.IdSafra = int.Parse(tb_idsafra.Text);
                 safra.Descricao = tb_descricao.Text;
+                safra.IdCultura =int.Parse(tb_tipocultura.Text);
                 safra.status = tb_status.Text;
                 safra.DataInicio = dt_datainicio.Value;
                 safra.DataFechamento = dt_datainicio.Value;
@@ -115,6 +119,13 @@ namespace sistemaCA.views.safra
         private void btn_fsafra_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormTipoCultura FormTipo = new FormTipoCultura();
+            FormTipo.ShowDialog();
+            tb_tipocultura.Text = FormTipo.Id_cultura.ToString();
         }
     }
 }

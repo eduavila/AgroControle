@@ -36,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tb_status = new System.Windows.Forms.TextBox();
             this.tb_descricao = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
             this.tb_tipocultura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -113,14 +113,15 @@
             this.tb_descricao.Size = new System.Drawing.Size(205, 20);
             this.tb_descricao.TabIndex = 37;
             // 
-            // button1
+            // btn_pesquisar
             // 
-            this.button1.Location = new System.Drawing.Point(369, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "psquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Location = new System.Drawing.Point(369, 120);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(33, 23);
+            this.btn_pesquisar.TabIndex = 36;
+            this.btn_pesquisar.Text = "psquisar";
+            this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.button1_Click);
             // 
             // tb_tipocultura
             // 
@@ -202,7 +203,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tb_status);
             this.Controls.Add(this.tb_descricao);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.tb_tipocultura);
             this.Controls.Add(this.label4);
             this.Name = "FormAtualizarSafra";
@@ -223,7 +224,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_status;
         private System.Windows.Forms.TextBox tb_descricao;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.TextBox tb_tipocultura;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;

@@ -15,6 +15,9 @@ namespace sistemaCA.views.produtos
         public string Descricao { get; set; }
         public string UnidadeMedida { get; set; }
         public int Id_tipoproduto { get; set; }
+       
+        
+        
         public Produto()
         {
             this.Banco = new DataClasses1DataContext();

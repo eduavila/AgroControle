@@ -55,5 +55,10 @@ namespace sistemaCA.views.produtos
             tb_tipoproduto.Text = formtipo.IDtipoProduto.ToString();
             
         }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

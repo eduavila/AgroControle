@@ -57,8 +57,9 @@
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(80, 30);
             this.btn_cancelar.TabIndex = 1;
-            this.btn_cancelar.Text = "Cadastrar";
+            this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // tb_nome
             // 

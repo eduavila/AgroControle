@@ -253,4 +253,74 @@
     <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.spPesquisaTipoproduto" Method="spPesquisaTipoproduto1">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesquisaTipoprodutoResult1">
+      <Column Name="id_tipoproduto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spPesquisaFunNome" Method="spPesquisaFunNome">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="spPesquisaFunNomeResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spPesquisaFunId" Method="spPesquisaFunId">
+    <Parameter Name="descricao" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spPesquisaFunIdResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spPesquisaFunCPF" Method="spPesquisaFunCPF">
+    <Parameter Name="descricao" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="spPesquisaFunCPFResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

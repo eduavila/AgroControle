@@ -274,6 +274,34 @@ namespace sistemaCA
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idfuncionario);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spPesquisaTipoproduto")]
+		public ISingleResult<spPesquisaTipoprodutoResult1> spPesquisaTipoproduto1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
+			return ((ISingleResult<spPesquisaTipoprodutoResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spPesquisaFunNome")]
+		public ISingleResult<spPesquisaFunNomeResult> spPesquisaFunNome([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
+			return ((ISingleResult<spPesquisaFunNomeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spPesquisaFunId")]
+		public ISingleResult<spPesquisaFunIdResult> spPesquisaFunId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
+			return ((ISingleResult<spPesquisaFunIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spPesquisaFunCPF")]
+		public ISingleResult<spPesquisaFunCPFResult> spPesquisaFunCPF([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string descricao)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), descricao);
+			return ((ISingleResult<spPesquisaFunCPFResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblaplicacao")]
@@ -3910,6 +3938,938 @@ namespace sistemaCA
 		private string _sexo;
 		
 		public spVisualizarFuncionarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_funcionario", DbType="Int NOT NULL")]
+		public int id_funcionario
+		{
+			get
+			{
+				return this._id_funcionario;
+			}
+			set
+			{
+				if ((this._id_funcionario != value))
+				{
+					this._id_funcionario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_funcao", DbType="VarChar(80)")]
+		public string funcao
+		{
+			get
+			{
+				return this._funcao;
+			}
+			set
+			{
+				if ((this._funcao != value))
+				{
+					this._funcao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctps", DbType="VarChar(15)")]
+		public string ctps
+		{
+			get
+			{
+				return this._ctps;
+			}
+			set
+			{
+				if ((this._ctps != value))
+				{
+					this._ctps = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data_admissao", DbType="Date")]
+		public System.Nullable<System.DateTime> data_admissao
+		{
+			get
+			{
+				return this._data_admissao;
+			}
+			set
+			{
+				if ((this._data_admissao != value))
+				{
+					this._data_admissao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_renumeracao_mensal", DbType="Real")]
+		public System.Nullable<float> renumeracao_mensal
+		{
+			get
+			{
+				return this._renumeracao_mensal;
+			}
+			set
+			{
+				if ((this._renumeracao_mensal != value))
+				{
+					this._renumeracao_mensal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endere", DbType="VarChar(80)")]
+		public string endere
+		{
+			get
+			{
+				return this._endere;
+			}
+			set
+			{
+				if ((this._endere != value))
+				{
+					this._endere = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bairro", DbType="VarChar(80)")]
+		public string bairro
+		{
+			get
+			{
+				return this._bairro;
+			}
+			set
+			{
+				if ((this._bairro != value))
+				{
+					this._bairro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefone", DbType="VarChar(15)")]
+		public string telefone
+		{
+			get
+			{
+				return this._telefone;
+			}
+			set
+			{
+				if ((this._telefone != value))
+				{
+					this._telefone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(80)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this._email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rg", DbType="VarChar(15)")]
+		public string rg
+		{
+			get
+			{
+				return this._rg;
+			}
+			set
+			{
+				if ((this._rg != value))
+				{
+					this._rg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cpf", DbType="VarChar(15)")]
+		public string cpf
+		{
+			get
+			{
+				return this._cpf;
+			}
+			set
+			{
+				if ((this._cpf != value))
+				{
+					this._cpf = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(180)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this._obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_celular", DbType="VarChar(15)")]
+		public string celular
+		{
+			get
+			{
+				return this._celular;
+			}
+			set
+			{
+				if ((this._celular != value))
+				{
+					this._celular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sobrenome", DbType="VarChar(80)")]
+		public string sobrenome
+		{
+			get
+			{
+				return this._sobrenome;
+			}
+			set
+			{
+				if ((this._sobrenome != value))
+				{
+					this._sobrenome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="NChar(2)")]
+		public string sexo
+		{
+			get
+			{
+				return this._sexo;
+			}
+			set
+			{
+				if ((this._sexo != value))
+				{
+					this._sexo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spPesquisaTipoprodutoResult1
+	{
+		
+		private int _id_tipoproduto;
+		
+		private string _descicao;
+		
+		public spPesquisaTipoprodutoResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipoproduto", DbType="Int NOT NULL")]
+		public int id_tipoproduto
+		{
+			get
+			{
+				return this._id_tipoproduto;
+			}
+			set
+			{
+				if ((this._id_tipoproduto != value))
+				{
+					this._id_tipoproduto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descicao", DbType="VarChar(80)")]
+		public string descicao
+		{
+			get
+			{
+				return this._descicao;
+			}
+			set
+			{
+				if ((this._descicao != value))
+				{
+					this._descicao = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spPesquisaFunNomeResult
+	{
+		
+		private int _id_funcionario;
+		
+		private string _nome;
+		
+		private string _funcao;
+		
+		private string _ctps;
+		
+		private System.Nullable<System.DateTime> _data_admissao;
+		
+		private System.Nullable<float> _renumeracao_mensal;
+		
+		private string _endere;
+		
+		private string _bairro;
+		
+		private string _telefone;
+		
+		private string _email;
+		
+		private string _rg;
+		
+		private string _cpf;
+		
+		private string _obs;
+		
+		private string _celular;
+		
+		private string _sobrenome;
+		
+		private string _sexo;
+		
+		public spPesquisaFunNomeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_funcionario", DbType="Int NOT NULL")]
+		public int id_funcionario
+		{
+			get
+			{
+				return this._id_funcionario;
+			}
+			set
+			{
+				if ((this._id_funcionario != value))
+				{
+					this._id_funcionario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_funcao", DbType="VarChar(80)")]
+		public string funcao
+		{
+			get
+			{
+				return this._funcao;
+			}
+			set
+			{
+				if ((this._funcao != value))
+				{
+					this._funcao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctps", DbType="VarChar(15)")]
+		public string ctps
+		{
+			get
+			{
+				return this._ctps;
+			}
+			set
+			{
+				if ((this._ctps != value))
+				{
+					this._ctps = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data_admissao", DbType="Date")]
+		public System.Nullable<System.DateTime> data_admissao
+		{
+			get
+			{
+				return this._data_admissao;
+			}
+			set
+			{
+				if ((this._data_admissao != value))
+				{
+					this._data_admissao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_renumeracao_mensal", DbType="Real")]
+		public System.Nullable<float> renumeracao_mensal
+		{
+			get
+			{
+				return this._renumeracao_mensal;
+			}
+			set
+			{
+				if ((this._renumeracao_mensal != value))
+				{
+					this._renumeracao_mensal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endere", DbType="VarChar(80)")]
+		public string endere
+		{
+			get
+			{
+				return this._endere;
+			}
+			set
+			{
+				if ((this._endere != value))
+				{
+					this._endere = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bairro", DbType="VarChar(80)")]
+		public string bairro
+		{
+			get
+			{
+				return this._bairro;
+			}
+			set
+			{
+				if ((this._bairro != value))
+				{
+					this._bairro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefone", DbType="VarChar(15)")]
+		public string telefone
+		{
+			get
+			{
+				return this._telefone;
+			}
+			set
+			{
+				if ((this._telefone != value))
+				{
+					this._telefone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(80)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this._email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rg", DbType="VarChar(15)")]
+		public string rg
+		{
+			get
+			{
+				return this._rg;
+			}
+			set
+			{
+				if ((this._rg != value))
+				{
+					this._rg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cpf", DbType="VarChar(15)")]
+		public string cpf
+		{
+			get
+			{
+				return this._cpf;
+			}
+			set
+			{
+				if ((this._cpf != value))
+				{
+					this._cpf = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(180)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this._obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_celular", DbType="VarChar(15)")]
+		public string celular
+		{
+			get
+			{
+				return this._celular;
+			}
+			set
+			{
+				if ((this._celular != value))
+				{
+					this._celular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sobrenome", DbType="VarChar(80)")]
+		public string sobrenome
+		{
+			get
+			{
+				return this._sobrenome;
+			}
+			set
+			{
+				if ((this._sobrenome != value))
+				{
+					this._sobrenome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="NChar(2)")]
+		public string sexo
+		{
+			get
+			{
+				return this._sexo;
+			}
+			set
+			{
+				if ((this._sexo != value))
+				{
+					this._sexo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spPesquisaFunIdResult
+	{
+		
+		private int _id_funcionario;
+		
+		private string _nome;
+		
+		private string _funcao;
+		
+		private string _ctps;
+		
+		private System.Nullable<System.DateTime> _data_admissao;
+		
+		private System.Nullable<float> _renumeracao_mensal;
+		
+		private string _endere;
+		
+		private string _bairro;
+		
+		private string _telefone;
+		
+		private string _email;
+		
+		private string _rg;
+		
+		private string _cpf;
+		
+		private string _obs;
+		
+		private string _celular;
+		
+		private string _sobrenome;
+		
+		private string _sexo;
+		
+		public spPesquisaFunIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_funcionario", DbType="Int NOT NULL")]
+		public int id_funcionario
+		{
+			get
+			{
+				return this._id_funcionario;
+			}
+			set
+			{
+				if ((this._id_funcionario != value))
+				{
+					this._id_funcionario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string nome
+		{
+			get
+			{
+				return this._nome;
+			}
+			set
+			{
+				if ((this._nome != value))
+				{
+					this._nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_funcao", DbType="VarChar(80)")]
+		public string funcao
+		{
+			get
+			{
+				return this._funcao;
+			}
+			set
+			{
+				if ((this._funcao != value))
+				{
+					this._funcao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ctps", DbType="VarChar(15)")]
+		public string ctps
+		{
+			get
+			{
+				return this._ctps;
+			}
+			set
+			{
+				if ((this._ctps != value))
+				{
+					this._ctps = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data_admissao", DbType="Date")]
+		public System.Nullable<System.DateTime> data_admissao
+		{
+			get
+			{
+				return this._data_admissao;
+			}
+			set
+			{
+				if ((this._data_admissao != value))
+				{
+					this._data_admissao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_renumeracao_mensal", DbType="Real")]
+		public System.Nullable<float> renumeracao_mensal
+		{
+			get
+			{
+				return this._renumeracao_mensal;
+			}
+			set
+			{
+				if ((this._renumeracao_mensal != value))
+				{
+					this._renumeracao_mensal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_endere", DbType="VarChar(80)")]
+		public string endere
+		{
+			get
+			{
+				return this._endere;
+			}
+			set
+			{
+				if ((this._endere != value))
+				{
+					this._endere = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bairro", DbType="VarChar(80)")]
+		public string bairro
+		{
+			get
+			{
+				return this._bairro;
+			}
+			set
+			{
+				if ((this._bairro != value))
+				{
+					this._bairro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefone", DbType="VarChar(15)")]
+		public string telefone
+		{
+			get
+			{
+				return this._telefone;
+			}
+			set
+			{
+				if ((this._telefone != value))
+				{
+					this._telefone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(80)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this._email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_rg", DbType="VarChar(15)")]
+		public string rg
+		{
+			get
+			{
+				return this._rg;
+			}
+			set
+			{
+				if ((this._rg != value))
+				{
+					this._rg = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cpf", DbType="VarChar(15)")]
+		public string cpf
+		{
+			get
+			{
+				return this._cpf;
+			}
+			set
+			{
+				if ((this._cpf != value))
+				{
+					this._cpf = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(180)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this._obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_celular", DbType="VarChar(15)")]
+		public string celular
+		{
+			get
+			{
+				return this._celular;
+			}
+			set
+			{
+				if ((this._celular != value))
+				{
+					this._celular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sobrenome", DbType="VarChar(80)")]
+		public string sobrenome
+		{
+			get
+			{
+				return this._sobrenome;
+			}
+			set
+			{
+				if ((this._sobrenome != value))
+				{
+					this._sobrenome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sexo", DbType="NChar(2)")]
+		public string sexo
+		{
+			get
+			{
+				return this._sexo;
+			}
+			set
+			{
+				if ((this._sexo != value))
+				{
+					this._sexo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spPesquisaFunCPFResult
+	{
+		
+		private int _id_funcionario;
+		
+		private string _nome;
+		
+		private string _funcao;
+		
+		private string _ctps;
+		
+		private System.Nullable<System.DateTime> _data_admissao;
+		
+		private System.Nullable<float> _renumeracao_mensal;
+		
+		private string _endere;
+		
+		private string _bairro;
+		
+		private string _telefone;
+		
+		private string _email;
+		
+		private string _rg;
+		
+		private string _cpf;
+		
+		private string _obs;
+		
+		private string _celular;
+		
+		private string _sobrenome;
+		
+		private string _sexo;
+		
+		public spPesquisaFunCPFResult()
 		{
 		}
 		

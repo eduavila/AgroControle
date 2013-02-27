@@ -54,7 +54,7 @@ namespace sistemaCA.views.funcionario
             dtp_admisao.Value = DateTime.Parse(Func.data_admissao.ToString());
             tb_renumeracao.Text = Func.renumeracao_mensal.ToString();
             tb_email.Text = Func.email;
-
+            cb_sexo.Text = Func.sexo;
             tb_telefone.Text = Func.telefone;
 
             tb_celular.Text = Func.celular;
@@ -136,6 +136,7 @@ namespace sistemaCA.views.funcionario
                 Func.ctps = tb_ctps.Text;
                 Func.rg = tb_rg.Text;
                 Func.endere = tb_endereco.Text;
+                Func.sexo = cb_sexo.Text;
                 Func.bairro = tb_bairro.Text;
                 Func.funcao = tb_funcao.Text;
                 Func.data_admissao = dtp_admisao.Value;
@@ -157,7 +158,7 @@ namespace sistemaCA.views.funcionario
                 tb_ctps.Text = "";
                 tb_endereco.Text = "";
                 tb_bairro.Text = "";
-              
+                cb_sexo.Text = "";              
                 tb_funcao.Text = "";
                 tb_renumeracao.Text = "";
                 tb_email.Text = "";

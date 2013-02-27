@@ -60,7 +60,7 @@
             this.tb_obs = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_sexo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dtp_admisao
@@ -332,23 +332,24 @@
             this.label17.TabIndex = 67;
             this.label17.Text = "Sexo";
             // 
-            // comboBox1
+            // cb_sexo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cb_sexo.AccessibleRole = System.Windows.Forms.AccessibleRole.SplitButton;
+            this.cb_sexo.FormattingEnabled = true;
+            this.cb_sexo.Items.AddRange(new object[] {
             "M",
             "F"});
-            this.comboBox1.Location = new System.Drawing.Point(320, 190);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(54, 21);
-            this.comboBox1.TabIndex = 68;
+            this.cb_sexo.Location = new System.Drawing.Point(320, 190);
+            this.cb_sexo.Name = "cb_sexo";
+            this.cb_sexo.Size = new System.Drawing.Size(54, 21);
+            this.cb_sexo.TabIndex = 68;
             // 
             // form_cadastro_fu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 490);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cb_sexo);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tb_obs);
@@ -427,6 +428,6 @@
         public System.Windows.Forms.TextBox tb_obs;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cb_sexo;
     }
 }

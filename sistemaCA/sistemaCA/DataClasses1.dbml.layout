@@ -74,7 +74,7 @@
         <elementListCompartment Id="d466ddc4-0080-4bfe-97af-bc38a5029fc1" absoluteBounds="7.0150000000000006, 14.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8 : 5.22280110677083); (8.375 : 5.59780110677083); (8.375 : 5.85740397135417); (9.79166666666667 : 5.85740397135417 : JumpStart); (9.95833333333333 : 5.85740397135417 : JumpEnd); (16.0015374615385 : 5.85740397135417); (16.3765374615385 : 5.48240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8 : 5.22280110677083); (8.375 : 5.59780110677083); (8.375 : 5.85740397135417); (16.0015374615385 : 5.85740397135417); (16.3765374615385 : 5.48240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tblben/tblben_tblaplicacao" />
       <nodes>
         <classShapeMoniker Id="24443062-a15c-45d7-911e-757c7670d28e" />

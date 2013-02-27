@@ -210,4 +210,47 @@
       <Column Name="descicao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.spVisualizarFuncionario" Method="spVisualizarFuncionario">
+    <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spVisualizarFuncionarioResult">
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="funcao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="ctps" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="data_admissao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="renumeracao_mensal" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="endere" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="bairro" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="rg" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(180)" CanBeNull="true" />
+      <Column Name="celular" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sobrenome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAlterarFuncionario" Method="spAlterarFuncionario">
+    <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="funcao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="ctps" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="renumeracao" Type="System.Single" DbType="Real" />
+    <Parameter Name="endere" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="bairro" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="telefone" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="email" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="rg" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="obs" Type="System.String" DbType="VarChar(180)" />
+    <Parameter Name="celular" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="sobrenome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="sexo" Type="System.String" DbType="NChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spDeletarFuncionario" Method="spDeletarFuncionario">
+    <Parameter Name="idfuncionario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

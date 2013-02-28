@@ -55,9 +55,14 @@
             // cb_tipoproduto
             // 
             this.cb_tipoproduto.FormattingEnabled = true;
+            this.cb_tipoproduto.Items.AddRange(new object[] {
+            "À lanço",
+            "Linha",
+            "Manual",
+            "Direto"});
             this.cb_tipoproduto.Location = new System.Drawing.Point(258, 143);
             this.cb_tipoproduto.Name = "cb_tipoproduto";
-            this.cb_tipoproduto.Size = new System.Drawing.Size(146, 21);
+            this.cb_tipoproduto.Size = new System.Drawing.Size(118, 21);
             this.cb_tipoproduto.TabIndex = 18;
             // 
             // label3

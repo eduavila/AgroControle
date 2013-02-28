@@ -103,8 +103,10 @@
             // 
             this.cb_cultivo.FormattingEnabled = true;
             this.cb_cultivo.Items.AddRange(new object[] {
-            "Direto",
-            "Pivo"});
+            "À lanço",
+            "Linha",
+            "Manual",
+            "Direto"});
             this.cb_cultivo.Location = new System.Drawing.Point(263, 108);
             this.cb_cultivo.Name = "cb_cultivo";
             this.cb_cultivo.Size = new System.Drawing.Size(121, 21);

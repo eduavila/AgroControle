@@ -144,6 +144,25 @@
       <DependentUpon>FormTipoCultura.cs</DependentUpon>
     </Compile>
     <Compile Include="views\safra\Safra.cs" />
+    <Compile Include="views\talhao\FormAtualizarTalhao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\talhao\FormAtualizarTalhao.Designer.cs">
+      <DependentUpon>FormAtualizarTalhao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\talhao\FormCadastroTalhao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\talhao\FormCadastroTalhao.Designer.cs">
+      <DependentUpon>FormCadastroTalhao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\talhao\FormTalhao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\talhao\FormTalhao.Designer.cs">
+      <DependentUpon>FormTalhao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\talhao\Talhao.cs" />
     <Compile Include="views\telasplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +224,15 @@
     <EmbeddedResource Include="views\safra\FormTipoCultura.resx">
       <DependentUpon>FormTipoCultura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\talhao\FormAtualizarTalhao.resx">
+      <DependentUpon>FormAtualizarTalhao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\talhao\FormCadastroTalhao.resx">
+      <DependentUpon>FormCadastroTalhao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\talhao\FormTalhao.resx">
+      <DependentUpon>FormTalhao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\telasplash.resx">
       <DependentUpon>telasplash.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,7 +271,6 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="views\bens\" />
-    <Folder Include="views\talhao\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

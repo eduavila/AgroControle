@@ -1,9 +1,9 @@
-AgroControle v1.0
+AgroControle
 ==========================================
 
-Projeto do 3ª Semestre de Gestão da Tecnologia da Informação da Faculdade LaSalle Lucas do Rio Verde.
+Projeto do 3ï¿½ Semestre de Gestï¿½o da Tecnologia da Informaï¿½ï¿½o da Faculdade LaSalle Lucas do Rio Verde.
 
-Grupo Acadêmicos
+Grupo Acadï¿½micos
 * Eduardo Avila Malheiros
 * Matheus Pessoa
 

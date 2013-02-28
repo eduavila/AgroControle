@@ -174,6 +174,7 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_alterar);
             this.Name = "FormProdutoAtualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizar Produto";
             this.Load += new System.EventHandler(this.FromProdutoAtulizar_Load);
             this.ResumeLayout(false);

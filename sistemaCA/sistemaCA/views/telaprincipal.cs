@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaCA.views.bens;
 using sistemaCA.views.produtos;
 using sistemaCA.views.safra;
 using sistemaCA.views.talhao;
@@ -77,6 +78,12 @@ namespace sistemaCA.views
         {
             FormTalhao formtalhao = new FormTalhao();
             formtalhao.Show();
+        }
+
+        private void bensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formbens formben = new Formbens();
+            formben.Show();
         }
     }
 }

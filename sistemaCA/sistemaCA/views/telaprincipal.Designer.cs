@@ -83,6 +83,7 @@
             this.bensToolStripMenuItem.Name = "bensToolStripMenuItem";
             this.bensToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bensToolStripMenuItem.Text = "Bens";
+            this.bensToolStripMenuItem.Click += new System.EventHandler(this.bensToolStripMenuItem_Click);
             // 
             // talhãoToolStripMenuItem
             // 

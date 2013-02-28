@@ -14,9 +14,9 @@
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
-      <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
       <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
       <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
+      <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblbens" Member="tblbens">
@@ -101,17 +101,6 @@
       <Association Name="tblsafra_tblrevisaofutura" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tbltalhao" Member="tbltalhaos">
-    <Type Name="tbltalhao">
-      <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="descricao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="localizacao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="tamanho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Column Name="sistemaCutivo" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Association Name="tbltalhao_tblaplicacao" Member="tblaplicacaos" ThisKey="id_talhao" OtherKey="id_talhao" Type="tblaplicacao" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblusuario" Member="tblusuarios">
     <Type Name="tblusuario">
       <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -159,6 +148,17 @@
       <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
       <Association Name="tblsafra_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_safra" OtherKey="id_safra" Type="tblrevisaofutura" />
       <Association Name="tblcultura_tblsafra" Member="tblcultura" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblcultura" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbltalhao" Member="tbltalhaos">
+    <Type Name="tbltalhao">
+      <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="localizacao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="tamanho" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="sistemaCutivo" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Association Name="tbltalhao_tblaplicacao" Member="tblaplicacaos" ThisKey="id_talhao" OtherKey="id_talhao" Type="tblaplicacao" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">
@@ -382,6 +382,16 @@
     <ElementType Name="spListarTipoCulturaResult">
       <Column Name="id_cultura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="nome" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spListarTalhao" Method="spListarTalhao">
+    <ElementType Name="spListarTalhaoResult">
+      <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="localizacao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="tamanho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="sistemaCutivo" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

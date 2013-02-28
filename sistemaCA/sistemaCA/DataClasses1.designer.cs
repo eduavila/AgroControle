@@ -54,9 +54,6 @@ namespace sistemaCA
     partial void Inserttblrevisaofutura(tblrevisaofutura instance);
     partial void Updatetblrevisaofutura(tblrevisaofutura instance);
     partial void Deletetblrevisaofutura(tblrevisaofutura instance);
-    partial void Inserttbltalhao(tbltalhao instance);
-    partial void Updatetbltalhao(tbltalhao instance);
-    partial void Deletetbltalhao(tbltalhao instance);
     partial void Inserttblusuario(tblusuario instance);
     partial void Updatetblusuario(tblusuario instance);
     partial void Deletetblusuario(tblusuario instance);
@@ -69,6 +66,9 @@ namespace sistemaCA
     partial void Inserttblsafra(tblsafra instance);
     partial void Updatetblsafra(tblsafra instance);
     partial void Deletetblsafra(tblsafra instance);
+    partial void Inserttbltalhao(tbltalhao instance);
+    partial void Updatetbltalhao(tbltalhao instance);
+    partial void Deletetbltalhao(tbltalhao instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -165,14 +165,6 @@ namespace sistemaCA
 			}
 		}
 		
-		public System.Data.Linq.Table<tbltalhao> tbltalhaos
-		{
-			get
-			{
-				return this.GetTable<tbltalhao>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblusuario> tblusuarios
 		{
 			get
@@ -202,6 +194,14 @@ namespace sistemaCA
 			get
 			{
 				return this.GetTable<tblsafra>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbltalhao> tbltalhaos
+		{
+			get
+			{
+				return this.GetTable<tbltalhao>();
 			}
 		}
 		
@@ -351,6 +351,13 @@ namespace sistemaCA
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<spListarTipoCulturaResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spListarTalhao")]
+		public ISingleResult<spListarTalhaoResult> spListarTalhao()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<spListarTalhaoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblaplicacao")]
@@ -383,11 +390,11 @@ namespace sistemaCA
 		
 		private EntityRef<tblprodutosaplicado> _tblprodutosaplicado;
 		
-		private EntityRef<tbltalhao> _tbltalhao;
-		
 		private EntityRef<tblfuncionario> _tblfuncionario;
 		
 		private EntityRef<tblsafra> _tblsafra;
+		
+		private EntityRef<tbltalhao> _tbltalhao;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -419,9 +426,9 @@ namespace sistemaCA
 		{
 			this._tblben = default(EntityRef<tblben>);
 			this._tblprodutosaplicado = default(EntityRef<tblprodutosaplicado>);
-			this._tbltalhao = default(EntityRef<tbltalhao>);
 			this._tblfuncionario = default(EntityRef<tblfuncionario>);
 			this._tblsafra = default(EntityRef<tblsafra>);
+			this._tbltalhao = default(EntityRef<tbltalhao>);
 			OnCreated();
 		}
 		
@@ -713,40 +720,6 @@ namespace sistemaCA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbltalhao_tblaplicacao", Storage="_tbltalhao", ThisKey="id_talhao", OtherKey="id_talhao", IsForeignKey=true)]
-		public tbltalhao tbltalhao
-		{
-			get
-			{
-				return this._tbltalhao.Entity;
-			}
-			set
-			{
-				tbltalhao previousValue = this._tbltalhao.Entity;
-				if (((previousValue != value) 
-							|| (this._tbltalhao.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tbltalhao.Entity = null;
-						previousValue.tblaplicacaos.Remove(this);
-					}
-					this._tbltalhao.Entity = value;
-					if ((value != null))
-					{
-						value.tblaplicacaos.Add(this);
-						this._id_talhao = value.id_talhao;
-					}
-					else
-					{
-						this._id_talhao = default(int);
-					}
-					this.SendPropertyChanged("tbltalhao");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblfuncionario_tblaplicacao", Storage="_tblfuncionario", ThisKey="id_funcionario", OtherKey="id_funcionario", IsForeignKey=true)]
 		public tblfuncionario tblfuncionario
 		{
@@ -811,6 +784,40 @@ namespace sistemaCA
 						this._id_safra = default(int);
 					}
 					this.SendPropertyChanged("tblsafra");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbltalhao_tblaplicacao", Storage="_tbltalhao", ThisKey="id_talhao", OtherKey="id_talhao", IsForeignKey=true)]
+		public tbltalhao tbltalhao
+		{
+			get
+			{
+				return this._tbltalhao.Entity;
+			}
+			set
+			{
+				tbltalhao previousValue = this._tbltalhao.Entity;
+				if (((previousValue != value) 
+							|| (this._tbltalhao.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tbltalhao.Entity = null;
+						previousValue.tblaplicacaos.Remove(this);
+					}
+					this._tbltalhao.Entity = value;
+					if ((value != null))
+					{
+						value.tblaplicacaos.Add(this);
+						this._id_talhao = value.id_talhao;
+					}
+					else
+					{
+						this._id_talhao = default(int);
+					}
+					this.SendPropertyChanged("tbltalhao");
 				}
 			}
 		}
@@ -2528,216 +2535,6 @@ namespace sistemaCA
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbltalhao")]
-	public partial class tbltalhao : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_talhao;
-		
-		private string _descricao;
-		
-		private string _localizacao;
-		
-		private int _tamanho;
-		
-		private string _obs;
-		
-		private string _sistemaCutivo;
-		
-		private EntitySet<tblaplicacao> _tblaplicacaos;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_talhaoChanging(int value);
-    partial void Onid_talhaoChanged();
-    partial void OndescricaoChanging(string value);
-    partial void OndescricaoChanged();
-    partial void OnlocalizacaoChanging(string value);
-    partial void OnlocalizacaoChanged();
-    partial void OntamanhoChanging(int value);
-    partial void OntamanhoChanged();
-    partial void OnobsChanging(string value);
-    partial void OnobsChanged();
-    partial void OnsistemaCutivoChanging(string value);
-    partial void OnsistemaCutivoChanged();
-    #endregion
-		
-		public tbltalhao()
-		{
-			this._tblaplicacaos = new EntitySet<tblaplicacao>(new Action<tblaplicacao>(this.attach_tblaplicacaos), new Action<tblaplicacao>(this.detach_tblaplicacaos));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_talhao", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_talhao
-		{
-			get
-			{
-				return this._id_talhao;
-			}
-			set
-			{
-				if ((this._id_talhao != value))
-				{
-					this.Onid_talhaoChanging(value);
-					this.SendPropertyChanging();
-					this._id_talhao = value;
-					this.SendPropertyChanged("id_talhao");
-					this.Onid_talhaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string descricao
-		{
-			get
-			{
-				return this._descricao;
-			}
-			set
-			{
-				if ((this._descricao != value))
-				{
-					this.OndescricaoChanging(value);
-					this.SendPropertyChanging();
-					this._descricao = value;
-					this.SendPropertyChanged("descricao");
-					this.OndescricaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localizacao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-		public string localizacao
-		{
-			get
-			{
-				return this._localizacao;
-			}
-			set
-			{
-				if ((this._localizacao != value))
-				{
-					this.OnlocalizacaoChanging(value);
-					this.SendPropertyChanging();
-					this._localizacao = value;
-					this.SendPropertyChanged("localizacao");
-					this.OnlocalizacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tamanho", DbType="Int NOT NULL")]
-		public int tamanho
-		{
-			get
-			{
-				return this._tamanho;
-			}
-			set
-			{
-				if ((this._tamanho != value))
-				{
-					this.OntamanhoChanging(value);
-					this.SendPropertyChanging();
-					this._tamanho = value;
-					this.SendPropertyChanged("tamanho");
-					this.OntamanhoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
-		public string obs
-		{
-			get
-			{
-				return this._obs;
-			}
-			set
-			{
-				if ((this._obs != value))
-				{
-					this.OnobsChanging(value);
-					this.SendPropertyChanging();
-					this._obs = value;
-					this.SendPropertyChanged("obs");
-					this.OnobsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sistemaCutivo", DbType="VarChar(80)")]
-		public string sistemaCutivo
-		{
-			get
-			{
-				return this._sistemaCutivo;
-			}
-			set
-			{
-				if ((this._sistemaCutivo != value))
-				{
-					this.OnsistemaCutivoChanging(value);
-					this.SendPropertyChanging();
-					this._sistemaCutivo = value;
-					this.SendPropertyChanged("sistemaCutivo");
-					this.OnsistemaCutivoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbltalhao_tblaplicacao", Storage="_tblaplicacaos", ThisKey="id_talhao", OtherKey="id_talhao")]
-		public EntitySet<tblaplicacao> tblaplicacaos
-		{
-			get
-			{
-				return this._tblaplicacaos;
-			}
-			set
-			{
-				this._tblaplicacaos.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tblaplicacaos(tblaplicacao entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbltalhao = this;
-		}
-		
-		private void detach_tblaplicacaos(tblaplicacao entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbltalhao = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblusuario")]
 	public partial class tblusuario : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3712,6 +3509,216 @@ namespace sistemaCA
 		{
 			this.SendPropertyChanging();
 			entity.tblsafra = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbltalhao")]
+	public partial class tbltalhao : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_talhao;
+		
+		private string _descricao;
+		
+		private string _localizacao;
+		
+		private System.Nullable<double> _tamanho;
+		
+		private string _obs;
+		
+		private string _sistemaCutivo;
+		
+		private EntitySet<tblaplicacao> _tblaplicacaos;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_talhaoChanging(int value);
+    partial void Onid_talhaoChanged();
+    partial void OndescricaoChanging(string value);
+    partial void OndescricaoChanged();
+    partial void OnlocalizacaoChanging(string value);
+    partial void OnlocalizacaoChanged();
+    partial void OntamanhoChanging(System.Nullable<double> value);
+    partial void OntamanhoChanged();
+    partial void OnobsChanging(string value);
+    partial void OnobsChanged();
+    partial void OnsistemaCutivoChanging(string value);
+    partial void OnsistemaCutivoChanged();
+    #endregion
+		
+		public tbltalhao()
+		{
+			this._tblaplicacaos = new EntitySet<tblaplicacao>(new Action<tblaplicacao>(this.attach_tblaplicacaos), new Action<tblaplicacao>(this.detach_tblaplicacaos));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_talhao", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_talhao
+		{
+			get
+			{
+				return this._id_talhao;
+			}
+			set
+			{
+				if ((this._id_talhao != value))
+				{
+					this.Onid_talhaoChanging(value);
+					this.SendPropertyChanging();
+					this._id_talhao = value;
+					this.SendPropertyChanged("id_talhao");
+					this.Onid_talhaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this.OndescricaoChanging(value);
+					this.SendPropertyChanging();
+					this._descricao = value;
+					this.SendPropertyChanged("descricao");
+					this.OndescricaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localizacao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string localizacao
+		{
+			get
+			{
+				return this._localizacao;
+			}
+			set
+			{
+				if ((this._localizacao != value))
+				{
+					this.OnlocalizacaoChanging(value);
+					this.SendPropertyChanging();
+					this._localizacao = value;
+					this.SendPropertyChanged("localizacao");
+					this.OnlocalizacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tamanho", DbType="Float")]
+		public System.Nullable<double> tamanho
+		{
+			get
+			{
+				return this._tamanho;
+			}
+			set
+			{
+				if ((this._tamanho != value))
+				{
+					this.OntamanhoChanging(value);
+					this.SendPropertyChanging();
+					this._tamanho = value;
+					this.SendPropertyChanged("tamanho");
+					this.OntamanhoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this.OnobsChanging(value);
+					this.SendPropertyChanging();
+					this._obs = value;
+					this.SendPropertyChanged("obs");
+					this.OnobsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sistemaCutivo", DbType="VarChar(80)")]
+		public string sistemaCutivo
+		{
+			get
+			{
+				return this._sistemaCutivo;
+			}
+			set
+			{
+				if ((this._sistemaCutivo != value))
+				{
+					this.OnsistemaCutivoChanging(value);
+					this.SendPropertyChanging();
+					this._sistemaCutivo = value;
+					this.SendPropertyChanged("sistemaCutivo");
+					this.OnsistemaCutivoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbltalhao_tblaplicacao", Storage="_tblaplicacaos", ThisKey="id_talhao", OtherKey="id_talhao")]
+		public EntitySet<tblaplicacao> tblaplicacaos
+		{
+			get
+			{
+				return this._tblaplicacaos;
+			}
+			set
+			{
+				this._tblaplicacaos.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_tblaplicacaos(tblaplicacao entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbltalhao = this;
+		}
+		
+		private void detach_tblaplicacaos(tblaplicacao entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbltalhao = null;
 		}
 	}
 	
@@ -5578,6 +5585,122 @@ namespace sistemaCA
 				if ((this._nome != value))
 				{
 					this._nome = value;
+				}
+			}
+		}
+	}
+	
+	public partial class spListarTalhaoResult
+	{
+		
+		private int _id_talhao;
+		
+		private string _descricao;
+		
+		private string _localizacao;
+		
+		private int _tamanho;
+		
+		private string _obs;
+		
+		private string _sistemaCutivo;
+		
+		public spListarTalhaoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_talhao", DbType="Int NOT NULL")]
+		public int id_talhao
+		{
+			get
+			{
+				return this._id_talhao;
+			}
+			set
+			{
+				if ((this._id_talhao != value))
+				{
+					this._id_talhao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string descricao
+		{
+			get
+			{
+				return this._descricao;
+			}
+			set
+			{
+				if ((this._descricao != value))
+				{
+					this._descricao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_localizacao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string localizacao
+		{
+			get
+			{
+				return this._localizacao;
+			}
+			set
+			{
+				if ((this._localizacao != value))
+				{
+					this._localizacao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tamanho", DbType="Int NOT NULL")]
+		public int tamanho
+		{
+			get
+			{
+				return this._tamanho;
+			}
+			set
+			{
+				if ((this._tamanho != value))
+				{
+					this._tamanho = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obs", DbType="VarChar(150)")]
+		public string obs
+		{
+			get
+			{
+				return this._obs;
+			}
+			set
+			{
+				if ((this._obs != value))
+				{
+					this._obs = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sistemaCutivo", DbType="VarChar(80)")]
+		public string sistemaCutivo
+		{
+			get
+			{
+				return this._sistemaCutivo;
+			}
+			set
+			{
+				if ((this._sistemaCutivo != value))
+				{
+					this._sistemaCutivo = value;
 				}
 			}
 		}

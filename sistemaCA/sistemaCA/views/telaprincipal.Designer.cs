@@ -89,6 +89,7 @@
             this.talhãoToolStripMenuItem.Name = "talhãoToolStripMenuItem";
             this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.talhãoToolStripMenuItem.Text = "Talhão";
+            this.talhãoToolStripMenuItem.Click += new System.EventHandler(this.talhãoToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 

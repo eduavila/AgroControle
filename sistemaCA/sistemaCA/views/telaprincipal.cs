@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaCA.views.produtos;
 using sistemaCA.views.safra;
+using sistemaCA.views.talhao;
 
 namespace sistemaCA.views
 {
@@ -70,6 +71,12 @@ namespace sistemaCA.views
             FormSafra formsafra = new FormSafra();
             formsafra.Show();
 
+        }
+
+        private void talhãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTalhao formtalhao = new FormTalhao();
+            formtalhao.Show();
         }
     }
 }

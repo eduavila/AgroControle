@@ -37,10 +37,14 @@
             // 
             // dgw_cultura
             // 
+            this.dgw_cultura.AllowUserToAddRows = false;
             this.dgw_cultura.AllowUserToDeleteRows = false;
+            this.dgw_cultura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgw_cultura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgw_cultura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_cultura.Location = new System.Drawing.Point(12, 73);
             this.dgw_cultura.Name = "dgw_cultura";
+            this.dgw_cultura.ReadOnly = true;
             this.dgw_cultura.Size = new System.Drawing.Size(390, 139);
             this.dgw_cultura.TabIndex = 2;
             this.dgw_cultura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_cultura_CellContentClick);

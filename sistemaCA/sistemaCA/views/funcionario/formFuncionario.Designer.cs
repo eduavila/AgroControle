@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgw_funcionario = new System.Windows.Forms.DataGridView();
             this.btn_cadastrar = new System.Windows.Forms.Button();
@@ -41,25 +39,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_funcionario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(860, 513);
-            this.shapeContainer1.TabIndex = 0;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 12;
-            this.lineShape1.X2 = 847;
-            this.lineShape1.Y1 = 62;
-            this.lineShape1.Y2 = 62;
             // 
             // groupBox1
             // 
@@ -155,7 +134,6 @@
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.shapeContainer1);
             this.Name = "formFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionários";
@@ -171,8 +149,6 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgw_funcionario;
         private System.Windows.Forms.Button btn_cadastrar;

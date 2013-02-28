@@ -55,5 +55,10 @@ namespace sistemaCA.views.safra
             tb_tipocultura.Text = FormTipo.Id_cultura.ToString();
             
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

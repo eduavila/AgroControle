@@ -207,6 +207,7 @@
             this.Controls.Add(this.tb_tipocultura);
             this.Controls.Add(this.label4);
             this.Name = "FormAtualizarSafra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizar Safra";
             this.Load += new System.EventHandler(this.FormAtualizarSafra_Load);
             this.ResumeLayout(false);

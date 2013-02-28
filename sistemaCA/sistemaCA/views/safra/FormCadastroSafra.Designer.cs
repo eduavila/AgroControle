@@ -100,6 +100,7 @@
             this.button3.TabIndex = 24;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -174,6 +175,7 @@
             this.Controls.Add(this.tb_tipocultura);
             this.Controls.Add(this.label4);
             this.Name = "FormCadastroSafra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Safra";
             this.Load += new System.EventHandler(this.FromCadastroSafra_Load);
             this.ResumeLayout(false);

@@ -86,6 +86,8 @@ namespace sistemaCA.views.safra
 
                 safra.AtualizarSafra();
                 MessageBox.Show("Alterado com sucesso!");
+
+                Close();
             }
             catch (Exception erro)
             {
@@ -106,6 +108,7 @@ namespace sistemaCA.views.safra
                 safra.DeletarSafra(int.Parse(tb_idsafra.Text));
 
                 MessageBox.Show("Registro excluido com sucesso!");
+                Close();
 
             }
             else

@@ -145,6 +145,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.shapeContainer2);
             this.Name = "FormSafra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Safra";
             this.Load += new System.EventHandler(this.FormSafra_Load);
             this.groupBox1.ResumeLayout(false);

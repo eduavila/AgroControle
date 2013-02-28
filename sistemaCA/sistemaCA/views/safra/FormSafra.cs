@@ -54,12 +54,13 @@ namespace sistemaCA.views.safra
             idsafra = int.Parse(dgw_safra.Rows[selecionado].Cells["id_safra"].Value.ToString());
 
             FormAtualizarSafra fromAtualizar = new FormAtualizarSafra(idsafra);
-            fromAtualizar.Show();
+            fromAtualizar.ShowDialog();
            
             
             // atualiza grid safra
-            Safra safra = new Safra();
-            safra.ListarSafra(dgw_safra);
+            Safra safra2 = new Safra();
+
+            safra2.ListarSafra(dgw_safra);
 
         }
     }

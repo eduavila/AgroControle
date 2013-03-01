@@ -12,25 +12,11 @@
       <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
       <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
       <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
       <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblbens" Member="tblbens">
-    <Type Name="tblben">
-      <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="descricao" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
-      <Column Name="tipoben" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="codigoControle" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="data_aquisicao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="preco_aquisicao" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Column Name="horimetro_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hodometro_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tblben_tblaplicacao" Member="tblaplicacaos" ThisKey="id_ben" OtherKey="id_ben" Type="tblaplicacao" />
-      <Association Name="tblben_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_ben" OtherKey="id_ben" Type="tblrevisaofutura" />
+      <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblcultura" Member="tblculturas">
@@ -96,9 +82,9 @@
       <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_itenrevisao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblben_tblrevisaofutura" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblitenrevisao_tblrevisaofutura" Member="tblitenrevisao" ThisKey="id_itenrevisao" OtherKey="id_itenrevisao" Type="tblitenrevisao" IsForeignKey="true" />
       <Association Name="tblsafra_tblrevisaofutura" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
+      <Association Name="tblben_tblrevisaofutura" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblusuario" Member="tblusuarios">
@@ -159,6 +145,21 @@
       <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="sistemaCutivo" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Association Name="tbltalhao_tblaplicacao" Member="tblaplicacaos" ThisKey="id_talhao" OtherKey="id_talhao" Type="tblaplicacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblbens" Member="tblbens">
+    <Type Name="tblben">
+      <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="tipoben" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoControle" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="data_aquisicao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="preco_aquisicao" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="horimetro_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hodometro_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="placa" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Association Name="tblben_tblaplicacao" Member="tblaplicacaos" ThisKey="id_ben" OtherKey="id_ben" Type="tblaplicacao" />
+      <Association Name="tblben_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_ben" OtherKey="id_ben" Type="tblrevisaofutura" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">

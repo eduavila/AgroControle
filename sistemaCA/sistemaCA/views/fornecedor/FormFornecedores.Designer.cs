@@ -39,6 +39,7 @@
             // 
             // dgw_Fornecedores
             // 
+            this.dgw_Fornecedores.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
             this.dgw_Fornecedores.AllowUserToAddRows = false;
             this.dgw_Fornecedores.AllowUserToDeleteRows = false;
             this.dgw_Fornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -59,6 +60,7 @@
             this.btn_visualizar.TabIndex = 42;
             this.btn_visualizar.Text = "Visualizar";
             this.btn_visualizar.UseVisualStyleBackColor = true;
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // btn_cadastrar
             // 

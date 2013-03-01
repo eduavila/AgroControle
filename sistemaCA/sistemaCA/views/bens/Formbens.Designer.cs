@@ -32,6 +32,8 @@
             this.btn_visualizar = new System.Windows.Forms.Button();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_bens)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,31 +69,53 @@
             this.btn_cadastrar.TabIndex = 41;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgw_bens);
-            this.groupBox1.Location = new System.Drawing.Point(8, 88);
+            this.groupBox1.Location = new System.Drawing.Point(8, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(845, 406);
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Máquinarios";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(547, 30);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(301, 33);
+            this.groupBox2.TabIndex = 43;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Pesquisa";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 491);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(860, 22);
+            this.statusStrip1.TabIndex = 44;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // Formbens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 513);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_visualizar);
             this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.groupBox1);
             this.Name = "Formbens";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Máquinarios / Caminhões";
             this.Load += new System.EventHandler(this.Formbens_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_bens)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -101,5 +125,7 @@
         private System.Windows.Forms.Button btn_visualizar;
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

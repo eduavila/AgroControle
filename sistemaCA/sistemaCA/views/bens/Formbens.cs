@@ -22,5 +22,17 @@ namespace sistemaCA.views.bens
             Bens ben = new Bens();
             ben.VisualizarBens(dgw_bens);
         }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastrarBen Ben = new FormCadastrarBen();
+            Ben.ShowDialog();
+
+
+            // atualizar data grid termina de cadastrar
+
+            Bens ben = new Bens();
+            ben.VisualizarBens(dgw_bens);    
+        }
     }
 }

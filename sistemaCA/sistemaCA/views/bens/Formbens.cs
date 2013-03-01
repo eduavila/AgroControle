@@ -21,6 +21,17 @@ namespace sistemaCA.views.bens
         {
             Bens ben = new Bens();
             ben.VisualizarBens(dgw_bens);
+
+
+            dgw_bens.Columns["id_ben"].HeaderText = "ID";
+            dgw_bens.Columns["descricao"].HeaderText = "Descrição";
+            dgw_bens.Columns["tipoben"].HeaderText = "Tipo";
+            dgw_bens.Columns["codigoControle"].HeaderText = "Código Controle";
+            dgw_bens.Columns["data_aquisicao"].HeaderText = "Data Aquisição";
+            dgw_bens.Columns["preco_aquisicao"].HeaderText = "Preço Aquisição";
+            dgw_bens.Columns["horimetro_inicial"].HeaderText = "Horimetro(KM)";
+            dgw_bens.Columns["Hodometro_inicial"].HeaderText = "Horimetro(Horas)";
+            dgw_bens.Columns["placa"].HeaderText = "Placa";
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

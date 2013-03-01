@@ -82,6 +82,8 @@ namespace sistemaCA.views.bens
 
             // alterando bens.
             ben.AlterarBen(int.Parse(tb_id.Text));
+
+            Close();
         }
 
         private void btn_alterar_Click(object sender, EventArgs e)
@@ -98,6 +100,23 @@ namespace sistemaCA.views.bens
             mtb_horimetro.Enabled = true;
 
             btn_salvar.Visible = true;
+        }
+
+        private void btn_deletar_Click(object sender, EventArgs e)
+        {
+
+
+            var resultado = MessageBox.Show("Tem Certeza de quer excluir o Registro Selecionado ?", "Excluir Registro", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+
+                Bens ben = new Bens();
+                ben.DeletarBen(int.Parse(tb_id.Text));
+                Close();
+
+            }
+            
         }
     }
 }

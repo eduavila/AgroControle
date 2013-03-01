@@ -128,6 +128,30 @@ namespace sistemaCA.views.bens
         }
 
 
+        public void DeletarBen(int idben)
+        {
+            try
+            {
+                var result = from ben in Banco.tblbens
+                             where
+                                 ben.id_ben == idben
+                             select ben;
+
+                Ben = result.Single();
+
+                Banco.tblbens.DeleteOnSubmit(Ben);
+                Banco.SubmitChanges();
+
+                MessageBox.Show("Registro Excluido com Sucesso!");
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show(erro.Message);
+            }
+        }
+
 
 
     }

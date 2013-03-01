@@ -11,7 +11,7 @@ using sistemaCA.views.bens;
 using sistemaCA.views.produtos;
 using sistemaCA.views.safra;
 using sistemaCA.views.talhao;
-
+using sistemaCA.views.fornecedor;
 namespace sistemaCA.views
 {
     public partial class telaprincipal : Form
@@ -82,8 +82,14 @@ namespace sistemaCA.views
 
         private void bensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formbens formben = new Formbens();
-            formben.Show();
+            FormFornecedores fornecedor =new FormFornecedores();
+            fornecedor.Show();
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formbens Formben =new Formbens();
+            Formben.Show();
         }
     }
 }

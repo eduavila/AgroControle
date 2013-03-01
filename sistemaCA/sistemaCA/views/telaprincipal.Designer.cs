@@ -42,6 +42,7 @@
             this.cadastroUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,8 @@
             this.bensToolStripMenuItem,
             this.talhãoToolStripMenuItem,
             this.produtoToolStripMenuItem,
-            this.safraToolStripMenuItem});
+            this.safraToolStripMenuItem,
+            this.fornecedoresToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -74,35 +76,35 @@
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionario";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
             // bensToolStripMenuItem
             // 
             this.bensToolStripMenuItem.Name = "bensToolStripMenuItem";
-            this.bensToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bensToolStripMenuItem.Text = "Bens";
+            this.bensToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.bensToolStripMenuItem.Text = "Fornecedores";
             this.bensToolStripMenuItem.Click += new System.EventHandler(this.bensToolStripMenuItem_Click);
             // 
             // talhãoToolStripMenuItem
             // 
             this.talhãoToolStripMenuItem.Name = "talhãoToolStripMenuItem";
-            this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.talhãoToolStripMenuItem.Text = "Talhão";
             this.talhãoToolStripMenuItem.Click += new System.EventHandler(this.talhãoToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // safraToolStripMenuItem
             // 
             this.safraToolStripMenuItem.Name = "safraToolStripMenuItem";
-            this.safraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.safraToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.safraToolStripMenuItem.Text = "Safra";
             this.safraToolStripMenuItem.Click += new System.EventHandler(this.safraToolStripMenuItem_Click);
             // 
@@ -153,6 +155,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // fornecedoresToolStripMenuItem
+            // 
+            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Máquinas\\Implementos";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
+            // 
             // telaprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,5 +197,6 @@
         private System.Windows.Forms.ToolStripMenuItem safraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroUsuárioToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
     }
 }

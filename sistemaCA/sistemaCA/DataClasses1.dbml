@@ -26,21 +26,6 @@
       <Association Name="tblcultura_tblsafra" Member="tblsafras" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblsafra" />
     </Type>
   </Table>
-  <Table Name="dbo.tblfornecedor" Member="tblfornecedors">
-    <Type Name="tblfornecedor">
-      <Column Name="id_fornecedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nomefatasia" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
-      <Column Name="razaosocial" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
-      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="cnpj" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="endereco" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
-      <Column Name="cidade" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
-      <Column Name="fone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
-      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
-      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblprodutosaplicados" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblprodutosaplicado" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblproduto" Member="tblprodutos">
     <Type Name="tblproduto">
       <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -68,8 +53,8 @@
       <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_fornecedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblaplicacaos" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblaplicacao" />
-      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblfornecedor" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblfornecedor" IsForeignKey="true" />
       <Association Name="tblproduto_tblprodutosaplicado" Member="tblproduto" ThisKey="id_produto" OtherKey="id_produto" Type="tblproduto" IsForeignKey="true" />
+      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblfornecedor" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblfornecedor" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tblrevisaofuturas" Member="tblrevisaofuturas">
@@ -160,6 +145,22 @@
       <Column Name="placa" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Association Name="tblben_tblaplicacao" Member="tblaplicacaos" ThisKey="id_ben" OtherKey="id_ben" Type="tblaplicacao" />
       <Association Name="tblben_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_ben" OtherKey="id_ben" Type="tblrevisaofutura" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblfornecedor" Member="tblfornecedors">
+    <Type Name="tblfornecedor">
+      <Column Name="id_fornecedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomefatasia" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="razaosocial" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="cpf" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cnpj" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="endereco" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="cidade" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="fone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="ie" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblprodutosaplicados" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblprodutosaplicado" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">

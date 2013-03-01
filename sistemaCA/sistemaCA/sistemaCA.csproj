@@ -86,6 +86,19 @@
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FormProduto.cs" />
+    <Compile Include="views\fornecedor\FormCasdatroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\fornecedor\FormCasdatroFornecedor.Designer.cs">
+      <DependentUpon>FormCasdatroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\fornecedor\FormFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\fornecedor\FormFornecedores.Designer.cs">
+      <DependentUpon>FormFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\fornecedor\Fornecedores.cs" />
     <Compile Include="views\funcionario\formFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\bens\FormCadastraBen.resx">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\fornecedor\FormCasdatroFornecedor.resx">
+      <DependentUpon>FormCasdatroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\fornecedor\FormFornecedores.resx">
+      <DependentUpon>FormFornecedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\funcionario\formFuncionario.resx">
       <DependentUpon>formFuncionario.cs</DependentUpon>

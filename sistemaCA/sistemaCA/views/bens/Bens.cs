@@ -25,7 +25,7 @@ namespace sistemaCA.views.bens
         public Bens()
         {
             Banco = new DataClasses1DataContext();
-            
+            Ben = new tblben();
         
         }
 
@@ -50,6 +50,7 @@ namespace sistemaCA.views.bens
 
             try
             {
+
 
                 this.Ben.descricao = this.Descricao;
                 this.Ben.codigoControle = this.Cod_Controle;

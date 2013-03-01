@@ -73,6 +73,12 @@
     <Compile Include="views\bens\Formbens.Designer.cs">
       <DependentUpon>Formbens.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\bens\FormCadastraBen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\bens\FormCadastraBen.Designer.cs">
+      <DependentUpon>FormCadastraBen.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FormProduto.cs" />
     <Compile Include="views\funcionario\formFuncionario.cs">
       <SubType>Form</SubType>
@@ -197,6 +203,9 @@
     </None>
     <EmbeddedResource Include="views\bens\Formbens.resx">
       <DependentUpon>Formbens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\bens\FormCadastraBen.resx">
+      <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\funcionario\formFuncionario.resx">
       <DependentUpon>formFuncionario.cs</DependentUpon>

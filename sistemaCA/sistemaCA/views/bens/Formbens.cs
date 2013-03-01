@@ -35,5 +35,25 @@ namespace sistemaCA.views.bens
 
 
         }
+
+        private void btn_visualizar_Click(object sender, EventArgs e)
+        {
+
+            int selecionado = dgw_bens.CurrentCell.RowIndex;
+
+            int idbens;
+
+            idbens = int.Parse(dgw_bens.Rows[selecionado].Cells["id_ben"].Value.ToString());
+
+
+            // instanciando formulario alterar
+            FormAlterarBens formaltera = new FormAlterarBens(idbens);
+            formaltera.ShowDialog();
+
+            // atualizando data grid 
+            Bens ben = new Bens();
+            ben.VisualizarBens(dgw_bens);
+
+        }
     }
 }

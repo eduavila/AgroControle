@@ -58,6 +58,7 @@
             this.btn_visualizar.TabIndex = 42;
             this.btn_visualizar.Text = "Visualizar";
             this.btn_visualizar.UseVisualStyleBackColor = true;
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // btn_cadastrar
             // 

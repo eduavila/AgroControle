@@ -67,6 +67,12 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="views\bens\Bens.cs" />
+    <Compile Include="views\bens\FormAlterarBens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\bens\FormAlterarBens.Designer.cs">
+      <DependentUpon>FormAlterarBens.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\bens\Formbens.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="views\bens\FormAlterarBens.resx">
+      <DependentUpon>FormAlterarBens.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\bens\Formbens.resx">
       <DependentUpon>Formbens.cs</DependentUpon>
     </EmbeddedResource>

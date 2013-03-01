@@ -25,7 +25,7 @@ namespace sistemaCA.views.bens
             ben.Descricao = tb_descricao.Text;
             ben.TipoBens = cb_tipo.Text;
             ben.Data_Aquisicao = dtp_dataaquisicao.Value;
-            ben.Preco_Aquisicao =double.Parse(tb_precoaquisicao.Text);
+            ben.Preco_Aquisicao =float.Parse(tb_precoaquisicao.Text);
             ben.Placa = mtb_placa.Text;
             ben.Hodometro_incial =int.Parse(mtb_hododmetro.Text);
             ben.Horimetro_incial = int.Parse(mtb_horimetro.Text);

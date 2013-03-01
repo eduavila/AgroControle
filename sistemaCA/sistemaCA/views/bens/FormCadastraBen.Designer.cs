@@ -41,12 +41,12 @@
             this.dtp_dataaquisicao = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mtb_horimetro = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.mtb_hododmetro = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.mtb_horimetro = new System.Windows.Forms.MaskedTextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -81,7 +81,7 @@
             // 
             this.tb_descricao.Location = new System.Drawing.Point(218, 54);
             this.tb_descricao.Name = "tb_descricao";
-            this.tb_descricao.Size = new System.Drawing.Size(256, 20);
+            this.tb_descricao.Size = new System.Drawing.Size(340, 20);
             this.tb_descricao.TabIndex = 3;
             // 
             // tb_precoaquisicao
@@ -170,33 +170,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Infomações";
             // 
-            // mtb_horimetro
-            // 
-            this.mtb_horimetro.Location = new System.Drawing.Point(18, 42);
-            this.mtb_horimetro.Mask = "00000";
-            this.mtb_horimetro.Name = "mtb_horimetro";
-            this.mtb_horimetro.Size = new System.Drawing.Size(79, 20);
-            this.mtb_horimetro.TabIndex = 13;
-            this.mtb_horimetro.ValidatingType = typeof(int);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Horimetro";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(104, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Horas";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -224,9 +197,36 @@
             this.mtb_hododmetro.TabIndex = 16;
             this.mtb_hododmetro.ValidatingType = typeof(int);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(104, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Horas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Horimetro";
+            // 
+            // mtb_horimetro
+            // 
+            this.mtb_horimetro.Location = new System.Drawing.Point(18, 42);
+            this.mtb_horimetro.Mask = "00000";
+            this.mtb_horimetro.Name = "mtb_horimetro";
+            this.mtb_horimetro.Size = new System.Drawing.Size(79, 20);
+            this.mtb_horimetro.TabIndex = 13;
+            this.mtb_horimetro.ValidatingType = typeof(int);
+            // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(361, 346);
+            this.btn_cancelar.Location = new System.Drawing.Point(445, 404);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(113, 35);
             this.btn_cancelar.TabIndex = 13;
@@ -236,7 +236,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(218, 346);
+            this.button2.Location = new System.Drawing.Point(306, 404);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 35);
             this.button2.TabIndex = 14;
@@ -248,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 393);
+            this.ClientSize = new System.Drawing.Size(580, 460);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.groupBox1);

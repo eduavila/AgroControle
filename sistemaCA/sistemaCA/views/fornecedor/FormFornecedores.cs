@@ -65,19 +65,23 @@ namespace sistemaCA.views.fornecedor
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
-            
-            int selecionado = dgw_Fornecedores.CurrentCell.RowIndex;
-            int idfonecedor;
-            idfonecedor = int.Parse(dgw_Fornecedores.Rows[selecionado].Cells["id_fornecedor"].Value.ToString());
 
-            FormVisualizarFornecedor Formfornecedor = new FormVisualizarFornecedor(idfonecedor);
-            Formfornecedor.ShowDialog();
+            if (dgw_Fornecedores.CurrentCell != null)
+            {
+                int selecionado = dgw_Fornecedores.CurrentCell.RowIndex;
 
 
-            // atualizando data grid
-            Fornecedores fornecedor = new Fornecedores();
-            fornecedor.ListarFornecedores(dgw_Fornecedores);
-           
+                int idfonecedor;
+                idfonecedor = int.Parse(dgw_Fornecedores.Rows[selecionado].Cells["id_fornecedor"].Value.ToString());
+
+                FormVisualizarFornecedor Formfornecedor = new FormVisualizarFornecedor(idfonecedor);
+                Formfornecedor.ShowDialog();
+
+
+                // atualizando data grid
+                Fornecedores fornecedor = new Fornecedores();
+                fornecedor.ListarFornecedores(dgw_Fornecedores);
+            }
         }
     }
 }

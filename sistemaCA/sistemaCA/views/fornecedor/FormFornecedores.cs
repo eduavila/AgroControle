@@ -65,6 +65,7 @@ namespace sistemaCA.views.fornecedor
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
+            
             int selecionado = dgw_Fornecedores.CurrentCell.RowIndex;
             int idfonecedor;
             idfonecedor = int.Parse(dgw_Fornecedores.Rows[selecionado].Cells["id_fornecedor"].Value.ToString());
@@ -76,6 +77,7 @@ namespace sistemaCA.views.fornecedor
             // atualizando data grid
             Fornecedores fornecedor = new Fornecedores();
             fornecedor.ListarFornecedores(dgw_Fornecedores);
+           
         }
     }
 }

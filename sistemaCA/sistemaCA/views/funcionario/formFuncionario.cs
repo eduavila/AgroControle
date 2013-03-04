@@ -104,39 +104,22 @@ namespace sistemaCA.views
         
             // pega a rows selecinado no gridview
 
-            int selecionado = dgw_funcionario.CurrentCell.RowIndex;
+            if (dgw_funcionario.CurrentCell != null)
+            {
+                int selecionado = dgw_funcionario.CurrentCell.RowIndex;
 
-            int idfunc;
+                int idfunc;
 
-            idfunc = int.Parse(dgw_funcionario.Rows[selecionado].Cells["id_funcionario"].Value.ToString());
+                idfunc = int.Parse(dgw_funcionario.Rows[selecionado].Cells["id_funcionario"].Value.ToString());
 
-            FormFuncionarioV FromVisualizar = new FormFuncionarioV(idfunc);
+                FormFuncionarioV FromVisualizar = new FormFuncionarioV(idfunc);
 
-            FromVisualizar.ShowDialog();
-            Funcionarios.PreecherGridview(dgw_funcionario);
+                FromVisualizar.ShowDialog();
+                Funcionarios.PreecherGridview(dgw_funcionario);
 
+            }
+      
 
-            //
-
-
-            //DataClasses1DataContext db = new DataClasses1DataContext();
-            //tblfuncionario funcionario = new tblfuncionario();
-
-
-            //// criar pesquisa  no banco para encontrar registro selecionado
-            //var pesquisa = from funcio in db.tblfuncionarios
-            //               where funcio.id_funcionario == idfunc
-            //               select funcio;
-
-
-            //funcionario = pesquisa.Single();
-
-            //// criando formulario para mostrar dados do registro que esta no banco 
-            //form_cadastro_fu formAlterar = new form_cadastro_fu(funcionario, db);
-
-            //// mostrando formulario
-
-            //formAlterar.ShowDialog();
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

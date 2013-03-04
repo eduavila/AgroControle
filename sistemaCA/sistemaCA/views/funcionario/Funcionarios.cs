@@ -206,9 +206,19 @@ namespace sistemaCA.views.funcionario
 
         public void PesquisarFuncionarioId(int idfunc,DataGridView dgw)
         {
-            
-            dgw.DataSource=Banco.spPesquisaFunId(idfunc);
-        
+            try
+            {
+                if (idfunc != null)
+                {
+                    dgw.DataSource = Banco.spPesquisaFunId(idfunc);
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+          
         }
 
         public void PequisarFuncionarioNome(string nome, DataGridView dgw)

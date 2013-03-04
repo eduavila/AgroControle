@@ -204,6 +204,8 @@ namespace sistemaCA.views
 
         private void tb_pesquisar_TextChanged(object sender, EventArgs e)
         {
+          
+            // pesquisar usuarios
             if (cb_seleciona != null)
             {
                 if (cb_seleciona.Text == "ID")
@@ -211,8 +213,13 @@ namespace sistemaCA.views
 
                      Funcionarios func = new Funcionarios();
 
-                     func.PesquisarFuncionarioId(int.Parse(tb_pesquisar.Text), dgw_funcionario);
-                   
+                     if ((tb_pesquisar.Text != null) && (tb_pesquisar.Text != ""))
+                     {
+                         func.PesquisarFuncionarioId(int.Parse(tb_pesquisar.Text), dgw_funcionario);
+                     }
+                     else {
+                         Funcionarios.PreecherGridview(dgw_funcionario);
+                     }
                 }
                 else if (cb_seleciona.Text == "Nome")
                 {
@@ -235,6 +242,7 @@ namespace sistemaCA.views
 
             }
 
+            // fim de pesquisa usuario
         }
 
         private void cb_seleciona_TextChanged(object sender, EventArgs e)
@@ -244,6 +252,8 @@ namespace sistemaCA.views
 
         private void cb_seleciona_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            // aplicando mascara no textbox para ID usuario.
             if (cb_seleciona.Text == "ID")
             {
                 tb_pesquisar.Mask = "0000";

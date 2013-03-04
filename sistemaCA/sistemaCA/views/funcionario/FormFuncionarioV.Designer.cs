@@ -63,7 +63,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_id_funcionario = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_salvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cb_sexo
@@ -357,22 +357,22 @@
             this.label10.TabIndex = 102;
             this.label10.Text = "ID";
             // 
-            // button1
+            // btn_salvar
             // 
-            this.button1.Location = new System.Drawing.Point(351, 442);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 35);
-            this.button1.TabIndex = 104;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_salvar.Location = new System.Drawing.Point(351, 442);
+            this.btn_salvar.Name = "btn_salvar";
+            this.btn_salvar.Size = new System.Drawing.Size(93, 35);
+            this.btn_salvar.TabIndex = 104;
+            this.btn_salvar.Text = "Salvar";
+            this.btn_salvar.UseVisualStyleBackColor = true;
+            this.btn_salvar.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormFuncionarioV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 490);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.tb_id_funcionario);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cb_sexo);
@@ -453,6 +453,6 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox tb_id_funcionario;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_salvar;
     }
 }

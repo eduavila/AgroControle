@@ -67,6 +67,8 @@ namespace sistemaCA.views.funcionario
             tb_telefone.Enabled = false;
             tb_celular.Enabled = false;
             tb_obs.Enabled = false;
+
+            btn_salvar.Visible = false;
         
         
         }
@@ -79,6 +81,7 @@ namespace sistemaCA.views.funcionario
 
         private void btn_Alterar_Click(object sender, EventArgs e)
         {
+            // habilitando componetes para alterações
             var msg = MessageBox.Show("Deseja alterar registros?", "Alterar Registro", MessageBoxButtons.YesNo);
 
             if (DialogResult.Yes == msg)
@@ -98,9 +101,12 @@ namespace sistemaCA.views.funcionario
                 tb_celular.Enabled = true;
                 tb_obs.Enabled = true;
                 cb_sexo.Enabled = true;
+
+                btn_salvar.Visible = true;
                 
             }
 
+            //------------------------------
         
         }
 
@@ -139,9 +145,17 @@ namespace sistemaCA.views.funcionario
 
         private void btn_Deletar_Click(object sender, EventArgs e)
         {
-            Funcionarios funcio = new Funcionarios();
-            funcio.DeletarFuncionario(int.Parse(tb_id_funcionario.Text));
-            this.Close();
+            var resultado = MessageBox.Show("Tem Certeza de quer excluir o Registro Selecionado ?", "Excluir Registro", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+
+                Funcionarios funcio = new Funcionarios();
+                funcio.DeletarFuncionario(int.Parse(tb_id_funcionario.Text));
+                this.Close();
+
+            }
+            
         }
     }
 }

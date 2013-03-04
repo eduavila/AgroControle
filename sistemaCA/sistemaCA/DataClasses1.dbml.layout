@@ -57,7 +57,7 @@
         <classShapeMoniker Id="b8366bdf-4e7d-4104-bb24-631410f507f0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 9.9374995); (10 : 9.9374995); (10 : 10.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 9.9374995); (8.76041666666667 : 9.9374995 : JumpStart); (8.92708333333333 : 9.9374995 : JumpEnd); (10 : 9.9374995); (10 : 10.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tblproduto/tblproduto_tblprodutosaplicado" />
       <nodes>
         <classShapeMoniker Id="35885c17-20cd-448c-842b-eff37f97969a" />
@@ -104,7 +104,7 @@
         <classShapeMoniker Id="b8366bdf-4e7d-4104-bb24-631410f507f0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(15.375 : 10.31249975); (10.0833333333333 : 10.31249975 : JumpStart); (9.91666666666667 : 10.31249975 : JumpEnd); (8.84375 : 10.31249975); (8.84375 : 5.22280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(15.375 : 10.31249975); (10.9895833333333 : 10.31249975 : JumpStart); (10.8229166666667 : 10.31249975 : JumpEnd); (8.84375 : 10.31249975); (8.84375 : 5.22280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tblsafra/tblsafra_tblrevisaofutura" />
       <nodes>
         <classShapeMoniker Id="5b119d57-92b3-4f99-845c-e31352bc461f" />
@@ -157,7 +157,7 @@
         <elementListCompartment Id="b6cbd5d2-2788-47c9-b114-72d964b618d4" absoluteBounds="14.265, 13.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(14.25 : 14.2123527018229); (10.03125 : 14.2123527018229); (10.03125 : 12.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(14.25 : 14.2123527018229); (10.03125 : 14.2123527018229); (10.03125 : 12.7131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/tblfornecedor/tblfornecedor_tblprodutosaplicado" />
       <nodes>
         <classShapeMoniker Id="1a38a932-65e5-4865-af4c-36bb717bb573" />

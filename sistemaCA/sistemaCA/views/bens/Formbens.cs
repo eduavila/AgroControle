@@ -49,22 +49,23 @@ namespace sistemaCA.views.bens
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
+            if (dgw_bens.CurrentCell != null)
+            {
+                int selecionado = dgw_bens.CurrentCell.RowIndex;
 
-            int selecionado = dgw_bens.CurrentCell.RowIndex;
+                int idbens;
 
-            int idbens;
-
-            idbens = int.Parse(dgw_bens.Rows[selecionado].Cells["id_ben"].Value.ToString());
+                idbens = int.Parse(dgw_bens.Rows[selecionado].Cells["id_ben"].Value.ToString());
 
 
-            // instanciando formulario alterar
-            FormAlterarBens formaltera = new FormAlterarBens(idbens);
-            formaltera.ShowDialog();
+                // instanciando formulario alterar
+                FormAlterarBens formaltera = new FormAlterarBens(idbens);
+                formaltera.ShowDialog();
 
-            // atualizando data grid 
-            Bens ben = new Bens();
-            ben.VisualizarBens(dgw_bens);
-
+                // atualizando data grid 
+                Bens ben = new Bens();
+                ben.VisualizarBens(dgw_bens);
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ namespace sistemaCA.views.safra
             tb_obs.Text = safra.Obs;
 
 
-
+            btn_salvar.Visible = false;
             tb_idsafra.Enabled = false;
             tb_descricao.Enabled = false;
             tb_status.Enabled = false;
@@ -57,20 +57,22 @@ namespace sistemaCA.views.safra
 
         private void btn_alterar_Click(object sender, EventArgs e)
         {
-
-            tb_idsafra.Enabled = true;
+            // abilitando componete para alteraçoes do dados .
+            btn_salvar.Visible = true;
             tb_descricao.Enabled = true;
             tb_status.Enabled = true;
             dt_datainicio.Enabled = true;
             dt_datainicio.Enabled = true;
             tb_obs.Enabled = true;
-            tb_tipocultura.Enabled = true;
+           
             btn_pesquisar.Enabled = true;
 
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
+
+            // salvando alterações de safra
             try
             {
                 Safra safra = new Safra();
@@ -99,6 +101,7 @@ namespace sistemaCA.views.safra
 
         private void btn_deletar_Click(object sender, EventArgs e)
         {
+            // deletando safra refente ao id clicado.
             var msg = MessageBox.Show("Tem certeza que deseja deletar o registo? ", "Deletar registro",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
             if (msg == DialogResult.Yes)

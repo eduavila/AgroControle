@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
+    <Compile Include="views\aplicacao\Aplicacao.cs" />
     <Compile Include="views\bens\Bens.cs" />
     <Compile Include="views\bens\FormAlterarBens.cs">
       <SubType>Form</SubType>

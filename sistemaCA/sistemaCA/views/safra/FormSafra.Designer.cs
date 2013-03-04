@@ -35,10 +35,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgw_safra = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_safra)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // cb_seleciona
@@ -47,7 +49,7 @@
             this.cb_seleciona.Items.AddRange(new object[] {
             "Nome",
             "CPF"});
-            this.cb_seleciona.Location = new System.Drawing.Point(597, 34);
+            this.cb_seleciona.Location = new System.Drawing.Point(27, 19);
             this.cb_seleciona.Name = "cb_seleciona";
             this.cb_seleciona.Size = new System.Drawing.Size(70, 21);
             this.cb_seleciona.TabIndex = 47;
@@ -55,7 +57,7 @@
             // 
             // btn_visualizar
             // 
-            this.btn_visualizar.Location = new System.Drawing.Point(127, 19);
+            this.btn_visualizar.Location = new System.Drawing.Point(120, 14);
             this.btn_visualizar.Name = "btn_visualizar";
             this.btn_visualizar.Size = new System.Drawing.Size(87, 33);
             this.btn_visualizar.TabIndex = 45;
@@ -65,7 +67,7 @@
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(17, 19);
+            this.btn_cadastrar.Location = new System.Drawing.Point(15, 15);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
             this.btn_cadastrar.TabIndex = 44;
@@ -75,7 +77,7 @@
             // 
             // tb_pesquisar
             // 
-            this.tb_pesquisar.Location = new System.Drawing.Point(673, 34);
+            this.tb_pesquisar.Location = new System.Drawing.Point(103, 19);
             this.tb_pesquisar.Name = "tb_pesquisar";
             this.tb_pesquisar.Size = new System.Drawing.Size(136, 20);
             this.tb_pesquisar.TabIndex = 46;
@@ -113,43 +115,45 @@
             this.statusStrip1.TabIndex = 48;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // lineShape1
+            // groupBox2
             // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 18;
-            this.lineShape1.X2 = 853;
-            this.lineShape1.Y1 = 73;
-            this.lineShape1.Y2 = 73;
+            this.groupBox2.Controls.Add(this.cb_seleciona);
+            this.groupBox2.Controls.Add(this.tb_pesquisar);
+            this.groupBox2.Location = new System.Drawing.Point(577, 34);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(270, 48);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Pesquisar";
             // 
-            // shapeContainer2
+            // groupBox3
             // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(860, 513);
-            this.shapeContainer2.TabIndex = 49;
-            this.shapeContainer2.TabStop = false;
+            this.groupBox3.Controls.Add(this.btn_visualizar);
+            this.groupBox3.Controls.Add(this.btn_cadastrar);
+            this.groupBox3.Location = new System.Drawing.Point(27, 26);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(220, 56);
+            this.groupBox3.TabIndex = 50;
+            this.groupBox3.TabStop = false;
             // 
             // FormSafra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 513);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.cb_seleciona);
-            this.Controls.Add(this.btn_visualizar);
-            this.Controls.Add(this.btn_cadastrar);
-            this.Controls.Add(this.tb_pesquisar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.shapeContainer2);
             this.Name = "FormSafra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Safra";
             this.Load += new System.EventHandler(this.FormSafra_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_safra)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,7 +168,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.DataGridView dgw_safra;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

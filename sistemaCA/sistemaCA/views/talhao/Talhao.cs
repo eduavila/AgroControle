@@ -100,7 +100,7 @@ namespace sistemaCA.views.talhao
             this.Localizacao = talhao.localizacao;
             this.Obs = talhao.obs;
             this.tamanho = Convert.ToDouble(talhao.tamanho);
-
+            this.SitemaCutivo = talhao.sistemaCutivo;
             return talhao;
         
         }

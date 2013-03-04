@@ -162,7 +162,7 @@
             this.tb_id.Location = new System.Drawing.Point(34, 30);
             this.tb_id.Name = "tb_id";
             this.tb_id.Size = new System.Drawing.Size(31, 20);
-            this.tb_id.TabIndex = 23;
+            this.tb_id.TabIndex = 0;
             // 
             // btn_alterar
             // 

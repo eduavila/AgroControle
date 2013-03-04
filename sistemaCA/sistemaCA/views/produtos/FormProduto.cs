@@ -44,18 +44,20 @@ namespace sistemaCA.views.produtos
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // teste com classe 
-            int selecionado = dgw_produto.CurrentCell.RowIndex;
+            if (dgw_produto.CurrentCell != null)
+            {
+                // teste com classe 
+                int selecionado = dgw_produto.CurrentCell.RowIndex;
 
-            int idprod;
+                int idprod;
 
-            idprod = int.Parse(dgw_produto.Rows[selecionado].Cells["id_produto"].Value.ToString());
+                idprod = int.Parse(dgw_produto.Rows[selecionado].Cells["id_produto"].Value.ToString());
 
-            // criando novo formulario atualizar com parametro do numero 1 da cells do data grid
-            FormProdutoAtualizar formproduto = new FormProdutoAtualizar(idprod);
-            formproduto.Show();
-            
+                // criando novo formulario atualizar com parametro do numero 1 da cells do data grid
+                FormProdutoAtualizar formproduto = new FormProdutoAtualizar(idprod);
+                formproduto.Show();
 
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

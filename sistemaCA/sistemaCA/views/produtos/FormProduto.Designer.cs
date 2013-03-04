@@ -33,13 +33,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgw_produto = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_pesquisar = new System.Windows.Forms.MaskedTextBox();
+            this.cb_seleciona = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_produto)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(115, 12);
+            this.button3.Location = new System.Drawing.Point(110, 11);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(87, 33);
             this.button3.TabIndex = 42;
@@ -49,7 +55,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(10, 12);
+            this.button2.Location = new System.Drawing.Point(11, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(87, 33);
             this.button2.TabIndex = 40;
@@ -89,20 +95,63 @@
             this.statusStrip1.TabIndex = 45;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tb_pesquisar);
+            this.groupBox3.Controls.Add(this.cb_seleciona);
+            this.groupBox3.Location = new System.Drawing.Point(414, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(247, 52);
+            this.groupBox3.TabIndex = 46;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pesquisar";
+            // 
+            // tb_pesquisar
+            // 
+            this.tb_pesquisar.Location = new System.Drawing.Point(89, 19);
+            this.tb_pesquisar.Name = "tb_pesquisar";
+            this.tb_pesquisar.Size = new System.Drawing.Size(152, 20);
+            this.tb_pesquisar.TabIndex = 43;
+            // 
+            // cb_seleciona
+            // 
+            this.cb_seleciona.FormattingEnabled = true;
+            this.cb_seleciona.Items.AddRange(new object[] {
+            "ID",
+            "Nome",
+            "CPF"});
+            this.cb_seleciona.Location = new System.Drawing.Point(12, 19);
+            this.cb_seleciona.Name = "cb_seleciona";
+            this.cb_seleciona.Size = new System.Drawing.Size(70, 21);
+            this.cb_seleciona.TabIndex = 42;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Location = new System.Drawing.Point(10, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(208, 47);
+            this.groupBox2.TabIndex = 47;
+            this.groupBox2.TabStop = false;
+            // 
             // formProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 440);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Name = "formProduto";
             this.Text = "Produtos";
             this.Load += new System.EventHandler(this.FormProduto_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_produto)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +164,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgw_produto;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox tb_pesquisar;
+        private System.Windows.Forms.ComboBox cb_seleciona;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

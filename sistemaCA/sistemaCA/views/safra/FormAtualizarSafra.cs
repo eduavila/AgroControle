@@ -20,15 +20,24 @@ namespace sistemaCA.views.safra
         public FormAtualizarSafra(int id_safra)
         {
             InitializeComponent();
-
+            dtp_final.Visible = false;
+            lb_datafin.Visible = false;
 
             Safra safra = new Safra();
             safra.VisualizarSafra(id_safra);
-
+            
 
             tb_idsafra.Text = safra.IdSafra.ToString() ;
             tb_descricao.Text = safra.Descricao;
             tb_status.Text = safra.status;
+            if (safra.status == "Fechada")
+            {
+                dtp_final.Visible = true;
+                lb_datafin.Visible = true;
+                dtp_final.Value = safra.DataFechamento;
+                
+            }
+
             tb_tipocultura.Text = safra.IdCultura.ToString();
             dt_datainicio.Value =DateTime.Parse(safra.DataInicio.ToString());
 
@@ -36,13 +45,13 @@ namespace sistemaCA.views.safra
             
             tb_obs.Text = safra.Obs;
 
-
+            
             btn_salvar.Visible = false;
             tb_idsafra.Enabled = false;
             tb_descricao.Enabled = false;
             tb_status.Enabled = false;
             dt_datainicio.Enabled = false;
-            dt_datainicio.Enabled = false;
+            dtp_final.Enabled = false;
             tb_obs.Enabled = false;
             tb_tipocultura.Enabled = false;
             btn_pesquisar.Enabled = false;
@@ -62,7 +71,7 @@ namespace sistemaCA.views.safra
             tb_descricao.Enabled = true;
             tb_status.Enabled = true;
             dt_datainicio.Enabled = true;
-            dt_datainicio.Enabled = true;
+            
             tb_obs.Enabled = true;
            
             btn_pesquisar.Enabled = true;
@@ -83,9 +92,18 @@ namespace sistemaCA.views.safra
                 safra.IdCultura =int.Parse(tb_tipocultura.Text);
                 safra.status = tb_status.Text;
                 safra.DataInicio = dt_datainicio.Value;
-                safra.DataFechamento = dt_datainicio.Value;
+               
                 safra.Obs = tb_obs.Text;
 
+                // somente vai salvar valor data picke se o componete 
+                if (dtp_final.Visible == true)
+                {
+                    safra.DataFechamento = dtp_final.Value;
+                }
+                if (dtp_final.Visible == false)
+                {
+                    safra.DataFechamento =DateTime.Parse("0000-00-00");
+                }
                 safra.AtualizarSafra();
                 MessageBox.Show("Alterado com sucesso!");
 
@@ -132,6 +150,22 @@ namespace sistemaCA.views.safra
             FormTipoCultura FormTipo = new FormTipoCultura();
             FormTipo.ShowDialog();
             tb_tipocultura.Text = FormTipo.Id_cultura.ToString();
+        }
+
+        private void tb_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tb_status.Text == "Fechada")
+            {
+                lb_datafin.Visible = true;
+                dtp_final.Visible = true;
+                dtp_final.Enabled = true;
+            }
+            if (tb_status.Text == "Aberta")
+            {
+                lb_datafin.Visible = false;
+                dtp_final.Visible = false;
+                dtp_final.Enabled = false;
+            }
         }
     }
 }

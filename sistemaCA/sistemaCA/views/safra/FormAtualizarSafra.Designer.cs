@@ -34,7 +34,6 @@
             this.dt_datainicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tb_status = new System.Windows.Forms.TextBox();
             this.tb_descricao = new System.Windows.Forms.TextBox();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.tb_tipocultura = new System.Windows.Forms.TextBox();
@@ -44,6 +43,9 @@
             this.btn_deletar = new System.Windows.Forms.Button();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
+            this.tb_status = new System.Windows.Forms.ComboBox();
+            this.dtp_final = new System.Windows.Forms.DateTimePicker();
+            this.lb_datafin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -98,13 +100,6 @@
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 39;
             this.label5.Text = "Descrição";
-            // 
-            // tb_status
-            // 
-            this.tb_status.Location = new System.Drawing.Point(271, 65);
-            this.tb_status.Name = "tb_status";
-            this.tb_status.Size = new System.Drawing.Size(86, 20);
-            this.tb_status.TabIndex = 38;
             // 
             // tb_descricao
             // 
@@ -185,11 +180,44 @@
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
+            // tb_status
+            // 
+            this.tb_status.FormattingEnabled = true;
+            this.tb_status.Items.AddRange(new object[] {
+            "Aberta",
+            "Fechada"});
+            this.tb_status.Location = new System.Drawing.Point(271, 65);
+            this.tb_status.Name = "tb_status";
+            this.tb_status.Size = new System.Drawing.Size(92, 21);
+            this.tb_status.TabIndex = 53;
+            this.tb_status.SelectedIndexChanged += new System.EventHandler(this.tb_status_SelectedIndexChanged);
+            // 
+            // dtp_final
+            // 
+            this.dtp_final.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_final.Location = new System.Drawing.Point(139, 124);
+            this.dtp_final.Name = "dtp_final";
+            this.dtp_final.Size = new System.Drawing.Size(99, 20);
+            this.dtp_final.TabIndex = 54;
+            this.dtp_final.Value = new System.DateTime(2013, 2, 27, 0, 0, 0, 0);
+            // 
+            // lb_datafin
+            // 
+            this.lb_datafin.AutoSize = true;
+            this.lb_datafin.Location = new System.Drawing.Point(138, 108);
+            this.lb_datafin.Name = "lb_datafin";
+            this.lb_datafin.Size = new System.Drawing.Size(49, 13);
+            this.lb_datafin.TabIndex = 55;
+            this.lb_datafin.Text = "Data Fim";
+            // 
             // FormAtualizarSafra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 354);
+            this.Controls.Add(this.lb_datafin);
+            this.Controls.Add(this.dtp_final);
+            this.Controls.Add(this.tb_status);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.btn_deletar);
             this.Controls.Add(this.btn_alterar);
@@ -201,7 +229,6 @@
             this.Controls.Add(this.dt_datainicio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tb_status);
             this.Controls.Add(this.tb_descricao);
             this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.tb_tipocultura);
@@ -223,7 +250,6 @@
         private System.Windows.Forms.DateTimePicker dt_datainicio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tb_status;
         private System.Windows.Forms.TextBox tb_descricao;
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.TextBox tb_tipocultura;
@@ -233,5 +259,8 @@
         private System.Windows.Forms.Button btn_deletar;
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.Button btn_salvar;
+        private System.Windows.Forms.ComboBox tb_status;
+        private System.Windows.Forms.DateTimePicker dtp_final;
+        private System.Windows.Forms.Label lb_datafin;
     }
 }

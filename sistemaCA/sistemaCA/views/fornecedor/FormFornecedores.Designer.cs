@@ -33,8 +33,14 @@
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_pesquisar = new System.Windows.Forms.MaskedTextBox();
+            this.cb_seleciona = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_Fornecedores)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgw_Fornecedores
@@ -54,7 +60,7 @@
             // 
             // btn_visualizar
             // 
-            this.btn_visualizar.Location = new System.Drawing.Point(124, 30);
+            this.btn_visualizar.Location = new System.Drawing.Point(104, 14);
             this.btn_visualizar.Name = "btn_visualizar";
             this.btn_visualizar.Size = new System.Drawing.Size(87, 33);
             this.btn_visualizar.TabIndex = 42;
@@ -64,7 +70,7 @@
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(14, 30);
+            this.btn_cadastrar.Location = new System.Drawing.Point(9, 14);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
             this.btn_cadastrar.TabIndex = 41;
@@ -90,14 +96,54 @@
             this.statusStrip1.TabIndex = 43;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.tb_pesquisar);
+            this.groupBox3.Controls.Add(this.cb_seleciona);
+            this.groupBox3.Location = new System.Drawing.Point(603, 24);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(247, 52);
+            this.groupBox3.TabIndex = 45;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pesquisar";
+            // 
+            // tb_pesquisar
+            // 
+            this.tb_pesquisar.Location = new System.Drawing.Point(89, 19);
+            this.tb_pesquisar.Name = "tb_pesquisar";
+            this.tb_pesquisar.Size = new System.Drawing.Size(152, 20);
+            this.tb_pesquisar.TabIndex = 43;
+            // 
+            // cb_seleciona
+            // 
+            this.cb_seleciona.FormattingEnabled = true;
+            this.cb_seleciona.Items.AddRange(new object[] {
+            "ID",
+            "Nome",
+            "CPF"});
+            this.cb_seleciona.Location = new System.Drawing.Point(12, 19);
+            this.cb_seleciona.Name = "cb_seleciona";
+            this.cb_seleciona.Size = new System.Drawing.Size(70, 21);
+            this.cb_seleciona.TabIndex = 42;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_cadastrar);
+            this.groupBox2.Controls.Add(this.btn_visualizar);
+            this.groupBox2.Location = new System.Drawing.Point(14, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 52);
+            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabStop = false;
+            // 
             // FormFornecedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 513);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btn_visualizar);
-            this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormFornecedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -105,6 +151,9 @@
             this.Load += new System.EventHandler(this.FormFornecedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_Fornecedores)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +166,9 @@
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox tb_pesquisar;
+        private System.Windows.Forms.ComboBox cb_seleciona;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

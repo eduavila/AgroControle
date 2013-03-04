@@ -194,15 +194,7 @@ namespace sistemaCA.views
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            if (tb_pesquisar.Text == " ")
-            {
-                Funcionarios.PreecherGridview(dgw_funcionario);
-
-            }
-            else { 
-                
             
-            }
         }
 
         private void dgw_funcionario_CellContentClick(object sender, DataGridViewCellEventArgs e)

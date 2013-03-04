@@ -48,20 +48,22 @@ namespace sistemaCA.views.safra
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
            // pega id da cell selecionada
-            int selecionado = dgw_safra.CurrentCell.RowIndex;
-            int idsafra;
+            if (dgw_safra.CurrentCell != null)
+            {
+                int selecionado = dgw_safra.CurrentCell.RowIndex;
+                int idsafra;
 
-            idsafra = int.Parse(dgw_safra.Rows[selecionado].Cells["id_safra"].Value.ToString());
+                idsafra = int.Parse(dgw_safra.Rows[selecionado].Cells["id_safra"].Value.ToString());
 
-            FormAtualizarSafra fromAtualizar = new FormAtualizarSafra(idsafra);
-            fromAtualizar.ShowDialog();
-           
-            
-            // atualiza grid safra
-            Safra safra2 = new Safra();
+                FormAtualizarSafra fromAtualizar = new FormAtualizarSafra(idsafra);
+                fromAtualizar.ShowDialog();
 
-            safra2.ListarSafra(dgw_safra);
 
+                // atualiza grid safra
+                Safra safra2 = new Safra();
+
+                safra2.ListarSafra(dgw_safra);
+            }
         }
     }
 }

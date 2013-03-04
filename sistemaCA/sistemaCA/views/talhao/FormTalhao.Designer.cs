@@ -35,9 +35,11 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_pesquisar = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_talhao)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgw_talhao
@@ -64,7 +66,7 @@
             // 
             // btn_Visalizar
             // 
-            this.btn_Visalizar.Location = new System.Drawing.Point(121, 19);
+            this.btn_Visalizar.Location = new System.Drawing.Point(104, 13);
             this.btn_Visalizar.Name = "btn_Visalizar";
             this.btn_Visalizar.Size = new System.Drawing.Size(87, 33);
             this.btn_Visalizar.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(16, 19);
+            this.btn_cadastrar.Location = new System.Drawing.Point(9, 13);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
             this.btn_cadastrar.TabIndex = 1;
@@ -108,16 +110,25 @@
             this.tb_pesquisar.TabIndex = 50;
             this.tb_pesquisar.TextChanged += new System.EventHandler(this.tb_pesquisar_TextChanged);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btn_cadastrar);
+            this.groupBox3.Controls.Add(this.btn_Visalizar);
+            this.groupBox3.Location = new System.Drawing.Point(9, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 49);
+            this.groupBox3.TabIndex = 50;
+            this.groupBox3.TabStop = false;
+            // 
             // FormTalhao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 440);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn_Visalizar);
-            this.Controls.Add(this.btn_cadastrar);
             this.Name = "FormTalhao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Talhões";
@@ -126,6 +137,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +152,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox tb_pesquisar;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

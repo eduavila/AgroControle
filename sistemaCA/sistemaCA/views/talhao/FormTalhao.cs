@@ -62,25 +62,26 @@ namespace sistemaCA.views.talhao
 
         private void btn_Visalizar_Click(object sender, EventArgs e)
         {
+            if (dgw_talhao.CurrentCell != null)
+            {
+                // Pegando o valor do id 
+                int selecionado = dgw_talhao.CurrentCell.RowIndex;
 
-            // Pegando o valor do id 
-            int selecionado = dgw_talhao.CurrentCell.RowIndex;
+                int idtalhao;
 
-            int idtalhao;
-
-            idtalhao = int.Parse(dgw_talhao.Rows[selecionado].Cells["id_talhao"].Value.ToString());
-
-
-            FormAtualizarTalhao formAtualizar = new FormAtualizarTalhao(idtalhao);
-            formAtualizar.ShowDialog();
+                idtalhao = int.Parse(dgw_talhao.Rows[selecionado].Cells["id_talhao"].Value.ToString());
 
 
-            // atualizando Data Grid
-            Talhao talhao = new Talhao();
+                FormAtualizarTalhao formAtualizar = new FormAtualizarTalhao(idtalhao);
+                formAtualizar.ShowDialog();
 
-            talhao.ListarTalhao(dgw_talhao);
-                
 
+                // atualizando Data Grid
+                Talhao talhao = new Talhao();
+
+                talhao.ListarTalhao(dgw_talhao);
+
+            }
         }
 
 

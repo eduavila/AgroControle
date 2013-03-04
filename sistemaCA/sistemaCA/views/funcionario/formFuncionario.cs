@@ -209,9 +209,10 @@ namespace sistemaCA.views
                 if (cb_seleciona.Text == "ID")
                 {
 
-                    Funcionarios func = new Funcionarios();
+                     Funcionarios func = new Funcionarios();
 
-                    func.PesquisarFuncionarioId(int.Parse(tb_pesquisar.Text), dgw_funcionario);
+                     func.PesquisarFuncionarioId(int.Parse(tb_pesquisar.Text), dgw_funcionario);
+                   
                 }
                 else if (cb_seleciona.Text == "Nome")
                 {
@@ -234,6 +235,23 @@ namespace sistemaCA.views
 
             }
 
+        }
+
+        private void cb_seleciona_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_seleciona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_seleciona.Text == "ID")
+            {
+                tb_pesquisar.Mask = "0000";
+            }
+            else
+            {
+                tb_pesquisar.Mask = "";
+            }
         }
     }
 }

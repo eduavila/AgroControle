@@ -33,10 +33,10 @@
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.btn_visualizar = new System.Windows.Forms.Button();
-            this.tb_pesquisar = new System.Windows.Forms.TextBox();
             this.cb_seleciona = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_pesquisar = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_funcionario)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -97,25 +97,19 @@
             this.btn_visualizar.UseVisualStyleBackColor = true;
             this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
-            // tb_pesquisar
-            // 
-            this.tb_pesquisar.Location = new System.Drawing.Point(88, 19);
-            this.tb_pesquisar.Name = "tb_pesquisar";
-            this.tb_pesquisar.Size = new System.Drawing.Size(149, 20);
-            this.tb_pesquisar.TabIndex = 40;
-            this.tb_pesquisar.TextChanged += new System.EventHandler(this.tb_pesquisar_TextChanged);
-            // 
             // cb_seleciona
             // 
             this.cb_seleciona.FormattingEnabled = true;
             this.cb_seleciona.Items.AddRange(new object[] {
+            "ID",
             "Nome",
             "CPF"});
             this.cb_seleciona.Location = new System.Drawing.Point(12, 19);
             this.cb_seleciona.Name = "cb_seleciona";
             this.cb_seleciona.Size = new System.Drawing.Size(70, 21);
             this.cb_seleciona.TabIndex = 42;
-            this.cb_seleciona.Text = "ID";
+            this.cb_seleciona.SelectedIndexChanged += new System.EventHandler(this.cb_seleciona_SelectedIndexChanged);
+            this.cb_seleciona.TextChanged += new System.EventHandler(this.cb_seleciona_TextChanged);
             // 
             // groupBox2
             // 
@@ -129,14 +123,22 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cb_seleciona);
             this.groupBox3.Controls.Add(this.tb_pesquisar);
+            this.groupBox3.Controls.Add(this.cb_seleciona);
             this.groupBox3.Location = new System.Drawing.Point(597, 20);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(247, 52);
             this.groupBox3.TabIndex = 44;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pesquisar";
+            // 
+            // tb_pesquisar
+            // 
+            this.tb_pesquisar.Location = new System.Drawing.Point(89, 19);
+            this.tb_pesquisar.Name = "tb_pesquisar";
+            this.tb_pesquisar.Size = new System.Drawing.Size(152, 20);
+            this.tb_pesquisar.TabIndex = 43;
+            this.tb_pesquisar.TextChanged += new System.EventHandler(this.tb_pesquisar_TextChanged);
             // 
             // formFuncionario
             // 
@@ -168,9 +170,9 @@
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.Button btn_visualizar;
-        private System.Windows.Forms.TextBox tb_pesquisar;
         private System.Windows.Forms.ComboBox cb_seleciona;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox tb_pesquisar;
     }
 }

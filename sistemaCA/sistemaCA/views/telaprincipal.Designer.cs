@@ -36,13 +36,16 @@
             this.talhãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.safraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aplicaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manutençãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aplicaçãoPréviaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.retornoAplicaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relátoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +79,7 @@
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionario";
             this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
             // 
@@ -90,26 +93,37 @@
             // talhãoToolStripMenuItem
             // 
             this.talhãoToolStripMenuItem.Name = "talhãoToolStripMenuItem";
-            this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.talhãoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.talhãoToolStripMenuItem.Text = "Talhão";
             this.talhãoToolStripMenuItem.Click += new System.EventHandler(this.talhãoToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
             // safraToolStripMenuItem
             // 
             this.safraToolStripMenuItem.Name = "safraToolStripMenuItem";
-            this.safraToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.safraToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.safraToolStripMenuItem.Text = "Safra";
             this.safraToolStripMenuItem.Click += new System.EventHandler(this.safraToolStripMenuItem_Click);
             // 
+            // fornecedoresToolStripMenuItem
+            // 
+            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Máquinas\\Implementos";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
+            // 
             // aplicaçãoToolStripMenuItem
             // 
+            this.aplicaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aplicaçãoPréviaToolStripMenuItem,
+            this.retornoAplicaçãoToolStripMenuItem,
+            this.relátoriosToolStripMenuItem});
             this.aplicaçãoToolStripMenuItem.Name = "aplicaçãoToolStripMenuItem";
             this.aplicaçãoToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.aplicaçãoToolStripMenuItem.Text = "Aplicação";
@@ -155,12 +169,25 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // fornecedoresToolStripMenuItem
+            // aplicaçãoPréviaToolStripMenuItem
             // 
-            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.fornecedoresToolStripMenuItem.Text = "Máquinas\\Implementos";
-            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
+            this.aplicaçãoPréviaToolStripMenuItem.Name = "aplicaçãoPréviaToolStripMenuItem";
+            this.aplicaçãoPréviaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.aplicaçãoPréviaToolStripMenuItem.Text = "Aplicação Prévia";
+            this.aplicaçãoPréviaToolStripMenuItem.Click += new System.EventHandler(this.aplicaçãoPréviaToolStripMenuItem_Click);
+            // 
+            // retornoAplicaçãoToolStripMenuItem
+            // 
+            this.retornoAplicaçãoToolStripMenuItem.Name = "retornoAplicaçãoToolStripMenuItem";
+            this.retornoAplicaçãoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.retornoAplicaçãoToolStripMenuItem.Text = "Baixa de  Aplicação";
+            this.retornoAplicaçãoToolStripMenuItem.Click += new System.EventHandler(this.retornoAplicaçãoToolStripMenuItem_Click);
+            // 
+            // relátoriosToolStripMenuItem
+            // 
+            this.relátoriosToolStripMenuItem.Name = "relátoriosToolStripMenuItem";
+            this.relátoriosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.relátoriosToolStripMenuItem.Text = "Relátorios";
             // 
             // telaprincipal
             // 
@@ -198,5 +225,8 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroUsuárioToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aplicaçãoPréviaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem retornoAplicaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relátoriosToolStripMenuItem;
     }
 }

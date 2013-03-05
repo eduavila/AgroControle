@@ -67,6 +67,18 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="views\aplicacao\Aplicacao.cs" />
+    <Compile Include="views\aplicacao\FormCadastraAplicacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\aplicacao\FormCadastraAplicacao.Designer.cs">
+      <DependentUpon>FormCadastraAplicacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\aplicacao\FormPrevisaoAplicacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\aplicacao\FormPrevisaoAplicacao.Designer.cs">
+      <DependentUpon>FormPrevisaoAplicacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\bens\Bens.cs" />
     <Compile Include="views\bens\FormAlterarBens.cs">
       <SubType>Form</SubType>
@@ -85,6 +97,15 @@
     </Compile>
     <Compile Include="views\bens\FormCadastraBen.Designer.cs">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Pesquisa\FormPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Pesquisa\FormPesquisa.Designer.cs">
+      <DependentUpon>FormPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Pesquisa\Pesquisa.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\FormProduto.cs" />
     <Compile Include="views\fornecedor\FormCasdatroFornecedor.cs">
@@ -227,6 +248,12 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="views\aplicacao\FormCadastraAplicacao.resx">
+      <DependentUpon>FormCadastraAplicacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\aplicacao\FormPrevisaoAplicacao.resx">
+      <DependentUpon>FormPrevisaoAplicacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\bens\FormAlterarBens.resx">
       <DependentUpon>FormAlterarBens.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\bens\FormCadastraBen.resx">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Pesquisa\FormPesquisa.resx">
+      <DependentUpon>FormPesquisa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\fornecedor\FormCasdatroFornecedor.resx">
       <DependentUpon>FormCasdatroFornecedor.cs</DependentUpon>

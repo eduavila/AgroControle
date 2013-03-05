@@ -1,4 +1,4 @@
-﻿namespace sistemaCA.views.FormPesquisa
+﻿namespace sistemaCA.views.Pesquisa
 {
     public partial class FormPesquisa
     {
@@ -66,6 +66,9 @@
             this.dgw_pesquisa.Size = new System.Drawing.Size(390, 139);
             this.dgw_pesquisa.TabIndex = 4;
             this.dgw_pesquisa.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_pesquisa_CellContentDoubleClick);
+            this.dgw_pesquisa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_pesquisa_CellDoubleClick);
+            this.dgw_pesquisa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_pesquisa_CellEndEdit);
+            this.dgw_pesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgw_pesquisa_KeyPress);
             // 
             // FormPesquisa
             // 
@@ -74,7 +77,10 @@
             this.ClientSize = new System.Drawing.Size(416, 226);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgw_pesquisa);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormPesquisa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -86,7 +92,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tb_pesquisa;
-        private System.Windows.Forms.DataGridView dgw_pesquisa;
+        public System.Windows.Forms.TextBox tb_pesquisa;
+        public System.Windows.Forms.DataGridView dgw_pesquisa;
     }
 }

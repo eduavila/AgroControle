@@ -1,24 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbsysca" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=NOT-EDUARDO\SYSCA;Initial Catalog=dbsysca;User ID=sa" SettingsObjectName="sistemaCA.Properties.Settings" SettingsPropertyName="dbsyscaConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.tblaplicacao" Member="tblaplicacaos">
-    <Type Name="tblaplicacao">
-      <Column Name="id_aplicacao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="data_cadastro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="data_aplicacao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="areaaplicada" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="id_produtosaplicado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
-      <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
-      <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
-      <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
-      <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblcultura" Member="tblculturas">
     <Type Name="tblcultura">
       <Column Name="id_cultura" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -116,8 +97,8 @@
       <Column Name="dataincio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Column Name="datafechamento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
       <Association Name="tblsafra_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_safra" OtherKey="id_safra" Type="tblrevisaofutura" />
+      <Association Name="tblsafra_tblaplicacao" Member="tblaplicacaos" ThisKey="id_safra" OtherKey="id_safra" Type="tblaplicacao" />
       <Association Name="tblcultura_tblsafra" Member="tblcultura" ThisKey="id_cultura" OtherKey="id_cultura" Type="tblcultura" IsForeignKey="true" />
     </Type>
   </Table>
@@ -143,8 +124,8 @@
       <Column Name="horimetro_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hodometro_inicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="placa" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Association Name="tblben_tblaplicacao" Member="tblaplicacaos" ThisKey="id_ben" OtherKey="id_ben" Type="tblaplicacao" />
       <Association Name="tblben_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_ben" OtherKey="id_ben" Type="tblrevisaofutura" />
+      <Association Name="tblben_tblaplicacao" Member="tblaplicacaos" ThisKey="id_ben" OtherKey="id_ben" Type="tblaplicacao" />
     </Type>
   </Table>
   <Table Name="dbo.tblfornecedor" Member="tblfornecedors">
@@ -161,6 +142,26 @@
       <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="ie" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
       <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblprodutosaplicados" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblprodutosaplicado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblaplicacao" Member="tblaplicacaos">
+    <Type Name="tblaplicacao">
+      <Column Name="id_aplicacao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="data_cadastro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="data_aplicacao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="areaaplicada" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="id_produtosaplicado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
+      <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
+      <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
+      <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
+      <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">

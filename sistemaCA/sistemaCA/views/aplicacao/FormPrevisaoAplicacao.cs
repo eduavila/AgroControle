@@ -26,5 +26,16 @@ namespace sistemaCA.views.aplicacao
             Aplicacao aplicacao = new Aplicacao();
             aplicacao.ListarAplicacoes(dgw_aplicacao);
         }
+
+        private void btn_visualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastraAplicacao Cadastro = new FormCadastraAplicacao();
+            Cadastro.ShowDialog();
+        }
     }
 }

@@ -25,19 +25,6 @@
       <Association Name="tblitenrevisao_tblrevisaofutura" Member="tblrevisaofuturas" ThisKey="id_itenrevisao" OtherKey="id_itenrevisao" Type="tblrevisaofutura" />
     </Type>
   </Table>
-  <Table Name="dbo.tblprodutosaplicado" Member="tblprodutosaplicados">
-    <Type Name="tblprodutosaplicado">
-      <Column Name="id_produtosaplicado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="preco" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Column Name="total" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_fornecedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblaplicacaos" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblaplicacao" />
-      <Association Name="tblproduto_tblprodutosaplicado" Member="tblproduto" ThisKey="id_produto" OtherKey="id_produto" Type="tblproduto" IsForeignKey="true" />
-      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblfornecedor" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblfornecedor" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblrevisaofuturas" Member="tblrevisaofuturas">
     <Type Name="tblrevisaofutura">
       <Column Name="id_revisao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -151,17 +138,32 @@
       <Column Name="status" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="data_aplicacao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="areaaplicada" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="id_produtosaplicado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_talhao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_safra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_ben" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_funcionario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="obs" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Association Name="tblaplicacao_tblprodutosaplicado" Member="tblprodutosaplicados" ThisKey="id_aplicacao" OtherKey="id_aplicacao" Type="tblprodutosaplicado" />
       <Association Name="tblben_tblaplicacao" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblfuncionario_tblaplicacao" Member="tblfuncionario" ThisKey="id_funcionario" OtherKey="id_funcionario" Type="tblfuncionario" IsForeignKey="true" />
-      <Association Name="tblprodutosaplicado_tblaplicacao" Member="tblprodutosaplicado" ThisKey="id_produtosaplicado" OtherKey="id_produtosaplicado" Type="tblprodutosaplicado" IsForeignKey="true" />
       <Association Name="tblsafra_tblaplicacao" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
       <Association Name="tbltalhao_tblaplicacao" Member="tbltalhao" ThisKey="id_talhao" OtherKey="id_talhao" Type="tbltalhao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblprodutosaplicado" Member="tblprodutosaplicados">
+    <Type Name="tblprodutosaplicado">
+      <Column Name="id_produtosaplicado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="preco" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="total" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_fornecedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="descricaoproduto" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="id_aplicacao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblaplicacao_tblprodutosaplicado" Member="tblaplicacao" ThisKey="id_aplicacao" OtherKey="id_aplicacao" Type="tblaplicacao" IsForeignKey="true" />
+      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblfornecedor" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblfornecedor" IsForeignKey="true" />
+      <Association Name="tblproduto_tblprodutosaplicado" Member="tblproduto" ThisKey="id_produto" OtherKey="id_produto" Type="tblproduto" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">

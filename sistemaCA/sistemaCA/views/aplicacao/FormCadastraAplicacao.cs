@@ -34,5 +34,19 @@ namespace sistemaCA.views.aplicacao
             tb_talhao.Text = pesqui.ID.ToString();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormPesquisaMaquinas pesqui = new FormPesquisaMaquinas();
+            pesqui.ShowDialog();
+            tb_maquinas.Text = pesqui.ID.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormPesquisaSafra pesqui = new FormPesquisaSafra();
+            pesqui.ShowDialog();
+            tb_safra.Text = pesqui.ID.ToString();
+        }
     }
 }

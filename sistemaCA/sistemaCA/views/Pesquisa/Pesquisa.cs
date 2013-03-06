@@ -124,4 +124,123 @@ namespace sistemaCA.views.Pesquisa
         
        
     }
+
+    // criando classe pesquisa safra
+
+
+    class FormPesquisaSafra : FormPesquisa
+    {
+        // propriedades
+
+
+        public void PesquisaSafra(string pesquisa, DataGridView dgw)
+        {
+            var pesqui = from safra in base.Banco.tblsafras
+                         where safra.descricao.Contains(pesquisa)
+                         select new
+                         {
+                             id = safra.id_safra,
+                             descricao = safra.descricao,
+                             datainicio = safra.dataincio
+                         };
+
+            dgw.DataSource = pesqui;
+        }
+
+
+        public void ListaSafra(DataGridView dgw)
+        {
+            var pesqui = from safra in base.Banco.tblsafras
+                         select new
+                         {
+                             id = safra.id_safra,
+                             descricao = safra.descricao,
+                             datainicio = safra.dataincio
+                         };
+
+            dgw.DataSource = pesqui;
+        }
+
+        //  metodos sobre escrevendo os outro da classe pai
+        public override void PreecherGrid()
+        {
+            ListaSafra(dgw_pesquisa);
+        }
+
+        public override void Pesquisar(string pesquisa, DataGridView dgw)
+        {
+            PesquisaSafra(pesquisa, dgw);
+        }
+        public override void AlterarHeadGrid()
+        {
+            dgw_pesquisa.Columns["id"].HeaderText = "ID Safra";
+            dgw_pesquisa.Columns["descricao"].HeaderText = "Descrição";
+            dgw_pesquisa.Columns["datainicio"].HeaderText = "Data Início";
+        }
+
+
+    }
+
+
+
+
+
+
+
+    // pesqusa maquinario
+
+
+    class FormPesquisaMaquinas : FormPesquisa
+    {
+        // propriedades
+
+
+        public void PesquisaMaquinas(string pesquisa, DataGridView dgw)
+        {
+            var pesqui = from maquinas in base.Banco.tblbens
+                         where maquinas.descricao.Contains(pesquisa)
+                         select new
+                         {
+                             id = maquinas.id_ben,
+                             descricao = maquinas.descricao,
+                             placa = maquinas.placa
+                         };
+
+            dgw.DataSource = pesqui;
+        }
+
+
+        public void ListaMaquinas(DataGridView dgw)
+        {
+            var pesqui = from maquinas in base.Banco.tblbens
+                         select new
+                         {
+                             id = maquinas.id_ben,
+                             descricao = maquinas.descricao,
+                             placa = maquinas.placa
+                         };
+
+            dgw.DataSource = pesqui;
+        }
+
+        //  metodos sobre escrevendo os outro da classe pai
+        public override void PreecherGrid()
+        {
+            ListaMaquinas(dgw_pesquisa);
+        }
+
+        public override void Pesquisar(string pesquisa, DataGridView dgw)
+        {
+            PesquisaMaquinas(pesquisa, dgw);
+        }
+        public override void AlterarHeadGrid()
+        {
+            dgw_pesquisa.Columns["id"].HeaderText = "ID Máquina";
+            dgw_pesquisa.Columns["descricao"].HeaderText = "Descrição";
+            dgw_pesquisa.Columns["placa"].HeaderText = "Placa";
+        }
+
+
+    }
+
 }

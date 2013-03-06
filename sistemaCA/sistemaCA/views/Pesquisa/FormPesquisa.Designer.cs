@@ -57,7 +57,7 @@
             // 
             this.dgw_pesquisa.AllowUserToAddRows = false;
             this.dgw_pesquisa.AllowUserToDeleteRows = false;
-            this.dgw_pesquisa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgw_pesquisa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgw_pesquisa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgw_pesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_pesquisa.Location = new System.Drawing.Point(12, 72);

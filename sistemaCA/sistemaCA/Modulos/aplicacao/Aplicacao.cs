@@ -61,6 +61,82 @@ namespace sistemaCA.views.aplicacao
             }
         }
 
+        public void VisualizarAplicacao(int id_aplica)
+        {
+            try
+            {
+
+                var pesqui = from aplicacao in Banco.tblaplicacaos
+                             where aplicacao.id_aplicacao == id_aplica
+                             select aplicacao;
+
+                Aplica = pesqui.Single();
+
+                this.Id_aplicacao = Aplica.id_aplicacao;
+                this.Descricao = Aplica.descricao;
+                this.DataCadastro = Aplica.data_cadastro;
+                this.DataAplicacao = Convert.ToDateTime(Aplica.data_aplicacao);
+                this.ID_Ben = Aplica.id_ben;
+                this.ID_Funcionario = Aplica.id_funcionario;
+                this.ID_talhao = Aplica.id_talhao;
+                this.ID_Safra = Aplica.id_safra;
+                this.Obs = Aplica.obs;
+                this.AreaAplicada = float.Parse(Aplica.areaaplicada.ToString());
+                this.Status = Aplica.status;
+                
+
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        
+        
+        
+        }
+
+
+
+
+
+
+
+        public void AlterarAplicacao(int id_aplica)
+        {
+            try
+            {
+                var pesqui = from aplicacao in Banco.tblaplicacaos
+                             where aplicacao.id_aplicacao == id_aplica
+                             select aplicacao;
+
+                Aplica = pesqui.Single();
+
+                Aplica.descricao = this.Descricao;
+                Aplica.data_aplicacao = this.DataAplicacao;
+                Aplica.id_ben = this.ID_Ben;
+                Aplica.id_funcionario = this.ID_Funcionario;
+                Aplica.id_talhao = this.ID_talhao;
+                Aplica.id_safra = this.ID_Safra;
+                Aplica.obs = this.Obs;
+                Aplica.areaaplicada = this.AreaAplicada;
+
+                Banco.SubmitChanges();
+
+                MessageBox.Show("Registro Alterado com Sucesso.");
+
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show(erro.Message);
+            }
+        
+        
+        }
+
 
 
         //· cadastro de aplicações
@@ -91,8 +167,27 @@ namespace sistemaCA.views.aplicacao
         }
 
 
+        public void DeletarAplicacao(int idaplica)
+        {
+            try
+            {
+                var pesqui = from aplicacao in Banco.tblaplicacaos
+                             where aplicacao.id_aplicacao == idaplica
+                             select aplicacao;
 
-      
+                Aplica = pesqui.Single();
+
+                Banco.tblaplicacaos.DeleteOnSubmit(Aplica);
+
+                Banco.SubmitChanges();
+                MessageBox.Show("Registro Excluido com Sucesso!");
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        
+        }
        
       
     }

@@ -97,6 +97,12 @@
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
     <Compile Include="Modulos\aplicacao\Aplicacao.cs" />
+    <Compile Include="Modulos\aplicacao\FormAlterarAplicacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\aplicacao\FormAlterarAplicacao.Designer.cs">
+      <DependentUpon>FormAlterarAplicacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\aplicacao\FormCadastraAplicacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,9 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Modulos\aplicacao\FormAlterarAplicacao.resx">
+      <DependentUpon>FormAlterarAplicacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\aplicacao\FormCadastraAplicacao.resx">
       <DependentUpon>FormCadastraAplicacao.cs</DependentUpon>
     </EmbeddedResource>

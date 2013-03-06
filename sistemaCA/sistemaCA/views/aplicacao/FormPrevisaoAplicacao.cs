@@ -36,6 +36,9 @@ namespace sistemaCA.views.aplicacao
         {
             FormCadastraAplicacao Cadastro = new FormCadastraAplicacao();
             Cadastro.ShowDialog();
+
+            Aplicacao aplicacao = new Aplicacao();
+            aplicacao.ListarAplicacoes(dgw_aplicacao);
         }
     }
 }

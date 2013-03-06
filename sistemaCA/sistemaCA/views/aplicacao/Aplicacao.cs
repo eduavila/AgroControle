@@ -10,6 +10,7 @@ namespace sistemaCA.views.aplicacao
     {
         public DataClasses1DataContext Banco { get; set; }
         public tblaplicacao Aplica { get; set; }
+        public string Descricao { get; set; }
         public int Id_aplicacao { get; set; }
         public DateTime DataAplicacao { get; set; }
         public DateTime DataCadastro { get; set; }
@@ -37,8 +38,20 @@ namespace sistemaCA.views.aplicacao
             try
             {
                 var pesqui = from aplica in Banco.tblaplicacaos
-                             select aplica;
-
+                             select new
+                             {
+                                 id_aplicacao = aplica.id_aplicacao,
+                                 status = aplica.status,
+                                 descricao = aplica.descricao,
+                                 datacadastro = aplica.data_cadastro,
+                                 dataaplicacao = aplica.data_aplicacao,
+                                 id_maquina = aplica.id_ben,
+                                 id_safra = aplica.id_safra,
+                                 id_func = aplica.id_funcionario,
+                                 id_talhao = aplica.id_talhao,
+                                 obs = aplica.obs
+                                 
+                             };
                 dgw.DataSource = pesqui;
 
             }
@@ -64,9 +77,11 @@ namespace sistemaCA.views.aplicacao
                 Aplica.id_funcionario = this.ID_Funcionario;
                 Aplica.id_ben = this.ID_Ben;
                 Aplica.obs = this.Obs;
+                Aplica.descricao = this.Descricao;
 
                 Banco.tblaplicacaos.InsertOnSubmit(Aplica);
                 Banco.SubmitChanges();
+                MessageBox.Show("Cadastrado com Sucesso!");
             }
             catch(Exception erro)
             {

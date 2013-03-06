@@ -48,5 +48,30 @@ namespace sistemaCA.views.aplicacao
             pesqui.ShowDialog();
             tb_safra.Text = pesqui.ID.ToString();
         }
+
+        private void FormCadastraAplicacao_Load(object sender, EventArgs e)
+        {
+            tb_status.Enabled = false;
+            tb_status.Text = "Aberto";
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            Aplicacao aplicacao = new Aplicacao();
+
+            aplicacao.Status = tb_status.Text;
+            aplicacao.Descricao = tb_descricao.Text;
+            aplicacao.DataAplicacao = dtp_aplicacao.Value;
+            aplicacao.DataCadastro = DateTime.Today.Date;
+            aplicacao.AreaAplicada =float.Parse(tb_areaplicada.Text);
+            aplicacao.ID_Ben =int.Parse(tb_maquinas.Text);
+            aplicacao.ID_Funcionario = int.Parse(tb_idFunc.Text);
+            aplicacao.ID_talhao = int.Parse(tb_talhao.Text);
+            aplicacao.ID_Safra = int.Parse(tb_safra.Text);
+            aplicacao.Obs = tb_obs.Text;
+            aplicacao.CadastraAplicacao();
+
+            Close();
+        }
     }
 }

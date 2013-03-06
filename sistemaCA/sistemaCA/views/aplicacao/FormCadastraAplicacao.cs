@@ -57,6 +57,7 @@ namespace sistemaCA.views.aplicacao
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
+            
             Aplicacao aplicacao = new Aplicacao();
 
             aplicacao.Status = tb_status.Text;
@@ -72,6 +73,11 @@ namespace sistemaCA.views.aplicacao
             aplicacao.CadastraAplicacao();
 
             Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }

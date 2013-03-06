@@ -66,181 +66,181 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="views\aplicacao\Aplicacao.cs" />
-    <Compile Include="views\aplicacao\FormCadastraAplicacao.cs">
+    <Compile Include="Modulos\aplicacao\Aplicacao.cs" />
+    <Compile Include="Modulos\aplicacao\FormCadastraAplicacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\aplicacao\FormCadastraAplicacao.Designer.cs">
+    <Compile Include="Modulos\aplicacao\FormCadastraAplicacao.Designer.cs">
       <DependentUpon>FormCadastraAplicacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\aplicacao\FormPrevisaoAplicacao.cs">
+    <Compile Include="Modulos\aplicacao\FormPrevisaoAplicacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\aplicacao\FormPrevisaoAplicacao.Designer.cs">
+    <Compile Include="Modulos\aplicacao\FormPrevisaoAplicacao.Designer.cs">
       <DependentUpon>FormPrevisaoAplicacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\bens\Bens.cs" />
-    <Compile Include="views\bens\FormAlterarBens.cs">
+    <Compile Include="Modulos\bens\Bens.cs" />
+    <Compile Include="Modulos\bens\FormAlterarBens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\bens\FormAlterarBens.Designer.cs">
+    <Compile Include="Modulos\bens\FormAlterarBens.Designer.cs">
       <DependentUpon>FormAlterarBens.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\bens\Formbens.cs">
+    <Compile Include="Modulos\bens\Formbens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\bens\Formbens.Designer.cs">
+    <Compile Include="Modulos\bens\Formbens.Designer.cs">
       <DependentUpon>Formbens.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\bens\FormCadastraBen.cs">
+    <Compile Include="Modulos\bens\FormCadastraBen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\bens\FormCadastraBen.Designer.cs">
+    <Compile Include="Modulos\bens\FormCadastraBen.Designer.cs">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Pesquisa\FormPesquisa.cs">
+    <Compile Include="Modulos\Pesquisa\FormPesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Pesquisa\FormPesquisa.Designer.cs">
+    <Compile Include="Modulos\Pesquisa\FormPesquisa.Designer.cs">
       <DependentUpon>FormPesquisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Pesquisa\Pesquisa.cs">
+    <Compile Include="Modulos\Pesquisa\Pesquisa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\FormProduto.cs" />
-    <Compile Include="views\fornecedor\FormCasdatroFornecedor.cs">
+    <Compile Include="Modulos\FormProduto.cs" />
+    <Compile Include="Modulos\fornecedor\FormCasdatroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\fornecedor\FormCasdatroFornecedor.Designer.cs">
+    <Compile Include="Modulos\fornecedor\FormCasdatroFornecedor.Designer.cs">
       <DependentUpon>FormCasdatroFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\fornecedor\FormFornecedores.cs">
+    <Compile Include="Modulos\fornecedor\FormFornecedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\fornecedor\FormFornecedores.Designer.cs">
+    <Compile Include="Modulos\fornecedor\FormFornecedores.Designer.cs">
       <DependentUpon>FormFornecedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\fornecedor\FormVisualizarFornecedor.cs">
+    <Compile Include="Modulos\fornecedor\FormVisualizarFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\fornecedor\FormVisualizarFornecedor.Designer.cs">
+    <Compile Include="Modulos\fornecedor\FormVisualizarFornecedor.Designer.cs">
       <DependentUpon>FormVisualizarFornecedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\fornecedor\Fornecedores.cs" />
-    <Compile Include="views\funcionario\formFuncionario.cs">
+    <Compile Include="Modulos\fornecedor\Fornecedores.cs" />
+    <Compile Include="Modulos\funcionario\formFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\funcionario\formFuncionario.Designer.cs">
+    <Compile Include="Modulos\funcionario\formFuncionario.Designer.cs">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\formUsuario.cs">
+    <Compile Include="Modulos\formUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\formUsuario.Designer.cs">
+    <Compile Include="Modulos\formUsuario.Designer.cs">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\funcionario\FormFuncionarioV.cs">
+    <Compile Include="Modulos\funcionario\FormFuncionarioV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\funcionario\FormFuncionarioV.Designer.cs">
+    <Compile Include="Modulos\funcionario\FormFuncionarioV.Designer.cs">
       <DependentUpon>FormFuncionarioV.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\funcionario\form_cadastro_fu.cs">
+    <Compile Include="Modulos\funcionario\form_cadastro_fu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\funcionario\form_cadastro_fu.Designer.cs">
+    <Compile Include="Modulos\funcionario\form_cadastro_fu.Designer.cs">
       <DependentUpon>form_cadastro_fu.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\funcionario\Funcionarios.cs" />
-    <Compile Include="views\produtos\FormProduto.cs">
+    <Compile Include="Modulos\funcionario\Funcionarios.cs" />
+    <Compile Include="Modulos\produtos\FormProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\produtos\FormProduto.Designer.cs">
+    <Compile Include="Modulos\produtos\FormProduto.Designer.cs">
       <DependentUpon>FormProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\produtos\FormProdutosCadastro.cs">
+    <Compile Include="Modulos\produtos\FormProdutosCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\produtos\FormProdutosCadastro.Designer.cs">
+    <Compile Include="Modulos\produtos\FormProdutosCadastro.Designer.cs">
       <DependentUpon>FormProdutosCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\produtos\FormProdutoAtualizar.cs">
+    <Compile Include="Modulos\produtos\FormProdutoAtualizar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\produtos\FormProdutoAtualizar.Designer.cs">
+    <Compile Include="Modulos\produtos\FormProdutoAtualizar.Designer.cs">
       <DependentUpon>FormProdutoAtualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\produtos\FormtipoProduto.cs">
+    <Compile Include="Modulos\produtos\FormtipoProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\produtos\FormtipoProduto.Designer.cs">
+    <Compile Include="Modulos\produtos\FormtipoProduto.Designer.cs">
       <DependentUpon>FormtipoProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\produtos\Produto.cs" />
-    <Compile Include="views\produtos\TipoProduto.cs" />
-    <Compile Include="views\safra\Cultura.cs" />
-    <Compile Include="views\safra\FormAtualizarSafra.cs">
+    <Compile Include="Modulos\produtos\Produto.cs" />
+    <Compile Include="Modulos\produtos\TipoProduto.cs" />
+    <Compile Include="Modulos\safra\Cultura.cs" />
+    <Compile Include="Modulos\safra\FormAtualizarSafra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\safra\FormAtualizarSafra.Designer.cs">
+    <Compile Include="Modulos\safra\FormAtualizarSafra.Designer.cs">
       <DependentUpon>FormAtualizarSafra.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\safra\FormSafra.cs">
+    <Compile Include="Modulos\safra\FormSafra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\safra\FormSafra.Designer.cs">
+    <Compile Include="Modulos\safra\FormSafra.Designer.cs">
       <DependentUpon>FormSafra.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\safra\FormCadastroSafra.cs">
+    <Compile Include="Modulos\safra\FormCadastroSafra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\safra\FormCadastroSafra.Designer.cs">
+    <Compile Include="Modulos\safra\FormCadastroSafra.Designer.cs">
       <DependentUpon>FormCadastroSafra.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\safra\FormTipoCultura.cs">
+    <Compile Include="Modulos\safra\FormTipoCultura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\safra\FormTipoCultura.Designer.cs">
+    <Compile Include="Modulos\safra\FormTipoCultura.Designer.cs">
       <DependentUpon>FormTipoCultura.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\safra\Safra.cs" />
-    <Compile Include="views\talhao\FormAtualizarTalhao.cs">
+    <Compile Include="Modulos\safra\Safra.cs" />
+    <Compile Include="Modulos\talhao\FormAtualizarTalhao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\talhao\FormAtualizarTalhao.Designer.cs">
+    <Compile Include="Modulos\talhao\FormAtualizarTalhao.Designer.cs">
       <DependentUpon>FormAtualizarTalhao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\talhao\FormCadastroTalhao.cs">
+    <Compile Include="Modulos\talhao\FormCadastroTalhao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\talhao\FormCadastroTalhao.Designer.cs">
+    <Compile Include="Modulos\talhao\FormCadastroTalhao.Designer.cs">
       <DependentUpon>FormCadastroTalhao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\talhao\FormTalhao.cs">
+    <Compile Include="Modulos\talhao\FormTalhao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\talhao\FormTalhao.Designer.cs">
+    <Compile Include="Modulos\talhao\FormTalhao.Designer.cs">
       <DependentUpon>FormTalhao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\talhao\Talhao.cs" />
-    <Compile Include="views\telasplash.cs">
+    <Compile Include="Modulos\talhao\Talhao.cs" />
+    <Compile Include="Modulos\telasplash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\telasplash.Designer.cs">
+    <Compile Include="Modulos\telasplash.Designer.cs">
       <DependentUpon>telasplash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\telaprincipal.cs">
+    <Compile Include="Modulos\telaprincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\telaprincipal.Designer.cs">
+    <Compile Include="Modulos\telaprincipal.Designer.cs">
       <DependentUpon>telaprincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\FormLogin.cs">
+    <Compile Include="Modulos\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\FormLogin.Designer.cs">
+    <Compile Include="Modulos\FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <None Include="app.config" />
@@ -248,79 +248,79 @@
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="views\aplicacao\FormCadastraAplicacao.resx">
+    <EmbeddedResource Include="Modulos\aplicacao\FormCadastraAplicacao.resx">
       <DependentUpon>FormCadastraAplicacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\aplicacao\FormPrevisaoAplicacao.resx">
+    <EmbeddedResource Include="Modulos\aplicacao\FormPrevisaoAplicacao.resx">
       <DependentUpon>FormPrevisaoAplicacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\bens\FormAlterarBens.resx">
+    <EmbeddedResource Include="Modulos\bens\FormAlterarBens.resx">
       <DependentUpon>FormAlterarBens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\bens\Formbens.resx">
+    <EmbeddedResource Include="Modulos\bens\Formbens.resx">
       <DependentUpon>Formbens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\bens\FormCadastraBen.resx">
+    <EmbeddedResource Include="Modulos\bens\FormCadastraBen.resx">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Pesquisa\FormPesquisa.resx">
+    <EmbeddedResource Include="Modulos\Pesquisa\FormPesquisa.resx">
       <DependentUpon>FormPesquisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\fornecedor\FormCasdatroFornecedor.resx">
+    <EmbeddedResource Include="Modulos\fornecedor\FormCasdatroFornecedor.resx">
       <DependentUpon>FormCasdatroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\fornecedor\FormFornecedores.resx">
+    <EmbeddedResource Include="Modulos\fornecedor\FormFornecedores.resx">
       <DependentUpon>FormFornecedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\fornecedor\FormVisualizarFornecedor.resx">
+    <EmbeddedResource Include="Modulos\fornecedor\FormVisualizarFornecedor.resx">
       <DependentUpon>FormVisualizarFornecedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\funcionario\formFuncionario.resx">
+    <EmbeddedResource Include="Modulos\funcionario\formFuncionario.resx">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\formUsuario.resx">
+    <EmbeddedResource Include="Modulos\formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\funcionario\FormFuncionarioV.resx">
+    <EmbeddedResource Include="Modulos\funcionario\FormFuncionarioV.resx">
       <DependentUpon>FormFuncionarioV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\funcionario\form_cadastro_fu.resx">
+    <EmbeddedResource Include="Modulos\funcionario\form_cadastro_fu.resx">
       <DependentUpon>form_cadastro_fu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\produtos\FormProduto.resx">
+    <EmbeddedResource Include="Modulos\produtos\FormProduto.resx">
       <DependentUpon>FormProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\produtos\FormProdutosCadastro.resx">
+    <EmbeddedResource Include="Modulos\produtos\FormProdutosCadastro.resx">
       <DependentUpon>FormProdutosCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\produtos\FormProdutoAtualizar.resx">
+    <EmbeddedResource Include="Modulos\produtos\FormProdutoAtualizar.resx">
       <DependentUpon>FormProdutoAtualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\produtos\FormtipoProduto.resx">
+    <EmbeddedResource Include="Modulos\produtos\FormtipoProduto.resx">
       <DependentUpon>FormtipoProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\safra\FormAtualizarSafra.resx">
+    <EmbeddedResource Include="Modulos\safra\FormAtualizarSafra.resx">
       <DependentUpon>FormAtualizarSafra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\safra\FormSafra.resx">
+    <EmbeddedResource Include="Modulos\safra\FormSafra.resx">
       <DependentUpon>FormSafra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\safra\FormCadastroSafra.resx">
+    <EmbeddedResource Include="Modulos\safra\FormCadastroSafra.resx">
       <DependentUpon>FormCadastroSafra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\safra\FormTipoCultura.resx">
+    <EmbeddedResource Include="Modulos\safra\FormTipoCultura.resx">
       <DependentUpon>FormTipoCultura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\talhao\FormAtualizarTalhao.resx">
+    <EmbeddedResource Include="Modulos\talhao\FormAtualizarTalhao.resx">
       <DependentUpon>FormAtualizarTalhao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\talhao\FormCadastroTalhao.resx">
+    <EmbeddedResource Include="Modulos\talhao\FormCadastroTalhao.resx">
       <DependentUpon>FormCadastroTalhao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\talhao\FormTalhao.resx">
+    <EmbeddedResource Include="Modulos\talhao\FormTalhao.resx">
       <DependentUpon>FormTalhao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\telasplash.resx">
+    <EmbeddedResource Include="Modulos\telasplash.resx">
       <DependentUpon>telasplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -332,10 +332,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="views\telaprincipal.resx">
+    <EmbeddedResource Include="Modulos\telaprincipal.resx">
       <DependentUpon>telaprincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\FormLogin.resx">
+    <EmbeddedResource Include="Modulos\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataClasses1.dbml">

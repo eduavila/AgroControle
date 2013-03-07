@@ -65,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(165, 83);
+            this.label1.Location = new System.Drawing.Point(28, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
@@ -73,16 +73,16 @@
             // 
             // tb_areaplicada
             // 
-            this.tb_areaplicada.Location = new System.Drawing.Point(171, 99);
+            this.tb_areaplicada.Location = new System.Drawing.Point(34, 98);
             this.tb_areaplicada.Name = "tb_areaplicada";
             this.tb_areaplicada.Size = new System.Drawing.Size(75, 20);
             this.tb_areaplicada.TabIndex = 1;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 420);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 385);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(559, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(575, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -90,7 +90,7 @@
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.tb_idFunc);
-            this.groupBox2.Location = new System.Drawing.Point(312, 165);
+            this.groupBox2.Location = new System.Drawing.Point(437, 82);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(107, 47);
             this.groupBox2.TabIndex = 4;
@@ -118,7 +118,7 @@
             // 
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.tb_safra);
-            this.groupBox3.Location = new System.Drawing.Point(171, 165);
+            this.groupBox3.Location = new System.Drawing.Point(171, 173);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(107, 47);
             this.groupBox3.TabIndex = 5;
@@ -145,7 +145,7 @@
             // dtp_aplicacao
             // 
             this.dtp_aplicacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_aplicacao.Location = new System.Drawing.Point(33, 99);
+            this.dtp_aplicacao.Location = new System.Drawing.Point(168, 98);
             this.dtp_aplicacao.Name = "dtp_aplicacao";
             this.dtp_aplicacao.Size = new System.Drawing.Size(99, 20);
             this.dtp_aplicacao.TabIndex = 6;
@@ -153,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 83);
+            this.label2.Location = new System.Drawing.Point(168, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 7;
@@ -162,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(250, 102);
+            this.label3.Location = new System.Drawing.Point(111, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 8;
@@ -172,7 +172,7 @@
             // 
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.tb_maquinas);
-            this.groupBox4.Location = new System.Drawing.Point(403, 83);
+            this.groupBox4.Location = new System.Drawing.Point(296, 82);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(107, 47);
             this.groupBox4.TabIndex = 6;
@@ -198,7 +198,7 @@
             // 
             // tb_obs
             // 
-            this.tb_obs.Location = new System.Drawing.Point(36, 268);
+            this.tb_obs.Location = new System.Drawing.Point(313, 193);
             this.tb_obs.Multiline = true;
             this.tb_obs.Name = "tb_obs";
             this.tb_obs.Size = new System.Drawing.Size(220, 78);
@@ -207,7 +207,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 241);
+            this.label4.Location = new System.Drawing.Point(310, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 10;
@@ -217,7 +217,7 @@
             // 
             this.groupBox6.Controls.Add(this.button6);
             this.groupBox6.Controls.Add(this.tb_talhao);
-            this.groupBox6.Location = new System.Drawing.Point(36, 165);
+            this.groupBox6.Location = new System.Drawing.Point(31, 173);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(107, 47);
             this.groupBox6.TabIndex = 7;
@@ -277,9 +277,9 @@
             // 
             this.groupBox1.Controls.Add(this.btn_cadastrar);
             this.groupBox1.Controls.Add(this.btn_cancelar);
-            this.groupBox1.Location = new System.Drawing.Point(312, 353);
+            this.groupBox1.Location = new System.Drawing.Point(323, 315);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(221, 64);
+            this.groupBox1.Size = new System.Drawing.Size(221, 65);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             // 
@@ -306,7 +306,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 442);
+            this.ClientSize = new System.Drawing.Size(575, 407);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tb_descricao);

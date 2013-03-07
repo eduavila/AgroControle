@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaCA.Modulos.aplicacao;
 using sistemaCA.views;
 using sistemaCA.views.Pesquisa;
 
@@ -53,11 +54,15 @@ namespace sistemaCA.views.aplicacao
         {
             tb_status.Enabled = false;
             tb_status.Text = "Aberto";
+
+
+
+            
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            
+            // cadastrando aplicaçao
             Aplicacao aplicacao = new Aplicacao();
 
             aplicacao.Status = tb_status.Text;
@@ -72,10 +77,21 @@ namespace sistemaCA.views.aplicacao
             aplicacao.Obs = tb_obs.Text;
             aplicacao.CadastraAplicacao();
 
-            Close();
+            // fim cadastro aplicaçao
+
+
+            
+
+
+            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

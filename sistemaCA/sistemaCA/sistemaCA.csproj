@@ -115,6 +115,7 @@
     <Compile Include="Modulos\aplicacao\FormPrevisaoAplicacao.Designer.cs">
       <DependentUpon>FormPrevisaoAplicacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\aplicacao\ProdutoAplicado.cs" />
     <Compile Include="Modulos\bens\Bens.cs" />
     <Compile Include="Modulos\bens\FormAlterarBens.cs">
       <SubType>Form</SubType>

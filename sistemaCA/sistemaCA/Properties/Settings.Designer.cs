@@ -26,17 +26,6 @@ namespace sistemaCA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOT-EDUARDO\\SYSCA;Initial Catalog=sysca2;User ID=sa;Password=99463782" +
-            "")]
-        public string sysca2ConnectionString {
-            get {
-                return ((string)(this["sysca2ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NOT-EDUARDO\\SYSCA;Initial Catalog=dbsysca;User ID=sa;Password=9946378" +
             "2")]
         public string dbsyscaConnectionString {

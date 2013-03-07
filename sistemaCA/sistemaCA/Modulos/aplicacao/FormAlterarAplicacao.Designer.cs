@@ -300,7 +300,7 @@
             // 
             this.tb_cadastro.Location = new System.Drawing.Point(166, 22);
             this.tb_cadastro.Name = "tb_cadastro";
-            this.tb_cadastro.Size = new System.Drawing.Size(70, 20);
+            this.tb_cadastro.Size = new System.Drawing.Size(63, 20);
             this.tb_cadastro.TabIndex = 65;
             // 
             // btn_alterar

@@ -75,7 +75,7 @@
             this.groupBox2.Controls.Add(this.btn_visualizar);
             this.groupBox2.Location = new System.Drawing.Point(15, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 64);
+            this.groupBox2.Size = new System.Drawing.Size(325, 64);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             // 

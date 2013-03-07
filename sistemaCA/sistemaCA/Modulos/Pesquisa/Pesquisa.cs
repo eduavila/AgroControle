@@ -203,7 +203,7 @@ namespace sistemaCA.views.Pesquisa
                          {
                              id = maquinas.id_ben,
                              descricao = maquinas.descricao,
-                             placa = maquinas.placa
+                             CodControle = maquinas.codigoControle
                          };
 
             dgw.DataSource = pesqui;
@@ -217,7 +217,7 @@ namespace sistemaCA.views.Pesquisa
                          {
                              id = maquinas.id_ben,
                              descricao = maquinas.descricao,
-                             placa = maquinas.placa
+                             CodControle = maquinas.codigoControle
                          };
 
             dgw.DataSource = pesqui;
@@ -237,7 +237,7 @@ namespace sistemaCA.views.Pesquisa
         {
             dgw_pesquisa.Columns["id"].HeaderText = "ID Máquina";
             dgw_pesquisa.Columns["descricao"].HeaderText = "Descrição";
-            dgw_pesquisa.Columns["placa"].HeaderText = "Placa";
+            dgw_pesquisa.Columns["CodControle"].HeaderText = "Cod Controle";
         }
 
 

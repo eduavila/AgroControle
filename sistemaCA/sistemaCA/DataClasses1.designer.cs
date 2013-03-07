@@ -2693,8 +2693,6 @@ namespace sistemaCA
 		
 		private string _ie;
 		
-		private EntitySet<tblprodutosaplicado> _tblprodutosaplicados;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2725,7 +2723,6 @@ namespace sistemaCA
 		
 		public tblfornecedor()
 		{
-			this._tblprodutosaplicados = new EntitySet<tblprodutosaplicado>(new Action<tblprodutosaplicado>(this.attach_tblprodutosaplicados), new Action<tblprodutosaplicado>(this.detach_tblprodutosaplicados));
 			OnCreated();
 		}
 		
@@ -2949,19 +2946,6 @@ namespace sistemaCA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblfornecedor_tblprodutosaplicado", Storage="_tblprodutosaplicados", ThisKey="id_fornecedor", OtherKey="id_fornecedor")]
-		public EntitySet<tblprodutosaplicado> tblprodutosaplicados
-		{
-			get
-			{
-				return this._tblprodutosaplicados;
-			}
-			set
-			{
-				this._tblprodutosaplicados.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2980,18 +2964,6 @@ namespace sistemaCA
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tblprodutosaplicados(tblprodutosaplicado entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblfornecedor = this;
-		}
-		
-		private void detach_tblprodutosaplicados(tblprodutosaplicado entity)
-		{
-			this.SendPropertyChanging();
-			entity.tblfornecedor = null;
 		}
 	}
 	
@@ -3501,19 +3473,11 @@ namespace sistemaCA
 		
 		private System.Nullable<float> _preco;
 		
-		private System.Nullable<float> _total;
-		
 		private int _id_produto;
-		
-		private int _id_fornecedor;
-		
-		private string _descricaoproduto;
 		
 		private System.Nullable<int> _id_aplicacao;
 		
 		private EntityRef<tblaplicacao> _tblaplicacao;
-		
-		private EntityRef<tblfornecedor> _tblfornecedor;
 		
 		private EntityRef<tblproduto> _tblproduto;
 		
@@ -3527,14 +3491,8 @@ namespace sistemaCA
     partial void OnquantidadeChanged();
     partial void OnprecoChanging(System.Nullable<float> value);
     partial void OnprecoChanged();
-    partial void OntotalChanging(System.Nullable<float> value);
-    partial void OntotalChanged();
     partial void Onid_produtoChanging(int value);
     partial void Onid_produtoChanged();
-    partial void Onid_fornecedorChanging(int value);
-    partial void Onid_fornecedorChanged();
-    partial void OndescricaoprodutoChanging(string value);
-    partial void OndescricaoprodutoChanged();
     partial void Onid_aplicacaoChanging(System.Nullable<int> value);
     partial void Onid_aplicacaoChanged();
     #endregion
@@ -3542,7 +3500,6 @@ namespace sistemaCA
 		public tblprodutosaplicado()
 		{
 			this._tblaplicacao = default(EntityRef<tblaplicacao>);
-			this._tblfornecedor = default(EntityRef<tblfornecedor>);
 			this._tblproduto = default(EntityRef<tblproduto>);
 			OnCreated();
 		}
@@ -3607,26 +3564,6 @@ namespace sistemaCA
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total", DbType="Real")]
-		public System.Nullable<float> total
-		{
-			get
-			{
-				return this._total;
-			}
-			set
-			{
-				if ((this._total != value))
-				{
-					this.OntotalChanging(value);
-					this.SendPropertyChanging();
-					this._total = value;
-					this.SendPropertyChanged("total");
-					this.OntotalChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_produto", DbType="Int NOT NULL")]
 		public int id_produto
 		{
@@ -3647,50 +3584,6 @@ namespace sistemaCA
 					this._id_produto = value;
 					this.SendPropertyChanged("id_produto");
 					this.Onid_produtoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_fornecedor", DbType="Int NOT NULL")]
-		public int id_fornecedor
-		{
-			get
-			{
-				return this._id_fornecedor;
-			}
-			set
-			{
-				if ((this._id_fornecedor != value))
-				{
-					if (this._tblfornecedor.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_fornecedorChanging(value);
-					this.SendPropertyChanging();
-					this._id_fornecedor = value;
-					this.SendPropertyChanged("id_fornecedor");
-					this.Onid_fornecedorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descricaoproduto", DbType="VarChar(80)")]
-		public string descricaoproduto
-		{
-			get
-			{
-				return this._descricaoproduto;
-			}
-			set
-			{
-				if ((this._descricaoproduto != value))
-				{
-					this.OndescricaoprodutoChanging(value);
-					this.SendPropertyChanging();
-					this._descricaoproduto = value;
-					this.SendPropertyChanged("descricaoproduto");
-					this.OndescricaoprodutoChanged();
 				}
 			}
 		}
@@ -3749,40 +3642,6 @@ namespace sistemaCA
 						this._id_aplicacao = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tblaplicacao");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblfornecedor_tblprodutosaplicado", Storage="_tblfornecedor", ThisKey="id_fornecedor", OtherKey="id_fornecedor", IsForeignKey=true)]
-		public tblfornecedor tblfornecedor
-		{
-			get
-			{
-				return this._tblfornecedor.Entity;
-			}
-			set
-			{
-				tblfornecedor previousValue = this._tblfornecedor.Entity;
-				if (((previousValue != value) 
-							|| (this._tblfornecedor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._tblfornecedor.Entity = null;
-						previousValue.tblprodutosaplicados.Remove(this);
-					}
-					this._tblfornecedor.Entity = value;
-					if ((value != null))
-					{
-						value.tblprodutosaplicados.Add(this);
-						this._id_fornecedor = value.id_fornecedor;
-					}
-					else
-					{
-						this._id_fornecedor = default(int);
-					}
-					this.SendPropertyChanged("tblfornecedor");
 				}
 			}
 		}

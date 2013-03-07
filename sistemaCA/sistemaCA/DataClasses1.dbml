@@ -128,7 +128,6 @@
       <Column Name="email" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
       <Column Name="obs" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Column Name="ie" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
-      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblprodutosaplicados" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblprodutosaplicado" />
     </Type>
   </Table>
   <Table Name="dbo.tblaplicacao" Member="tblaplicacaos">
@@ -156,13 +155,9 @@
       <Column Name="id_produtosaplicado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="quantidade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="preco" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Column Name="total" Type="System.Single" DbType="Real" CanBeNull="true" />
       <Column Name="id_produto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_fornecedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="descricaoproduto" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
       <Column Name="id_aplicacao" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="tblaplicacao_tblprodutosaplicado" Member="tblaplicacao" ThisKey="id_aplicacao" OtherKey="id_aplicacao" Type="tblaplicacao" IsForeignKey="true" />
-      <Association Name="tblfornecedor_tblprodutosaplicado" Member="tblfornecedor" ThisKey="id_fornecedor" OtherKey="id_fornecedor" Type="tblfornecedor" IsForeignKey="true" />
       <Association Name="tblproduto_tblprodutosaplicado" Member="tblproduto" ThisKey="id_produto" OtherKey="id_produto" Type="tblproduto" IsForeignKey="true" />
     </Type>
   </Table>

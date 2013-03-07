@@ -37,7 +37,11 @@ namespace sistemaCA.views.aplicacao
         {
             try
             {
-                var pesqui = from aplica in Banco.tblaplicacaos
+                var pesqui = from aplica in Banco.tblaplicacaos join maquina in Banco.tblbens on aplica.id_ben equals maquina.id_ben 
+                             join safra in Banco.tblsafras on aplica.id_safra equals safra.id_safra
+                             join talhao in Banco.tbltalhaos on aplica.id_talhao equals talhao.id_talhao
+                             join funcionario in Banco.tblfuncionarios on aplica.id_funcionario equals funcionario.id_funcionario
+
                              select new
                              {
                                  id_aplicacao = aplica.id_aplicacao,
@@ -45,10 +49,10 @@ namespace sistemaCA.views.aplicacao
                                  descricao = aplica.descricao,
                                  datacadastro = aplica.data_cadastro,
                                  dataaplicacao = aplica.data_aplicacao,
-                                 id_maquina = aplica.id_ben,
-                                 id_safra = aplica.id_safra,
-                                 id_func = aplica.id_funcionario,
-                                 id_talhao = aplica.id_talhao,
+                                 Maquina = maquina.codigoControle,
+                                 safra = safra.descricao,
+                                 funcionario = funcionario.nome,
+                                 talhao = talhao.descricao,
                                  obs = aplica.obs
                                  
                              };

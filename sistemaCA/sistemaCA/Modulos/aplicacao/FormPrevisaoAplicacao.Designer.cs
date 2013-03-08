@@ -75,7 +75,7 @@
             this.groupBox2.Controls.Add(this.btn_visualizar);
             this.groupBox2.Location = new System.Drawing.Point(15, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(325, 64);
+            this.groupBox2.Size = new System.Drawing.Size(254, 62);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             // 
@@ -85,13 +85,13 @@
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
             this.btn_cadastrar.TabIndex = 34;
-            this.btn_cadastrar.Text = "Cadastrar";
+            this.btn_cadastrar.Text = "Baixa";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
             this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // btn_visualizar
             // 
-            this.btn_visualizar.Location = new System.Drawing.Point(114, 20);
+            this.btn_visualizar.Location = new System.Drawing.Point(148, 19);
             this.btn_visualizar.Name = "btn_visualizar";
             this.btn_visualizar.Size = new System.Drawing.Size(87, 33);
             this.btn_visualizar.TabIndex = 39;

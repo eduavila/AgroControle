@@ -13,6 +13,7 @@ using sistemaCA.views.safra;
 using sistemaCA.views.talhao;
 using sistemaCA.views.fornecedor;
 using sistemaCA.views.aplicacao;
+
 namespace sistemaCA.views
 {
     public partial class telaprincipal : Form
@@ -95,13 +96,19 @@ namespace sistemaCA.views
 
         private void retornoAplicaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormPrevisaoAplicacao Aplicacao = new FormPrevisaoAplicacao();
+            Aplicacao.Show();
         }
 
         private void aplicaçãoPréviaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrevisaoAplicacao Aplicacao = new FormPrevisaoAplicacao();
-            Aplicacao.Show();
+            FormCadastraAplicacao Cadastro = new FormCadastraAplicacao();
+            Cadastro.ShowDialog();
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

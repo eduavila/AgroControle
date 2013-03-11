@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 namespace sistemaCA.Modulos.aplicacao
 {
@@ -34,39 +35,70 @@ namespace sistemaCA.Modulos.aplicacao
 
             DataGridViewComboBoxColumn produto = new DataGridViewComboBoxColumn();
             produto.HeaderText = "Produto";
+            produto.Name = "produto";
+            
 
             produto.DataSource = pro.ToList();
 
             dgw.Columns.Add(produto);
+            
         }
 
         public int ProximoRegistro()
         {
             var aplica = from aplicacao in Banco.tblaplicacaos select aplicacao.id_aplicacao;
 
-            int result = aplica.Max()+1;
+            int result = aplica.Max();
 
             return result;
         }
 
 
+        
 
 
-        public void CadastraProdutoAplicado()
+
+
+        // produrando produto pela descricao
+        public int ProcurarProduto(string produ)
+        {
+
+            var result = from produto in Banco.tblprodutos
+                         where produto.descricao == produ
+                         select produto;
+
+            Produto = result.Single(); 
+
+        
+             return Produto.id_produto;
+        }
+
+        
+
+
+        public void CadastraProdutoAplicado(DataGridView dgw)
         {
             try
             {
-                ProdutoAplica.quantidade = this.Quantidade;
-                ProdutoAplica.preco = this.Preco;
-                ProdutoAplica.id_aplicacao = this.Id_aplicacao;
-                ProdutoAplica.id_produto = this.Id_Produto;
 
 
-                Banco.tblprodutosaplicados.InsertOnSubmit(ProdutoAplica);
+            for(int linha= 0 ;(dgw.RowCount-1) > linha ;linha++)
+            {
+                tblprodutosaplicado Produto = new tblprodutosaplicado();
+                var result = dgw.Rows[linha].Cells["produto"].Value.ToString();
+                Produto.id_produto = this.ProcurarProduto(result);
+                Produto.preco = float.Parse(dgw.Rows[linha].Cells["valor"].Value.ToString());
+                Produto.quantidade = int.Parse(dgw.Rows[linha].Cells["quantidade"].Value.ToString());
+                Produto.id_aplicacao = this.ProximoRegistro();
+                Banco.tblprodutosaplicados.InsertOnSubmit(Produto);
             }
+            Banco.SubmitChanges();
+
+            
+         }
             catch (Exception erro)
             {
-                MessageBox.Show(erro.Message);
+                MessageBox.Show("Erro ao Cadastra Produto Aplicado :"+erro.Message);
             }
 
 

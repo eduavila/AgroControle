@@ -55,11 +55,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgw_produto = new System.Windows.Forms.DataGridView();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_produto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,9 +86,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 385);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 465);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(575, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(555, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -118,7 +124,7 @@
             // 
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.tb_safra);
-            this.groupBox3.Location = new System.Drawing.Point(171, 173);
+            this.groupBox3.Location = new System.Drawing.Point(168, 163);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(107, 47);
             this.groupBox3.TabIndex = 5;
@@ -198,7 +204,7 @@
             // 
             // tb_obs
             // 
-            this.tb_obs.Location = new System.Drawing.Point(313, 193);
+            this.tb_obs.Location = new System.Drawing.Point(313, 163);
             this.tb_obs.Multiline = true;
             this.tb_obs.Name = "tb_obs";
             this.tb_obs.Size = new System.Drawing.Size(220, 78);
@@ -207,7 +213,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(310, 173);
+            this.label4.Location = new System.Drawing.Point(310, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 10;
@@ -217,7 +223,7 @@
             // 
             this.groupBox6.Controls.Add(this.button6);
             this.groupBox6.Controls.Add(this.tb_talhao);
-            this.groupBox6.Location = new System.Drawing.Point(31, 173);
+            this.groupBox6.Location = new System.Drawing.Point(33, 163);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(107, 47);
             this.groupBox6.TabIndex = 7;
@@ -270,18 +276,19 @@
             // 
             this.tb_descricao.Location = new System.Drawing.Point(168, 40);
             this.tb_descricao.Name = "tb_descricao";
-            this.tb_descricao.Size = new System.Drawing.Size(354, 20);
+            this.tb_descricao.Size = new System.Drawing.Size(365, 20);
             this.tb_descricao.TabIndex = 14;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_cadastrar);
             this.groupBox1.Controls.Add(this.btn_cancelar);
-            this.groupBox1.Location = new System.Drawing.Point(313, 308);
+            this.groupBox1.Location = new System.Drawing.Point(313, 400);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(221, 65);
+            this.groupBox1.Size = new System.Drawing.Size(221, 62);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btn_cadastrar
             // 
@@ -302,11 +309,44 @@
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgw_produto);
+            this.groupBox5.Location = new System.Drawing.Point(34, 246);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(499, 147);
+            this.groupBox5.TabIndex = 45;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Produtos";
+            // 
+            // dgw_produto
+            // 
+            this.dgw_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_produto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.quantidade,
+            this.valor});
+            this.dgw_produto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_produto.Location = new System.Drawing.Point(3, 16);
+            this.dgw_produto.Name = "dgw_produto";
+            this.dgw_produto.Size = new System.Drawing.Size(493, 128);
+            this.dgw_produto.TabIndex = 0;
+            // 
+            // quantidade
+            // 
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // valor
+            // 
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            // 
             // FormCadastraAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 407);
+            this.ClientSize = new System.Drawing.Size(555, 487);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tb_descricao);
@@ -336,6 +376,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,5 +412,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dgw_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }

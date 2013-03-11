@@ -56,6 +56,21 @@ namespace sistemaCA.views.aplicacao
             tb_status.Text = "Aberto";
 
 
+            // listando descricao produto no comobox 
+
+            ProdutoAplicado produto = new ProdutoAplicado();
+
+
+            produto.ListandoProduto(dgw_produto);
+
+          //  dgw_produto.Columns["Produto"].DisplayIndex = 0;
+            dgw_produto.Columns["quantidade"].DisplayIndex = 1;
+            dgw_produto.Columns["valor"].DisplayIndex = 2;
+          
+
+            
+
+            
 
             
         }
@@ -78,10 +93,11 @@ namespace sistemaCA.views.aplicacao
             aplicacao.CadastraAplicacao();
 
             // fim cadastro aplicaçao
+            ProdutoAplicado produto = new ProdutoAplicado();
 
+            produto.CadastraProdutoAplicado(dgw_produto);
 
-            
-
+            MessageBox.Show("Registro Cadastrado com Sucesso!");
 
             
         }
@@ -92,6 +108,11 @@ namespace sistemaCA.views.aplicacao
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

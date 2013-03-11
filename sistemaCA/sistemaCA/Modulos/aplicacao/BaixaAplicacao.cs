@@ -16,5 +16,10 @@ namespace sistemaCA.Modulos.aplicacao
         {
             InitializeComponent();
         }
+
+        private void BaixaAplicacao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

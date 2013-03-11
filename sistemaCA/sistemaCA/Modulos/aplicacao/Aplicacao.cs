@@ -162,7 +162,7 @@ namespace sistemaCA.views.aplicacao
                 Banco.tblaplicacaos.InsertOnSubmit(Aplica);
                 Banco.SubmitChanges();
                 
-                MessageBox.Show("Cadastrado com Sucesso!");
+                
             }
             catch(Exception erro)
             {

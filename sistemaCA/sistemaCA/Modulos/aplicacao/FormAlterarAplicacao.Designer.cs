@@ -136,17 +136,17 @@
             // 
             // tb_obs
             // 
-            this.tb_obs.Location = new System.Drawing.Point(34, 275);
+            this.tb_obs.Location = new System.Drawing.Point(31, 300);
             this.tb_obs.Multiline = true;
             this.tb_obs.Name = "tb_obs";
-            this.tb_obs.Size = new System.Drawing.Size(220, 78);
+            this.tb_obs.Size = new System.Drawing.Size(466, 105);
             this.tb_obs.TabIndex = 54;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btn_maquina);
             this.groupBox4.Controls.Add(this.tb_maquinas);
-            this.groupBox4.Location = new System.Drawing.Point(401, 107);
+            this.groupBox4.Location = new System.Drawing.Point(304, 90);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(107, 47);
             this.groupBox4.TabIndex = 49;
@@ -305,7 +305,7 @@
             // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(344, 385);
+            this.btn_alterar.Location = new System.Drawing.Point(354, 442);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(87, 33);
             this.btn_alterar.TabIndex = 68;
@@ -315,7 +315,7 @@
             // 
             // btn_salvar
             // 
-            this.btn_salvar.Location = new System.Drawing.Point(251, 386);
+            this.btn_salvar.Location = new System.Drawing.Point(261, 443);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(87, 33);
             this.btn_salvar.TabIndex = 66;
@@ -325,7 +325,7 @@
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(436, 385);
+            this.btn_cancelar.Location = new System.Drawing.Point(446, 442);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(87, 33);
             this.btn_cancelar.TabIndex = 67;
@@ -337,7 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 442);
+            this.ClientSize = new System.Drawing.Size(555, 487);
             this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.btn_cancelar);

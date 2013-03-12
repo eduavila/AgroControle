@@ -99,6 +99,7 @@ namespace sistemaCA.views.aplicacao
 
             MessageBox.Show("Registro Cadastrado com Sucesso!");
 
+            Close();
             
         }
 
@@ -113,6 +114,11 @@ namespace sistemaCA.views.aplicacao
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgw_produto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

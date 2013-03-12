@@ -86,9 +86,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 465);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 481);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(555, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(559, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -312,9 +312,9 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dgw_produto);
-            this.groupBox5.Location = new System.Drawing.Point(34, 246);
+            this.groupBox5.Location = new System.Drawing.Point(21, 247);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(499, 147);
+            this.groupBox5.Size = new System.Drawing.Size(513, 147);
             this.groupBox5.TabIndex = 45;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Produtos";
@@ -328,8 +328,9 @@
             this.dgw_produto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgw_produto.Location = new System.Drawing.Point(3, 16);
             this.dgw_produto.Name = "dgw_produto";
-            this.dgw_produto.Size = new System.Drawing.Size(493, 128);
+            this.dgw_produto.Size = new System.Drawing.Size(507, 128);
             this.dgw_produto.TabIndex = 0;
+            this.dgw_produto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_produto_CellContentClick);
             // 
             // quantidade
             // 
@@ -345,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 487);
+            this.ClientSize = new System.Drawing.Size(559, 503);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
@@ -365,6 +366,7 @@
             this.Controls.Add(this.tb_areaplicada);
             this.Controls.Add(this.label1);
             this.Name = "FormCadastraAplicacao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicação Prévia";
             this.Load += new System.EventHandler(this.FormCadastraAplicacao_Load);
             this.groupBox2.ResumeLayout(false);

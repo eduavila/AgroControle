@@ -56,10 +56,23 @@ namespace sistemaCA.Modulos.aplicacao
 
 
 
+            // preechendo grid de produto
+            ProdutoAplicado produ = new ProdutoAplicado();
+
+
+            produ.ListandoTodoProduto(id_aplicacao, dgw_produto);
+
+            
+
+
+
+
 
         }
         private void FormAlterarAplicacao_Load(object sender, EventArgs e)
         {
+            
+            
 
         }
 
@@ -147,12 +160,37 @@ namespace sistemaCA.Modulos.aplicacao
             if (resultado == DialogResult.Yes)
             {
 
-                Aplicacao aplicacao = new Aplicacao();
+                ProdutoAplicado produtos = new ProdutoAplicado();
+                produtos.DeletandoTodoProduto(int.Parse(tb_id.Text));
 
+                Aplicacao aplicacao = new Aplicacao();
                 aplicacao.DeletarAplicacao(int.Parse(tb_id.Text));
+
+               
+
                 Close();
 
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_cadastro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgw_produto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgw_produto_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //
         }
     }
 }

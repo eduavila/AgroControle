@@ -58,16 +58,20 @@
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgw_produto = new System.Windows.Forms.DataGridView();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_produto)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(166, 45);
+            this.label6.Location = new System.Drawing.Point(166, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 59;
@@ -75,7 +79,7 @@
             // 
             // tb_descricao
             // 
-            this.tb_descricao.Location = new System.Drawing.Point(166, 64);
+            this.tb_descricao.Location = new System.Drawing.Point(166, 22);
             this.tb_descricao.Name = "tb_descricao";
             this.tb_descricao.Size = new System.Drawing.Size(354, 20);
             this.tb_descricao.TabIndex = 58;
@@ -100,7 +104,7 @@
             // 
             this.groupBox6.Controls.Add(this.btn_talhao);
             this.groupBox6.Controls.Add(this.tb_talhao);
-            this.groupBox6.Location = new System.Drawing.Point(34, 177);
+            this.groupBox6.Location = new System.Drawing.Point(34, 169);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(107, 47);
             this.groupBox6.TabIndex = 51;
@@ -128,7 +132,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 248);
+            this.label4.Location = new System.Drawing.Point(309, 107);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 55;
@@ -136,17 +140,17 @@
             // 
             // tb_obs
             // 
-            this.tb_obs.Location = new System.Drawing.Point(31, 300);
+            this.tb_obs.Location = new System.Drawing.Point(312, 126);
             this.tb_obs.Multiline = true;
             this.tb_obs.Name = "tb_obs";
-            this.tb_obs.Size = new System.Drawing.Size(466, 105);
+            this.tb_obs.Size = new System.Drawing.Size(172, 72);
             this.tb_obs.TabIndex = 54;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btn_maquina);
             this.groupBox4.Controls.Add(this.tb_maquinas);
-            this.groupBox4.Location = new System.Drawing.Point(304, 90);
+            this.groupBox4.Location = new System.Drawing.Point(295, 50);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(107, 47);
             this.groupBox4.TabIndex = 49;
@@ -174,7 +178,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(248, 126);
+            this.label3.Location = new System.Drawing.Point(230, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 53;
@@ -201,7 +205,7 @@
             // 
             this.groupBox3.Controls.Add(this.btn_safra);
             this.groupBox3.Controls.Add(this.tb_safra);
-            this.groupBox3.Location = new System.Drawing.Point(169, 177);
+            this.groupBox3.Location = new System.Drawing.Point(165, 107);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(107, 47);
             this.groupBox3.TabIndex = 48;
@@ -230,7 +234,7 @@
             // 
             this.groupBox2.Controls.Add(this.btn_funcionario);
             this.groupBox2.Controls.Add(this.tb_idFunc);
-            this.groupBox2.Location = new System.Drawing.Point(310, 177);
+            this.groupBox2.Location = new System.Drawing.Point(173, 169);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(107, 47);
             this.groupBox2.TabIndex = 47;
@@ -257,7 +261,7 @@
             // 
             // tb_areaplicada
             // 
-            this.tb_areaplicada.Location = new System.Drawing.Point(169, 123);
+            this.tb_areaplicada.Location = new System.Drawing.Point(151, 66);
             this.tb_areaplicada.Name = "tb_areaplicada";
             this.tb_areaplicada.Size = new System.Drawing.Size(75, 20);
             this.tb_areaplicada.TabIndex = 46;
@@ -265,7 +269,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 107);
+            this.label1.Location = new System.Drawing.Point(145, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 45;
@@ -290,18 +294,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(163, 6);
+            this.label8.Location = new System.Drawing.Point(75, 6);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 13);
             this.label8.TabIndex = 64;
             this.label8.Text = "Data Aplicação";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // tb_cadastro
             // 
-            this.tb_cadastro.Location = new System.Drawing.Point(166, 22);
+            this.tb_cadastro.Location = new System.Drawing.Point(78, 22);
             this.tb_cadastro.Name = "tb_cadastro";
             this.tb_cadastro.Size = new System.Drawing.Size(63, 20);
             this.tb_cadastro.TabIndex = 65;
+            this.tb_cadastro.TextChanged += new System.EventHandler(this.tb_cadastro_TextChanged);
             // 
             // btn_alterar
             // 
@@ -333,11 +339,37 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgw_produto);
+            this.groupBox5.Location = new System.Drawing.Point(31, 262);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(502, 147);
+            this.groupBox5.TabIndex = 69;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Produtos";
+            // 
+            // dgw_produto
+            // 
+            this.dgw_produto.AllowUserToDeleteRows = false;
+            this.dgw_produto.AllowUserToOrderColumns = true;
+            this.dgw_produto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_produto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_produto.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgw_produto.Location = new System.Drawing.Point(3, 16);
+            this.dgw_produto.Name = "dgw_produto";
+            this.dgw_produto.ReadOnly = true;
+            this.dgw_produto.Size = new System.Drawing.Size(496, 128);
+            this.dgw_produto.TabIndex = 0;
+            this.dgw_produto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_produto_CellContentClick);
+            this.dgw_produto.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgw_produto_DataError);
+            // 
             // FormAlterarAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 487);
+            this.ClientSize = new System.Drawing.Size(561, 501);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.btn_cancelar);
@@ -372,6 +404,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +443,7 @@
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dgw_produto;
     }
 }

@@ -16,5 +16,29 @@ namespace sistemaCA.Modulos.aplicacao.relatorios
         {
             InitializeComponent();
         }
+
+
+        // contrutor com id da aplicaçao
+
+        public FormRelatorioAplicacao(int id_aplicacao)
+        {
+            InitializeComponent();
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void FormRelatorioAplicacao_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

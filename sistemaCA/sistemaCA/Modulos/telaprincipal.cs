@@ -96,19 +96,25 @@ namespace sistemaCA.views
 
         private void retornoAplicaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPrevisaoAplicacao Aplicacao = new FormPrevisaoAplicacao();
-            Aplicacao.Show();
+            
         }
 
         private void aplicaçãoPréviaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCadastraAplicacao Cadastro = new FormCadastraAplicacao();
-            Cadastro.ShowDialog();
+
+            FormPrevisaoAplicacao Aplicacao = new FormPrevisaoAplicacao();
+            Aplicacao.Show();
+            
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

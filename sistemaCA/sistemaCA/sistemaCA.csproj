@@ -124,6 +124,11 @@
       <DependentUpon>FormPrevisaoAplicacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\aplicacao\ProdutoAplicado.cs" />
+    <Compile Include="Modulos\aplicacao\relatorios\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\aplicacao\relatorios\FormRelatorioAplicacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +319,7 @@
     <EmbeddedResource Include="Modulos\aplicacao\relatorios\FormRelatorioAplicacao.resx">
       <DependentUpon>FormRelatorioAplicacao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\aplicacao\relatorios\Report1.rdlc" />
     <EmbeddedResource Include="Modulos\bens\FormAlterarBens.resx">
       <DependentUpon>FormAlterarBens.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +409,17 @@
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Modulos\aplicacao\relatorios\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\aplicacao\relatorios\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\aplicacao\relatorios\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\tblproduto.datasource" />
     <None Include="Properties\DataSources\tbltipoproduto.datasource" />
@@ -417,7 +434,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Modulos\Sobre\" />
   </ItemGroup>
   <ItemGroup>

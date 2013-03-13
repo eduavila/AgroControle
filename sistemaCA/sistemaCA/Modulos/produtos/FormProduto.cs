@@ -40,6 +40,11 @@ namespace sistemaCA.views.produtos
             dgw_produto.Columns["nome"].HeaderText = "Nome";
             dgw_produto.Columns["unidade_medida"].HeaderText = "Unidade Medida ";
             dgw_produto.Columns["id_tipoproduto"].HeaderText = "Tipo Produto ";
+
+
+
+            // barra de rodape
+            toolStripStatusLabel1.Text = dgw_produto.RowCount + " Produtos Cadastrado.";
         }
 
         private void button3_Click(object sender, EventArgs e)

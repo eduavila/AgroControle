@@ -50,6 +50,11 @@ namespace sistemaCA.views.fornecedor
             dgw_Fornecedores.Columns["email"].DisplayIndex = 9;
             dgw_Fornecedores.Columns["obs"].DisplayIndex = 10;
 
+
+            // barra de rodape
+
+            toolStripStatusLabel1.Text = dgw_Fornecedores.RowCount + " Fornecedores Cadastrado.";
+
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

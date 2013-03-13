@@ -32,6 +32,10 @@ namespace sistemaCA.views.safra
             dgw_safra.Columns["dataincio"].HeaderText = "Data Inicio";
             dgw_safra.Columns["datafechamento"].HeaderText = "Data Fechamento";
             dgw_safra.Columns["id_cultura"].HeaderText = "ID Cultura";
+
+
+            //
+            toolStripStatusLabel1.Text = dgw_safra.RowCount + " Safras Cadastradas.";
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

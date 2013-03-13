@@ -33,11 +33,14 @@
             this.btn_Visalizar = new System.Windows.Forms.Button();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_pesquisar = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_talhao)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -51,22 +54,25 @@
             this.dgw_talhao.Location = new System.Drawing.Point(3, 16);
             this.dgw_talhao.Name = "dgw_talhao";
             this.dgw_talhao.ReadOnly = true;
-            this.dgw_talhao.Size = new System.Drawing.Size(645, 319);
+            this.dgw_talhao.Size = new System.Drawing.Size(834, 400);
             this.dgw_talhao.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgw_talhao);
             this.groupBox1.Location = new System.Drawing.Point(9, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(651, 338);
+            this.groupBox1.Size = new System.Drawing.Size(840, 419);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Talhões";
             // 
             // btn_Visalizar
             // 
-            this.btn_Visalizar.Location = new System.Drawing.Point(104, 13);
+            this.btn_Visalizar.Location = new System.Drawing.Point(104, 17);
             this.btn_Visalizar.Name = "btn_Visalizar";
             this.btn_Visalizar.Size = new System.Drawing.Size(87, 33);
             this.btn_Visalizar.TabIndex = 2;
@@ -76,7 +82,7 @@
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(9, 13);
+            this.btn_cadastrar.Location = new System.Drawing.Point(9, 17);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
             this.btn_cadastrar.TabIndex = 1;
@@ -86,16 +92,25 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 418);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 491);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(672, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(861, 22);
             this.statusStrip1.TabIndex = 48;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.tb_pesquisar);
-            this.groupBox2.Location = new System.Drawing.Point(397, 14);
+            this.groupBox2.Location = new System.Drawing.Point(589, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(260, 49);
             this.groupBox2.TabIndex = 49;
@@ -112,19 +127,29 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.btn_cadastrar);
             this.groupBox3.Controls.Add(this.btn_Visalizar);
-            this.groupBox3.Location = new System.Drawing.Point(9, 14);
+            this.groupBox3.Location = new System.Drawing.Point(9, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 49);
+            this.groupBox3.Size = new System.Drawing.Size(300, 60);
             this.groupBox3.TabIndex = 50;
             this.groupBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(197, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 33);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Visualizar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormTalhao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 440);
+            this.ClientSize = new System.Drawing.Size(861, 513);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
@@ -135,6 +160,8 @@
             this.Load += new System.EventHandler(this.FormTalhao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_talhao)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -153,5 +180,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox tb_pesquisar;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

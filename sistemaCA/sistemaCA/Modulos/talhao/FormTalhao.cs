@@ -40,7 +40,8 @@ namespace sistemaCA.views.talhao
             dgw_talhao.Columns["sistemacutivo"].HeaderText = "Tipo Plantio";
 
 
-
+            // barra de rodape
+            toolStripStatusLabel1.Text = dgw_talhao.RowCount + " Talhães Cadastrado.";
 
             btn_cadastrar.Focus();
             

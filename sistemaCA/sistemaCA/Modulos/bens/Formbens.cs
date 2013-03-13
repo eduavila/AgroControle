@@ -32,6 +32,12 @@ namespace sistemaCA.views.bens
             dgw_bens.Columns["horimetro_inicial"].HeaderText = "Horimetro(KM)";
             dgw_bens.Columns["Hodometro_inicial"].HeaderText = "Horimetro(Horas)";
             dgw_bens.Columns["placa"].HeaderText = "Placa";
+
+
+
+
+            // barra de rodape
+            toolStripStatusLabel1.Text = dgw_bens.RowCount + " Máquinas Cadastrada.";
         }
 
         private void btn_cadastrar_Click(object sender, EventArgs e)

@@ -50,7 +50,9 @@ namespace sistemaCA.views
             
             
             
-            
+           // barra rodape
+
+            toolStripStatusLabel1.Text = dgw_funcionario.RowCount + " Funcionários Cadastrado.";
             
           
 

@@ -126,12 +126,13 @@
             // 
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.tb_safra);
-            this.groupBox3.Location = new System.Drawing.Point(157, 155);
+            this.groupBox3.Location = new System.Drawing.Point(155, 184);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(107, 47);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Safra";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button2
             // 
@@ -157,6 +158,7 @@
             this.dtp_aplicacao.Name = "dtp_aplicacao";
             this.dtp_aplicacao.Size = new System.Drawing.Size(99, 20);
             this.dtp_aplicacao.TabIndex = 6;
+            this.dtp_aplicacao.ValueChanged += new System.EventHandler(this.dtp_aplicacao_ValueChanged);
             // 
             // label2
             // 
@@ -166,6 +168,7 @@
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Data Aplicação";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -206,7 +209,7 @@
             // 
             // tb_obs
             // 
-            this.tb_obs.Location = new System.Drawing.Point(349, 171);
+            this.tb_obs.Location = new System.Drawing.Point(376, 171);
             this.tb_obs.Multiline = true;
             this.tb_obs.Name = "tb_obs";
             this.tb_obs.Size = new System.Drawing.Size(220, 78);
@@ -215,7 +218,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(346, 155);
+            this.label4.Location = new System.Drawing.Point(373, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 10;
@@ -225,7 +228,7 @@
             // 
             this.groupBox6.Controls.Add(this.button6);
             this.groupBox6.Controls.Add(this.tb_talhao);
-            this.groupBox6.Location = new System.Drawing.Point(24, 155);
+            this.groupBox6.Location = new System.Drawing.Point(23, 184);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(107, 47);
             this.groupBox6.TabIndex = 7;

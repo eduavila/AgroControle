@@ -28,7 +28,10 @@ namespace sistemaCA.views.aplicacao
             aplicacao.ListarAplicacoes(dgw_aplicacao);
 
 
-            Barra_rodape1.Text = dgw_aplicacao.RowCount + " Aplicações";
+            Barra_rodape1.Text = dgw_aplicacao.RowCount + " Aplicações Cadastrada.";
+
+
+            
 
 
             
@@ -117,6 +120,30 @@ namespace sistemaCA.views.aplicacao
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_visualizar_Click_1(object sender, EventArgs e)
+        {
+            if (dgw_aplicacao.CurrentCell != null)
+            {
+                int selecionado = dgw_aplicacao.CurrentCell.RowIndex;
+                int idaplicacao;
+                idaplicacao = int.Parse(dgw_aplicacao.Rows[selecionado].Cells["id_aplicacao"].Value.ToString());
+
+                FormAlterarAplicacao Aplicacao = new FormAlterarAplicacao(idaplicacao);
+
+                Aplicacao.ShowDialog();
+
+                // atualiza o grid
+                Aplicacao aplicacao = new Aplicacao();
+                aplicacao.ListarAplicacoes(dgw_aplicacao);
+
+            }
+        }
+
+        private void btn_Deletar_Click_1(object sender, EventArgs e)
         {
 
         }

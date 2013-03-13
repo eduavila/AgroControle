@@ -39,6 +39,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios
         {
 
             this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
     }
 }

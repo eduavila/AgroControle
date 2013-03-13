@@ -36,6 +36,7 @@ namespace sistemaCA.Modulos.aplicacao
             tb_status.Enabled = false;
             tb_maquinas.Enabled = false;
             btn_salvar.Visible = false;
+            cb_tipoaplicacao.Enabled = false;
 
             // preechendo campos com 
             try
@@ -57,7 +58,7 @@ namespace sistemaCA.Modulos.aplicacao
                 tb_maquinas.Text = aplica.ID_Ben.ToString();
                 dtp_aplicacao.Value = aplica.DataAplicacao;
                 tb_cadastro.Text = aplica.DataCadastro.ToString();
-
+                cb_tipoaplicacao.Text = aplica.TipoAplicao;
 
 
 
@@ -126,6 +127,7 @@ namespace sistemaCA.Modulos.aplicacao
             tb_obs.Enabled = true;
             tb_talhao.Enabled = false;
             tb_safra.Enabled = false;
+            cb_tipoaplicacao.Enabled = true ;
 
             btn_salvar.Visible = true;
 
@@ -155,6 +157,7 @@ namespace sistemaCA.Modulos.aplicacao
             aplicacao.ID_talhao = int.Parse(tb_talhao.Text);
             aplicacao.ID_Safra = int.Parse(tb_safra.Text);
             aplicacao.Obs = tb_obs.Text;
+            aplicacao.TipoAplicao = cb_tipoaplicacao.Text;
 
             aplicacao.AlterarAplicacao(int.Parse(tb_id.Text));
 

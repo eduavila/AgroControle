@@ -16,13 +16,13 @@ namespace sistemaCA.views.aplicacao
         public DateTime DataCadastro { get; set; }
         public string Status { get; set; }
         public float AreaAplicada { get; set; }
-        public int ID_talhao { get; set; }
-        public int ID_Safra { get; set; }
-        public int ID_Ben { get; set; }
-        public int ID_Funcionario { get; set;}
+        public int ? ID_talhao { get; set; }
+        public int ? ID_Safra { get; set; }
+        public int ? ID_Ben { get; set; }
+        public int ? ID_Funcionario { get; set;}
         public string Obs { get; set; }
         public int Id_ProdutoAplicado { get; set; }
-
+        public string TipoAplicao { get; set; }
 
 
         public Aplicacao()
@@ -53,10 +53,13 @@ namespace sistemaCA.views.aplicacao
                                  safra = safra.descricao,
                                  funcionario = funcionario.nome,
                                  talhao = talhao.descricao,
-                                 obs = aplica.obs
+                                 obs = aplica.obs,
+                                 tipoaplicacao = aplica.tipoaplicaco
                                  
                              };
                 dgw.DataSource = pesqui;
+
+
 
             }
             catch (Exception erro)
@@ -83,11 +86,11 @@ namespace sistemaCA.views.aplicacao
                 this.ID_Ben = Aplica.id_ben;
                 this.ID_Funcionario = Aplica.id_funcionario;
                 this.ID_talhao = Aplica.id_talhao;
-                this.ID_Safra = Aplica.id_safra;
+                this.ID_Safra =  Aplica.id_safra;
                 this.Obs = Aplica.obs;
                 this.AreaAplicada = float.Parse(Aplica.areaaplicada.ToString());
                 this.Status = Aplica.status;
-                
+                this.TipoAplicao = Aplica.tipoaplicaco;
 
 
 
@@ -125,7 +128,7 @@ namespace sistemaCA.views.aplicacao
                 Aplica.id_safra = this.ID_Safra;
                 Aplica.obs = this.Obs;
                 Aplica.areaaplicada = this.AreaAplicada;
-
+                Aplica.tipoaplicaco = this.TipoAplicao;
                 Banco.SubmitChanges();
 
                 MessageBox.Show("Registro Alterado com Sucesso.");
@@ -158,7 +161,7 @@ namespace sistemaCA.views.aplicacao
                 Aplica.id_ben = this.ID_Ben;
                 Aplica.obs = this.Obs;
                 Aplica.descricao = this.Descricao;
-
+                Aplica.tipoaplicaco = this.TipoAplicao;
                 Banco.tblaplicacaos.InsertOnSubmit(Aplica);
                 Banco.SubmitChanges();
                 

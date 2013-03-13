@@ -77,7 +77,8 @@ namespace sistemaCA.views.aplicacao
 
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
-            // cadastrando aplicaçao
+           
+               // cadastrando aplicaçao
             Aplicacao aplicacao = new Aplicacao();
 
             aplicacao.Status = tb_status.Text;
@@ -90,8 +91,12 @@ namespace sistemaCA.views.aplicacao
             aplicacao.ID_talhao = int.Parse(tb_talhao.Text);
             aplicacao.ID_Safra = int.Parse(tb_safra.Text);
             aplicacao.Obs = tb_obs.Text;
-            aplicacao.CadastraAplicacao();
+            aplicacao.TipoAplicao = cb_tipoaplicacao.Text;
 
+
+            // cadastra aplicacao
+            aplicacao.CadastraAplicacao();
+           
             // fim cadastro aplicaçao
             ProdutoAplicado produto = new ProdutoAplicado();
 
@@ -119,6 +124,21 @@ namespace sistemaCA.views.aplicacao
         }
 
         private void dgw_produto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
         {
 
         }

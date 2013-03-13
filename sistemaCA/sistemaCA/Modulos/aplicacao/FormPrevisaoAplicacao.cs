@@ -26,6 +26,12 @@ namespace sistemaCA.views.aplicacao
         {
             Aplicacao aplicacao = new Aplicacao();
             aplicacao.ListarAplicacoes(dgw_aplicacao);
+
+
+            Barra_rodape1.Text = dgw_aplicacao.RowCount + " Aplicações";
+
+
+            
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)
@@ -55,6 +61,64 @@ namespace sistemaCA.views.aplicacao
             // atualiza grid
             Aplicacao aplicacao = new Aplicacao();
             aplicacao.ListarAplicacoes(dgw_aplicacao);
+        }
+
+        private void dgw_aplicacao_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgw_aplicacao.CurrentCell != null)
+            {
+                int selecionado = dgw_aplicacao.CurrentCell.RowIndex;
+                int idaplicacao;
+                idaplicacao = int.Parse(dgw_aplicacao.Rows[selecionado].Cells["id_aplicacao"].Value.ToString());
+
+                FormAlterarAplicacao Aplicacao = new FormAlterarAplicacao(idaplicacao);
+
+                Aplicacao.ShowDialog();
+
+                // atualiza o grid
+                Aplicacao aplicacao = new Aplicacao();
+                aplicacao.ListarAplicacoes(dgw_aplicacao);
+
+            }
+        }
+
+        private void btn_Deletar_Click(object sender, EventArgs e)
+        {
+            var resultado = MessageBox.Show("Tem Certeza de quer excluir o Registro Selecionado ?", "Excluir Registro", MessageBoxButtons.YesNo);
+
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    int selecionado = dgw_aplicacao.CurrentCell.RowIndex;
+                    int idaplicacao;
+                    idaplicacao = int.Parse(dgw_aplicacao.Rows[selecionado].Cells["id_aplicacao"].Value.ToString());
+
+
+                    ProdutoAplicado produtos = new ProdutoAplicado();
+                    produtos.DeletandoTodoProduto(idaplicacao);
+
+                    Aplicacao aplicacao = new Aplicacao();
+                    aplicacao.DeletarAplicacao(idaplicacao);
+
+                    // atualizando grid
+                    aplicacao.ListarAplicacoes(dgw_aplicacao);
+
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message);
+                }
+
+                
+                
+
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

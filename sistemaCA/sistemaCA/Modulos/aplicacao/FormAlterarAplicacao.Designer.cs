@@ -335,7 +335,7 @@
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(87, 33);
             this.btn_cancelar.TabIndex = 67;
-            this.btn_cancelar.Text = "Deletar";
+            this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
@@ -368,7 +368,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 501);
+            this.ClientSize = new System.Drawing.Size(571, 501);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.btn_salvar);

@@ -48,7 +48,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.tb_talhao = new System.Windows.Forms.TextBox();
-            this.tb_status = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tb_descricao = new System.Windows.Forms.TextBox();
@@ -59,6 +58,9 @@
             this.dgw_produto = new System.Windows.Forms.DataGridView();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cb_tipoaplicacao = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_status = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -71,7 +73,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 82);
+            this.label1.Location = new System.Drawing.Point(22, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
@@ -79,16 +81,16 @@
             // 
             // tb_areaplicada
             // 
-            this.tb_areaplicada.Location = new System.Drawing.Point(34, 98);
+            this.tb_areaplicada.Location = new System.Drawing.Point(21, 97);
             this.tb_areaplicada.Name = "tb_areaplicada";
             this.tb_areaplicada.Size = new System.Drawing.Size(75, 20);
             this.tb_areaplicada.TabIndex = 1;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 481);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 514);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(559, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(611, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -96,7 +98,7 @@
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.tb_idFunc);
-            this.groupBox2.Location = new System.Drawing.Point(426, 82);
+            this.groupBox2.Location = new System.Drawing.Point(429, 81);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(107, 47);
             this.groupBox2.TabIndex = 4;
@@ -124,7 +126,7 @@
             // 
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.tb_safra);
-            this.groupBox3.Location = new System.Drawing.Point(168, 163);
+            this.groupBox3.Location = new System.Drawing.Point(157, 155);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(107, 47);
             this.groupBox3.TabIndex = 5;
@@ -151,7 +153,7 @@
             // dtp_aplicacao
             // 
             this.dtp_aplicacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_aplicacao.Location = new System.Drawing.Point(168, 98);
+            this.dtp_aplicacao.Location = new System.Drawing.Point(157, 97);
             this.dtp_aplicacao.Name = "dtp_aplicacao";
             this.dtp_aplicacao.Size = new System.Drawing.Size(99, 20);
             this.dtp_aplicacao.TabIndex = 6;
@@ -159,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 82);
+            this.label2.Location = new System.Drawing.Point(154, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 7;
@@ -168,7 +170,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 101);
+            this.label3.Location = new System.Drawing.Point(98, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 8;
@@ -178,7 +180,7 @@
             // 
             this.groupBox4.Controls.Add(this.button3);
             this.groupBox4.Controls.Add(this.tb_maquinas);
-            this.groupBox4.Location = new System.Drawing.Point(296, 82);
+            this.groupBox4.Location = new System.Drawing.Point(283, 81);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(107, 47);
             this.groupBox4.TabIndex = 6;
@@ -204,7 +206,7 @@
             // 
             // tb_obs
             // 
-            this.tb_obs.Location = new System.Drawing.Point(313, 163);
+            this.tb_obs.Location = new System.Drawing.Point(349, 171);
             this.tb_obs.Multiline = true;
             this.tb_obs.Name = "tb_obs";
             this.tb_obs.Size = new System.Drawing.Size(220, 78);
@@ -213,7 +215,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(310, 143);
+            this.label4.Location = new System.Drawing.Point(346, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 10;
@@ -223,7 +225,7 @@
             // 
             this.groupBox6.Controls.Add(this.button6);
             this.groupBox6.Controls.Add(this.tb_talhao);
-            this.groupBox6.Location = new System.Drawing.Point(33, 163);
+            this.groupBox6.Location = new System.Drawing.Point(24, 155);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(107, 47);
             this.groupBox6.TabIndex = 7;
@@ -247,17 +249,10 @@
             this.tb_talhao.Size = new System.Drawing.Size(43, 20);
             this.tb_talhao.TabIndex = 2;
             // 
-            // tb_status
-            // 
-            this.tb_status.Location = new System.Drawing.Point(33, 40);
-            this.tb_status.Name = "tb_status";
-            this.tb_status.Size = new System.Drawing.Size(100, 20);
-            this.tb_status.TabIndex = 12;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 21);
+            this.label5.Location = new System.Drawing.Point(18, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 13;
@@ -266,7 +261,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(168, 21);
+            this.label6.Location = new System.Drawing.Point(109, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 15;
@@ -274,24 +269,28 @@
             // 
             // tb_descricao
             // 
-            this.tb_descricao.Location = new System.Drawing.Point(168, 40);
+            this.tb_descricao.Location = new System.Drawing.Point(109, 30);
             this.tb_descricao.Name = "tb_descricao";
-            this.tb_descricao.Size = new System.Drawing.Size(365, 20);
+            this.tb_descricao.Size = new System.Drawing.Size(302, 20);
             this.tb_descricao.TabIndex = 14;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_cadastrar);
             this.groupBox1.Controls.Add(this.btn_cancelar);
-            this.groupBox1.Location = new System.Drawing.Point(313, 400);
+            this.groupBox1.Location = new System.Drawing.Point(384, 448);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(221, 62);
+            this.groupBox1.Size = new System.Drawing.Size(223, 62);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btn_cadastrar
             // 
+            this.btn_cadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cadastrar.Location = new System.Drawing.Point(13, 20);
             this.btn_cadastrar.Name = "btn_cadastrar";
             this.btn_cadastrar.Size = new System.Drawing.Size(87, 33);
@@ -302,6 +301,8 @@
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cancelar.Location = new System.Drawing.Point(114, 20);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(87, 33);
@@ -311,11 +312,14 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.dgw_produto);
-            this.groupBox5.Location = new System.Drawing.Point(21, 247);
+            this.groupBox5.Location = new System.Drawing.Point(12, 268);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(513, 147);
-            this.groupBox5.TabIndex = 45;
+            this.groupBox5.Size = new System.Drawing.Size(587, 174);
+            this.groupBox5.TabIndex = 46;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Produtos";
             // 
@@ -328,9 +332,8 @@
             this.dgw_produto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgw_produto.Location = new System.Drawing.Point(3, 16);
             this.dgw_produto.Name = "dgw_produto";
-            this.dgw_produto.Size = new System.Drawing.Size(507, 128);
+            this.dgw_produto.Size = new System.Drawing.Size(581, 155);
             this.dgw_produto.TabIndex = 0;
-            this.dgw_produto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_produto_CellContentClick);
             // 
             // quantidade
             // 
@@ -342,20 +345,54 @@
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             // 
+            // cb_tipoaplicacao
+            // 
+            this.cb_tipoaplicacao.FormattingEnabled = true;
+            this.cb_tipoaplicacao.Items.AddRange(new object[] {
+            "Plantio",
+            "Adubação",
+            "Puvirização"});
+            this.cb_tipoaplicacao.Location = new System.Drawing.Point(429, 27);
+            this.cb_tipoaplicacao.Name = "cb_tipoaplicacao";
+            this.cb_tipoaplicacao.Size = new System.Drawing.Size(121, 21);
+            this.cb_tipoaplicacao.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(426, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Tipo de Aplicação";
+            // 
+            // tb_status
+            // 
+            this.tb_status.FormattingEnabled = true;
+            this.tb_status.Items.AddRange(new object[] {
+            "Aberta\t",
+            "Finalizada"});
+            this.tb_status.Location = new System.Drawing.Point(15, 30);
+            this.tb_status.Name = "tb_status";
+            this.tb_status.Size = new System.Drawing.Size(80, 21);
+            this.tb_status.TabIndex = 49;
+            // 
             // FormCadastraAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 503);
+            this.ClientSize = new System.Drawing.Size(611, 536);
+            this.Controls.Add(this.tb_status);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cb_tipoaplicacao);
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tb_obs);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tb_descricao);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tb_status);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tb_obs);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -407,7 +444,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox tb_talhao;
-        private System.Windows.Forms.TextBox tb_status;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tb_descricao;
@@ -418,5 +454,8 @@
         private System.Windows.Forms.DataGridView dgw_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.ComboBox cb_tipoaplicacao;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox tb_status;
     }
 }

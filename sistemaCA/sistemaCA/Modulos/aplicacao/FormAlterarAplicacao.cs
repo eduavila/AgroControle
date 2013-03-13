@@ -38,31 +38,41 @@ namespace sistemaCA.Modulos.aplicacao
             btn_salvar.Visible = false;
 
             // preechendo campos com 
-            Aplicacao aplica = new Aplicacao();
-            aplica.VisualizarAplicacao(id_aplicacao);
+            try
+            {
 
-            tb_id.Text = aplica.Id_aplicacao.ToString();
-            tb_descricao.Text = aplica.Descricao;
-            tb_areaplicada.Text = aplica.AreaAplicada.ToString();
-            tb_idFunc.Text = aplica.ID_Funcionario.ToString();
-            tb_obs.Text = aplica.Obs;
-            tb_talhao.Text = aplica.ID_talhao.ToString();
-            tb_safra.Text = aplica.ID_Safra.ToString();
-            tb_status.Text = aplica.Status;
-            tb_maquinas.Text = aplica.ID_Ben.ToString();
-            dtp_aplicacao.Value = aplica.DataAplicacao;
-            tb_cadastro.Text = aplica.DataCadastro.ToString();
+                Aplicacao aplica = new Aplicacao();
 
 
+                aplica.VisualizarAplicacao(id_aplicacao);
+
+                tb_id.Text = aplica.Id_aplicacao.ToString();
+                tb_descricao.Text = aplica.Descricao;
+                tb_areaplicada.Text = aplica.AreaAplicada.ToString();
+                tb_idFunc.Text = aplica.ID_Funcionario.ToString();
+                tb_obs.Text = aplica.Obs;
+                tb_talhao.Text = aplica.ID_talhao.ToString();
+                tb_safra.Text = aplica.ID_Safra.ToString();
+                tb_status.Text = aplica.Status;
+                tb_maquinas.Text = aplica.ID_Ben.ToString();
+                dtp_aplicacao.Value = aplica.DataAplicacao;
+                tb_cadastro.Text = aplica.DataCadastro.ToString();
 
 
-            // preechendo grid de produto
-            ProdutoAplicado produ = new ProdutoAplicado();
 
 
-            produ.ListandoTodoProduto(id_aplicacao, dgw_produto);
+                // preechendo grid de produto
+                ProdutoAplicado produ = new ProdutoAplicado();
 
+
+                produ.ListandoTodoProduto(id_aplicacao, dgw_produto);
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
             
+            }
 
 
 
@@ -155,22 +165,7 @@ namespace sistemaCA.Modulos.aplicacao
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            var resultado = MessageBox.Show("Tem Certeza de quer excluir o Registro Selecionado ?", "Excluir Registro", MessageBoxButtons.YesNo);
-
-            if (resultado == DialogResult.Yes)
-            {
-
-                ProdutoAplicado produtos = new ProdutoAplicado();
-                produtos.DeletandoTodoProduto(int.Parse(tb_id.Text));
-
-                Aplicacao aplicacao = new Aplicacao();
-                aplicacao.DeletarAplicacao(int.Parse(tb_id.Text));
-
-               
-
-                Close();
-
-            }
+            Close();
         }
 
         private void label8_Click(object sender, EventArgs e)

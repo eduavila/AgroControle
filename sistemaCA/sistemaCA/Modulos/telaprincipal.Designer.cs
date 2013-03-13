@@ -60,7 +60,7 @@
             this.sobreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(861, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -132,14 +132,14 @@
             // aplicaçãoPréviaToolStripMenuItem
             // 
             this.aplicaçãoPréviaToolStripMenuItem.Name = "aplicaçãoPréviaToolStripMenuItem";
-            this.aplicaçãoPréviaToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.aplicaçãoPréviaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.aplicaçãoPréviaToolStripMenuItem.Text = "Aplicação Prévia";
             this.aplicaçãoPréviaToolStripMenuItem.Click += new System.EventHandler(this.aplicaçãoPréviaToolStripMenuItem_Click);
             // 
             // relátoriosToolStripMenuItem
             // 
             this.relátoriosToolStripMenuItem.Name = "relátoriosToolStripMenuItem";
-            this.relátoriosToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.relátoriosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.relátoriosToolStripMenuItem.Text = "Relátorios";
             // 
             // manutençãoToolStripMenuItem
@@ -173,9 +173,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 491);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(861, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -185,7 +185,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(784, 515);
+            this.pictureBox1.Size = new System.Drawing.Size(861, 467);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(861, 513);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -203,6 +203,7 @@
             this.Name = "telaprincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Controle Agrícola";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

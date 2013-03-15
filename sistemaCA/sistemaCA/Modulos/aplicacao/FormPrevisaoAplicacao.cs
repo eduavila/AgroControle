@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaCA.Modulos.aplicacao;
+using sistemaCA.Modulos.aplicacao.relatorios;
 
 namespace sistemaCA.views.aplicacao
 {
@@ -146,6 +147,21 @@ namespace sistemaCA.views.aplicacao
         private void btn_Deletar_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgw_aplicacao.CurrentCell != null)
+            {
+                int selecionado = dgw_aplicacao.CurrentCell.RowIndex;
+                int idaplicacao;
+                idaplicacao = int.Parse(dgw_aplicacao.Rows[selecionado].Cells["id_aplicacao"].Value.ToString());
+
+                FormRelatorioAplicacao Aplicacao = new FormRelatorioAplicacao(idaplicacao);
+
+                Aplicacao.ShowDialog();
+
+            }
         }
     }
 }

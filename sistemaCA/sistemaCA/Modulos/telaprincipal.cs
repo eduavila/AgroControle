@@ -13,6 +13,7 @@ using sistemaCA.views.safra;
 using sistemaCA.views.talhao;
 using sistemaCA.views.fornecedor;
 using sistemaCA.views.aplicacao;
+using sistemaCA.Modulos.ControleMaquinas;
 
 namespace sistemaCA.views
 {
@@ -115,6 +116,12 @@ namespace sistemaCA.views
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void previsãoRevisãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRevisao revisao = new FormRevisao();
+            revisao.Show();
         }
     }
 }

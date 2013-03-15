@@ -46,6 +46,7 @@
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.previsãoRevisãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +145,8 @@
             // 
             // manutençãoToolStripMenuItem
             // 
+            this.manutençãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.previsãoRevisãoToolStripMenuItem});
             this.manutençãoToolStripMenuItem.Name = "manutençãoToolStripMenuItem";
             this.manutençãoToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.manutençãoToolStripMenuItem.Text = "Manutenção";
@@ -190,6 +193,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // previsãoRevisãoToolStripMenuItem
+            // 
+            this.previsãoRevisãoToolStripMenuItem.Name = "previsãoRevisãoToolStripMenuItem";
+            this.previsãoRevisãoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.previsãoRevisãoToolStripMenuItem.Text = "Previsão Revisão";
+            this.previsãoRevisãoToolStripMenuItem.Click += new System.EventHandler(this.previsãoRevisãoToolStripMenuItem_Click);
+            // 
             // telaprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,5 +241,6 @@
         private System.Windows.Forms.ToolStripMenuItem aplicaçãoPréviaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relátoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem previsãoRevisãoToolStripMenuItem;
     }
 }

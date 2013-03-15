@@ -169,6 +169,21 @@
     <Compile Include="Modulos\bens\FormCadastraBen.Designer.cs">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\ControleMaquinas\dsRevisao.cs">
+      <DependentUpon>dsRevisao.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\ControleMaquinas\dsRevisao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRevisao.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ControleMaquinas\FormCadastroRevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\ControleMaquinas\FormCadastroRevisao.Designer.cs">
+      <DependentUpon>FormCadastroRevisao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\ControleMaquinas\FormRevisao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +366,9 @@
     <EmbeddedResource Include="Modulos\bens\FormCadastraBen.resx">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ControleMaquinas\FormCadastroRevisao.resx">
+      <DependentUpon>FormCadastroRevisao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\ControleMaquinas\FormRevisao.resx">
       <DependentUpon>FormRevisao.cs</DependentUpon>
     </EmbeddedResource>
@@ -455,6 +473,17 @@
     </None>
     <None Include="Modulos\aplicacao\relatorios\dsRelatorioAplicacao.xss">
       <DependentUpon>dsRelatorioAplicacao.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\ControleMaquinas\dsRevisao.xsc">
+      <DependentUpon>dsRevisao.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\ControleMaquinas\dsRevisao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRevisao.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\ControleMaquinas\dsRevisao.xss">
+      <DependentUpon>dsRevisao.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\tblproduto.datasource" />

@@ -117,6 +117,7 @@
             this.Controls.Add(this.btn_entrar);
             this.Controls.Add(this.tb_senha);
             this.Controls.Add(this.tb_user);
+            this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -62,6 +62,11 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -78,6 +83,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -129,6 +135,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\aplicacao\relatorios\dsRelatorioAplicacao.cs">
+      <DependentUpon>dsRelatorioAplicacao.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modulos\aplicacao\relatorios\dsRelatorioAplicacao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRelatorioAplicacao.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\aplicacao\relatorios\FormRelatorioAplicacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +168,12 @@
     </Compile>
     <Compile Include="Modulos\bens\FormCadastraBen.Designer.cs">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\ControleMaquinas\FormRevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\ControleMaquinas\FormRevisao.Designer.cs">
+      <DependentUpon>FormRevisao.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Pesquisa\FormPesquisa.cs">
       <SubType>Form</SubType>
@@ -189,10 +210,10 @@
     <Compile Include="Modulos\funcionario\formFuncionario.Designer.cs">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\formUsuario.cs">
+    <Compile Include="Modulos\Usuarios\formUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modulos\formUsuario.Designer.cs">
+    <Compile Include="Modulos\Usuarios\formUsuario.Designer.cs">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\funcionario\FormFuncionarioV.cs">
@@ -319,7 +340,8 @@
     <EmbeddedResource Include="Modulos\aplicacao\relatorios\FormRelatorioAplicacao.resx">
       <DependentUpon>FormRelatorioAplicacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\aplicacao\relatorios\Report1.rdlc" />
+    <EmbeddedResource Include="Modulos\aplicacao\relatorios\Report2.rdlc" />
+    <EmbeddedResource Include="Modulos\aplicacao\relatorios\Report3.rdlc" />
     <EmbeddedResource Include="Modulos\bens\FormAlterarBens.resx">
       <DependentUpon>FormAlterarBens.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\bens\FormCadastraBen.resx">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ControleMaquinas\FormRevisao.resx">
+      <DependentUpon>FormRevisao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Pesquisa\FormPesquisa.resx">
       <DependentUpon>FormPesquisa.cs</DependentUpon>
@@ -344,7 +369,7 @@
     <EmbeddedResource Include="Modulos\funcionario\formFuncionario.resx">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\formUsuario.resx">
+    <EmbeddedResource Include="Modulos\Usuarios\formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\funcionario\FormFuncionarioV.resx">
@@ -420,8 +445,22 @@
     <None Include="Modulos\aplicacao\relatorios\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="Modulos\aplicacao\relatorios\dsRelatorioAplicacao.xsc">
+      <DependentUpon>dsRelatorioAplicacao.xsd</DependentUpon>
+    </None>
+    <None Include="Modulos\aplicacao\relatorios\dsRelatorioAplicacao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRelatorioAplicacao.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Modulos\aplicacao\relatorios\dsRelatorioAplicacao.xss">
+      <DependentUpon>dsRelatorioAplicacao.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\tblproduto.datasource" />
+    <None Include="Properties\DataSources\tblprodutosaplicado1.datasource" />
+    <None Include="Properties\DataSources\tblsafra1.datasource" />
+    <None Include="Properties\DataSources\tbltalhao1.datasource" />
     <None Include="Properties\DataSources\tbltipoproduto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

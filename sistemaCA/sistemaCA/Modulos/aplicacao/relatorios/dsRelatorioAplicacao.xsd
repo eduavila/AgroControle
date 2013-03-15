@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="dsRelatorioAplicao" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -165,7 +165,8 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        tblprodutosaplicado.quantidade, tblprodutosaplicado.preco, tblprodutosaplicado.id_produto, tblproduto.descricao AS produto
+                    <CommandText>SELECT        tblprodutosaplicado.quantidade, tblprodutosaplicado.preco, tblprodutosaplicado.id_produto, tblproduto.descricao AS produto, 
+                         tblprodutosaplicado.id_aplicacao
 FROM            tblprodutosaplicado INNER JOIN
                          tblproduto ON tblprodutosaplicado.id_produto = tblproduto.id_produto
 WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)</CommandText>
@@ -201,6 +202,7 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
               <Mapping SourceColumn="preco" DataSetColumn="preco" />
               <Mapping SourceColumn="id_produto" DataSetColumn="id_produto" />
               <Mapping SourceColumn="produto" DataSetColumn="produto" />
+              <Mapping SourceColumn="id_aplicacao" DataSetColumn="id_aplicacao" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -209,10 +211,10 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+  <xs:element name="dsRelatorioAplicao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsRelatorioAplicao" msprop:Generator_UserDSName="dsRelatorioAplicao">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblaplicacao" msprop:Generator_TableClassName="tblaplicacaoDataTable" msprop:Generator_TableVarName="tabletblaplicacao" msprop:Generator_TablePropName="tblaplicacao" msprop:Generator_RowDeletingName="tblaplicacaoRowDeleting" msprop:Generator_RowChangingName="tblaplicacaoRowChanging" msprop:Generator_RowEvHandlerName="tblaplicacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblaplicacaoRowDeleted" msprop:Generator_UserTableName="tblaplicacao" msprop:Generator_RowChangedName="tblaplicacaoRowChanged" msprop:Generator_RowEvArgName="tblaplicacaoRowChangeEvent" msprop:Generator_RowClassName="tblaplicacaoRow">
+        <xs:element name="tblaplicacao" msprop:Generator_TableClassName="tblaplicacaoDataTable" msprop:Generator_TableVarName="tabletblaplicacao" msprop:Generator_RowChangedName="tblaplicacaoRowChanged" msprop:Generator_TablePropName="tblaplicacao" msprop:Generator_RowDeletingName="tblaplicacaoRowDeleting" msprop:Generator_RowChangingName="tblaplicacaoRowChanging" msprop:Generator_RowEvHandlerName="tblaplicacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblaplicacaoRowDeleted" msprop:Generator_RowClassName="tblaplicacaoRow" msprop:Generator_UserTableName="tblaplicacao" msprop:Generator_RowEvArgName="tblaplicacaoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_aplicacao" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_aplicacao" msprop:Generator_ColumnPropNameInRow="id_aplicacao" msprop:Generator_ColumnPropNameInTable="id_aplicacaoColumn" msprop:Generator_UserColumnName="id_aplicacao" type="xs:int" />
@@ -278,7 +280,7 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblprodutosaplicado" msprop:Generator_TableClassName="tblprodutosaplicadoDataTable" msprop:Generator_TableVarName="tabletblprodutosaplicado" msprop:Generator_TablePropName="tblprodutosaplicado" msprop:Generator_RowDeletingName="tblprodutosaplicadoRowDeleting" msprop:Generator_RowChangingName="tblprodutosaplicadoRowChanging" msprop:Generator_RowEvHandlerName="tblprodutosaplicadoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblprodutosaplicadoRowDeleted" msprop:Generator_UserTableName="tblprodutosaplicado" msprop:Generator_RowChangedName="tblprodutosaplicadoRowChanged" msprop:Generator_RowEvArgName="tblprodutosaplicadoRowChangeEvent" msprop:Generator_RowClassName="tblprodutosaplicadoRow">
+        <xs:element name="tblprodutosaplicado" msprop:Generator_TableClassName="tblprodutosaplicadoDataTable" msprop:Generator_TableVarName="tabletblprodutosaplicado" msprop:Generator_RowChangedName="tblprodutosaplicadoRowChanged" msprop:Generator_TablePropName="tblprodutosaplicado" msprop:Generator_RowDeletingName="tblprodutosaplicadoRowDeleting" msprop:Generator_RowChangingName="tblprodutosaplicadoRowChanging" msprop:Generator_RowEvHandlerName="tblprodutosaplicadoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblprodutosaplicadoRowDeleted" msprop:Generator_RowClassName="tblprodutosaplicadoRow" msprop:Generator_UserTableName="tblprodutosaplicado" msprop:Generator_RowEvArgName="tblprodutosaplicadoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_UserColumnName="quantidade" type="xs:int" />
@@ -291,6 +293,7 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="id_aplicacao" msprop:Generator_ColumnVarNameInTable="columnid_aplicacao" msprop:Generator_ColumnPropNameInRow="id_aplicacao" msprop:Generator_ColumnPropNameInTable="id_aplicacaoColumn" msprop:Generator_UserColumnName="id_aplicacao" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -301,4 +304,9 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
       <xs:field xpath="mstns:id_aplicacao" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="tblaplicacao_tblprodutosaplicado" msdata:parent="tblaplicacao" msdata:child="tblprodutosaplicado" msdata:parentkey="id_aplicacao" msdata:childkey="id_aplicacao" msprop:Generator_UserChildTable="tblprodutosaplicado" msprop:Generator_ChildPropName="GettblprodutosaplicadoRows" msprop:Generator_UserRelationName="tblaplicacao_tblprodutosaplicado" msprop:Generator_ParentPropName="tblaplicacaoRow" msprop:Generator_RelationVarName="relationtblaplicacao_tblprodutosaplicado" msprop:Generator_UserParentTable="tblaplicacao" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

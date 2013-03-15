@@ -20,19 +20,21 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsRelatorioAplicao")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsRelatorioAplicacao : global::System.Data.DataSet {
+    public partial class dsRelatorioAplicao : global::System.Data.DataSet {
         
         private tblaplicacaoDataTable tabletblaplicacao;
         
         private tblprodutosaplicadoDataTable tabletblprodutosaplicado;
         
+        private global::System.Data.DataRelation relationtblaplicacao_tblprodutosaplicado;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dsRelatorioAplicacao() {
+        public dsRelatorioAplicao() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +45,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dsRelatorioAplicacao(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsRelatorioAplicao(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -142,7 +144,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsRelatorioAplicacao cln = ((dsRelatorioAplicacao)(base.Clone()));
+            dsRelatorioAplicao cln = ((dsRelatorioAplicao)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -218,12 +220,13 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
                     this.tabletblprodutosaplicado.InitVars();
                 }
             }
+            this.relationtblaplicacao_tblprodutosaplicado = this.Relations["tblaplicacao_tblprodutosaplicado"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "dsRelatorioAplicao";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
@@ -232,6 +235,10 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             base.Tables.Add(this.tabletblaplicacao);
             this.tabletblprodutosaplicado = new tblprodutosaplicadoDataTable();
             base.Tables.Add(this.tabletblprodutosaplicado);
+            this.relationtblaplicacao_tblprodutosaplicado = new global::System.Data.DataRelation("tblaplicacao_tblprodutosaplicado", new global::System.Data.DataColumn[] {
+                        this.tabletblaplicacao.id_aplicacaoColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletblprodutosaplicado.id_aplicacaoColumn}, false);
+            this.Relations.Add(this.relationtblaplicacao_tblprodutosaplicado);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -257,7 +264,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsRelatorioAplicacao ds = new dsRelatorioAplicacao();
+            dsRelatorioAplicao ds = new dsRelatorioAplicao();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -676,7 +683,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsRelatorioAplicacao ds = new dsRelatorioAplicacao();
+                dsRelatorioAplicao ds = new dsRelatorioAplicao();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -750,6 +757,8 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             
             private global::System.Data.DataColumn columnproduto;
             
+            private global::System.Data.DataColumn columnid_aplicacao;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tblprodutosaplicadoDataTable() {
@@ -817,6 +826,14 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_aplicacaoColumn {
+                get {
+                    return this.columnid_aplicacao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -852,13 +869,17 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tblprodutosaplicadoRow AddtblprodutosaplicadoRow(int quantidade, float preco, int id_produto, string produto) {
+            public tblprodutosaplicadoRow AddtblprodutosaplicadoRow(int quantidade, float preco, int id_produto, string produto, tblaplicacaoRow parenttblaplicacaoRowBytblaplicacao_tblprodutosaplicado) {
                 tblprodutosaplicadoRow rowtblprodutosaplicadoRow = ((tblprodutosaplicadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         quantidade,
                         preco,
                         id_produto,
-                        produto};
+                        produto,
+                        null};
+                if ((parenttblaplicacaoRowBytblaplicacao_tblprodutosaplicado != null)) {
+                    columnValuesArray[4] = parenttblaplicacaoRowBytblaplicacao_tblprodutosaplicado[0];
+                }
                 rowtblprodutosaplicadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblprodutosaplicadoRow);
                 return rowtblprodutosaplicadoRow;
@@ -885,6 +906,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
                 this.columnpreco = base.Columns["preco"];
                 this.columnid_produto = base.Columns["id_produto"];
                 this.columnproduto = base.Columns["produto"];
+                this.columnid_aplicacao = base.Columns["id_aplicacao"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -898,6 +920,8 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
                 base.Columns.Add(this.columnid_produto);
                 this.columnproduto = new global::System.Data.DataColumn("produto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproduto);
+                this.columnid_aplicacao = new global::System.Data.DataColumn("id_aplicacao", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_aplicacao);
                 this.columnquantidade.AllowDBNull = false;
                 this.columnid_produto.AllowDBNull = false;
                 this.columnproduto.MaxLength = 120;
@@ -968,7 +992,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsRelatorioAplicacao ds = new dsRelatorioAplicacao();
+                dsRelatorioAplicao ds = new dsRelatorioAplicao();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1291,6 +1315,17 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             public void SetSafraNull() {
                 this[this.tabletblaplicacao.SafraColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblprodutosaplicadoRow[] GettblprodutosaplicadoRows() {
+                if ((this.Table.ChildRelations["tblaplicacao_tblprodutosaplicado"] == null)) {
+                    return new tblprodutosaplicadoRow[0];
+                }
+                else {
+                    return ((tblprodutosaplicadoRow[])(base.GetChildRows(this.Table.ChildRelations["tblaplicacao_tblprodutosaplicado"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1363,6 +1398,33 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_aplicacao {
+                get {
+                    try {
+                        return ((int)(this[this.tabletblprodutosaplicado.id_aplicacaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'id_aplicacao\' in table \'tblprodutosaplicado\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletblprodutosaplicado.id_aplicacaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tblaplicacaoRow tblaplicacaoRow {
+                get {
+                    return ((tblaplicacaoRow)(this.GetParentRow(this.Table.ParentRelations["tblaplicacao_tblprodutosaplicado"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["tblaplicacao_tblprodutosaplicado"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsprecoNull() {
                 return this.IsNull(this.tabletblprodutosaplicado.precoColumn);
             }
@@ -1383,6 +1445,18 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetprodutoNull() {
                 this[this.tabletblprodutosaplicado.produtoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_aplicacaoNull() {
+                return this.IsNull(this.tabletblprodutosaplicado.id_aplicacaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_aplicacaoNull() {
+                this[this.tabletblprodutosaplicado.id_aplicacaoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1455,7 +1529,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios {
         }
     }
 }
-namespace sistemaCA.Modulos.aplicacao.relatorios.DataSet1TableAdapters {
+namespace sistemaCA.Modulos.aplicacao.relatorios.dsRelatorioAplicaoTableAdapters {
     
     
     /// <summary>
@@ -1723,7 +1797,7 @@ GROUP BY tblaplicacao.id_aplicacao, tblaplicacao.data_cadastro, tblaplicacao.sta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsRelatorioAplicacao.tblaplicacaoDataTable dataTable, int idaplicacao) {
+        public virtual int Fill(dsRelatorioAplicao.tblaplicacaoDataTable dataTable, int idaplicacao) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idaplicacao));
             if ((this.ClearBeforeFill == true)) {
@@ -1737,10 +1811,10 @@ GROUP BY tblaplicacao.id_aplicacao, tblaplicacao.data_cadastro, tblaplicacao.sta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsRelatorioAplicacao.tblaplicacaoDataTable GetData(int idaplicacao) {
+        public virtual dsRelatorioAplicao.tblaplicacaoDataTable GetData(int idaplicacao) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idaplicacao));
-            dsRelatorioAplicacao.tblaplicacaoDataTable dataTable = new dsRelatorioAplicacao.tblaplicacaoDataTable();
+            dsRelatorioAplicao.tblaplicacaoDataTable dataTable = new dsRelatorioAplicao.tblaplicacaoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1748,14 +1822,14 @@ GROUP BY tblaplicacao.id_aplicacao, tblaplicacao.data_cadastro, tblaplicacao.sta
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsRelatorioAplicacao.tblaplicacaoDataTable dataTable) {
+        public virtual int Update(dsRelatorioAplicao.tblaplicacaoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsRelatorioAplicacao dataSet) {
+        public virtual int Update(dsRelatorioAplicao dataSet) {
             return this.Adapter.Update(dataSet, "tblaplicacao");
         }
         
@@ -2301,6 +2375,7 @@ GROUP BY tblaplicacao.id_aplicacao, tblaplicacao.data_cadastro, tblaplicacao.sta
             tableMapping.ColumnMappings.Add("preco", "preco");
             tableMapping.ColumnMappings.Add("id_produto", "id_produto");
             tableMapping.ColumnMappings.Add("produto", "produto");
+            tableMapping.ColumnMappings.Add("id_aplicacao", "id_aplicacao");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2354,7 +2429,8 @@ SELECT id_produtosaplicado, quantidade, preco, id_produto, id_aplicacao FROM tbl
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        tblprodutosaplicado.quantidade, tblprodutosaplicado.preco, tblprodutosaplicado.id_produto, tblproduto.descricao AS produto
+            this._commandCollection[0].CommandText = @"SELECT        tblprodutosaplicado.quantidade, tblprodutosaplicado.preco, tblprodutosaplicado.id_produto, tblproduto.descricao AS produto, 
+                         tblprodutosaplicado.id_aplicacao
 FROM            tblprodutosaplicado INNER JOIN
                          tblproduto ON tblprodutosaplicado.id_produto = tblproduto.id_produto
 WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
@@ -2366,7 +2442,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsRelatorioAplicacao.tblprodutosaplicadoDataTable dataTable, global::System.Nullable<int> idaplicacao) {
+        public virtual int Fill(dsRelatorioAplicao.tblprodutosaplicadoDataTable dataTable, global::System.Nullable<int> idaplicacao) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((idaplicacao.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idaplicacao.Value));
@@ -2385,7 +2461,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsRelatorioAplicacao.tblprodutosaplicadoDataTable GetData(global::System.Nullable<int> idaplicacao) {
+        public virtual dsRelatorioAplicao.tblprodutosaplicadoDataTable GetData(global::System.Nullable<int> idaplicacao) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((idaplicacao.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idaplicacao.Value));
@@ -2393,7 +2469,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            dsRelatorioAplicacao.tblprodutosaplicadoDataTable dataTable = new dsRelatorioAplicacao.tblprodutosaplicadoDataTable();
+            dsRelatorioAplicao.tblprodutosaplicadoDataTable dataTable = new dsRelatorioAplicao.tblprodutosaplicadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2401,14 +2477,14 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsRelatorioAplicacao.tblprodutosaplicadoDataTable dataTable) {
+        public virtual int Update(dsRelatorioAplicao.tblprodutosaplicadoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dsRelatorioAplicacao dataSet) {
+        public virtual int Update(dsRelatorioAplicao dataSet) {
             return this.Adapter.Update(dataSet, "tblprodutosaplicado");
         }
         
@@ -2672,7 +2748,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(dsRelatorioAplicacao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsRelatorioAplicao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tblaplicacaoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblaplicacao.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2700,7 +2776,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(dsRelatorioAplicacao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsRelatorioAplicao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._tblaplicacaoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblaplicacao.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2726,7 +2802,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(dsRelatorioAplicacao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsRelatorioAplicao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._tblprodutosaplicadoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblprodutosaplicado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2776,7 +2852,7 @@ WHERE        (tblprodutosaplicado.id_aplicacao = @idaplicacao)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(dsRelatorioAplicacao dataSet) {
+        public virtual int UpdateAll(dsRelatorioAplicao dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

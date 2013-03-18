@@ -16,5 +16,11 @@ namespace sistemaCA.Modulos.ControleMaquinas
         {
             InitializeComponent();
         }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastroRevisao FormCada =new FormCadastroRevisao();
+            FormCada.ShowDialog();
+        }
     }
 }

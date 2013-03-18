@@ -103,6 +103,7 @@
             this.btn_cadastrar.TabIndex = 34;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // btn_visualizar
             // 
@@ -119,12 +120,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgw_revisao);
-            this.groupBox1.Location = new System.Drawing.Point(8, 77);
+            this.groupBox1.Location = new System.Drawing.Point(8, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(846, 406);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Usuário";
+            this.groupBox1.Text = "Revisões";
             // 
             // dgw_revisao
             // 
@@ -158,6 +159,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormRevisao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Previsão de Revisão";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

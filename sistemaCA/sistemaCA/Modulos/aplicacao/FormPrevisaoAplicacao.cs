@@ -147,6 +147,30 @@ namespace sistemaCA.views.aplicacao
         private void btn_Deletar_Click_1(object sender, EventArgs e)
         {
 
+            if (dgw_aplicacao.CurrentCell != null)
+            {
+                int selecionado = dgw_aplicacao.CurrentCell.RowIndex;
+                int idaplicacao;
+                idaplicacao = int.Parse(dgw_aplicacao.Rows[selecionado].Cells["id_aplicacao"].Value.ToString());
+                // deletar produtos
+                ProdutoAplicado produtos = new ProdutoAplicado();
+                produtos.DeletandoTodoProduto(idaplicacao);
+                
+                // deletar aplicacao
+                Aplicacao aplicacao = new Aplicacao();
+                aplicacao.DeletarAplicacao(idaplicacao);
+
+
+                // atualiza o grid
+
+                aplicacao.ListarAplicacoes(dgw_aplicacao);
+
+
+            }
+            
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -162,6 +186,15 @@ namespace sistemaCA.views.aplicacao
                 Aplicacao.ShowDialog();
 
             }
+        }
+
+        private void btn_cadastrar_Click_1(object sender, EventArgs e)
+        {
+            FormCadastraAplicacao formAplicacao = new FormCadastraAplicacao();
+            formAplicacao.ShowDialog();
+
+            Aplicacao aplicacao = new Aplicacao();
+            aplicacao.ListarAplicacoes(dgw_aplicacao);
         }
     }
 }

@@ -29,10 +29,76 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tblaplicacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tblaplicacaoTableAdapter = new sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.tblaplicacaoTableAdapter();
+            this.tblprodutosaplicacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblprodutosaplicadoTableAdapter = new sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.tblprodutosaplicadoTableAdapter();
+            this.DSRelatorio = new sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorio();
+            ((System.ComponentModel.ISupportInitialize)(this.tblaplicacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblprodutosaplicacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSRelatorio)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tblaplicacaoBindingSource
+            // 
+            this.tblaplicacaoBindingSource.DataMember = "tblaplicacao";
+            this.tblaplicacaoBindingSource.DataSource = this.DSRelatorio;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "Relatorio";
+            reportDataSource1.Value = this.tblaplicacaoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "sistemaCA.Modulos.aplicacao.Relatorios.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(677, 433);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // tblaplicacaoTableAdapter
+            // 
+            this.tblaplicacaoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblprodutosaplicacaoBindingSource
+            // 
+            this.tblprodutosaplicacaoBindingSource.DataMember = "tblprodutosaplicado";
+            this.tblprodutosaplicacaoBindingSource.DataSource = this.DSRelatorio;
+            // 
+            // tblprodutosaplicadoTableAdapter
+            // 
+            this.tblprodutosaplicadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // DSRelatorio
+            // 
+            this.DSRelatorio.DataSetName = "DSRelatorio";
+            this.DSRelatorio.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // FormRelatorio
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(677, 433);
+            this.Controls.Add(this.reportViewer1);
+            this.Name = "FormRelatorio";
             this.Text = "FormRelatorio";
+            this.Load += new System.EventHandler(this.FormRelatorio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tblaplicacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblprodutosaplicacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSRelatorio)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource tblaplicacaoBindingSource;
+        private DSRelatorioTableAdapters.tblaplicacaoTableAdapter tblaplicacaoTableAdapter;
+        private System.Windows.Forms.BindingSource tblprodutosaplicacaoBindingSource;
+        private DSRelatorioTableAdapters.tblprodutosaplicadoTableAdapter tblprodutosaplicadoTableAdapter;
+        private DSRelatorio DSRelatorio;
     }
 }

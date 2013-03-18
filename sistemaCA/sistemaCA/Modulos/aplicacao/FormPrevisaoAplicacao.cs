@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaCA.Modulos.aplicacao;
-using sistemaCA.Modulos.aplicacao.relatorios;
+using sistemaCA.Modulos.aplicacao;
+using sistemaCA.Modulos.aplicacao.Relatorios;
 
 namespace sistemaCA.views.aplicacao
 {
@@ -181,7 +182,7 @@ namespace sistemaCA.views.aplicacao
                 int idaplicacao;
                 idaplicacao = int.Parse(dgw_aplicacao.Rows[selecionado].Cells["id_aplicacao"].Value.ToString());
 
-                FormRelatorioAplicacao Aplicacao = new FormRelatorioAplicacao(idaplicacao);
+                FormRelatorio Aplicacao = new FormRelatorio(idaplicacao);
 
                 Aplicacao.ShowDialog();
 

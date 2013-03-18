@@ -230,7 +230,7 @@
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Left>0.01042in</Left>
-            <Height>2.10417in</Height>
+            <Height>1.46875in</Height>
             <Width>5.375in</Width>
             <Style>
               <Border>
@@ -238,12 +238,25 @@
               </Border>
             </Style>
           </Rectangle>
+          <Subreport Name="Subreport1">
+            <ReportName>Report3.rdlc</ReportName>
+            <Top>1.61921in</Top>
+            <Left>0.01042in</Left>
+            <Height>4.28125in</Height>
+            <Width>5.375in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Subreport>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>0.33333in</Top>
+        <Top>0.01389in</Top>
         <Left>0.17583in</Left>
-        <Height>5.04514in</Height>
-        <Width>5.39583in</Width>
+        <Height>5.90046in</Height>
+        <Width>5.38542in</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -251,14 +264,14 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>5.40625in</Height>
+    <Height>7.52894in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>5.69792in</Width>
+  <Width>5.91542in</Width>
   <Page>
     <PageHeader>
       <Height>0.82746in</Height>

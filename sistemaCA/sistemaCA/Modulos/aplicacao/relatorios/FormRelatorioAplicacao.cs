@@ -35,7 +35,7 @@ namespace sistemaCA.Modulos.aplicacao.relatorios
             // TODO: This line of code loads data into the 'dsRelatorioAplicao.tblaplicacao' table. You can move, or remove it, as needed.
 
             this.tblaplicacaoTableAdapter.Fill(this.dsRelatorioAplicao.tblaplicacao, IDAplicacao);
-
+            this.tblprodutosaplicadoTableAdapter1.Fill(this.dsRelatorioAplicao.tblprodutosaplicado, IDAplicacao);
             this.reportViewer1.RefreshReport();
         }
 

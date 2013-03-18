@@ -30,17 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tblaplicacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRelatorioAplicao = new sistemaCA.Modulos.aplicacao.relatorios.dsRelatorioAplicao();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dsRelatorioAplicaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tblaplicacaoTableAdapter = new sistemaCA.Modulos.aplicacao.relatorios.dsRelatorioAplicaoTableAdapters.tblaplicacaoTableAdapter();
+            this.tblprodutosaplicadoTableAdapter1 = new sistemaCA.Modulos.aplicacao.relatorios.dsRelatorioAplicaoTableAdapters.tblprodutosaplicadoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblaplicacaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRelatorioAplicao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRelatorioAplicaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tblaplicacaoBindingSource
+            // 
+            this.tblaplicacaoBindingSource.DataMember = "tblaplicacao";
+            this.tblaplicacaoBindingSource.DataSource = this.dsRelatorioAplicao;
+            // 
+            // dsRelatorioAplicao
+            // 
+            this.dsRelatorioAplicao.DataSetName = "dsRelatorioAplicao";
+            this.dsRelatorioAplicao.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -53,16 +64,6 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(777, 504);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // tblaplicacaoBindingSource
-            // 
-            this.tblaplicacaoBindingSource.DataMember = "tblaplicacao";
-            this.tblaplicacaoBindingSource.DataSource = this.dsRelatorioAplicao;
-            // 
-            // dsRelatorioAplicao
-            // 
-            this.dsRelatorioAplicao.DataSetName = "dsRelatorioAplicao";
-            this.dsRelatorioAplicao.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dsRelatorioAplicaoBindingSource
             // 
@@ -78,6 +79,10 @@
             // tblaplicacaoTableAdapter
             // 
             this.tblaplicacaoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tblprodutosaplicadoTableAdapter1
+            // 
+            this.tblprodutosaplicadoTableAdapter1.ClearBeforeFill = true;
             // 
             // FormRelatorioAplicacao
             // 
@@ -104,6 +109,7 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource tblaplicacaoBindingSource;
         private dsRelatorioAplicaoTableAdapters.tblaplicacaoTableAdapter tblaplicacaoTableAdapter;
+        private dsRelatorioAplicaoTableAdapters.tblprodutosaplicadoTableAdapter tblprodutosaplicadoTableAdapter1;
 
       
 

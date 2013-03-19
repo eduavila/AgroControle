@@ -81,5 +81,24 @@ namespace sistemaCA.Modulos.ControleMaquinas
                 }
             }
         }
+
+        private void dgw_revisao_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgw_revisao.CurrentCell != null)
+            {
+                int selecionado = dgw_revisao.CurrentCell.RowIndex;
+                int idaplicacao;
+                idaplicacao = int.Parse(dgw_revisao.Rows[selecionado].Cells["id"].Value.ToString());
+
+                FormAlterarRevisao revisao = new FormAlterarRevisao(idaplicacao);
+                revisao.ShowDialog();
+
+                // preechendo grid.
+                ControleRevisao Revisao = new ControleRevisao();
+                Revisao.VisualizarRevisao(dgw_revisao);
+
+
+            }
+        }
     }
 }

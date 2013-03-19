@@ -145,6 +145,7 @@
             this.dgw_revisao.ReadOnly = true;
             this.dgw_revisao.Size = new System.Drawing.Size(840, 387);
             this.dgw_revisao.TabIndex = 0;
+            this.dgw_revisao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_revisao_CellDoubleClick);
             // 
             // statusStrip1
             // 

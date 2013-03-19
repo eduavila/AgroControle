@@ -8,6 +8,8 @@ namespace sistemaCA
 {
     static class Program
     {
+
+        public static string Usuario { get; set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

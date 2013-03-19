@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaCA.Properties;
 
 namespace sistemaCA.views
 {
@@ -42,6 +43,7 @@ namespace sistemaCA.views
 
                 if ((tb_user.Text == user.login.ToString()) && (tb_senha.Text == user.senha.ToString()))
                 {
+                    sistemaCA.Program.Usuario = tb_user.Text;
 
                     telaprincipal formprincipal = new telaprincipal();
                     formprincipal.Show();

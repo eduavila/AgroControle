@@ -14,6 +14,7 @@ using sistemaCA.views.talhao;
 using sistemaCA.views.fornecedor;
 using sistemaCA.views.aplicacao;
 using sistemaCA.Modulos.ControleMaquinas;
+using sistemaCA.Properties;
 
 namespace sistemaCA.views
 {
@@ -122,6 +123,17 @@ namespace sistemaCA.views
         {
             FormRevisao revisao = new FormRevisao();
             revisao.Show();
+        }
+
+        private void telaprincipal_Load_1(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "Usuário: " + sistemaCA.Program.Usuario;
+            
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

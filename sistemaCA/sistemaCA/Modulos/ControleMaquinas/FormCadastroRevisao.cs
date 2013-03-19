@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using sistemaCA.Modulos.ControleMaquinas.dsRevisaoTableAdapters;
+using sistemaCA.views.Pesquisa;
+
 
 namespace sistemaCA.Modulos.ControleMaquinas
 {
@@ -16,50 +17,14 @@ namespace sistemaCA.Modulos.ControleMaquinas
         public FormCadastroRevisao()
         {
             InitializeComponent();
+
         }
 
         private void FormCadastroRevisao_Load(object sender, EventArgs e)
         {
-           
+            ControleRevisao Revisao = new ControleRevisao();
 
-            // TODO: This line of code loads data into the 'dsRevisao.DTItemRevisao' table. You can move, or remove it, as needed.
-            this.dTItemRevisaoTableAdapter.Fill(this.dsRevisao.DTItemRevisao);
-
-            // TODO: This line of code loads data into the 'dsRevisao.DTRevisao' table. You can move, or remove it, as needed.
-            this.dTRevisaoTableAdapter.Fill(this.dsRevisao.DTRevisao);
-
-            DataClasses1DataContext db = new DataClasses1DataContext();
-            // prechendo como box safra.
-            var result = from safra in db.tblsafras select new { safra = safra.descricao };
-
-
-            safraComboBox.DataSource = result;
-            safraComboBox.DisplayMember = "safra";
-            safraComboBox.ValueMember = "safra";
-            // ----------------------------------------------------------
-
-            // prenchendo combo maquinas
-            var bens = from maquina in db.tblbens select new {maquina = maquina.codigoControle };
-
-            máquinaComboBox.DataSource = bens;
-            máquinaComboBox.DisplayMember = "maquina";
-            máquinaComboBox.ValueMember = "maquina";
-
-
-
-            // prenchendo combox produtos
-            var pro = from produ in db.tblprodutos
-                          select new {produto = produ.descricao};
-
-            dataGridViewComboBoxColumn2.DataSource = pro;
-            dataGridViewComboBoxColumn2.DisplayMember = "produto";
-            dataGridViewComboBoxColumn2.ValueMember = "produto";
-            //------------------------
-
-            
-
-            
-
+            Revisao.ListandoProduto(produto);
         }
 
         private void motivoLabel_Click(object sender, EventArgs e)
@@ -67,29 +32,47 @@ namespace sistemaCA.Modulos.ControleMaquinas
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dTRevisaoTableAdapter.FillBy(this.dsRevisao.DTRevisao);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+       
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
+            ControleRevisao Revisao = new ControleRevisao();
 
-           
+            Revisao.Motivo = tb_descricao.Text;
+            Revisao.data_cadastro = DateTime.Today.Date;
+            Revisao.data_revisao = Dtp_datarevisao.Value;
+            Revisao.Status = cb_status.Text;
+            Revisao.ID_Ben = int.Parse(tb_maquina.Text);
+            Revisao.ID_Safra = int.Parse(tb_safra.Text);
 
 
-          
-            
+
+            // metodo de cadastro revisao.
+            Revisao.CadastroRevisao();
+
+            Revisao.CadastraProdutoAplicado(dgw_produtos);
 
 
         }
+
+        private void dTItemRevisaoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormPesquisaMaquinas pes_maqui = new FormPesquisaMaquinas();
+            pes_maqui.ShowDialog();
+            tb_maquina.Text = pes_maqui.ID.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormPesquisaSafra safra = new FormPesquisaSafra();
+            safra.ShowDialog();
+            tb_safra.Text = safra.ID.ToString();
+        }
+       
     }
 }

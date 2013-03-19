@@ -21,6 +21,37 @@ namespace sistemaCA.Modulos.ControleMaquinas
         {
             FormCadastroRevisao FormCada =new FormCadastroRevisao();
             FormCada.ShowDialog();
+            // atualizando.
+            ControleRevisao Revisao = new ControleRevisao();
+            Revisao.VisualizarRevisao(dgw_revisao);
+        }
+
+        private void FormRevisao_Load(object sender, EventArgs e)
+        {
+            // preechendo grid.
+            ControleRevisao Revisao = new ControleRevisao();
+            Revisao.VisualizarRevisao(dgw_revisao);
+        }
+
+        private void btn_visualizar_Click(object sender, EventArgs e)
+        {
+            if (dgw_revisao.CurrentCell != null)
+            {
+                int selecionado = dgw_revisao.CurrentCell.RowIndex;
+                int idaplicacao;
+                idaplicacao = int.Parse(dgw_revisao.Rows[selecionado].Cells["id"].Value.ToString());
+
+                FormAlterarRevisao revisao = new FormAlterarRevisao(idaplicacao);
+                revisao.ShowDialog();
+                
+                // preechendo grid.
+                ControleRevisao Revisao = new ControleRevisao();
+                Revisao.VisualizarRevisao(dgw_revisao);
+
+
+            }
+
+
         }
     }
 }

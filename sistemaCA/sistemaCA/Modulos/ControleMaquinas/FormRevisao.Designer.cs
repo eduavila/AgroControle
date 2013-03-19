@@ -113,6 +113,7 @@
             this.btn_visualizar.TabIndex = 39;
             this.btn_visualizar.Text = "Visualizar";
             this.btn_visualizar.UseVisualStyleBackColor = true;
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // groupBox1
             // 
@@ -131,6 +132,7 @@
             // 
             this.dgw_revisao.AllowUserToAddRows = false;
             this.dgw_revisao.AllowUserToDeleteRows = false;
+            this.dgw_revisao.AllowUserToOrderColumns = true;
             this.dgw_revisao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgw_revisao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgw_revisao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -161,6 +163,7 @@
             this.Name = "FormRevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Previsão de Revisão";
+            this.Load += new System.EventHandler(this.FormRevisao_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);

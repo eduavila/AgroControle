@@ -110,12 +110,12 @@ namespace sistemaCA.Modulos.ControleMaquinas
 
         }
 
-        public void ListandoProduto(DataGridViewComboBoxColumn dgw)
+        public List<string> ListandoProduto()
         {
             var pro = from produ in Banco.tblprodutos select produ.descricao;
-            dgw.DataSource = pro.ToList();
-
             
+
+            return pro.ToList();
         }
 
         public int ProximoRegistro()
@@ -180,6 +180,32 @@ namespace sistemaCA.Modulos.ControleMaquinas
 
             dgw.DataSource = result;
         
+        }
+
+
+        public void ExcluirRevisao(int idrevisao)
+        {
+            try
+            {
+                var itens = from iten in Banco.tblitenrevisaos where iten.id_revisao == idrevisao select iten;
+
+                Banco.tblitenrevisaos.DeleteAllOnSubmit(itens);
+
+
+                var result = from revisoes in Banco.tblrevisaofuturas where revisoes.id_revisao == idrevisao select revisoes;
+
+                var revisao = result.Single();
+
+                Banco.tblrevisaofuturas.DeleteOnSubmit(revisao);
+
+                Banco.SubmitChanges();
+                MessageBox.Show("Registro Excluido com Sucesso!");
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
 
     }

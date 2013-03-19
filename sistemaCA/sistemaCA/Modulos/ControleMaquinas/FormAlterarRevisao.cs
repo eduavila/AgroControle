@@ -36,7 +36,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
             revisao.visualiarItemRevisa(dgw_produtos, idrevisao);
 
 
-
+            
 
 
 
@@ -59,15 +59,27 @@ namespace sistemaCA.Modulos.ControleMaquinas
             cb_status.Enabled = true;
 
             dgw_produtos.Enabled = true;
-           
+
+
           
 
+           
 
         }
 
         private void dgw_produtos_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             //
+        }
+
+        private void dgw_produtos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -49,7 +49,7 @@
             this.tb_id = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.dtp_data_cadastro = new System.Windows.Forms.DateTimePicker();
-            this.produto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             safraLabel = new System.Windows.Forms.Label();
@@ -62,6 +62,69 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_produtos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // safraLabel
+            // 
+            safraLabel.AutoSize = true;
+            safraLabel.Location = new System.Drawing.Point(318, 112);
+            safraLabel.Name = "safraLabel";
+            safraLabel.Size = new System.Drawing.Size(35, 13);
+            safraLabel.TabIndex = 54;
+            safraLabel.Text = "Safra:";
+            // 
+            // máquinaLabel
+            // 
+            máquinaLabel.AutoSize = true;
+            máquinaLabel.Location = new System.Drawing.Point(165, 112);
+            máquinaLabel.Name = "máquinaLabel";
+            máquinaLabel.Size = new System.Drawing.Size(51, 13);
+            máquinaLabel.TabIndex = 53;
+            máquinaLabel.Text = "Máquina:";
+            // 
+            // statusLabel
+            // 
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new System.Drawing.Point(27, 112);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new System.Drawing.Size(40, 13);
+            statusLabel.TabIndex = 51;
+            statusLabel.Text = "Status:";
+            // 
+            // data_revisaoLabel
+            // 
+            data_revisaoLabel.AutoSize = true;
+            data_revisaoLabel.Location = new System.Drawing.Point(318, 51);
+            data_revisaoLabel.Name = "data_revisaoLabel";
+            data_revisaoLabel.Size = new System.Drawing.Size(68, 13);
+            data_revisaoLabel.TabIndex = 48;
+            data_revisaoLabel.Text = "data revisao:";
+            // 
+            // motivoLabel
+            // 
+            motivoLabel.AutoSize = true;
+            motivoLabel.Location = new System.Drawing.Point(27, 51);
+            motivoLabel.Name = "motivoLabel";
+            motivoLabel.Size = new System.Drawing.Size(55, 13);
+            motivoLabel.TabIndex = 47;
+            motivoLabel.Text = "Descrição";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(26, 6);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(18, 13);
+            label1.TabIndex = 62;
+            label1.Text = "ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(124, 6);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(75, 13);
+            label2.TabIndex = 66;
+            label2.Text = "Data Cadastro";
             // 
             // btnsafra
             // 
@@ -129,33 +192,7 @@
             this.dgw_produtos.Size = new System.Drawing.Size(529, 222);
             this.dgw_produtos.TabIndex = 0;
             this.dgw_produtos.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgw_produtos_DataError);
-            // 
-            // safraLabel
-            // 
-            safraLabel.AutoSize = true;
-            safraLabel.Location = new System.Drawing.Point(318, 112);
-            safraLabel.Name = "safraLabel";
-            safraLabel.Size = new System.Drawing.Size(35, 13);
-            safraLabel.TabIndex = 54;
-            safraLabel.Text = "Safra:";
-            // 
-            // máquinaLabel
-            // 
-            máquinaLabel.AutoSize = true;
-            máquinaLabel.Location = new System.Drawing.Point(165, 112);
-            máquinaLabel.Name = "máquinaLabel";
-            máquinaLabel.Size = new System.Drawing.Size(51, 13);
-            máquinaLabel.TabIndex = 53;
-            máquinaLabel.Text = "Máquina:";
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(27, 112);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(40, 13);
-            statusLabel.TabIndex = 51;
-            statusLabel.Text = "Status:";
+            this.dgw_produtos.Click += new System.EventHandler(this.dgw_produtos_Click);
             // 
             // cb_status
             // 
@@ -169,15 +206,6 @@
             this.cb_status.Size = new System.Drawing.Size(92, 21);
             this.cb_status.TabIndex = 52;
             // 
-            // data_revisaoLabel
-            // 
-            data_revisaoLabel.AutoSize = true;
-            data_revisaoLabel.Location = new System.Drawing.Point(318, 51);
-            data_revisaoLabel.Name = "data_revisaoLabel";
-            data_revisaoLabel.Size = new System.Drawing.Size(68, 13);
-            data_revisaoLabel.TabIndex = 48;
-            data_revisaoLabel.Text = "data revisao:";
-            // 
             // Dtp_datarevisao
             // 
             this.Dtp_datarevisao.Enabled = false;
@@ -186,15 +214,6 @@
             this.Dtp_datarevisao.Name = "Dtp_datarevisao";
             this.Dtp_datarevisao.Size = new System.Drawing.Size(98, 20);
             this.Dtp_datarevisao.TabIndex = 50;
-            // 
-            // motivoLabel
-            // 
-            motivoLabel.AutoSize = true;
-            motivoLabel.Location = new System.Drawing.Point(27, 51);
-            motivoLabel.Name = "motivoLabel";
-            motivoLabel.Size = new System.Drawing.Size(55, 13);
-            motivoLabel.TabIndex = 47;
-            motivoLabel.Text = "Descrição";
             // 
             // tb_descricao
             // 
@@ -213,6 +232,7 @@
             this.button1.TabIndex = 61;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_visualizar
             // 
@@ -225,15 +245,6 @@
             this.btn_visualizar.Text = "Alterar";
             this.btn_visualizar.UseVisualStyleBackColor = true;
             this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(26, 6);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(18, 13);
-            label1.TabIndex = 62;
-            label1.Text = "ID";
             // 
             // tb_id
             // 
@@ -265,24 +276,13 @@
             this.dtp_data_cadastro.Size = new System.Drawing.Size(89, 20);
             this.dtp_data_cadastro.TabIndex = 65;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(124, 6);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(75, 13);
-            label2.TabIndex = 66;
-            label2.Text = "Data Cadastro";
-            // 
             // produto
             // 
+            this.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.produto.DataPropertyName = "produto";
-            this.produto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.produto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.produto.HeaderText = "Produtos";
             this.produto.Name = "produto";
             this.produto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.produto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // quantidade
             // 
@@ -347,7 +347,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DateTimePicker dtp_data_cadastro;
         private System.Windows.Forms.DataGridView dgw_produtos;
-        private System.Windows.Forms.DataGridViewComboBoxColumn produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }

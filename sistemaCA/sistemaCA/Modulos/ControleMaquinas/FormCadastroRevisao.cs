@@ -24,7 +24,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
         {
             ControleRevisao Revisao = new ControleRevisao();
 
-            Revisao.ListandoProduto(produto);
+            produto.DataSource = Revisao.ListandoProduto();
         }
 
         private void motivoLabel_Click(object sender, EventArgs e)

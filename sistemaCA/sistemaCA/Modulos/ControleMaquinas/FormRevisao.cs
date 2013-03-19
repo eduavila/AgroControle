@@ -28,9 +28,13 @@ namespace sistemaCA.Modulos.ControleMaquinas
 
         private void FormRevisao_Load(object sender, EventArgs e)
         {
+            
+            
             // preechendo grid.
             ControleRevisao Revisao = new ControleRevisao();
             Revisao.VisualizarRevisao(dgw_revisao);
+
+            toolStripStatusLabel1.Text = dgw_revisao.RowCount + " Revisões Cadatrada.";
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)
@@ -52,6 +56,30 @@ namespace sistemaCA.Modulos.ControleMaquinas
             }
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (dgw_revisao.CurrentCell != null)
+            {
+                int selecionado = dgw_revisao.CurrentCell.RowIndex;
+                int idrevisao;
+                idrevisao = int.Parse(dgw_revisao.Rows[selecionado].Cells[0].Value.ToString());
+
+                var resultado = MessageBox.Show("Tem Certeza de quer excluir o Registro Selecionado ?", "Excluir Registro", MessageBoxButtons.YesNo);
+
+                if (resultado == DialogResult.Yes)
+                {
+
+                    ControleRevisao revisao = new ControleRevisao();
+                    revisao.ExcluirRevisao(idrevisao);
+
+
+                  // atualizando grid
+                    revisao.VisualizarRevisao(dgw_revisao);
+                }
+            }
         }
     }
 }

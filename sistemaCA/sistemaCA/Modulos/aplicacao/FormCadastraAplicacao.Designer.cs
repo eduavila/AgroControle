@@ -337,6 +337,7 @@
             this.dgw_produto.Name = "dgw_produto";
             this.dgw_produto.Size = new System.Drawing.Size(581, 155);
             this.dgw_produto.TabIndex = 0;
+            this.dgw_produto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_produto_CellContentClick_1);
             // 
             // quantidade
             // 

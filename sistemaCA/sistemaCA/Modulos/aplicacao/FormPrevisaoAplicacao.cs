@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaCA.Modulos.aplicacao;
-using sistemaCA.Modulos.aplicacao;
 using sistemaCA.Modulos.aplicacao.Relatorios;
 
 namespace sistemaCA.views.aplicacao

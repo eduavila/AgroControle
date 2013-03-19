@@ -63,7 +63,7 @@ namespace sistemaCA.views.aplicacao
 
             produto.ListandoProduto(dgw_produto);
 
-          //  dgw_produto.Columns["Produto"].DisplayIndex = 0;
+            dgw_produto.Columns["Produto"].DisplayIndex = 0;
             dgw_produto.Columns["quantidade"].DisplayIndex = 1;
             dgw_produto.Columns["valor"].DisplayIndex = 2;
           
@@ -154,6 +154,11 @@ namespace sistemaCA.views.aplicacao
         }
 
         private void dtp_aplicacao_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgw_produto_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

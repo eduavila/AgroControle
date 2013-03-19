@@ -59,6 +59,8 @@ namespace sistemaCA.views.aplicacao
                              };
                 dgw.DataSource = pesqui;
 
+          
+
 
 
             }

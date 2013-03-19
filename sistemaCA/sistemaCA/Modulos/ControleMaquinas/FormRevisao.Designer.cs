@@ -136,7 +136,7 @@
             this.dgw_revisao.AllowUserToAddRows = false;
             this.dgw_revisao.AllowUserToDeleteRows = false;
             this.dgw_revisao.AllowUserToOrderColumns = true;
-            this.dgw_revisao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgw_revisao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgw_revisao.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dgw_revisao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_revisao.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -50,6 +50,7 @@ namespace sistemaCA.Modulos.aplicacao
 
             DataGridViewComboBoxColumn cb_produto = new DataGridViewComboBoxColumn();
             cb_produto.DataPropertyName = "produto";
+            cb_produto.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             cb_produto.DisplayMember = "produto";
             cb_produto.ValueMember = "idproduto";
             cb_produto.DataSource = result.ToList();
@@ -74,6 +75,9 @@ namespace sistemaCA.Modulos.aplicacao
             
         
         }
+
+
+        
 
 
         public void ListandoProduto(DataGridView dgw)

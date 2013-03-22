@@ -475,8 +475,8 @@
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dgw_produto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cb_tipoaplicacao;
+        public System.Windows.Forms.DataGridView dgw_produto;
     }
 }

@@ -136,9 +136,14 @@ namespace sistemaCA.Modulos.aplicacao
             btn_maquina.Enabled = true;
             btn_talhao.Enabled = true;
             btn_funcionario.Enabled = true;
+
+
+
+            ProdutoAplicado produto = new ProdutoAplicado();
+
+            produto.ListandoTodoProdutoAlterar(int.Parse(tb_id.Text),dgw_produto);
+           
             
-
-
 
 
 

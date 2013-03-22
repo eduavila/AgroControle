@@ -218,6 +218,12 @@
     <Compile Include="Modulos\funcionario\formFuncionario.Designer.cs">
       <DependentUpon>formFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Usuarios\FormCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\FormCadastroUsuario.Designer.cs">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Usuarios\formUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +320,7 @@
     <Compile Include="Modulos\telasplash.Designer.cs">
       <DependentUpon>telasplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Usuarios\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modulos\telaprincipal.cs">
@@ -382,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\funcionario\formFuncionario.resx">
       <DependentUpon>formFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Usuarios\FormCadastroUsuario.resx">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Usuarios\formUsuario.resx">
       <DependentUpon>formUsuario.cs</DependentUpon>

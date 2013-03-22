@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using sistemaCA.Modulos.Usuarios;
 
 namespace sistemaCA.views
 {
@@ -44,6 +45,15 @@ namespace sistemaCA.views
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_cadastrar_Click(object sender, EventArgs e)
+        {
+            FormCadastroUsuario FormCada =new FormCadastroUsuario();
+            FormCada.ShowDialog();
+
+
 
         }
 

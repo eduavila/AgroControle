@@ -24,6 +24,7 @@
       <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="login" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="senha" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="tblusuario_tblacesso" Member="tblacessos" ThisKey="id_usuario" OtherKey="idusuario" Type="tblacesso" />
     </Type>
   </Table>
   <Table Name="dbo.tbltipoproduto" Member="tbltipoprodutos">
@@ -164,6 +165,15 @@
       <Association Name="tblrevisaofutura_tblitenrevisao" Member="tblitenrevisaos" ThisKey="id_revisao" OtherKey="id_revisao" Type="tblitenrevisao" />
       <Association Name="tblben_tblrevisaofutura" Member="tblben" ThisKey="id_ben" OtherKey="id_ben" Type="tblben" IsForeignKey="true" />
       <Association Name="tblsafra_tblrevisaofutura" Member="tblsafra" ThisKey="id_safra" OtherKey="id_safra" Type="tblsafra" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblacesso" Member="tblacessos">
+    <Type Name="tblacesso">
+      <Column Name="idacesso" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModAplicaco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModRevisao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblusuario_tblacesso" Member="tblusuario" ThisKey="idusuario" OtherKey="id_usuario" Type="tblusuario" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.spListaProduto" Method="spListaProduto">

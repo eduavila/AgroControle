@@ -69,6 +69,9 @@ namespace sistemaCA
     partial void Inserttblrevisaofutura(tblrevisaofutura instance);
     partial void Updatetblrevisaofutura(tblrevisaofutura instance);
     partial void Deletetblrevisaofutura(tblrevisaofutura instance);
+    partial void Inserttblacesso(tblacesso instance);
+    partial void Updatetblacesso(tblacesso instance);
+    partial void Deletetblacesso(tblacesso instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -202,6 +205,14 @@ namespace sistemaCA
 			get
 			{
 				return this.GetTable<tblrevisaofutura>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblacesso> tblacessos
+		{
+			get
+			{
+				return this.GetTable<tblacesso>();
 			}
 		}
 		
@@ -741,6 +752,8 @@ namespace sistemaCA
 		
 		private string _senha;
 		
+		private EntitySet<tblacesso> _tblacessos;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -755,6 +768,7 @@ namespace sistemaCA
 		
 		public tblusuario()
 		{
+			this._tblacessos = new EntitySet<tblacesso>(new Action<tblacesso>(this.attach_tblacessos), new Action<tblacesso>(this.detach_tblacessos));
 			OnCreated();
 		}
 		
@@ -818,6 +832,19 @@ namespace sistemaCA
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblusuario_tblacesso", Storage="_tblacessos", ThisKey="id_usuario", OtherKey="idusuario")]
+		public EntitySet<tblacesso> tblacessos
+		{
+			get
+			{
+				return this._tblacessos;
+			}
+			set
+			{
+				this._tblacessos.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -836,6 +863,18 @@ namespace sistemaCA
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_tblacessos(tblacesso entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblusuario = this;
+		}
+		
+		private void detach_tblacessos(tblacesso entity)
+		{
+			this.SendPropertyChanging();
+			entity.tblusuario = null;
 		}
 	}
 	
@@ -3839,6 +3878,181 @@ namespace sistemaCA
 		{
 			this.SendPropertyChanging();
 			entity.tblrevisaofutura = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblacesso")]
+	public partial class tblacesso : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idacesso;
+		
+		private int _idusuario;
+		
+		private System.Nullable<int> _ModAplicaco;
+		
+		private System.Nullable<int> _ModRevisao;
+		
+		private EntityRef<tblusuario> _tblusuario;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidacessoChanging(int value);
+    partial void OnidacessoChanged();
+    partial void OnidusuarioChanging(int value);
+    partial void OnidusuarioChanged();
+    partial void OnModAplicacoChanging(System.Nullable<int> value);
+    partial void OnModAplicacoChanged();
+    partial void OnModRevisaoChanging(System.Nullable<int> value);
+    partial void OnModRevisaoChanged();
+    #endregion
+		
+		public tblacesso()
+		{
+			this._tblusuario = default(EntityRef<tblusuario>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idacesso", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idacesso
+		{
+			get
+			{
+				return this._idacesso;
+			}
+			set
+			{
+				if ((this._idacesso != value))
+				{
+					this.OnidacessoChanging(value);
+					this.SendPropertyChanging();
+					this._idacesso = value;
+					this.SendPropertyChanged("idacesso");
+					this.OnidacessoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idusuario", DbType="Int NOT NULL")]
+		public int idusuario
+		{
+			get
+			{
+				return this._idusuario;
+			}
+			set
+			{
+				if ((this._idusuario != value))
+				{
+					if (this._tblusuario.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidusuarioChanging(value);
+					this.SendPropertyChanging();
+					this._idusuario = value;
+					this.SendPropertyChanged("idusuario");
+					this.OnidusuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModAplicaco", DbType="Int")]
+		public System.Nullable<int> ModAplicaco
+		{
+			get
+			{
+				return this._ModAplicaco;
+			}
+			set
+			{
+				if ((this._ModAplicaco != value))
+				{
+					this.OnModAplicacoChanging(value);
+					this.SendPropertyChanging();
+					this._ModAplicaco = value;
+					this.SendPropertyChanged("ModAplicaco");
+					this.OnModAplicacoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModRevisao", DbType="Int")]
+		public System.Nullable<int> ModRevisao
+		{
+			get
+			{
+				return this._ModRevisao;
+			}
+			set
+			{
+				if ((this._ModRevisao != value))
+				{
+					this.OnModRevisaoChanging(value);
+					this.SendPropertyChanging();
+					this._ModRevisao = value;
+					this.SendPropertyChanged("ModRevisao");
+					this.OnModRevisaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tblusuario_tblacesso", Storage="_tblusuario", ThisKey="idusuario", OtherKey="id_usuario", IsForeignKey=true)]
+		public tblusuario tblusuario
+		{
+			get
+			{
+				return this._tblusuario.Entity;
+			}
+			set
+			{
+				tblusuario previousValue = this._tblusuario.Entity;
+				if (((previousValue != value) 
+							|| (this._tblusuario.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._tblusuario.Entity = null;
+						previousValue.tblacessos.Remove(this);
+					}
+					this._tblusuario.Entity = value;
+					if ((value != null))
+					{
+						value.tblacessos.Add(this);
+						this._idusuario = value.id_usuario;
+					}
+					else
+					{
+						this._idusuario = default(int);
+					}
+					this.SendPropertyChanged("tblusuario");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

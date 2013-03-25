@@ -141,7 +141,7 @@ namespace sistemaCA.Modulos.aplicacao
 
             ProdutoAplicado produto = new ProdutoAplicado();
 
-            produto.ListandoTodoProdutoAlterar(int.Parse(tb_id.Text),dgw_produto);
+           // produto.ListandoTodoProdutoAlterar(int.Parse(tb_id.Text),dgw_produto);
            
             
 

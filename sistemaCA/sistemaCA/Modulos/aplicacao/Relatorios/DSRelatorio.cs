@@ -12,3 +12,10 @@ namespace sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters
     public partial class tblprodutosaplicadoTableAdapter {
     }
 }
+
+namespace sistemaCA.DSRelatorioTableAdapters {
+    
+    
+    public partial class tblaplicacaoTableAdapter {
+    }
+}

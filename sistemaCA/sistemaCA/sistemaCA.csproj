@@ -355,8 +355,8 @@
     <EmbeddedResource Include="Modulos\aplicacao\Relatorios\FormRelatorio.resx">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\aplicacao\Relatorios\Report1.rdlc" />
-    <EmbeddedResource Include="Modulos\aplicacao\Relatorios\Report2.rdlc" />
+    <EmbeddedResource Include="Modulos\aplicacao\Relatorios\Report3.rdlc" />
+    <EmbeddedResource Include="Modulos\aplicacao\Relatorios\SubRelatorio.rdlc" />
     <EmbeddedResource Include="Modulos\bens\FormAlterarBens.resx">
       <DependentUpon>FormAlterarBens.cs</DependentUpon>
     </EmbeddedResource>

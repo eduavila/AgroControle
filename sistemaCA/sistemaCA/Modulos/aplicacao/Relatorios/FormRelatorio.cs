@@ -39,7 +39,7 @@ namespace sistemaCA.Modulos.aplicacao.Relatorios
 
         void SubreportProcessingEventHandler(object sender, SubreportProcessingEventArgs e)
         {
-            e.DataSources.Add(new ReportDataSource("subRelatorio", tblprodutosaplicacaoBindingSource));
+            e.DataSources.Add(new ReportDataSource("DsSubRelatorio", tblprodutosaplicacaoBindingSource));
         }
     }
 }

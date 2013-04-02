@@ -1,9 +1,9 @@
-AgroControle
+Agro Sistema
 ==========================================
 
-Projeto do 3� Semestre de Gest�o da Tecnologia da Informa��o da Faculdade LaSalle Lucas do Rio Verde.
+Projeto do 3º Semestre de Gestão da Tecnologia da Informação da Faculdade LaSalle Lucas do Rio Verde.
 
-Grupo Acad�micos
+Grupo Academicos
 * Eduardo Avila Malheiros
 * Matheus Pessoa
 

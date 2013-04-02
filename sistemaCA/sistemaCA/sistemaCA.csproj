@@ -471,6 +471,7 @@
       <DependentUpon>DSRelatorio.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\tblaplicacao2.datasource" />
     <None Include="Properties\DataSources\tblprodutosaplicado1.datasource" />
     <None Include="Properties\DataSources\tbltipoproduto.datasource" />
     <None Include="Properties\Settings.settings">

@@ -85,7 +85,10 @@ namespace sistemaCA.views.aplicacao
             aplicacao.Descricao = tb_descricao.Text;
             aplicacao.DataAplicacao = dtp_aplicacao.Value;
             aplicacao.DataCadastro = DateTime.Today.Date;
-            aplicacao.AreaAplicada =float.Parse(tb_areaplicada.Text);
+            if (tb_areaplicada.Text == " ")
+            {
+                aplicacao.AreaAplicada = float.Parse(tb_areaplicada.Text);
+            }
             aplicacao.ID_Ben =int.Parse(tb_maquinas.Text);
             aplicacao.ID_Funcionario = int.Parse(tb_idFunc.Text);
             aplicacao.ID_talhao = int.Parse(tb_talhao.Text);

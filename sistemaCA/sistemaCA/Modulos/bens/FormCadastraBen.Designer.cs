@@ -191,7 +191,6 @@
             // mtb_hododmetro
             // 
             this.mtb_hododmetro.Location = new System.Drawing.Point(173, 41);
-            this.mtb_hododmetro.Mask = "00000";
             this.mtb_hododmetro.Name = "mtb_hododmetro";
             this.mtb_hododmetro.Size = new System.Drawing.Size(79, 20);
             this.mtb_hododmetro.TabIndex = 16;
@@ -218,7 +217,6 @@
             // mtb_horimetro
             // 
             this.mtb_horimetro.Location = new System.Drawing.Point(18, 42);
-            this.mtb_horimetro.Mask = "00000";
             this.mtb_horimetro.Name = "mtb_horimetro";
             this.mtb_horimetro.Size = new System.Drawing.Size(79, 20);
             this.mtb_horimetro.TabIndex = 13;

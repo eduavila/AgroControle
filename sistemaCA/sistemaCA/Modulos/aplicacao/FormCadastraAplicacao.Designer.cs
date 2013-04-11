@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastraAplicacao));
             this.label1 = new System.Windows.Forms.Label();
             this.tb_areaplicada = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -107,11 +108,11 @@
             // 
             // button1
             // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(66, 16);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -136,11 +137,11 @@
             // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(66, 16);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(33, 23);
             this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -192,11 +193,11 @@
             // 
             // button3
             // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(66, 16);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(33, 23);
             this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -237,11 +238,11 @@
             // 
             // button6
             // 
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(66, 16);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(33, 23);
             this.button6.TabIndex = 3;
-            this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

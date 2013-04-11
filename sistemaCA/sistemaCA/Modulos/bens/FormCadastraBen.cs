@@ -27,9 +27,14 @@ namespace sistemaCA.views.bens
             ben.Data_Aquisicao = dtp_dataaquisicao.Value;
             ben.Preco_Aquisicao =float.Parse(tb_precoaquisicao.Text);
             ben.Placa = mtb_placa.Text;
-            ben.Hodometro_incial =int.Parse(mtb_hododmetro.Text);
-            ben.Horimetro_incial = int.Parse(mtb_horimetro.Text);
-
+            if (mtb_hododmetro.Text != "")
+            {
+                ben.Hodometro_incial = int.Parse(mtb_hododmetro.Text);
+            }
+            if (mtb_horimetro.Text != "")
+            {
+                ben.Horimetro_incial = int.Parse(mtb_horimetro.Text);
+            }
             ben.CadastrarBens();
             Close();
 

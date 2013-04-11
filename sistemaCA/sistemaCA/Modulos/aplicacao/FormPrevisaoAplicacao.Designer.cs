@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgw_aplicacao = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.Barra_rodape1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -41,14 +42,12 @@
             this.tblaplicacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblaplicacaoTableAdapter = new sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.tblaplicacaoTableAdapter();
             this.tableAdapterManager = new sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.TableAdapterManager();
-            this.dgw_aplicacao = new System.Windows.Forms.DataGridView();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_aplicacao)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dSRelatorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblaplicacaoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_aplicacao)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,11 +63,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Aplicações";
             // 
+            // dgw_aplicacao
+            // 
+            this.dgw_aplicacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgw_aplicacao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgw_aplicacao.Location = new System.Drawing.Point(3, 16);
+            this.dgw_aplicacao.Name = "dgw_aplicacao";
+            this.dgw_aplicacao.Size = new System.Drawing.Size(835, 368);
+            this.dgw_aplicacao.TabIndex = 0;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Barra_rodape1,
-            this.toolStripStatusLabel1});
+            this.Barra_rodape1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 491);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(861, 22);
@@ -129,7 +136,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 33);
             this.button1.TabIndex = 41;
-            this.button1.Text = "Relatorio";
+            this.button1.Text = "Relátorio";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -154,21 +161,6 @@
             this.tableAdapterManager.tblprodutosaplicadoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = sistemaCA.Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // dgw_aplicacao
-            // 
-            this.dgw_aplicacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgw_aplicacao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgw_aplicacao.Location = new System.Drawing.Point(3, 16);
-            this.dgw_aplicacao.Name = "dgw_aplicacao";
-            this.dgw_aplicacao.Size = new System.Drawing.Size(835, 368);
-            this.dgw_aplicacao.TabIndex = 0;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
             // FormPrevisaoAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,12 +175,12 @@
             this.Text = "Previsão de Aplicação";
             this.Load += new System.EventHandler(this.FormAplicacao_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgw_aplicacao)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dSRelatorio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblaplicacaoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgw_aplicacao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +201,5 @@
         private Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.tblaplicacaoTableAdapter tblaplicacaoTableAdapter;
         private Modulos.aplicacao.Relatorios.DSRelatorioTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgw_aplicacao;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

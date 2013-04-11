@@ -41,17 +41,17 @@
             this.tb_maquina = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgw_produtos = new System.Windows.Forms.DataGridView();
+            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.Dtp_datarevisao = new System.Windows.Forms.DateTimePicker();
             this.tb_descricao = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_visualizar = new System.Windows.Forms.Button();
             this.tb_id = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_salvar = new System.Windows.Forms.Button();
             this.dtp_data_cadastro = new System.Windows.Forms.DateTimePicker();
-            this.produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             safraLabel = new System.Windows.Forms.Label();
             máquinaLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
@@ -194,6 +194,26 @@
             this.dgw_produtos.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgw_produtos_DataError);
             this.dgw_produtos.Click += new System.EventHandler(this.dgw_produtos_Click);
             // 
+            // produto
+            // 
+            this.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.produto.DataPropertyName = "produto";
+            this.produto.HeaderText = "Produtos";
+            this.produto.Name = "produto";
+            this.produto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // quantidade
+            // 
+            this.quantidade.DataPropertyName = "quantidade";
+            this.quantidade.HeaderText = "Quantidade";
+            this.quantidade.Name = "quantidade";
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "valor";
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            // 
             // cb_status
             // 
             this.cb_status.Enabled = false;
@@ -254,17 +274,18 @@
             this.tb_id.Size = new System.Drawing.Size(30, 20);
             this.tb_id.TabIndex = 63;
             // 
-            // button4
+            // btn_salvar
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(266, 458);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(87, 33);
-            this.button4.TabIndex = 64;
-            this.button4.Tag = "";
-            this.button4.Text = "Salvar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
+            this.btn_salvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_salvar.Location = new System.Drawing.Point(266, 458);
+            this.btn_salvar.Name = "btn_salvar";
+            this.btn_salvar.Size = new System.Drawing.Size(87, 33);
+            this.btn_salvar.TabIndex = 64;
+            this.btn_salvar.Tag = "";
+            this.btn_salvar.Text = "Salvar";
+            this.btn_salvar.UseVisualStyleBackColor = true;
+            this.btn_salvar.Visible = false;
+            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // dtp_data_cadastro
             // 
@@ -276,26 +297,6 @@
             this.dtp_data_cadastro.Size = new System.Drawing.Size(89, 20);
             this.dtp_data_cadastro.TabIndex = 65;
             // 
-            // produto
-            // 
-            this.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.produto.DataPropertyName = "produto";
-            this.produto.HeaderText = "Produtos";
-            this.produto.Name = "produto";
-            this.produto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // quantidade
-            // 
-            this.quantidade.DataPropertyName = "quantidade";
-            this.quantidade.HeaderText = "Quantidade";
-            this.quantidade.Name = "quantidade";
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "valor";
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            // 
             // FormAlterarRevisao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,7 +304,7 @@
             this.ClientSize = new System.Drawing.Size(586, 518);
             this.Controls.Add(label2);
             this.Controls.Add(this.dtp_data_cadastro);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_salvar);
             this.Controls.Add(label1);
             this.Controls.Add(this.tb_id);
             this.Controls.Add(this.button1);
@@ -322,7 +323,7 @@
             this.Controls.Add(motivoLabel);
             this.Controls.Add(this.tb_descricao);
             this.Name = "FormAlterarRevisao";
-            this.Text = "FormAlterarRevisao";
+            this.Text = "Visualizar Revisão";
             this.Load += new System.EventHandler(this.FormAlterarRevisao_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_produtos)).EndInit();
@@ -344,7 +345,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_visualizar;
         private System.Windows.Forms.TextBox tb_id;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.DateTimePicker dtp_data_cadastro;
         private System.Windows.Forms.DataGridView dgw_produtos;
         private System.Windows.Forms.DataGridViewTextBoxColumn produto;

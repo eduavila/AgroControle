@@ -33,13 +33,14 @@
             System.Windows.Forms.Label statusLabel;
             System.Windows.Forms.Label máquinaLabel;
             System.Windows.Forms.Label safraLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroRevisao));
             this.tb_descricao = new System.Windows.Forms.TextBox();
             this.Dtp_datarevisao = new System.Windows.Forms.DateTimePicker();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.dgw_produtos = new System.Windows.Forms.DataGridView();
-            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_maquina = new System.Windows.Forms.TextBox();
             this.tb_safra = new System.Windows.Forms.TextBox();
@@ -56,13 +57,6 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tb_descricao
-            // 
-            this.tb_descricao.Location = new System.Drawing.Point(27, 45);
-            this.tb_descricao.Name = "tb_descricao";
-            this.tb_descricao.Size = new System.Drawing.Size(235, 20);
-            this.tb_descricao.TabIndex = 2;
-            // 
             // motivoLabel
             // 
             motivoLabel.AutoSize = true;
@@ -73,14 +67,6 @@
             motivoLabel.Text = "Descrição";
             motivoLabel.Click += new System.EventHandler(this.motivoLabel_Click);
             // 
-            // Dtp_datarevisao
-            // 
-            this.Dtp_datarevisao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dtp_datarevisao.Location = new System.Drawing.Point(322, 45);
-            this.Dtp_datarevisao.Name = "Dtp_datarevisao";
-            this.Dtp_datarevisao.Size = new System.Drawing.Size(98, 20);
-            this.Dtp_datarevisao.TabIndex = 3;
-            // 
             // data_revisaoLabel
             // 
             data_revisaoLabel.AutoSize = true;
@@ -89,17 +75,6 @@
             data_revisaoLabel.Size = new System.Drawing.Size(68, 13);
             data_revisaoLabel.TabIndex = 2;
             data_revisaoLabel.Text = "data revisao:";
-            // 
-            // cb_status
-            // 
-            this.cb_status.FormattingEnabled = true;
-            this.cb_status.Items.AddRange(new object[] {
-            "Aberta",
-            "Finalizada"});
-            this.cb_status.Location = new System.Drawing.Point(27, 106);
-            this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(92, 21);
-            this.cb_status.TabIndex = 5;
             // 
             // statusLabel
             // 
@@ -128,6 +103,32 @@
             safraLabel.TabIndex = 11;
             safraLabel.Text = "Safra:";
             // 
+            // tb_descricao
+            // 
+            this.tb_descricao.Location = new System.Drawing.Point(27, 45);
+            this.tb_descricao.Name = "tb_descricao";
+            this.tb_descricao.Size = new System.Drawing.Size(235, 20);
+            this.tb_descricao.TabIndex = 2;
+            // 
+            // Dtp_datarevisao
+            // 
+            this.Dtp_datarevisao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Dtp_datarevisao.Location = new System.Drawing.Point(322, 45);
+            this.Dtp_datarevisao.Name = "Dtp_datarevisao";
+            this.Dtp_datarevisao.Size = new System.Drawing.Size(98, 20);
+            this.Dtp_datarevisao.TabIndex = 3;
+            // 
+            // cb_status
+            // 
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Items.AddRange(new object[] {
+            "Aberta",
+            "Finalizada"});
+            this.cb_status.Location = new System.Drawing.Point(27, 106);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(92, 21);
+            this.cb_status.TabIndex = 5;
+            // 
             // dgw_produtos
             // 
             this.dgw_produtos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -142,20 +143,20 @@
             this.dgw_produtos.TabIndex = 0;
             this.dgw_produtos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dTItemRevisaoDataGridView_CellContentClick);
             // 
-            // valor
+            // produto
             // 
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
+            this.produto.HeaderText = "Produto";
+            this.produto.Name = "produto";
             // 
             // quantidade
             // 
             this.quantidade.HeaderText = "Quantidade";
             this.quantidade.Name = "quantidade";
             // 
-            // produto
+            // valor
             // 
-            this.produto.HeaderText = "Produto";
-            this.produto.Name = "produto";
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
             // 
             // groupBox1
             // 
@@ -187,21 +188,21 @@
             // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(224, 106);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 23);
             this.button2.TabIndex = 45;
-            this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(372, 106);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(25, 23);
             this.button3.TabIndex = 46;
-            this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -247,7 +248,7 @@
             this.Controls.Add(motivoLabel);
             this.Controls.Add(this.tb_descricao);
             this.Name = "FormCadastroRevisao";
-            this.Text = "FormCadastroRevisao";
+            this.Text = "Cadastro Revisão";
             this.Load += new System.EventHandler(this.FormCadastroRevisao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_produtos)).EndInit();
             this.groupBox1.ResumeLayout(false);

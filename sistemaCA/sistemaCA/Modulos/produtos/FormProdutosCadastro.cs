@@ -31,16 +31,24 @@ namespace sistemaCA.views.produtos
         private void btn_cadastrar_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                Produto produto = new Produto();
+                produto.Nome = tb_nome.Text;
+                produto.Descricao = tb_descricao.Text;
+                produto.UnidadeMedida = cb_unidademedida.Text;
+                produto.Id_tipoproduto = int.Parse(tb_tipoproduto.Text);
 
-            Produto produto = new Produto();
-            produto.Nome = tb_nome.Text;
-            produto.Descricao = tb_descricao.Text;
-            produto.UnidadeMedida = cb_unidademedida.Text;
-            produto.Id_tipoproduto = int.Parse(tb_tipoproduto.Text);
+                produto.CadastarProduto();
 
-            produto.CadastarProduto();
+                MessageBox.Show("Registro Cadastrado com Sucesso.");
+                Close();
 
-
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
             //produto.descricao tb_descricao.Text = produto.descricao;
             //tb_nome.Text = produto.nome;
             //cb_unidademedida. = produto.unidade_medida;

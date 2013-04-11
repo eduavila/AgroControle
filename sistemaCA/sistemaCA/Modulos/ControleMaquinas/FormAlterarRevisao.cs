@@ -12,6 +12,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
 {
     public partial class FormAlterarRevisao : Form
     {
+        public int ID_revisao ;
         public FormAlterarRevisao()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
         public FormAlterarRevisao(int idrevisao)
         {
             InitializeComponent();
-
+            ID_revisao = idrevisao;
             ControleRevisao revisao = new ControleRevisao();
 
             revisao.VisualizarRevisaoDl(idrevisao);
@@ -58,6 +59,8 @@ namespace sistemaCA.Modulos.ControleMaquinas
             tb_safra.Enabled = true;
             cb_status.Enabled = true;
 
+            btn_salvar.Visible = true;
+
             dgw_produtos.Enabled = true;
 
 
@@ -80,6 +83,24 @@ namespace sistemaCA.Modulos.ControleMaquinas
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_salvar_Click(object sender, EventArgs e)
+        {
+            ControleRevisao Revisao = new ControleRevisao();
+
+            Revisao.ID_Revisao = ID_revisao;
+            Revisao.Motivo = tb_descricao.Text;
+            Revisao.data_cadastro = DateTime.Today.Date;
+            Revisao.data_revisao = Dtp_datarevisao.Value;
+            Revisao.Status = cb_status.Text;
+            Revisao.ID_Ben = int.Parse(tb_maquina.Text);
+            Revisao.ID_Safra = int.Parse(tb_safra.Text);
+
+
+
+            // metodo de cadastro revisao.
+            Revisao.CadastroRevisao();
         }
     }
 }

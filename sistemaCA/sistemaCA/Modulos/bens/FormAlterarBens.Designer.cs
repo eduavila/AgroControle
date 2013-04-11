@@ -255,6 +255,7 @@
             this.btn_salvar.TabIndex = 28;
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = true;
+            this.btn_salvar.Visible = false;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // tb_id

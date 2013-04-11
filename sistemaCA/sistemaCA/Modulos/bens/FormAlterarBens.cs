@@ -50,7 +50,7 @@ namespace sistemaCA.views.bens
                 mtb_hododmetro.Enabled = false;
                 mtb_horimetro.Enabled = false;
 
-                btn_salvar.Visible = false;
+                
         
         
         }

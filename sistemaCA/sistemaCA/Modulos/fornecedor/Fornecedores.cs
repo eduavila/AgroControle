@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace sistemaCA.views.fornecedor
 {
-    class Fornecedores
+    class Fornecedores : ClasseBase
     {
 
         // propriedades
-
-        public DataClasses1DataContext Banco { get; set; }
         public tblfornecedor Fornecedor { get; set; }
 
 
@@ -29,11 +25,9 @@ namespace sistemaCA.views.fornecedor
         public string IE { get; set; }
         // fim propriedade fornecedor
 
-
         // construtor padrao
-        public Fornecedores()
+        public Fornecedores() : base(new DataClasses1DataContext())
         {
-            Banco = new DataClasses1DataContext();
             Fornecedor = new tblfornecedor();
         }
 
@@ -44,7 +38,7 @@ namespace sistemaCA.views.fornecedor
                          select fornecedor;
 
             dgw.DataSource = result;
-        
+
         }
 
         public void CadatraFornecededor()
@@ -70,30 +64,31 @@ namespace sistemaCA.views.fornecedor
             {
                 MessageBox.Show(erro.Message);
             }
-             
+
         }
 
         // lista somente o fornecedor selecionado
-        public void VisalizarFornecedor(int idfornecedor)
-        { 
+        public void VisualizarFornecedor(int idfornecedor)
+        {
 
-               var pesqui = from forne in Banco.tblfornecedors 
-                            where forne.id_fornecedor == idfornecedor select forne;
+            var pesqui = from forne in Banco.tblfornecedors
+                         where forne.id_fornecedor == idfornecedor
+                         select forne;
 
-               Fornecedor = pesqui.Single();
+            Fornecedor = pesqui.Single();
 
-                this.Id_fornecedor = Fornecedor.id_fornecedor;
-                this.NomeFatasia = Fornecedor.nomefatasia;
-                this.RazaoSocial = Fornecedor.razaosocial;
-                this.Cpf = Fornecedor.cpf;
-                this.Cnpj = Fornecedor.cnpj;
-                this.Cidade = Fornecedor.cidade;
-                this.Endereco = Fornecedor.endereco;
-                this.Email = Fornecedor.email;
-                this.Fone = Fornecedor.fone;
-                this.Obs = Fornecedor.obs;
-                this.IE = Fornecedor.ie; 
-                 
+            this.Id_fornecedor = Fornecedor.id_fornecedor;
+            this.NomeFatasia = Fornecedor.nomefatasia;
+            this.RazaoSocial = Fornecedor.razaosocial;
+            this.Cpf = Fornecedor.cpf;
+            this.Cnpj = Fornecedor.cnpj;
+            this.Cidade = Fornecedor.cidade;
+            this.Endereco = Fornecedor.endereco;
+            this.Email = Fornecedor.email;
+            this.Fone = Fornecedor.fone;
+            this.Obs = Fornecedor.obs;
+            this.IE = Fornecedor.ie;
+
         }
 
 
@@ -126,7 +121,7 @@ namespace sistemaCA.views.fornecedor
             {
                 MessageBox.Show(erro.Message);
             }
-        
+
         }
 
 
@@ -149,13 +144,13 @@ namespace sistemaCA.views.fornecedor
             {
                 MessageBox.Show(erro.Message);
             }
-           
+
 
         }
 
 
 
 
-        
+
     }
 }

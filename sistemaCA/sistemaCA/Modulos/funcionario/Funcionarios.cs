@@ -1,47 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-
-
 
 namespace sistemaCA.views.funcionario
 {
-    class Funcionarios
+    class Funcionarios : ClasseBase
     {
-
-        public DataClasses1DataContext Banco { get; set; }
-
         public int IDFuncionario { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
-        public string Cpf {get;set;}
-        public string Rg{get;set;}
+        public string Cpf { get; set; }
+        public string Rg { get; set; }
         public string Ctps { get; set; }
-        public string Endere {get;set;}
-        public string Bairro{get;set;}
-        public string Funcao{get;set;}
-        public DateTime DataAdmisao{get;set;}
-        public float RenumeracaoMensal{get;set;}
-        public string Email{get;set;}
-        public string Telefone{get;set;}
-        public string Celular{get;set;}  
-        public string Obs{get;set;}
-        public string Sexo { get; set; }        
+        public string Endere { get; set; }
+        public string Bairro { get; set; }
+        public string Funcao { get; set; }
+        public DateTime DataAdmisao { get; set; }
+        public float RenumeracaoMensal { get; set; }
+        public string Email { get; set; }
+        public string Telefone { get; set; }
+        public string Celular { get; set; }
+        public string Obs { get; set; }
+        public string Sexo { get; set; }
 
-        public Funcionarios()
-        {
-
-            this.Banco =new DataClasses1DataContext();
-        
-        
-        }
+        public Funcionarios() : base(new DataClasses1DataContext())
+        { }
 
 
         /// <summary>
@@ -80,9 +64,9 @@ namespace sistemaCA.views.funcionario
             //dgw.Columns["sexo"].HeaderText = "Sexo";
         }
 
-        public void Pesquisar( string pesquisa,string entidade, DataGridView dgw)
+        public void Pesquisar(string pesquisa, string entidade, DataGridView dgw)
         {
-               
+
         }
 
         private DataClasses1DataContext DataClasses1DataContext()
@@ -98,10 +82,10 @@ namespace sistemaCA.views.funcionario
 
             //try
             //{
-                                
-                
 
-               
+
+
+
 
 
             //    FormCada.tb_nome.Text = "";
@@ -132,13 +116,13 @@ namespace sistemaCA.views.funcionario
 
             //}
 
-        
-        
+
+
         }
 
         public void Visualizar(int func)
         {
-           tblfuncionario funcionario = new tblfuncionario();
+            tblfuncionario funcionario = new tblfuncionario();
 
             // criar pesquisa  no banco para encontrar registro selecionado
             var pesquisa = from Funcionario in this.Banco.tblfuncionarios
@@ -163,8 +147,8 @@ namespace sistemaCA.views.funcionario
             this.Bairro = funcionario.bairro;
             this.Telefone = funcionario.telefone;
             this.Celular = funcionario.celular;
-            this.Obs  = funcionario.obs;
-            this.Sexo = funcionario.sexo;         
+            this.Obs = funcionario.obs;
+            this.Sexo = funcionario.sexo;
         }
 
 
@@ -176,15 +160,15 @@ namespace sistemaCA.views.funcionario
 
                 Banco.spAlterarFuncionario(this.IDFuncionario, this.Nome, this.Funcao, this.Ctps, this.RenumeracaoMensal, this.Endere, this.Bairro, this.Telefone, this.Email, this.Rg, this.Cpf, this.Obs, this.Celular, this.Sobrenome, this.Sexo);
 
-            
-            
-              }
-            catch(Exception erro)
+
+
+            }
+            catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-            
+
             }
-        
+
         }
 
 
@@ -201,14 +185,14 @@ namespace sistemaCA.views.funcionario
 
                 MessageBox.Show(erro.Message);
             }
-        
+
         }
 
-        public void PesquisarFuncionarioId(int idfunc,DataGridView dgw)
+        public void PesquisarFuncionarioId(int idfunc, DataGridView dgw)
         {
             try
             {
-                if (idfunc != null)
+                if (idfunc != 0)
                 {
                     dgw.DataSource = Banco.spPesquisaFunId(idfunc);
 
@@ -218,14 +202,14 @@ namespace sistemaCA.views.funcionario
             {
                 MessageBox.Show(erro.Message);
             }
-          
+
         }
 
         public void PequisarFuncionarioNome(string nome, DataGridView dgw)
         {
 
             dgw.DataSource = Banco.spPesquisaFunNome(nome);
-        
+
         }
 
 
@@ -233,7 +217,7 @@ namespace sistemaCA.views.funcionario
         {
 
             dgw.DataSource = Banco.spPesquisaFunCPF(cpf);
-        
+
         }
 
 

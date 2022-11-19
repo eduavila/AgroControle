@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace sistemaCA.views.talhao
 {
-    class Talhao
+    class Talhao : ClasseBase
     {
-        public DataClasses1DataContext Banco { get; set; }    
         // atributos
         public int Id_talhao { get; set; }
         public string Descricao { get; set; }
@@ -18,10 +15,8 @@ namespace sistemaCA.views.talhao
         public string SitemaCutivo { get; set; }
 
         // metodo contrutor
-        public Talhao()
+        public Talhao() : base(new DataClasses1DataContext())
         {
-            this.Banco = new DataClasses1DataContext();     
-        
         }
 
         public void ListarTalhao(DataGridView dgw)
@@ -63,10 +58,10 @@ namespace sistemaCA.views.talhao
             {
                 MessageBox.Show(erro.Message);
             }
-         }
+        }
 
 
-        public void Pesquisar(string pesquisa,DataGridView dgw)
+        public void Pesquisar(string pesquisa, DataGridView dgw)
         {
             try
             {
@@ -87,11 +82,12 @@ namespace sistemaCA.views.talhao
 
         public tbltalhao VisualizarTalhao(int idtalhao)
         {
-              
+
             tbltalhao talhao;
 
-            var result = from talha in Banco.tbltalhaos 
-                         where talha.id_talhao == idtalhao select talha;
+            var result = from talha in Banco.tbltalhaos
+                         where talha.id_talhao == idtalhao
+                         select talha;
 
             talhao = result.Single();
 
@@ -102,15 +98,15 @@ namespace sistemaCA.views.talhao
             this.tamanho = Convert.ToDouble(talhao.tamanho);
             this.SitemaCutivo = talhao.sistemaCutivo;
             return talhao;
-        
+
         }
 
 
-        
+
 
         // altera usuario recebe parameto ID talhao
 
-        public void AlterarTalhao(int idtalhao )
+        public void AlterarTalhao(int idtalhao)
         {
             try
             {
@@ -130,18 +126,18 @@ namespace sistemaCA.views.talhao
                 talhao.tamanho = this.tamanho;
 
 
-                
+
                 Banco.SubmitChanges();
 
             }
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-                
+
             }
 
 
-          }
+        }
 
         public void DeletarTalhao(int idtalhao)
         {
@@ -163,11 +159,11 @@ namespace sistemaCA.views.talhao
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-            
+
             }
 
 
-        
+
         }
 
 

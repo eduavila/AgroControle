@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace sistemaCA.views.bens
 {
-    class Bens
+    class Bens : ClasseBase
     {
-        public DataClasses1DataContext Banco { get; set; }
         public tblben Ben { get; set; }
         //propriedade do bens
 
-        public int ID_Bens { get; set;}
+        public int ID_Bens { get; set; }
         public string Descricao { get; set; }
         public string TipoBens { get; set; }
         public string Cod_Controle { get; set; }
@@ -22,11 +19,10 @@ namespace sistemaCA.views.bens
         public int Hodometro_incial { get; set; }
         public string Placa { get; set; }
 
-        public Bens()
+        public Bens() : base(new DataClasses1DataContext())
         {
-            Banco = new DataClasses1DataContext();
             Ben = new tblben();
-        
+
         }
 
         public void VisualizarBens(DataGridView dgw)
@@ -75,7 +71,7 @@ namespace sistemaCA.views.bens
         // visualizar unico bens
         public tblben CaregarBen(int id_ben)
         {
-            
+
 
             var result = from ben in Banco.tblbens
                          where ben.id_ben == id_ben
@@ -95,7 +91,7 @@ namespace sistemaCA.views.bens
 
             return Ben;
 
-            
+
         }
 
 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using sistemaCA.views.bens;
 using sistemaCA.views.produtos;
@@ -14,7 +7,6 @@ using sistemaCA.views.talhao;
 using sistemaCA.views.fornecedor;
 using sistemaCA.views.aplicacao;
 using sistemaCA.Modulos.ControleMaquinas;
-using sistemaCA.Properties;
 
 namespace sistemaCA.views
 {
@@ -44,7 +36,7 @@ namespace sistemaCA.views
 
         private void telaprincipal_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -67,8 +59,8 @@ namespace sistemaCA.views
 
             fpro.ShowDialog();
 
-            
-            
+
+
         }
 
         private void safraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,19 +78,19 @@ namespace sistemaCA.views
 
         private void bensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormFornecedores fornecedor =new FormFornecedores();
+            FormFornecedores fornecedor = new FormFornecedores();
             fornecedor.Show();
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formbens Formben =new Formbens();
+            Formbens Formben = new Formbens();
             Formben.Show();
         }
 
         private void retornoAplicaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void aplicaçãoPréviaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,12 +98,12 @@ namespace sistemaCA.views
 
             FormPrevisaoAplicacao Aplicacao = new FormPrevisaoAplicacao();
             Aplicacao.Show();
-            
+
         }
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -128,12 +120,18 @@ namespace sistemaCA.views
         private void telaprincipal_Load_1(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "Usuário: " + sistemaCA.Program.Usuario;
-            
+
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            Application.Exit();
         }
     }
 }

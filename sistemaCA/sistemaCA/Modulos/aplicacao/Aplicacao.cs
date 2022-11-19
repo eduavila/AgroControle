@@ -1,35 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 namespace sistemaCA.views.aplicacao
 {
-    class Aplicacao
+    class Aplicacao : ClasseBase
     {
-        public DataClasses1DataContext Banco { get; set; }
-        public tblaplicacao Aplica { get; set; }
+        private tblaplicacao Aplica { get; set; }
         public string Descricao { get; set; }
         public int Id_aplicacao { get; set; }
         public DateTime DataAplicacao { get; set; }
         public DateTime DataCadastro { get; set; }
         public string Status { get; set; }
         public float AreaAplicada { get; set; }
-        public int ? ID_talhao { get; set; }
-        public int ? ID_Safra { get; set; }
-        public int ? ID_Ben { get; set; }
-        public int ? ID_Funcionario { get; set;}
+        public int? ID_talhao { get; set; }
+        public int? ID_Safra { get; set; }
+        public int? ID_Ben { get; set; }
+        public int? ID_Funcionario { get; set; }
         public string Obs { get; set; }
         public int Id_ProdutoAplicado { get; set; }
         public string TipoAplicao { get; set; }
 
 
-        public Aplicacao()
-        {
-            Banco = new DataClasses1DataContext();
-            Aplica = new tblaplicacao();
-        }
+        public Aplicacao() : base(new DataClasses1DataContext())
+        { }
 
 
 
@@ -37,7 +31,8 @@ namespace sistemaCA.views.aplicacao
         {
             try
             {
-                var pesqui = from aplica in Banco.tblaplicacaos join maquina in Banco.tblbens on aplica.id_ben equals maquina.id_ben 
+                var pesqui = from aplica in Banco.tblaplicacaos
+                             join maquina in Banco.tblbens on aplica.id_ben equals maquina.id_ben
                              join safra in Banco.tblsafras on aplica.id_safra equals safra.id_safra
                              join talhao in Banco.tbltalhaos on aplica.id_talhao equals talhao.id_talhao
                              join funcionario in Banco.tblfuncionarios on aplica.id_funcionario equals funcionario.id_funcionario
@@ -55,11 +50,11 @@ namespace sistemaCA.views.aplicacao
                                  talhao = talhao.descricao,
                                  obs = aplica.obs,
                                  tipoaplicacao = aplica.tipoaplicaco
-                                 
+
                              };
                 dgw.DataSource = pesqui;
 
-          
+
 
 
 
@@ -75,11 +70,7 @@ namespace sistemaCA.views.aplicacao
             try
             {
 
-                var pesqui = from aplicacao in Banco.tblaplicacaos
-                             where aplicacao.id_aplicacao == id_aplica
-                             select aplicacao;
-
-                Aplica = pesqui.Single();
+                BuscaRegistro(id_aplica);
 
                 this.Id_aplicacao = Aplica.id_aplicacao;
                 this.Descricao = Aplica.descricao;
@@ -88,7 +79,7 @@ namespace sistemaCA.views.aplicacao
                 this.ID_Ben = Aplica.id_ben;
                 this.ID_Funcionario = Aplica.id_funcionario;
                 this.ID_talhao = Aplica.id_talhao;
-                this.ID_Safra =  Aplica.id_safra;
+                this.ID_Safra = Aplica.id_safra;
                 this.Obs = Aplica.obs;
                 this.AreaAplicada = float.Parse(Aplica.areaaplicada.ToString());
                 this.Status = Aplica.status;
@@ -101,9 +92,9 @@ namespace sistemaCA.views.aplicacao
             {
                 MessageBox.Show(erro.Message);
             }
-        
-        
-        
+
+
+
         }
 
 
@@ -116,11 +107,7 @@ namespace sistemaCA.views.aplicacao
         {
             try
             {
-                var pesqui = from aplicacao in Banco.tblaplicacaos
-                             where aplicacao.id_aplicacao == id_aplica
-                             select aplicacao;
-
-                Aplica = pesqui.Single();
+                BuscaRegistro(id_aplica);
 
                 Aplica.descricao = this.Descricao;
                 Aplica.data_aplicacao = this.DataAplicacao;
@@ -142,8 +129,8 @@ namespace sistemaCA.views.aplicacao
 
                 MessageBox.Show(erro.Message);
             }
-        
-        
+
+
         }
 
 
@@ -166,14 +153,14 @@ namespace sistemaCA.views.aplicacao
                 Aplica.tipoaplicaco = this.TipoAplicao;
                 Banco.tblaplicacaos.InsertOnSubmit(Aplica);
                 Banco.SubmitChanges();
-                
-                
+
+
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
-                MessageBox.Show(erro.Message);            
+                MessageBox.Show(erro.Message);
             }
-        
+
         }
 
 
@@ -181,11 +168,7 @@ namespace sistemaCA.views.aplicacao
         {
             try
             {
-                var pesqui = from aplicacao in Banco.tblaplicacaos
-                             where aplicacao.id_aplicacao == idaplica
-                             select aplicacao;
-
-                Aplica = pesqui.Single();
+                BuscaRegistro(idaplica);
 
                 Banco.tblaplicacaos.DeleteOnSubmit(Aplica);
 
@@ -196,9 +179,16 @@ namespace sistemaCA.views.aplicacao
             {
                 MessageBox.Show(erro.Message);
             }
-        
+
         }
-       
-      
+
+        private void BuscaRegistro(int id_aplica)
+        {
+            var pesqui = from aplicacao in Banco.tblaplicacaos
+                         where aplicacao.id_aplicacao == id_aplica
+                         select aplicacao;
+
+            Aplica = pesqui.Single();
+        }
     }
 }

@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using sistemaCA;
 
 namespace sistemaCA.views.safra
 {
-    class Safra
+    class Safra : ClasseBase
     {
-        public DataClasses1DataContext Banco { get; set; }
-        
         // propriedades do banco de ddados
         public int IdSafra { get; set; }
         public string Descricao { get; set; }
@@ -22,19 +16,14 @@ namespace sistemaCA.views.safra
         public int IdCultura { get; set; }
 
 
-        public Safra()
-        {
-            Banco = new DataClasses1DataContext();
-
-            
-        
-        }
+        public Safra() : base(new DataClasses1DataContext())
+        { }
 
 
         public void ListarSafra(DataGridView dgw)
         {
             dgw.DataSource = Banco.psListarSafra();
-       
+
         }
 
 
@@ -72,7 +61,7 @@ namespace sistemaCA.views.safra
                 this.IdSafra = safra.id_safra;
                 this.Descricao = safra.descricao;
                 this.DataInicio = safra.dataincio;
-                this.DataFechamento =DateTime.Parse(safra.datafechamento.ToString());
+                this.DataFechamento = DateTime.Parse(safra.datafechamento.ToString());
                 this.Obs = safra.obs;
                 this.status = safra.status;
                 this.IdCultura = Convert.ToInt32(safra.id_cultura);
@@ -81,12 +70,12 @@ namespace sistemaCA.views.safra
             catch (Exception Erro)
             {
                 MessageBox.Show(Erro.Message);
-                     
-            
+
+
             }
-                           
-        
-        
+
+
+
         }
 
 
@@ -97,12 +86,12 @@ namespace sistemaCA.views.safra
 
                 this.Banco.spAtualizarSafra(this.IdSafra, this.Descricao, this.status, this.Obs, this.DataInicio, this.IdCultura, this.DataFechamento);
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-            
+
             }
-        
+
         }
 
 
@@ -124,12 +113,12 @@ namespace sistemaCA.views.safra
         }
 
 
-// metodo para trabalha com datetime
-        
-
-    
+        // metodo para trabalha com datetime
 
 
-    
+
+
+
+
     }
 }

@@ -1,37 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
+
 namespace sistemaCA.views.Pesquisa
 {
-    class Pesquisa
+    class Pesquisa : ClasseBase
     {
-        public DataClasses1DataContext Banco { get; set; }
-        public int ID{get;set;}
-        
-        public Pesquisa()
-        {
-            Banco = new DataClasses1DataContext();
-            
-        }
+        public int ID { get; set; }
+
+        public Pesquisa() : base(new DataClasses1DataContext())
+        { }
         // pesquisando funcionairo no banco de dados
-        public void PesquisarFuncionario(string Pesquisa,DataGridView dgw)
+        public void PesquisarFuncionario(string Pesquisa, DataGridView dgw)
         {
             var pesqui = from func in Banco.tblfuncionarios
                          where func.nome.Contains(Pesquisa)
                          select new
-                             {
-                                 id = func.id_funcionario,
-                                 nome = func.nome,
-                                 sobrenome = func.sobrenome
+                         {
+                             id = func.id_funcionario,
+                             nome = func.nome,
+                             sobrenome = func.sobrenome
 
-                             };
+                         };
 
 
             dgw.DataSource = pesqui;
-            
+
 
         }
         public void ListaFuncionario(DataGridView dgw)
@@ -45,7 +38,7 @@ namespace sistemaCA.views.Pesquisa
                          };
 
             dgw.DataSource = pesqui;
-                                 
+
         }
 
 
@@ -75,9 +68,9 @@ namespace sistemaCA.views.Pesquisa
     class FormPesquisaIDtalhao : FormPesquisa
     {
         // propriedades
-       
 
-        public void PesquisaTalhao(string pesquisa,DataGridView dgw)
+
+        public void PesquisaTalhao(string pesquisa, DataGridView dgw)
         {
             var pesqui = from talhao in base.Banco.tbltalhaos
                          where talhao.descricao.Contains(pesquisa)
@@ -91,7 +84,7 @@ namespace sistemaCA.views.Pesquisa
             dgw.DataSource = pesqui;
         }
 
-        
+
         public void Listatalhao(DataGridView dgw)
         {
             var pesqui = from talhao in base.Banco.tbltalhaos
@@ -121,8 +114,8 @@ namespace sistemaCA.views.Pesquisa
             dgw_pesquisa.Columns["descricao"].HeaderText = "Descrição";
             dgw_pesquisa.Columns["tamanho"].HeaderText = "Área Hectares";
         }
-        
-       
+
+
     }
 
     // criando classe pesquisa safra

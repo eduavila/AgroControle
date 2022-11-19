@@ -62,13 +62,27 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\library\CrystalDecisions\13.0.4.705\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\library\CrystalDecisions\13.0.4.705\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\library\CrystalDecisions\13.0.4.705\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\library\CrystalDecisions\13.0.4.705\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71">
+      <HintPath>..\library\FlashControlV71\v1.0.3187.32366\FlashControlV71.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common">
+      <HintPath>..\library\Microsoft.ReportViewer.Common\11.0.9165.1186\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\library\Microsoft.ReportViewer.WinForms\v11.0.9165.1186\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.TeamFoundation.Client, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.TeamFoundation.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.TeamFoundation.Diff, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -132,7 +146,6 @@
     <Compile Include="Modulos\aplicacao\ProdutoAplicado.cs" />
     <Compile Include="Modulos\aplicacao\Relatorios\DSRelatorio.cs">
       <DependentUpon>DSRelatorio.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modulos\aplicacao\Relatorios\DSRelatorio.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -164,6 +177,7 @@
     <Compile Include="Modulos\bens\FormCadastraBen.Designer.cs">
       <DependentUpon>FormCadastraBen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\ClasseBase.cs" />
     <Compile Include="Modulos\ControleMaquinas\FormAlterarRevisao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,10 +203,7 @@
     <Compile Include="Modulos\Pesquisa\FormPesquisa.Designer.cs">
       <DependentUpon>FormPesquisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modulos\Pesquisa\Pesquisa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos\FormProduto.cs" />
+    <Compile Include="Modulos\Pesquisa\Pesquisa.cs" />
     <Compile Include="Modulos\fornecedor\FormCasdatroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>

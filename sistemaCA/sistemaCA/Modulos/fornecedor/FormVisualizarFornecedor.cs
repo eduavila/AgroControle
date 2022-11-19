@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sistemaCA.views.fornecedor
@@ -24,10 +17,10 @@ namespace sistemaCA.views.fornecedor
 
             // criando buscando o fornecedor selecionado
 
-            
+
             Fornecedores fornecedor = new Fornecedores();
 
-            fornecedor.VisalizarFornecedor(idFornecedor);
+            fornecedor.VisualizarFornecedor(idFornecedor);
 
 
             tb_idfornecedor.Text = fornecedor.Id_fornecedor.ToString();
@@ -40,11 +33,11 @@ namespace sistemaCA.views.fornecedor
             mtb_telefone.Text = fornecedor.Fone;
             mtb_email.Text = fornecedor.Email;
             mtb_ie.Text = fornecedor.IE;
-            tb_obs.Text = fornecedor.Obs; 
+            tb_obs.Text = fornecedor.Obs;
 
 
 
-        
+
             // desabilitando componetes
 
 
@@ -61,7 +54,7 @@ namespace sistemaCA.views.fornecedor
             tb_obs.Enabled = false;
 
             btn_salvar.Visible = false;
-        
+
         }
 
         private void FormVisualizarFornecedor_Load(object sender, EventArgs e)
@@ -74,7 +67,7 @@ namespace sistemaCA.views.fornecedor
             // criando buscando o fornecedor selecionado
             Fornecedores fornecedor = new Fornecedores();
 
-            fornecedor.Id_fornecedor =int.Parse(tb_idfornecedor.Text);
+            fornecedor.Id_fornecedor = int.Parse(tb_idfornecedor.Text);
             fornecedor.NomeFatasia = tb_nomeFantasia.Text;
             fornecedor.RazaoSocial = tb_razaosocial.Text;
             fornecedor.Cpf = mtb_cpf.Text;

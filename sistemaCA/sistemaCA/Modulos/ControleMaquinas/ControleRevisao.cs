@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sistemaCA.Modulos.ControleMaquinas
 {
 
     // classe de Maquinas
-    public class ControleRevisao
+    public class ControleRevisao : ClasseBase
     {
-        DataClasses1DataContext Banco { get; set; }
         tblrevisaofutura Revisao { get; set; }
 
-
         public int ID_Revisao { get; set; }
-        public string Motivo { get; set;}
+        public string Motivo { get; set; }
         public DateTime data_cadastro { get; set; }
         public DateTime data_revisao { get; set; }
         public string Status { get; set; }
@@ -24,11 +20,10 @@ namespace sistemaCA.Modulos.ControleMaquinas
         public int ID_Safra { get; set; }
 
 
-        public ControleRevisao()
-        { 
-            Banco = new DataClasses1DataContext();
+        public ControleRevisao() : base(new DataClasses1DataContext())
+        {
             Revisao = new tblrevisaofutura();
-        
+
         }
 
         public void VisualizarRevisao(DataGridView dgw)
@@ -36,17 +31,18 @@ namespace sistemaCA.Modulos.ControleMaquinas
             var result = from revisao in Banco.tblrevisaofuturas
                          join maquina in Banco.tblbens on revisao.id_ben equals maquina.id_ben
                          join safra in Banco.tblsafras on revisao.id_safra equals safra.id_safra
-                         select new { 
+                         select new
+                         {
                              id = revisao.id_revisao,
                              decricao = revisao.motivo,
                              data_cadastro = revisao.data_cadastro,
                              data_revisao = revisao.data_revisao,
                              safra = safra.descricao,
-                             maquina= maquina.codigoControle,
+                             maquina = maquina.codigoControle,
                          };
 
             dgw.DataSource = result;
-        
+
         }
 
 
@@ -76,7 +72,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
             {
                 MessageBox.Show(erro.Message);
             }
-        
+
         }
 
 
@@ -113,7 +109,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
         public List<string> ListandoProduto()
         {
             var pro = from produ in Banco.tblprodutos select produ.descricao;
-            
+
 
             return pro.ToList();
         }
@@ -152,7 +148,7 @@ namespace sistemaCA.Modulos.ControleMaquinas
 
             var result = from revisao in Banco.tblrevisaofuturas where revisao.id_revisao == idrevisao select revisao;
 
-            
+
             Revisao = result.Single();
 
             this.ID_Revisao = Revisao.id_revisao;
@@ -165,21 +161,21 @@ namespace sistemaCA.Modulos.ControleMaquinas
 
         }
 
-        public void visualiarItemRevisa(DataGridView dgw,int idrevisao)
-        { 
-            var result = from items in Banco.tblitenrevisaos 
+        public void visualiarItemRevisa(DataGridView dgw, int idrevisao)
+        {
+            var result = from items in Banco.tblitenrevisaos
                          join produto in Banco.tblprodutos on items.id_produtos equals produto.id_produto
-                         
-                         where items.id_revisao == idrevisao 
-                         select new 
+
+                         where items.id_revisao == idrevisao
+                         select new
                          {
-                            Produto = produto.descricao,
-                            quantidade =items.quantidade,
-                            valor = items.preco
+                             Produto = produto.descricao,
+                             quantidade = items.quantidade,
+                             valor = items.preco
                          };
 
             dgw.DataSource = result;
-        
+
         }
 
 

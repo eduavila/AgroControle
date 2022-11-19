@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sistemaCA.Modulos.Usuarios
@@ -19,7 +12,7 @@ namespace sistemaCA.Modulos.Usuarios
 
         private void FormCadastroUsuario_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -29,7 +22,7 @@ namespace sistemaCA.Modulos.Usuarios
 
         private void ck_cadastro_CheckedChanged(object sender, EventArgs e)
         {
-            // abilitando 
+            // Habilitando 
             if (ck_cadastro.Checked == true)
             {
                 ckl_cadastro.Enabled = true;
@@ -75,7 +68,8 @@ namespace sistemaCA.Modulos.Usuarios
             {
                 ckl_admin.Enabled = true;
             }
-            else {
+            else
+            {
                 ckl_admin.Enabled = false;
             }
 

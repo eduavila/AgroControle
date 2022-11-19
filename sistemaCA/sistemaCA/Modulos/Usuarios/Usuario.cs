@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace sistemaCA.Modulos.Usuarios
+﻿namespace sistemaCA.Modulos.Usuarios
 {
     public class Usuario
     {
@@ -16,8 +10,5 @@ namespace sistemaCA.Modulos.Usuarios
         public int ModAplicacao { get; set; }
         public int ModRevisao { get; set; }
         public int MdAdmin { get; set; }
-     
-
-
     }
 }

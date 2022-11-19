@@ -1,39 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sistemaCA.views.produtos
 {
-    class Produto
+    class Produto : ClasseBase
     {
-        public DataClasses1DataContext Banco { get; set; }
         public int Idproduto { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string UnidadeMedida { get; set; }
         public int Id_tipoproduto { get; set; }
-       
-        
-        
-        public Produto()
-        {
-            this.Banco = new DataClasses1DataContext();
-        
-        
-        }
 
 
-
-      
+        public Produto() : base(new DataClasses1DataContext())
+        { }
 
         public void ListaProdutos(DataGridView dgw)
         {
-            
+
             dgw.DataSource = Banco.spListaProduto();
-        
+
         }
 
 
@@ -88,9 +75,9 @@ namespace sistemaCA.views.produtos
             catch (Exception erro)
             {
                 MessageBox.Show(erro.Message);
-                
+
             }
-                    
+
         }
 
 
@@ -100,20 +87,20 @@ namespace sistemaCA.views.produtos
             {
                 Banco.spAlterarProduto(this.Idproduto, this.Nome, this.Descricao, this.UnidadeMedida, this.Id_tipoproduto);
             }
-            catch(Exception exe)
+            catch (Exception exe)
             {
 
                 MessageBox.Show(" Erro  : " + exe.Message);
             }
-        
+
         }
 
 
 
-        
 
 
 
-        
-        }
+
+
+    }
 }

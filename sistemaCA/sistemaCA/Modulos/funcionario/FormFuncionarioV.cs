@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sistemaCA.views.funcionario
@@ -24,7 +17,7 @@ namespace sistemaCA.views.funcionario
 
 
 
-            
+
             // mandando dado para forms
 
             Funcionarios Func = new Funcionarios();
@@ -69,8 +62,8 @@ namespace sistemaCA.views.funcionario
             tb_obs.Enabled = false;
 
             btn_salvar.Visible = false;
-        
-        
+
+
         }
 
 
@@ -103,11 +96,13 @@ namespace sistemaCA.views.funcionario
                 cb_sexo.Enabled = true;
 
                 btn_salvar.Visible = true;
-                
+
+                this.btn_Alterar.Visible = false;
+                this.btn_Deletar.Visible = false;
             }
 
             //------------------------------
-        
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -155,7 +150,7 @@ namespace sistemaCA.views.funcionario
                 this.Close();
 
             }
-            
+
         }
     }
 }
